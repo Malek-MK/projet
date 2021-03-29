@@ -45,7 +45,6 @@ const Mediation = () => {
         <div className="card-body text-center">
         <MultiStep steps={steps} prevStyle={prevStyle} nextStyle={nextStyle} />
         {steps.name==='StepThree'?<button className="btn btn-primary" onClick={onSave}>SAVE</button>:null}
-        <button className="btn btn-primary" onClick={onSave}>SAVE</button>
       </div>
       </div>
       </div>

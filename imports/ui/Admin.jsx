@@ -1,13 +1,18 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Meteor } from 'meteor/meteor';
-import { Link } from 'react-router-dom';
+import Button from "react-bootstrap/Button";
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Mediation from './Mediation';
+import { useHistory } from 'react-router-dom'
+
 const User = () => {
+    const history = useHistory();
     const onLogout = () => {
-        console.log('im logout')
         Meteor.logout();
-    }
+        history.replace('/');
+      }
+    const [show,setShow]=useState(false);
+   
     return (
         <div>
             <header className="navbar navbar-expand-md navbar-light d-print-none">
@@ -21,33 +26,19 @@ const User = () => {
     </h1>
                     <div className="navbar-nav flex-row order-md-last">
 
-                        <div className="nav-item dropdown d-none d-md-flex me-3">
-                            <a href="#" className="nav-link px-0" data-bs-toggle="dropdown" tabIndex={-1} aria-label="Show notifications">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="icon" width={24} height={24} viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" /><path d="M9 17v1a3 3 0 0 0 6 0v-1" /></svg>
-                                <span className="badge bg-red" />
-                            </a>
-                            <div className="dropdown-menu dropdown-menu-end dropdown-menu-card">
-                                <div className="card">
-                                    <div className="card-body"> 
-                                    </div>
-                                </div>
-                            </div>    
-                        </div>
-                        <div className="nav-item dropdown">
-                            <a href="#" className="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
-                                <span className="avatar avatar-sm" style={{ backgroundImage: 'url(./static/avatars/000m.jpg)' }} />
-                                <div className="d-none d-xl-block ps-2">
+                        
+                        <div className="nav-item ">
+                            <a>
+                                <div >
                                     <div>Hello,<b>{Meteor.user().username}</b> </div>
                                 </div>
                             </a>
-                            <div className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                <a href="#" className="dropdown-item">Set status</a>
-                                <a href="#" className="dropdown-item">Profile &amp; account</a>
-                                <a href="#" className="dropdown-item">Feedback</a>
-                                <div className="dropdown-divider" />
-                                <a href="#" className="dropdown-item">Settings</a>
-                                <a href="#" className="dropdown-item">Logout</a>
-                            </div>
+                            
+                        </div>
+                        <div className="nav-item">
+                        <Button variant="outline-danger" onClick={onLogout} className="btn rounded-circle mt-1 ml-5 ">
+                        <i className="fa fa-power-off" aria-hidden="true"></i>
+                         </Button>
                         </div>
                     </div>
                 </div>
@@ -95,29 +86,23 @@ const User = () => {
                                         Dashboard
         </h2>
                                 </div>
-                                <div className="col-auto ms-auto d-print-none">
+                                {!show? <div className="col-auto ms-auto d-print-none">
                                     <div className="btn-list">
-                                        <span className="d-none d-sm-inline">
-                                            <a href="#" className="btn btn-white">
-                                                New view
-            </a>
-                                        </span>
-                                        <a href="#" className="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-report">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="icon" width={24} height={24} viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><line x1={12} y1={5} x2={12} y2={19} /><line x1={5} y1={12} x2={19} y2={12} /></svg>
+                                        
+                                        <a onClick={()=>setShow(true)} className="btn btn-primary d-none d-sm-inline-block" >
             Create new Mediation
           </a>
-                                        <a href="#" className="btn btn-primary d-sm-none btn-icon" data-bs-toggle="modal" data-bs-target="#modal-report" aria-label="Create new report">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="icon" width={24} height={24} viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><line x1={12} y1={5} x2={12} y2={19} /><line x1={5} y1={12} x2={19} y2={12} /></svg>
+                                        <a href="#" className="btn btn-primary d-sm-none btn-icon"  aria-label="Create new report">
                                         </a>
                                     </div>
-                                </div>
+                                </div>:null}
                             </div>
                         </div>
                     </div>
 
                 </div>
             </div>
-        <Mediation/> 
+        {show ?<Mediation/> :null }
         </div>
     )
 }
