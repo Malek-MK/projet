@@ -1,0 +1,28 @@
+import React, { useEffect } from "react";
+import { Route, useHistory } from "react-router-dom";
+import { useTracker } from "meteor/react-meteor-data";
+
+const Authenticated = ({ path, component }) => {
+
+  const user = useTracker(() => Meteor.userId());
+  const loading = useTracker(() => Meteor.loggingIn());
+  const history = useHistory();
+  const authenticatedPage = ["/user","/admin"];
+  const unAuthenticatedPage = ["/", "/signin", "/signup"];
+  const isAuthenticatedPage = authenticatedPage.includes(path);
+  const isUnauthenticatedPage = unAuthenticatedPage.includes(path);
+
+  useEffect(() => {
+    if (!user  && isAuthenticatedPage) {
+      history.replace("/");
+    }
+  }, [user]);
+
+  return loading ? (
+    <span>loading</span>
+  ) : (
+    <Route path={path} component={component} />
+  );
+};
+
+export default Authenticated;
