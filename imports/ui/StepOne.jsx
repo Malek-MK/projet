@@ -7,7 +7,7 @@ const StepOne = ({setData}) => {
     const { register, handleSubmit, errors } = useForm({
         resolver: yupResolver(Schema1)
       }); 
-      
+       //mmmmmm
       const onSubmit = (data1)=>setData(old=>({...old,...data1}));
     
         return (
