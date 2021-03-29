@@ -1,10 +1,8 @@
 import React, { useState }  from 'react'
-import MultiStep from 'react-multistep'
 import StepOne from '../ui/StepOne';
 import StepTwo from '../ui/StepTwo';
 import StepThree from '../ui/StepThree';
-
-
+import NavSteps from '../ui/NavSteps';
 const notyf = new Notyf({
     duration: 2000,
     position: {
@@ -36,15 +34,14 @@ const Mediation = () => {
           }
         );
       }
-      const prevStyle = {'background': '#33c3f0', 'borderWidth': '2px','marginRight':'50px'}
-      const nextStyle = {'background': '#33c3f0',  'borderWidth': '2px','marginLeft':'50px'}
+  
 
     return (
         <div  className="d-flex justify-content-center ">
         <div className="card w-75 ml-5" >
         <div className="card-body text-center">
-        <MultiStep steps={steps} prevStyle={prevStyle} nextStyle={nextStyle} />
-        {steps.name==='StepThree'?<button className="btn btn-primary" onClick={onSave}>SAVE</button>:null}
+          <NavSteps/>
+       <StepOne/>
       </div>
       </div>
       </div>
