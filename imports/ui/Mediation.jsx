@@ -8,13 +8,13 @@ import ButtonSteps from '../ui/ButtonSteps';
 const notyf = new Notyf({
   duration: 2000,
   position: {
-    x: 'left',
-    y: 'top',
+    x: 'center',
+    y: 'center',
   }
 })
 
 
-const Mediation = () => {
+const Mediation = ({setView}) => {
 
   const [data, setData] = useState({});
 
@@ -29,6 +29,7 @@ const Mediation = () => {
         }
       }
     );
+    setView(false)
   }
   const [show, setShow] = useState('step1');
 

@@ -11,7 +11,7 @@ const User = () => {
         Meteor.logout();
         history.replace('/');
       }
-    const [show,setShow]=useState(false);
+    const [view,setView]=useState(false);
    
     return (
         <div>
@@ -86,10 +86,10 @@ const User = () => {
                                         Dashboard
         </h2>
                                 </div>
-                                {!show? <div className="col-auto ms-auto d-print-none">
+                                {!view? <div className="col-auto ms-auto d-print-none">
                                     <div className="btn-list">
                                         
-                                        <a onClick={()=>setShow(true)} className="btn btn-primary d-none d-sm-inline-block" >
+                                        <a onClick={()=>setView(true)} className="btn btn-primary d-none d-sm-inline-block" >
             Create new Mediation
           </a>
                                         <a href="#" className="btn btn-primary d-sm-none btn-icon"  aria-label="Create new report">
@@ -102,7 +102,7 @@ const User = () => {
 
                 </div>
             </div>
-        {show ?<Mediation/> :null }
+        {view ?<Mediation setView={setView}/> :null }
         </div>
     )
 }
