@@ -30,7 +30,7 @@ const Mediation = () => {
       }
     );
   }
-  const [show, setShow] = useState('');
+  const [show, setShow] = useState('step1');
 
   return (
     <div className="d-flex justify-content-center ">
