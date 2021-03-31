@@ -7,7 +7,9 @@ const User = () => {
     }
     return (
         <div>
-            <h1>Welcome </h1>
+
+            <div>Hello,<b>{Meteor.user().username}</b> </div>
+
             <Link to="/" onClick={onLogout}>Logout</Link>
         </div>
     )
