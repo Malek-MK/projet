@@ -8,8 +8,9 @@ const StepThree = ({ setData }) => {
     const { register, handleSubmit, errors } = useForm({
         resolver: yupResolver(Schema3)
     });
-    const onSubmit = (data3) => setData(old => ({ ...old, ...data3 }));
-
+    const onSubmit = (data3) => {
+        setData(old => ({ ...old, ...data3 }));
+      }
 
 
 
@@ -34,7 +35,7 @@ const StepThree = ({ setData }) => {
                     <textarea name="desc" ref={register} className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     <p className="text-danger">{errors.desc?.message}</p>
                 </div>
-
+                <button>save</button>
             </form>
         </div>
     )

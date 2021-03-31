@@ -9,8 +9,9 @@ const StepTwo = ({ setData }) => {
     resolver: yupResolver(Schema2)
   });
 
-  const onSubmit = (data2) => setData(old => ({ ...old, ...data2 }));
-
+  const onSubmit = (data2) => {
+    setData(old => ({ ...old, ...data2 }));
+  }
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -60,7 +61,7 @@ const StepTwo = ({ setData }) => {
           </div>
         </div>
         <label >Numéro d'identification</label>
-        <input type="text" name="numid1" ref={register} className="form-control mb-2" id="formGroupExampleInput" placeholder="Example input"></input>
+        <input type="number" name="numid1" ref={register} className="form-control mb-2" id="formGroupExampleInput" placeholder="Example input"></input>
         <p className="text-danger">{errors.numid1?.message}</p>
         <div className="row mb-2">
           <div className="col">
@@ -101,7 +102,7 @@ const StepTwo = ({ setData }) => {
             <p className="text-danger">{errors.tel1?.message}</p>
           </div>
         </div>
-
+        <button>save</button>
       </form>
     </div>
   )

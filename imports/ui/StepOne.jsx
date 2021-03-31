@@ -2,20 +2,18 @@ import React from 'react'
 import { useForm } from 'react-hook-form';
 import Schema1 from '../Validation/YupStep1';
 import { yupResolver } from '@hookform/resolvers/yup';
-
-const StepOne = ({ setData }) => {
+import ButtonSteps from '../ui/ButtonSteps'
+const StepOne = ({setData }) => {
 
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(Schema1)
   });
   const onSubmit = (data1) => {
-    console.log(data1);
     setData(old => ({ ...old, ...data1 }));
   }
-  const show = true;
   return (
     <div className="mt-5">
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form  onSubmit={handleSubmit(onSubmit)}>
 
         <div className="form-group mb-2 mt-5">
           <h2 className="text mb-5">Coordonnées de la partie A
@@ -62,7 +60,7 @@ const StepOne = ({ setData }) => {
           </div>
         </div>
         <label >Numéro d'identification</label>
-        <input type="text" name="numid" ref={register} className="form-control mb-2" id="formGroupExampleInput" placeholder="Example input"></input>
+        <input type="number" name="numid" ref={register} className="form-control mb-2" id="formGroupExampleInput" placeholder="Example input"></input>
         <p className="text-danger">{errors.numid?.message}</p>
         <div className="row mb-2">
           <div className="col">
@@ -103,8 +101,7 @@ const StepOne = ({ setData }) => {
             <p className="text-danger">{errors.tel?.message}</p>
           </div>
         </div>
-
-
+        <button>save</button>
       </form>
     </div>
   )

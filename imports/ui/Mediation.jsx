@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
+import {Meteor} from 'meteor/meteor'
 import StepOne from '../ui/StepOne';
 import StepTwo from '../ui/StepTwo';
 import StepThree from '../ui/StepThree';
 import NavSteps from '../ui/NavSteps';
 import ButtonSteps from '../ui/ButtonSteps';
-
 const notyf = new Notyf({
   duration: 2000,
   position: {
@@ -20,10 +20,10 @@ const Mediation = () => {
 
   const onSave = () => {
     Meteor.call(
-      "insertMediation", data, (err) => {
+      'insertMediation', data, (err) => {
         console.log(data)
         if (err) {
-          notyf.error("Inserted Failed")
+          notyf.error(err)
         } else {
           notyf.success("Inscription with success")
         }
