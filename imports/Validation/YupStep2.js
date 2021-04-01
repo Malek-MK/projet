@@ -17,9 +17,7 @@ export default Step2 = yup.object().shape({
         .string("check your form")
         .oneOf(['choix1', 'sas1','sarl1','sa1','snc1','gie1'])
         .required("Forme Juridique is required"), 
-    numid1: yup
-        .number("check your Num ID")
-        .required("Num Id is required"), 
+    numid1:yup.number().required().positive().integer(),
     prerepleg1: yup
         .string("check your username")
         .required("Prénom is required"),     
@@ -29,9 +27,7 @@ export default Step2 = yup.object().shape({
     adresse1: yup
         .string("check your adresse")
         .required("Adresse is required"),  
-    codepos1: yup
-        .number("check your code postal format")
-        .required("Code Postal is required"),         
+    codepos1:yup.number().required().positive().integer(),        
     ville1: yup
     .string("check your ville")
     .required("Ville is required"),  
@@ -39,8 +35,6 @@ export default Step2 = yup.object().shape({
     .string()
     .email("check your email format")
     .required("Email is required"), 
-    tel1: yup
-        .number("check your number phone format")
-        .required("Phone is required"),  
+    tel1 :yup.number().required().positive().integer(), 
 
   });

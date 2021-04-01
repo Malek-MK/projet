@@ -14,7 +14,6 @@ const onclickprev=(e)=>{
 }
 
   const onSubmit = (data2) => {
-    console.log(data2)
     setData(old => ({ ...old, ...data2 }));
     setStep(2)
   }

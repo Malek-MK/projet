@@ -69,7 +69,7 @@ Meteor.methods({
             conso:data.conso,
             constr:data.constr,
             desc:data.desc,
-             userId: this.userId
+            userId: this.userId
          });
         
        
@@ -136,6 +136,12 @@ Meteor.methods({
             throw new Meteor.Error('Not Authorized');
         }
         Mediation.remove({ _id });
+    },
+    'showMediations'(){
+        if (!this.userId) {
+            throw new Meteor.Error('Not Authorized');
+        }
+       return {res: Mediation.find({ userId: this.userId }).fetch()};
     }
 
 })
