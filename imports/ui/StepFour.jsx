@@ -25,7 +25,7 @@ const StepFour = ({ setStep, data }) => {
             <h2 className="text mb-5">Récapitulatif du dossier de médiation</h2>
             <h5>Informations concernant le demandeur de la médiation</h5>
             
-            
+        
                 
                 <table className="table table-bordered " >
                 {data1.map((dat)=>{ <table><tbody><tr key={dat._id}>
