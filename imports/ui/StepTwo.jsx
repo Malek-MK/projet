@@ -3,14 +3,20 @@ import { useForm } from 'react-hook-form';
 import Schema2 from '../Validation/YupStep2';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-const StepTwo = ({ setData }) => {
+const StepTwo = ({ setData,setStep }) => {
 
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(Schema2)
   });
+const onclickprev=(e)=>{
+  e.preventDefault
+  setStep(0)
+}
 
   const onSubmit = (data2) => {
+    console.log(data2)
     setData(old => ({ ...old, ...data2 }));
+    setStep(2)
   }
   return (
     <div>
@@ -102,7 +108,8 @@ const StepTwo = ({ setData }) => {
             <p className="text-danger">{errors.tel1?.message}</p>
           </div>
         </div>
-        <button>save</button>
+        <button type="button" name='prev' className="btn btn-primary btn-lg pull-left" onClick={onclickprev} >Previous</button>
+        <button type="submit" name='next' className="btn btn-primary btn-lg pull-right" >Next</button>
       </form>
     </div>
   )

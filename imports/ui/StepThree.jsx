@@ -3,16 +3,21 @@ import { useForm } from 'react-hook-form';
 import Schema3 from '../Validation/YupStep3';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-const StepThree = ({ setData }) => {
+const StepThree = ({ setData, setStep }) => {
 
     const { register, handleSubmit, errors } = useForm({
         resolver: yupResolver(Schema3)
     });
     const onSubmit = (data3) => {
+        console.log(data3)
+
         setData(old => ({ ...old, ...data3 }));
-      }
+    }
 
-
+    const onclickprev = (e) => {
+        e.preventDefault
+        setStep(1)
+    }
 
     return (
         <div>
@@ -35,8 +40,9 @@ const StepThree = ({ setData }) => {
                     <textarea name="desc" ref={register} className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     <p className="text-danger">{errors.desc?.message}</p>
                 </div>
-                <button>save</button>
-            </form>
+                <button type="button" name='prev' className="btn btn-primary btn-lg pull-left" onClick={onclickprev} >Previous</button>     
+                <button type="submit" name='valide' className="btn btn-success btn-lg pull-right" >Valider</button>
+                       </form>
         </div>
     )
 }

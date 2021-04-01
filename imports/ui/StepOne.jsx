@@ -2,14 +2,15 @@ import React from 'react'
 import { useForm } from 'react-hook-form';
 import Schema1 from '../Validation/YupStep1';
 import { yupResolver } from '@hookform/resolvers/yup';
-import ButtonSteps from '../ui/ButtonSteps'
-const StepOne = ({setData }) => {
+
+const StepOne = ({setData,setStep }) => {
 
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(Schema1)
   });
   const onSubmit = (data1) => {
     setData(old => ({ ...old, ...data1 }));
+    setStep(1)
   }
   return (
     <div className="mt-5">
@@ -101,7 +102,7 @@ const StepOne = ({setData }) => {
             <p className="text-danger">{errors.tel?.message}</p>
           </div>
         </div>
-        <button>save</button>
+        <button type="submit" name='next' className="btn btn-primary btn-lg pull-right">Next</button>
       </form>
     </div>
   )
