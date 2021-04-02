@@ -1,37 +1,70 @@
 import React,{useState,useEffect} from 'react'
 import { Meteor } from 'meteor/meteor';
+import { Notyf } from 'notyf';
+import 'notyf/notyf.min.css';
 
-const StepFour = ({ setStep, data }) => {
-    const [data1,setData1]=useState([])
+
+const notyf = new Notyf({
+    duration: 2000,
+    position: {
+      x: 'center',
+      y: 'center',
+    }
+  })
+
+const StepFour = ({ setStep, data ,setShow}) => {
+    const [data1,setData1]=useState({
+        vousA:data.vousA,
+        nomsoc:data.nomsoc,
+        formjurid:data.formjurid,
+        numid:data.numid, 
+        prerepleg:data.prerepleg,
+        nomrepleg:data.nomrepleg,
+        adresse:data.adresse,
+        codepos:data.codepos,
+        ville:data.ville,
+        email:data.email,
+        tel:data.tel,
+        vousB:data.vousB,
+        nomsoc1:data.nomsoc1,
+        formjurid1:data.formjurid1,
+        numid1:data.numid1,
+        prerepleg1:data.prerepleg1,
+        nomrepleg1:data.nomrepleg1,
+        adresse1:data.adresse1,
+        codepos1:data.codepos1,
+        ville1:data.ville1,
+        email1:data.email1,
+        tel1:data.tel1,
+        objlitige:data.objlitige,
+        desc:data.desc,
+    })
     const onclickprev = (e) => {
         e.preventDefault
         setStep(2)
     }
-    const renderMediations=()=>{
-        Meteor.call('showMediations',(err,{res})=>{
-            console.log('result',res)
-            setData1(res)
-            
-        })
-        
+    const onclick=()=>{
+        Meteor.call(
+            'insertMediation', data, (err) => {
+                if (err) {
+                    notyf.error("Inserted Failed")
+                  } else {
+                    notyf.success("Inserted with success")
+                    setShow(false)
+                  }
+            }
+          );
     }
-
     useEffect(()=>{
-        renderMediations()
-
+        setData1(data)
     },[])
+
     return (
         <div>
+          
             <h2 className="text mb-5">Récapitulatif du dossier de médiation</h2>
             <h5>Informations concernant le demandeur de la médiation</h5>
-            
-        
-                
                 <table className="table table-bordered " >
-                {data1.map((dat)=>{ <table><tbody><tr key={dat._id}>
-                            <th className="w-25">Type</th>
-                            <td className="w-75">une sociéte :{dat.adresse}</td>
-                        </tr></tbody></table>})}
                     <tbody>
                         <tr>
                             <th className="w-25">Type</th>
@@ -120,9 +153,9 @@ const StepFour = ({ setStep, data }) => {
                        
                     </tbody>
                 </table>
-                <button type="button" name='prev' className="btn btn-primary btn-lg pull-left" onClick={onclickprev} >Previous</button>
-                <button type="button" name='soumettre' className="btn btn-success btn-lg pull-right" >Soumettre</button>
-            
+                <button type="button" name='prev' className="btn btn-primary btn-lg pull-left" onClick={onclickprev} >Précedent</button>
+                <button type="button" name='soumettre' className="btn btn-success btn-lg pull-right" onClick={onclick}>Soumettre</button>
+         
         </div>
     )
 }

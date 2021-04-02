@@ -21,7 +21,7 @@ const StepOne = ({setData,setStep }) => {
           </h2>
           <h5>Informations vous concernant :</h5>
           <label >Pays</label>
-          <select name="infoA" ref={register} className="form-control" required>
+          <select name="infoA" ref={register} className="form-control" >
             <option value="tun" >Tunisie</option>
             <option value="alg" >Algerie</option>
             <option value="mar" >Maroc</option>
@@ -32,7 +32,7 @@ const StepOne = ({setData,setStep }) => {
         </div>
         <div className="form-group mb-2">
           <label >Vous êtes</label>
-          <select name="vousA" ref={register} className="form-control" id="exampleFormControlSelect1">
+          <select name="vousA" ref={register} className="form-control" >
             <option value="soccom" >Une sociéte commerciale</option>
             <option value="entind" >Un entrepreneur individuel</option>
             <option value="socciv" >Une sociéte civile</option>
@@ -44,12 +44,12 @@ const StepOne = ({setData,setStep }) => {
         <div className="row mb-2">
           <div className="col">
             <label>Nom de la société</label>
-            <input type="text" className="form-control" name="nomsoc" ref={register} placeholder="First name" required></input>
+            <input type="text" className="form-control" name="nomsoc" ref={register} placeholder="First name" ></input>
             <p className="text-danger">{errors.nomsoc?.message}</p>
           </div>
           <div className="col">
             <label>Forme juridique</label>
-            <select name="formjurid" ref={register} className="form-control" id="exampleFormControlSelect1">
+            <select name="formjurid" ref={register} className="form-control" >
               <option value="choix" >Choisir</option>
               <option value="sas" >SAS</option>
               <option value="sarl" >SARL</option>
@@ -61,7 +61,7 @@ const StepOne = ({setData,setStep }) => {
           </div>
         </div>
         <label >Numéro d'identification</label>
-        <input type="number" name="numid" ref={register} className="form-control mb-2" id="formGroupExampleInput" placeholder="Example input"></input>
+        <input type="number" name="numid" ref={register} className="form-control mb-2"  placeholder="Example input"></input>
         <p className="text-danger">{errors.numid?.message}</p>
         <div className="row mb-2">
           <div className="col">
@@ -76,7 +76,7 @@ const StepOne = ({setData,setStep }) => {
           </div>
         </div>
         <label >Adresse du siège social</label>
-        <input type="text" name="adresse" ref={register} className="form-control mb-2" id="formGroupExampleInput" placeholder="Example input"></input>
+        <input type="text" name="adresse" ref={register} className="form-control mb-2" placeholder="Example input"></input>
         <p className="text-danger">{errors.adresse?.message}</p>
         <div className="row mb-2">
           <div className="col">
@@ -102,7 +102,7 @@ const StepOne = ({setData,setStep }) => {
             <p className="text-danger">{errors.tel?.message}</p>
           </div>
         </div>
-        <button type="submit" name='next' className="btn btn-primary btn-lg pull-right">Next</button>
+        <button type="submit" name='next' className="btn btn-primary btn-lg pull-right">Suivant</button>
       </form>
     </div>
   )

@@ -12,10 +12,8 @@ const StepThree = ({ setData, setStep ,setSave}) => {
     const onSubmit = (data3) => {
         setData(old => ({ ...old, ...data3 }));
         setStep(3)
-    }
-    const onclick=()=>{
-        setSave(true)
-    }
+    } 
+   
     const onclickprev = (e) => {
         e.preventDefault
         setStep(1)
@@ -51,7 +49,7 @@ const StepThree = ({ setData, setStep ,setSave}) => {
                 <p className="text-danger">{errors.verif?.message}</p>
                 </div>
                 <button type="button" name='prev' className="btn btn-primary btn-lg pull-left" onClick={onclickprev} >Previous</button>     
-                <button type="submit" name='valide' className="btn btn-primary btn-lg pull-right" onClick={onclick}>Valider</button>
+                <button type="submit" name='valide' className="btn btn-primary btn-lg pull-right" >Next</button>
                        </form>
         </div>
     )

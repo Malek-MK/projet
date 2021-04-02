@@ -17,28 +17,20 @@ const notyf = new Notyf({
 
 const Components=[StepOne,StepTwo,StepThree,StepFour];
 
-const Mediation = ({setView}) => {
+const Mediation = ({setShow}) => {
 
   const [data, setData] = useState({});
-  const [save, setSave] = useState(false);
   const [step,setStep]=useState(0);
   const Component=Components[step];
+ 
+ 
 
-  if(save&&data!=={}){
-Meteor.call(
-  'insertMediation', data, (err) => {
-    console.log(data,err)
-  }
-);
-setSave(false)
-setData({})
-}
   return (
     <div className="d-flex justify-content-center ">
       <div className="card w-75 ml-5" >
         <div className="card-body text-center">
-        <NavSteps setStep={setStep} />
-        <Component setStep={setStep} setSave={setSave} setData={setData} data={data}/>
+        <NavSteps setStep={setStep} step={step}/>
+        <Component setStep={setStep} setData={setData} setShow={setShow} data={data}/>
         </div>
       </div>
     </div>

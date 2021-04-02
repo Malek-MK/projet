@@ -37,7 +37,7 @@ const onclickprev=(e)=>{
         </div>
         <div className="form-group mb-2">
           <label >Vous êtes</label>
-          <select name="vousB" ref={register} className="form-control" id="exampleFormControlSelect1">
+          <select name="vousB" ref={register} className="form-control" >
             <option value="soccom1" >Une sociéte commerciale</option>
             <option value="entind1" >Un entrepreneur individuel</option>
             <option value="socciv1" >Une sociéte civile</option>
@@ -54,7 +54,7 @@ const onclickprev=(e)=>{
           </div>
           <div className="col">
             <label>Forme juridique</label>
-            <select name="formjurid1" ref={register} className="form-control" id="exampleFormControlSelect1">
+            <select name="formjurid1" ref={register} className="form-control" >
               <option value="choix1" >Choisir</option>
               <option value="sas1" >SAS</option>
               <option value="sarl1" >SARL</option>
@@ -66,7 +66,7 @@ const onclickprev=(e)=>{
           </div>
         </div>
         <label >Numéro d'identification</label>
-        <input type="number" name="numid1" ref={register} className="form-control mb-2" id="formGroupExampleInput" placeholder="Example input"></input>
+        <input type="number" name="numid1" ref={register} className="form-control mb-2"  placeholder="Example input"></input>
         <p className="text-danger">{errors.numid1?.message}</p>
         <div className="row mb-2">
           <div className="col">
@@ -81,7 +81,7 @@ const onclickprev=(e)=>{
           </div>
         </div>
         <label >Adresse du siège social</label>
-        <input type="text" name="adresse1" ref={register} className="form-control mb-2" id="formGroupExampleInput" placeholder="Example input"></input>
+        <input type="text" name="adresse1" ref={register} className="form-control mb-2"  placeholder="Example input"></input>
         <p className="text-danger">{errors.adresse1?.message}</p>
         <div className="row mb-2">
           <div className="col">
@@ -107,8 +107,8 @@ const onclickprev=(e)=>{
             <p className="text-danger">{errors.tel1?.message}</p>
           </div>
         </div>
-        <button type="button" name='prev' className="btn btn-primary btn-lg pull-left" onClick={onclickprev} >Previous</button>
-        <button type="submit" name='next' className="btn btn-primary btn-lg pull-right" >Next</button>
+        <button type="button" name='prev' className="btn btn-primary btn-lg pull-left" onClick={onclickprev} >Précedent</button>
+        <button type="submit" name='next' className="btn btn-primary btn-lg pull-right" >Suivant</button>
       </form>
     </div>
   )
