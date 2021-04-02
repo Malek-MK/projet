@@ -3,10 +3,23 @@ import { useForm } from 'react-hook-form';
 import Schema2 from '../Validation/YupStep2';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-const StepTwo = ({ setData,setStep }) => {
+const StepTwo = ({ setData,setStep,data }) => {
 
   const { register, handleSubmit, errors } = useForm({
-    resolver: yupResolver(Schema2)
+    resolver: yupResolver(Schema2),
+    defaultValues: {
+      vousB:data.vousB,
+        nomsoc1:data.nomsoc1,
+        formjurid1:data.formjurid1,
+        numid1:data.numid1,
+        prerepleg1:data.prerepleg1,
+        nomrepleg1:data.nomrepleg1,
+        adresse1:data.adresse1,
+        codepos1:data.codepos1,
+        ville1:data.ville1,
+        email1:data.email1,
+        tel1:data.tel1,
+    }
   });
 const onclickprev=(e)=>{
   e.preventDefault

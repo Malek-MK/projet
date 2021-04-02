@@ -3,15 +3,29 @@ import { useForm } from 'react-hook-form';
 import Schema1 from '../Validation/YupStep1';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-const StepOne = ({setData,setStep }) => {
+const StepOne = ({setData,setStep,data }) => {
 
   const { register, handleSubmit, errors } = useForm({
-    resolver: yupResolver(Schema1)
+    resolver: yupResolver(Schema1),
+    defaultValues: {
+      vousA:data.vousA,
+      nomsoc:data.nomsoc,
+      formjurid:data.formjurid,
+      numid:data.numid, 
+      prerepleg:data.prerepleg,
+      nomrepleg:data.nomrepleg,
+      adresse:data.adresse,
+      codepos:data.codepos,
+      ville:data.ville,
+      email:data.email,
+      tel:data.tel,
+    }
   });
   const onSubmit = (data1) => {
     setData(old => ({ ...old, ...data1 }));
     setStep(1)
   }
+  
   return (
     <div className="mt-5">
       <form  onSubmit={handleSubmit(onSubmit)}>

@@ -4,10 +4,14 @@ import Schema3 from '../Validation/YupStep3';
 import { yupResolver } from '@hookform/resolvers/yup';
 
   
-const StepThree = ({ setData, setStep ,setSave}) => {
+const StepThree = ({ setData, setStep,data }) => {
 
     const { register, handleSubmit, errors } = useForm({
-        resolver: yupResolver(Schema3)
+        resolver: yupResolver(Schema3),
+        defaultValues:{
+        objlitige:data.objlitige,
+        desc:data.desc,
+        }
     });
     const onSubmit = (data3) => {
         setData(old => ({ ...old, ...data3 }));

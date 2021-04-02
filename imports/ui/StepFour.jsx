@@ -13,6 +13,7 @@ const notyf = new Notyf({
   })
 
 const StepFour = ({ setStep, data ,setShow}) => {
+   
     const [data1,setData1]=useState({
         vousA:data.vousA,
         nomsoc:data.nomsoc,

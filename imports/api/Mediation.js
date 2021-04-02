@@ -2,7 +2,8 @@ import { Mongo } from 'meteor/mongo';
 import { Meteor } from 'meteor/meteor';
 
 export const Mediation = new Mongo.Collection('mediation');
-
+let it=new Date();
+const today=it.getFullYear()+'/'+it.getMonth()+1+'/'+it.getDate()+' '+it.getHours()+':'+it.getMinutes()
 Meteor.methods({
 
     'insertMediation'(data) {
@@ -12,6 +13,7 @@ Meteor.methods({
         }
       
         Mediation.insert({
+            time:today,
             tun:data.tun,
             alg:data.alg,
             mar:data.mar,
@@ -75,7 +77,7 @@ Meteor.methods({
        
        
     },
-    'showMediation'({ currentPage, ITEMS_PER_PAGE, search, sortBy = '_id', sortOrder = 'asc' }) {
+    'showMediations'({ currentPage, ITEMS_PER_PAGE, search, sortBy = '_id', sortOrder = 'asc' }) {
         const query = { userId: this.userId };
         const options = {
             skip: (currentPage - 1) * ITEMS_PER_PAGE, limit: ITEMS_PER_PAGE,
@@ -83,7 +85,7 @@ Meteor.methods({
                 [sortBy]: sortOrder === 'asc' ? 1 : -1
             }
         };
-        const totalCount = Players.find({ userId: this.userId }).count();
+        const totalCount = Mediation.find({ userId: this.userId }).count();
         const totalPages = Math.ceil(totalCount / ITEMS_PER_PAGE);
         // IF SEARCH IS DEFINED && SEARCH LENGTH != 0 THEN WE ADD SEARCH STEP TO QUERY OBJECT
         if (search && search.length) {
@@ -108,21 +110,21 @@ Meteor.methods({
         }
         return { items: Mediation.find(query, options).fetch(), totalCount };
     },
-    'paginateProduct'(params) {
+    'paginateMediation'(params) {
         //console.log(params);
         const { page } = params;
         const perPage = 10;
 
-        return Players.find({ userId: this.userId }, {}).fetch();
+        return Mediation.find({ userId: this.userId }, {}).fetch();
 
     },
-    'updatePlayer'({ id, data }) {
+    'updateMediation'({ id, data }) {
         if (!this.userId) {
             throw new Meteor.Error('Not Authorized');
         }
-        const player = Players.findOne({ _id: id, userId: this.userId });
-        if (!player) {
-            throw new Meteor.Error('Player not found');
+        const media = Mediation.findOne({ _id: id, userId: this.userId });
+        if (!media) {
+            throw new Meteor.Error('it is not found');
         }
         try {
             YupPlayer.validate(data)
@@ -131,17 +133,12 @@ Meteor.methods({
         }
         Mediation.update({ _id: id }, { $set: data });
     },
-    'deletePlayer'(_id) {
+    'deleteMediation'(_id) {
         if (!this.userId) {
             throw new Meteor.Error('Not Authorized');
         }
         Mediation.remove({ _id });
     },
-    'showMediations'(){
-        if (!this.userId) {
-            throw new Meteor.Error('Not Authorized');
-        }
-       return {res: Mediation.find({ userId: this.userId }).fetch()};
-    }
+    
 
 })
