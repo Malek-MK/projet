@@ -117,7 +117,10 @@ const StepOne = ({setData,setStep,data }) => {
           </div>
         </div>
         <button type="submit" name='next' className="btn btn-primary btn-lg pull-right">Suivant</button>
+      
+       
       </form>
+      <a id="Button-1" className="btn btn-outline-primary pull-right" style={{ position: 'absolute',bottom:'50px',left: '1000px' }} href="#" role="button"><h5> <i class="fa fa-arrow-up"></i></h5></a>
     </div>
   )
 }
