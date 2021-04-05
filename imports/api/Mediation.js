@@ -3,7 +3,8 @@ import { Meteor } from 'meteor/meteor';
 
 export const Mediation = new Mongo.Collection('mediation');
 let it=new Date();
-const today=it.getFullYear()+'/'+it.getMonth()+1+'/'+it.getDate()+' '+it.getHours()+':'+it.getMinutes()
+const today=it.getFullYear()+'/'+it.getMonth()+'/'+it.getDate()+' '+it.getHours()+':'+it.getMinutes()
+console.log(today) 
 Meteor.methods({
 
     'insertMediation'(data) {
