@@ -12,13 +12,14 @@ const NavSteps = ({setStep,step}) => {
     <div>
       {step == 0?<div className="steps mb-5">
       <a className= 'step-item text-decoration-none active' >
-        Step 1<i class="fas fa-user-friends"></i>
+        Step 1<i class="fa fa-user-friends"></i>
     </a>
       <a className= 'step-item text-decoration-none ' >
-        Step 2<i class="fad fa-user-friends"></i>
+        Step 2 <i class="fa fa-user" aria-hidden="true"></i>
+
     </a>
       <a className= 'step-item text-decoration-none ' >
-        Step 3
+        Step 3<i class="fa fa-user-shield"></i>
     </a>
     <a className= 'step-item text-decoration-none ' >
         Step 4
