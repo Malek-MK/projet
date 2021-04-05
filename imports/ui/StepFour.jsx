@@ -101,8 +101,8 @@ const StepFour = ({ setStep, data ,setShow}) => {
                         </tr>
                     </tbody>
                 </table>
-                <h2 className="text mb-5">Récapitulatif du dossier de médiation</h2>
-                <h5>Informations concernant l'autre partie</h5>
+
+                 <h5>Informations concernant l'autre partie</h5>
                 <table className="table table-bordered ">
                     <tbody>
                         <tr>

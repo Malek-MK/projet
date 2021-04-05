@@ -12,7 +12,7 @@ const Home = () => {
 	
 	
 	<nav className="navbar navbar-expand-lg navbar-light bg-dark">
-        <a className="navbar-brand text-white" href="#"><i className="fa fa-home"></i>Community</a>
+        <a className="navbar-brand text-white" href="#"><i class="fa fa-balance-scale"></i>Community</a>
        
         <div className="collapse navbar-collapse ml-2" id="navbarSupportedContent">
             <ul className="navbar-nav ml-auto topnav">
@@ -48,7 +48,7 @@ const Home = () => {
                 <div className="position-absolute top-5 end-0">
                 <ul className="navbar-nav topnav">
                 <li className="nav-item mr-2">
-                <Link to="/signin" className="text-primary text-decoration-none"><b><i className="fa fa-user"></i>Sign In</b></Link>                 
+                <Link to="/signin" className="text-success text-decoration-none"><b><i className="fa fa-user"></i>Sign In</b></Link>                 
                 </li>
                 <li className="nav-item text-white">/</li>
                 <li className="nav-item">

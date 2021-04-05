@@ -19,8 +19,9 @@ const Authenticated = ({ path, component }) => {
   }, [user]);
 
   return loading ? (
-    <span>loading</span>
-  ) : (
+<span><h3>loading <i class="fa fa-spinner"></i></h3></span>
+
+) : (
     <Route path={path} component={component} />
   );
 };

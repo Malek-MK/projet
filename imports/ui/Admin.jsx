@@ -62,7 +62,7 @@ const User = () => {
                     </button>
                     <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
                       <a className="nav-link decoration-none">
-                        Dashboard
+                        <h3><i className="fa fa-home"></i>Dashboard</h3>
                       </a>
                     </h1>
                    
