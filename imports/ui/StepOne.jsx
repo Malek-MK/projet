@@ -125,35 +125,35 @@ const [check,setCheck]=useState(false);
           <label>Do you want to add the contact details of a lawyer?</label>
             <input  type="radio" name="test" value="yes" onClick={()=>setCheck(true)}></input>
             <label for="louie">Yes</label>
-            <input type="radio" name="test" value="no" onClick={()=>setCheck(false)}></input>
-            <label for="louie">No</label>
+            <input type="radio" name="test" value="no" onClick={()=>setCheck(false)} ></input>
+            <label for="louie" >No</label>
           </div>
                 </div>
                 {check? <>
                  <div className="row mb-2">
                  <div className="col">
                    <label>First name </label>
-                   <input type="text" name="firstnamelawyer" ref={register} className="form-control" placeholder="First name"></input>
+                   <input type="text" name="firstnamelawyer" ref={register} className="form-control" placeholder="First name" defaultValue="vide"></input>
                    <p className="text-danger">{errors.firstnamelawyer?.message}</p>
                  </div>
                  <div className="col">
                    <label>Name </label>
-                   <input type="text" name="namelawyer" ref={register} className="form-control" placeholder="First name"></input>
+                   <input type="text" name="namelawyer" ref={register} className="form-control" placeholder="First name" defaultValue="vide"></input>
                    <p className="text-danger">{errors.namelawyer?.message}</p>
                  </div>
                </div>
                <label >Address</label>
-               <input type="text" name="adresslawyer" ref={register} className="form-control mb-2" placeholder="Example input"></input>
+               <input type="text" name="adresslawyer" ref={register} className="form-control mb-2" placeholder="Example input" defaultValue="vide"></input>
                <p className="text-danger">{errors.adresslawyer?.message}</p>
                <div className="row mb-4">
           <div className="col">
             <label>E-mail</label>
-            <input type="email" name="emaillawyer" ref={register} className="form-control" placeholder="First name"></input>
+            <input type="email" name="emaillawyer" ref={register} className="form-control" placeholder="First name" defaultValue="vide@vide.com"></input>
             <p className="text-danger">{errors.emaillawyer?.message}</p>
           </div>
           <div className="col">
             <label>Phone</label>
-            <input type="number" name="tellawyer" ref={register} className="form-control" placeholder="First name"></input>
+            <input type="number" name="tellawyer" ref={register} className="form-control" placeholder="First name" defaultValue={0}></input>
             <p className="text-danger">{errors.tellawyer?.message}</p>
           </div>
         </div>

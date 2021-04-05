@@ -42,7 +42,9 @@ export default Step1 = yup.object().shape({
     tel: yup
         .number("check your number phone format")
         .required("Phone is required"),  
-    firstnamelawyer: yup
+   /*
+
+ firstnamelawyer: yup
         .string("check your name societe")
         .required("name societe is required"),
     namelawyer: yup
@@ -58,5 +60,8 @@ export default Step1 = yup.object().shape({
     tellawyer: yup
         .number("check your number phone format")
         .required("Phone is required"),  
-
+    test: yup
+        .string()
+        .required("A radio option is required")
+   */
   });
