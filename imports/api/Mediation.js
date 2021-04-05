@@ -138,6 +138,4 @@ Meteor.methods({
         }
         Mediation.remove({ _id });
     },
-    
-
 })

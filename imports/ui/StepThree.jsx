@@ -25,21 +25,21 @@ const StepThree = ({ setData, setStep,data }) => {
     return (
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <h2 className="text mb-5">Objet du litige</h2>
+                <h2 className="text mb-5">Subject of the dispute</h2>
                 <div className="form-group mb-2 mt-3">
-                    <label >Type de litige </label>
+                    <label >Type of dispute </label>
                     <select name="objlitige" ref={register} className="form-control" >
-                        <option value="contra" >Contractuel</option>
-                        <option value="comm" > Commerciale</option>
-                        <option value="vois" >Voisinage</option>
-                        <option value="copro" >Copropriéte</option>
-                        <option value="conso" >Consommation</option>
+                        <option value="contra" >Contractual</option>
+                        <option value="comm" > Commercial</option>
+                        <option value="vois" >Neighborhood</option>
+                        <option value="copro" >Co-ownership</option>
+                        <option value="conso" >Consumption</option>
                         <option value="constr" >Construction</option>
                     </select>
                     <p className="text-danger">{errors.objlitige?.message}</p>
                 </div>
                 <div className="form-group mb-4">
-                    <label >Description du litige</label>
+                    <label >Description of the dispute</label>
                     <textarea name="desc" ref={register} className="form-control"  rows="3"></textarea>
                     <p className="text-danger">{errors.desc?.message}</p>
                 </div>
@@ -49,11 +49,11 @@ const StepThree = ({ setData, setStep,data }) => {
                         name="verif"
                         ref={register} 
                         defaultChecked={false}
-                    /><label>Etes-vous sûr que les informations que vous avez écrites sont correctes?</label>
+                    /><label>Are you sure the information you have entered is correct?</label>
                 <p className="text-danger">{errors.verif?.message}</p>
                 </div>
                 <button type="button" name='prev' className="btn btn-primary btn-lg pull-left" onClick={onclickprev} >Previous</button>     
-                <button type="submit" name='valide' className="btn btn-primary btn-lg pull-right" >Next</button>
+                <button type="submit" name='next' className="btn btn-primary btn-lg pull-right" >Next</button>
                        </form>
         </div>
     )

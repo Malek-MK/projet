@@ -154,8 +154,8 @@ const StepFour = ({ setStep, data ,setShow}) => {
                        
                     </tbody>
                 </table>
-                <button type="button" name='prev' className="btn btn-primary btn-lg pull-left" onClick={onclickprev} >Précedent</button>
-                <button type="button" name='soumettre' className="btn btn-success btn-lg pull-right" onClick={onclick}>Soumettre</button>
+                <button type="button" name='prev' className="btn btn-primary btn-lg pull-left" onClick={onclickprev} >Previous</button>
+                <button type="button" name='soumettre' className="btn btn-success btn-lg pull-right" onClick={onclick}>Submit</button>
                 <a id="Button-1" className="btn btn-outline-primary pull-right" style={{ position: 'absolute',bottom:'50px',left: '1000px' }} href="#" role="button"><h5><i class="fa fa-arrow-up"></i></h5></a>
 
         </div>

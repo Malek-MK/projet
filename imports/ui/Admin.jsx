@@ -75,7 +75,7 @@ const User = () => {
                         <li className="nav-item active ">
                                     <Link to="/" className="nav-link decoration-none">
                                         
-                                       Home
+                                      Go_Home
                                     </Link>
                                 </li>
                                 <li className="nav-item ">
