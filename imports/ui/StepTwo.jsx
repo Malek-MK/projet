@@ -137,27 +137,27 @@ const onclickprev=(e)=>{
                  <div className="row mb-2">
                  <div className="col">
                    <label>First name </label>
-                   <input type="text" name="firstnamelawyer1" ref={register} className="form-control" placeholder="First name" defaultValue="vide"></input>
+                   <input type="text" name="firstnamelawyer1" ref={register} className="form-control" placeholder="First name" defaultValue="vide" required></input>
                    <p className="text-danger">{errors.firstnamelawyer1?.message}</p>
                  </div>
                  <div className="col">
                    <label>Name </label>
-                   <input type="text" name="namelawyer1" ref={register} className="form-control" placeholder="First name" defaultValue="vide"></input>
+                   <input type="text" name="namelawyer1" ref={register} className="form-control" placeholder="First name" defaultValue="vide" required></input>
                    <p className="text-danger">{errors.namelawyer1?.message}</p>
                  </div>
                </div>
                <label >Address</label>
-               <input type="text" name="adresslawyer1" ref={register} className="form-control mb-2" placeholder="Example input" defaultValue="vide"></input>
+               <input type="text" name="adresslawyer1" ref={register} className="form-control mb-2" placeholder="Example input" defaultValue="vide" required></input>
                <p className="text-danger">{errors.adresslawyer1?.message}</p>
                <div className="row mb-4">
           <div className="col">
             <label>E-mail</label>
-            <input type="email" name="emaillawyer1" ref={register} className="form-control" placeholder="First name" defaultValue="vide@vide.com"></input>
+            <input type="email" name="emaillawyer1" ref={register} className="form-control" placeholder="First name" defaultValue="vide@vide.com" required></input>
             <p className="text-danger">{errors.emaillawyer1?.message}</p>
           </div>
           <div className="col">
             <label>Phone</label>
-            <input type="number" name="tellawyer1" ref={register} className="form-control" placeholder="First name" defaultValue={0}></input>
+            <input type="number" name="tellawyer1" ref={register} className="form-control" placeholder="First name" defaultValue={0} required></input>
             <p className="text-danger">{errors.tellawyer1?.message}</p>
           </div>
         </div>
