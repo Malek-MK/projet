@@ -91,18 +91,17 @@ Meteor.methods({
         if (search && search.length) {
             query.$or = [
                 {
-                    name: {
-                        $regex: `const notyf = new Notyf({
-                            duration: 2000,
-                            position: {
-                              x: 'left',
-                              y: 'top',
-                            }
-                          }).*${search}.*`, $options: 'i'
+                    nomsoc: {
+                        $regex: `.*${search}.*`, $options: 'i'
                     }
                 },
                 {
-                    number: {
+                    nomsoc1: {
+                        $regex: `.*${search}.*`, $options: 'i'
+                    }
+                },
+                {
+                    time: {
                         $regex: `.*${search}.*`, $options: 'i'
                     }
                 }
