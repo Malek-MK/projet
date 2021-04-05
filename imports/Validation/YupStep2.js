@@ -29,12 +29,29 @@ export default Step2 = yup.object().shape({
         .required("Adresse is required"),  
     codepos1:yup.number().required().positive().integer(),        
     ville1: yup
-    .string("check your ville")
-    .required("Ville is required"),  
+        .string("check your ville")
+        .required("Ville is required"),  
     email1:yup
-    .string()
-    .email("check your email format")
-    .required("Email is required"), 
-    tel1 :yup.number().required().positive().integer(), 
+        .string()
+        .email("check your email format")
+        .required("Email is required"), 
+    tel1 :yup
+        .number().required().positive().integer(), 
+    firstnamelawyer1: yup
+        .string("check your name societe")
+        .required("name societe is required"),
+    namelawyer1: yup
+        .string("check your name societe")
+        .required("name societe is required"),   
+    adresslawyer1: yup
+        .string("check your name societe")
+        .required("name societe is required"),   
+    emaillawyer1: yup
+        .string()
+        .email("check your email format")
+        .required("Email is required"),
+    tellawyer1: yup
+        .number("check your number phone format")
+        .required("Phone is required"),
 
   });

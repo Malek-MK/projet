@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
 import Schema1 from '../Validation/YupStep1';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 const StepOne = ({setData,setStep,data }) => {
-
+const [check,setCheck]=useState(false);
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(Schema1),
     defaultValues: {
@@ -115,6 +115,44 @@ const StepOne = ({setData,setStep,data }) => {
             <p className="text-danger">{errors.tel?.message}</p>
           </div>
         </div>
+        <div className="form-group mb-4">
+          <div>
+          <label>Do you want to add the contact details of a lawyer?</label>
+            <input  type="radio" name="test" value="yes" onClick={()=>setCheck(true)}></input>
+            <label for="louie">Yes</label>
+            <input type="radio" name="test" value="no" onClick={()=>setCheck(false)}></input>
+            <label for="louie">No</label>
+          </div>
+                </div>
+                {check? <>
+                 <div className="row mb-2">
+                 <div className="col">
+                   <label>First name </label>
+                   <input type="text" name="firstnamelawyer1" ref={register} className="form-control" placeholder="First name"></input>
+                   <p className="text-danger">{errors.firstnamelawyer1?.message}</p>
+                 </div>
+                 <div className="col">
+                   <label>Name </label>
+                   <input type="text" name="namelawyer1" ref={register} className="form-control" placeholder="First name"></input>
+                   <p className="text-danger">{errors.namelawyer1?.message}</p>
+                 </div>
+               </div>
+               <label >Address</label>
+               <input type="text" name="adresslawyer1" ref={register} className="form-control mb-2" placeholder="Example input"></input>
+               <p className="text-danger">{errors.adresslawyer1?.message}</p>
+               <div className="row mb-4">
+          <div className="col">
+            <label>E-mail</label>
+            <input type="email" name="emaillawyer1" ref={register} className="form-control" placeholder="First name"></input>
+            <p className="text-danger">{errors.emaillawyer1?.message}</p>
+          </div>
+          <div className="col">
+            <label>Phone</label>
+            <input type="number" name="tellawyer1" ref={register} className="form-control" placeholder="First name"></input>
+            <p className="text-danger">{errors.tellawyer1?.message}</p>
+          </div>
+        </div>
+                </>: null}
         <button type="submit" name='next' className="btn btn-primary btn-lg pull-right">Next</button>
       
        
