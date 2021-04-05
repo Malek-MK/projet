@@ -124,9 +124,9 @@ const [check,setCheck]=useState(false);
           <div>
           <label>Do you want to add the contact details of a lawyer?</label>
             <input  type="radio" name="test" value="yes" onClick={()=>setCheck(true)}></input>
-            <label for="louie">Yes</label>
+            <label htmlFor="yes">Yes</label>
             <input type="radio" name="test" value="no" onClick={()=>setCheck(false)} ></input>
-            <label for="louie" >No</label>
+            <label htmlFor="no" >No</label>
           </div>
                 </div>
                 {check? <>
@@ -162,7 +162,7 @@ const [check,setCheck]=useState(false);
       
        
       </form>
-      <a id="Button-1" className="btn btn-outline-primary pull-right" style={{ position: 'absolute',bottom:'50px',left: '1000px' }} href="#" role="button"><h5> <i class="fa fa-arrow-up"></i></h5></a>
+      <a id="Button-1" className="btn btn-outline-primary pull-right" style={{ position: 'absolute',bottom:'50px',left: '1000px' }} href="#" role="button"><h5> <i className="fa fa-arrow-up"></i></h5></a>
     </div>
   )
 }

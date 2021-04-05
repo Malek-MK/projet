@@ -56,11 +56,11 @@ const User = () => {
         <div>
             <header className="navbar navbar-expand-md navbar-light d-print-none">
      
-            <div class="container-xl">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
-                      <span class="navbar-toggler-icon"></span>
+            <div className="container-xl">
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
+                      <span className="navbar-toggler-icon"></span>
                     </button>
-                    <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
+                    <h1 className="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
                       <a className="nav-link decoration-none">
                         <h3><i className="fa fa-home"></i>Dashboard</h3>
                       </a>
@@ -69,9 +69,9 @@ const User = () => {
                       
                      
                     
-                    <div class="collapse navbar-collapse" id="navbar-menu">
-                      <div class="d-flex flex-column flex-md-row flex-fill align-items-stretch align-items-md-center">
-                        <ul class="navbar-nav">
+                    <div className="collapse navbar-collapse" id="navbar-menu">
+                      <div className="d-flex flex-column flex-md-row flex-fill align-items-stretch align-items-md-center">
+                        <ul className="navbar-nav">
                         <li className="nav-item active ">
                                     <Link to="/" className="nav-link decoration-none">
                                         
@@ -92,12 +92,12 @@ const User = () => {
                                 </li>
                                 
                         </ul>
-                        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link decoration-none" >Hello, <b className="text-dark">{Meteor.user().username}</b></a>
+                        <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
+      <ul className="navbar-nav ms-auto">
+        <li className="nav-item">
+          <a className="nav-link decoration-none" >Hello, <b className="text-dark">{Meteor.user().username}</b></a>
         </li>
-        <li class="nav-item">
+        <li className="nav-item">
         <Button variant="outline-danger" onClick={onLogout} className="btn rounded-circle mt-1 ml-5 ">
                                 <i className="fa fa-power-off" aria-hidden="true"></i>
                             </Button>
