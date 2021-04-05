@@ -72,6 +72,16 @@ Meteor.methods({
             conso:data.conso,
             constr:data.constr,
             desc:data.desc,
+            namelawyer:data.namelawyer,
+            firstnamelawyer:data.firstnamelawyer,
+            adresslawyer:data.adresslawyer,
+            emaillawyer:data.emaillawyer,
+            tellawyer:data.tellawyer,
+            namelawyer1:data.namelawyer1,
+            firstnamelawyer1:data.firstnamelawyer1,
+            adresslawyer1:data.adresslawyer1,
+            emaillawyer1:data.emaillawyer1,
+            tellawyer1:data.tellawyer1,
             userId: this.userId
          });
         

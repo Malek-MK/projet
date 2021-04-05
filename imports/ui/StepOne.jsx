@@ -19,6 +19,11 @@ const [check,setCheck]=useState(false);
       ville:data.ville,
       email:data.email,
       tel:data.tel,
+      namelawyer:data.namelawyer,
+      firstnamelawyer:data.firstnamelawyer,
+      adresslawyer:data.adresslawyer,
+      emaillawyer:data.emaillawyer,
+      tellawyer:data.tellawyer
     }
   });
   const onSubmit = (data1) => {
@@ -128,28 +133,28 @@ const [check,setCheck]=useState(false);
                  <div className="row mb-2">
                  <div className="col">
                    <label>First name </label>
-                   <input type="text" name="firstnamelawyer1" ref={register} className="form-control" placeholder="First name"></input>
-                   <p className="text-danger">{errors.firstnamelawyer1?.message}</p>
+                   <input type="text" name="firstnamelawyer" ref={register} className="form-control" placeholder="First name"></input>
+                   <p className="text-danger">{errors.firstnamelawyer?.message}</p>
                  </div>
                  <div className="col">
                    <label>Name </label>
-                   <input type="text" name="namelawyer1" ref={register} className="form-control" placeholder="First name"></input>
-                   <p className="text-danger">{errors.namelawyer1?.message}</p>
+                   <input type="text" name="namelawyer" ref={register} className="form-control" placeholder="First name"></input>
+                   <p className="text-danger">{errors.namelawyer?.message}</p>
                  </div>
                </div>
                <label >Address</label>
-               <input type="text" name="adresslawyer1" ref={register} className="form-control mb-2" placeholder="Example input"></input>
-               <p className="text-danger">{errors.adresslawyer1?.message}</p>
+               <input type="text" name="adresslawyer" ref={register} className="form-control mb-2" placeholder="Example input"></input>
+               <p className="text-danger">{errors.adresslawyer?.message}</p>
                <div className="row mb-4">
           <div className="col">
             <label>E-mail</label>
-            <input type="email" name="emaillawyer1" ref={register} className="form-control" placeholder="First name"></input>
-            <p className="text-danger">{errors.emaillawyer1?.message}</p>
+            <input type="email" name="emaillawyer" ref={register} className="form-control" placeholder="First name"></input>
+            <p className="text-danger">{errors.emaillawyer?.message}</p>
           </div>
           <div className="col">
             <label>Phone</label>
-            <input type="number" name="tellawyer1" ref={register} className="form-control" placeholder="First name"></input>
-            <p className="text-danger">{errors.tellawyer1?.message}</p>
+            <input type="number" name="tellawyer" ref={register} className="form-control" placeholder="First name"></input>
+            <p className="text-danger">{errors.tellawyer?.message}</p>
           </div>
         </div>
                 </>: null}

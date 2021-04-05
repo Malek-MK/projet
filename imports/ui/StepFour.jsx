@@ -39,6 +39,16 @@ const StepFour = ({ setStep, data ,setShow}) => {
         tel1:data.tel1,
         objlitige:data.objlitige,
         desc:data.desc,
+        namelawyer:data.namelawyer,
+        firstnamelawyer:data.firstnamelawyer,
+        adresslawyer:data.adresslawyer,
+        emaillawyer:data.emaillawyer,
+        tellawyer:data.tellawyer,
+        namelawyer1:data.namelawyer1,
+        firstnamelawyer1:data.firstnamelawyer1,
+        adresslawyer1:data.adresslawyer1,
+        emaillawyer1:data.emaillawyer1,
+        tellawyer1:data.tellawyer1
     })
     const onclickprev = (e) => {
         e.preventDefault
@@ -99,6 +109,10 @@ const StepFour = ({ setStep, data ,setShow}) => {
                             <th className="w-25">Téléphone	</th> 
                             <td className="w-75">{data1.tel}</td>
                         </tr>
+                        <tr>
+                            <th className="w-25">Téléphone Avocat</th> 
+                            <td className="w-75">{data1.tellawyer}</td>
+                        </tr>
                     </tbody>
                 </table>
 
@@ -136,6 +150,10 @@ const StepFour = ({ setStep, data ,setShow}) => {
                         <tr>
                             <th className="w-25">Téléphone	</th> 
                             <td className="w-75">{data1.tel1}</td>
+                        </tr>
+                        <tr>
+                            <th className="w-25">Téléphone Avocat</th> 
+                            <td className="w-75">{data1.tellawyer1}</td>
                         </tr>
                     </tbody>
                 </table>
