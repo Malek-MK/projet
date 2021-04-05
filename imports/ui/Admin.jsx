@@ -31,7 +31,7 @@ const User = () => {
         { name: "PartieA", field: "nomsoc", sortable: true },
         { name: "PartieB", field: "nomsoc1", sortable: true },
         { name: "Status", field: "status", sortable: false },
-        { name: "Date", field: "date", sortable: false },
+        { name: "Date", field: "time", sortable: true },
         { name: "Update", field: "update", sortable: false },
         { name: "Delete", field: "delete", sortable: false },
     ];
@@ -167,9 +167,9 @@ const User = () => {
                                     >
                                         {sorting.field === field ? (
                                             sorting.dir === "asc" ? (
-                                                <i className="fas fa-arrow-up"></i>
+                                                <i className="fa fa-arrow-up" ></i>
                                             ) : (
-                                                <i className="fas fa-arrow-down"></i>
+                                                <i className="fa fa-arrow-down" ></i>
                                             )
                                         ) : null}{" "}
                                         {name}

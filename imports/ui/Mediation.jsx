@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import {Meteor} from 'meteor/meteor'
 import StepOne from '../ui/StepOne';
 import StepTwo from '../ui/StepTwo';
 import StepThree from '../ui/StepThree';
