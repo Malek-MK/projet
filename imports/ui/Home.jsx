@@ -16,7 +16,7 @@ const Home = () => {
         <div className="collapse navbar-collapse ml-2" id="navbarSupportedContent">
             <ul className="navbar-nav ml-auto topnav">
                 <li className="nav-item active">
-                    <a className="nav-link text-white" href="/">Home <span className="sr-only">(current)</span></a>
+                <Link to="/admin" className="nav-link text-white decoration-none">Dashboard <span className="sr-only">(current)</span></Link>
                 </li>
                 <li className="nav-item">
                     <a className="nav-link text-white" href="#">Shop Pre-Owned</a>
