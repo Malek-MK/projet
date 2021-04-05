@@ -4,7 +4,7 @@ import { Meteor } from 'meteor/meteor';
 export const Mediation = new Mongo.Collection('mediation');
 let it=new Date();
 const today=it.getFullYear()+'/'+it.getMonth()+'/'+it.getDate()+' '+it.getHours()+':'+it.getMinutes()
-console.log(today) 
+
 Meteor.methods({
 
     'insertMediation'(data) {
@@ -105,7 +105,17 @@ Meteor.methods({
                     time: {
                         $regex: `.*${search}.*`, $options: 'i'
                     }
-                }
+                },
+                {
+                    email: {
+                        $regex: `.*${search}.*`, $options: 'i'
+                    }
+                },
+                {
+                    email1: {
+                        $regex: `.*${search}.*`, $options: 'i'
+                    }
+                },
             ]
         }
         return { items: Mediation.find(query, options).fetch(), totalCount };
