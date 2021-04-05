@@ -61,7 +61,7 @@ const User = () => {
                       <span class="navbar-toggler-icon"></span>
                     </button>
                     <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
-                      <a href=".">
+                      <a className="nav-link decoration-none">
                         Dashboard
                       </a>
                     </h1>
@@ -72,19 +72,17 @@ const User = () => {
                     <div class="collapse navbar-collapse" id="navbar-menu">
                       <div class="d-flex flex-column flex-md-row flex-fill align-items-stretch align-items-md-center">
                         <ul class="navbar-nav">
-                        <li className="nav-item active">
-                                    <Link to="/">
-                                        <span className="nav-link-icon d-md-none d-lg-inline-block">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="icon" width={24} height={24} viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><polyline points="5 12 3 12 12 3 21 12 19 12" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>
-                                        </span>
+                        <li className="nav-item active ">
+                                    <Link to="/" className="nav-link decoration-none">
+                                        
                                        Home
                                     </Link>
                                 </li>
                                 <li className="nav-item ">
                                     <NavDropdown title="Médiation" >
-                                        <NavDropdown.Item href="#action/3.1">Mes Médiations</NavDropdown.Item>
+                                        <NavDropdown.Item onClick={() => setShow(false)}>Mes Médiations</NavDropdown.Item>
                                         <NavDropdown.Item href="#action/3.2">Mes Litiges</NavDropdown.Item>
-                                        <NavDropdown.Item href="#action/3.3">Ajouter une médiation</NavDropdown.Item>
+                                        <NavDropdown.Item onClick={() => setShow(true)}>Ajouter une médiation</NavDropdown.Item>
                                     </NavDropdown>
                                 </li>
                                 <li className="nav-item">
@@ -92,26 +90,25 @@ const User = () => {
                                         <NavDropdown.Item href="#action/3.1">Arbitrages</NavDropdown.Item>
                                     </NavDropdown>
                                 </li>
-                                <div className="nav-item ">
-                            <a>
-                                <div >
-                                    <div>Hello,<b>{Meteor.user().username}</b> </div>
-                                </div>
-                            </a>
-
-                        </div>
-                        <div className="nav-item">
-                            <Button variant="outline-danger" onClick={onLogout} className="btn rounded-circle mt-1 ml-5 ">
+                                
+                        </ul>
+                        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link decoration-none" >Hello, <b className="text-dark">{Meteor.user().username}</b></a>
+        </li>
+        <li class="nav-item">
+        <Button variant="outline-danger" onClick={onLogout} className="btn rounded-circle mt-1 ml-5 ">
                                 <i className="fa fa-power-off" aria-hidden="true"></i>
                             </Button>
-                        </div>
-                        </ul>
+        </li>
+      </ul>
+    </div>
                       </div>
                     </div>
                   </div>
             </header>
-          
-                    <div className="container-xl">
+                    <div className="container-xl mt-5">
                         <div className="page-header d-print-none">
                             <div className="row align-items-center">
                                 
