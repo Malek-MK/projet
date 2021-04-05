@@ -8,12 +8,12 @@ const Authenticated = ({ path, component }) => {
   const loading = useTracker(() => Meteor.loggingIn());
   const history = useHistory();
   const authenticatedPage = ["/user","/admin"];
-  const unAuthenticatedPage = ["/", "/signin", "/signup"];
+  const unAuthenticatedPage = [ "/signin", "/signup"];
   const isAuthenticatedPage = authenticatedPage.includes(path);
   const isUnauthenticatedPage = unAuthenticatedPage.includes(path);
 
   useEffect(() => {
-    if (!user  && isAuthenticatedPage) {
+    if ((!user  && isAuthenticatedPage)||(user&&isUnauthenticatedPage)) {
       history.replace("/");
     }
   }, [user]);

@@ -20,8 +20,8 @@ const routes = (
     <Switch>
       <Route path="/" exact component={Home} />
       <Authenticated path="/admin"  component={Admin} />
-      <Route path="/signup"  component={Signup} />
-      <Route path="/signin"  component={Login} />
+      <Authenticated path="/signup"  component={Signup} />
+      <Authenticated path="/signin"  component={Login} />
       <Authenticated path="/user"  component={User} />
       <Route path="*" component={Notfound} />
     </Switch>
