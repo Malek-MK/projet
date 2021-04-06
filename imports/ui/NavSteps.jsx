@@ -12,62 +12,69 @@ const NavSteps = ({setStep,step}) => {
     <div>
       {step == 0?<div className="steps mb-5">
       <a className= 'step-item text-decoration-none active' >
-        Step 1<i class="fa fa-user-friends"></i>
+      <h3>Step1 <i class="fa fa-user" ></i></h3>
     </a>
       <a className= 'step-item text-decoration-none ' >
-        Step 2 <i class="fa fa-user" aria-hidden="true"></i>
+      <h3>Step2 <i class="fa fa-users" ></i></h3>
+    </a>
+      <a className= 'step-item text-decoration-none ' >
+       <h3> Step3 <i class="fa fa-file-text"></i></h3>
 
     </a>
-      <a className= 'step-item text-decoration-none ' >
-        Step 3<i class="fa fa-user-shield"></i>
-    </a>
     <a className= 'step-item text-decoration-none ' >
-        Step 4
+        <h3>Step4 <i class="fa fa-check-square"></i></h3>
+
     </a>
 
     </div>:null}
     {step == 1?<div className="steps mb-5">
       <a className= 'step-item text-decoration-none ' >
-        Step 1
+      <h3>Step1 <i class="fa fa-user" ></i></h3>
     </a>
       <a className= 'step-item text-decoration-none active' >
-        Step 2
+      <h3>Step2 <i class="fa fa-users" ></i></h3>
     </a>
       <a className= 'step-item text-decoration-none ' >
-        Step 3
+       <h3> Step3 <i class="fa fa-file-text"></i></h3>
+
     </a>
     <a className= 'step-item text-decoration-none ' >
-        Step 4
+        <h3>Step4 <i class="fa fa-check-square"></i></h3>
+
     </a>
 
     </div>:null}
     {step == 2?<div className="steps mb-5">
       <a className= 'step-item text-decoration-none ' >
-        Step 1
+      <h3>Step1 <i class="fa fa-user" ></i></h3>
     </a>
       <a className= 'step-item text-decoration-none ' >
-        Step 2
+      <h3>Step2 <i class="fa fa-users" ></i></h3>
     </a>
       <a className= 'step-item text-decoration-none active' >
-        Step 3
+       <h3> Step3 <i class="fa fa-file-text"></i></h3>
+
     </a>
     <a className= 'step-item text-decoration-none ' >
-        Step 4
+        <h3>Step4 <i class="fa fa-check-square"></i></h3>
+
     </a>
 
     </div>:null}
     {step == 3?<div className="steps mb-5">
       <a className= 'step-item text-decoration-none ' >
-        Step 1
+      <h3>Step1 <i class="fa fa-user" ></i></h3>
     </a>
       <a className= 'step-item text-decoration-none ' >
-        Step 2
+      <h3>Step2 <i class="fa fa-users" ></i></h3>
     </a>
       <a className= 'step-item text-decoration-none ' >
-        Step 3
+       <h3> Step3 <i class="fa fa-file-text"></i></h3>
+
     </a>
     <a className= 'step-item text-decoration-none active' >
-        Step 4
+        <h3>Step4 <i class="fa fa-check-square"></i></h3>
+
     </a>
 
     </div>:null}
