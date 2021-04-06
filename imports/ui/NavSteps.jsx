@@ -28,7 +28,7 @@ const NavSteps = ({setStep,step}) => {
 
     </div>:null}
     {step == 1?<div className="steps mb-5">
-      <a className= 'step-item text-decoration-none ' >
+      <a className= 'step-item text-decoration-none text-primary' >
       <h3>Step1 <i class="fa fa-user" ></i></h3>
     </a>
       <a className= 'step-item text-decoration-none text-primary active' >
@@ -45,10 +45,10 @@ const NavSteps = ({setStep,step}) => {
 
     </div>:null}
     {step == 2?<div className="steps mb-5">
-      <a className= 'step-item text-decoration-none ' >
+      <a className= 'step-item text-decoration-none text-primary' >
       <h3>Step1 <i class="fa fa-user" ></i></h3>
     </a>
-      <a className= 'step-item text-decoration-none ' >
+      <a className= 'step-item text-decoration-none text-primary' >
       <h3>Step2 <i class="fa fa-users" ></i></h3>
     </a>
       <a className= 'step-item text-decoration-none text-primary active' >
@@ -62,13 +62,13 @@ const NavSteps = ({setStep,step}) => {
 
     </div>:null}
     {step == 3?<div className="steps mb-5">
-      <a className= 'step-item text-decoration-none ' >
+      <a className= 'step-item text-decoration-none text-primary' >
       <h3>Step1 <i class="fa fa-user" ></i></h3>
     </a>
-      <a className= 'step-item text-decoration-none ' >
+      <a className= 'step-item text-decoration-none text-primary' >
       <h3>Step2 <i class="fa fa-users" ></i></h3>
     </a>
-      <a className= 'step-item text-decoration-none ' >
+      <a className= 'step-item text-decoration-none text-primary' >
        <h3> Step3 <i class="fa fa-file-text"></i></h3>
 
     </a>

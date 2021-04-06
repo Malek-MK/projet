@@ -128,9 +128,9 @@ const onclickprev=(e)=>{
         <div className="form-group mb-4">
         <label>Do you want to add the contact details of a lawyer?</label>
           <input  type="radio" name="test" value="yes" onClick={()=>setCheck(true)} ></input>
-            <label for="louie">Yes</label>
+            <label >Yes</label>
             <input type="radio" name="test" value="no" onClick={()=>setCheck(false)} ></input>
-            <label for="louie" >No</label>
+            <label >No</label>
                 <p className="text-danger">{errors.verif?.message}</p>
                 </div>
                 {check? <>
