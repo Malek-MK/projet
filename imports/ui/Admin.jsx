@@ -105,8 +105,10 @@ const User = () => {
       </ul>
     </div>
                       </div>
+                    
                     </div>
                   </div>
+                  
             </header>
                     <div className="container-xl mt-5">
                         <div className="page-header d-print-none">
@@ -130,8 +132,11 @@ const User = () => {
             
             {show ? <Mediation setShow={setShow} /> : null}
             {!show ? <div className="container">
+            <div class="card-title mb-5"><h3 class="card-label">
+            My mediation files
+                        </h3><span class="d-block text-muted pt-2 font-size-sm">Consult and edit my mediation files</span></div>
                 <div className="col mb-3 col-12 text-center">
-                    <div className="row">
+                    <div className="row ">
                         <div className="col-md-6">
                             <Pagination
                                 total={totalItems}

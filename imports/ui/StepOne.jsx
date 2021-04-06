@@ -162,7 +162,7 @@ const [check,setCheck]=useState(false);
       
        
       </form>
-      <a id="Button-1" className="btn btn-outline-primary pull-right" style={{ position: 'absolute',bottom:'50px',left: '1000px' }} href="#" role="button"><h5> <i className="fa fa-arrow-up"></i></h5></a>
+      <a id="Button-1" className="btn btn-outline-primary pull-right" style={{ position: 'absolute',bottom:'50px',left: '1140px' }} href="#" role="button"><h5> <i className="fa fa-arrow-up"></i></h5></a>
     </div>
   )
 }

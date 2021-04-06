@@ -165,7 +165,7 @@ const onclickprev=(e)=>{
         <button type="button" name='prev' className="btn btn-primary btn-lg pull-left" onClick={onclickprev} >Previous</button>
         <button type="submit" name='next' className="btn btn-primary btn-lg pull-right" >Next</button>
       </form>
-      <a id="Button-1" className="btn btn-outline-primary pull-right" style={{ position: 'absolute',bottom:'50px',left: '1000px' }} href="#" role="button"><h5> <i class="fa fa-arrow-up"></i></h5></a>
+      <a id="Button-1" className="btn btn-outline-primary pull-right" style={{ position: 'absolute',bottom:'50px',left: '1140px' }} href="#" role="button"><h5> <i class="fa fa-arrow-up"></i></h5></a>
     </div>
   )
 }

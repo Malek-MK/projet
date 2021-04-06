@@ -90,9 +90,9 @@ const Litige = ({media,fetch}) => {
         backdrop="static"
         keyboard={false}
       >
-        <Modal.Header closeButton>
+        <Modal.Header closeButton >
           <Modal.Title>Update this player</Modal.Title>
-        </Modal.Header>
+        </Modal.Header >
         <Modal.Body >
           <form onSubmit={handleSubmit(UpdateMediation)} id="update">
             <Mediation/>
