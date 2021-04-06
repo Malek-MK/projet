@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-
+import NavCheck from '../ui/NavCheck';
 
 const Home = () => {
 
@@ -63,12 +62,9 @@ const Home = () => {
 
                         </ul>
                     </div>
-
-
-
                 </nav>
             </div>
-           
+       <NavCheck/>
         </div>
 
     )
