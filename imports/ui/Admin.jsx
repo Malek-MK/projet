@@ -51,31 +51,31 @@ const User = () => {
             field,
             dir,
         });
-    }; 
+    };
     return (
         <div>
             <header className="navbar navbar-expand-md navbar-light d-print-none">
-     
-            <div className="container-xl">
+
+                <div className="container-xl">
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
-                      <span className="navbar-toggler-icon"></span>
+                        <span className="navbar-toggler-icon"></span>
                     </button>
                     <h1 className="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
-                      <a className="nav-link decoration-none">
-                        <h3><i className="fa fa-home"></i>Dashboard</h3>
-                      </a>
+                        <a className="nav-link decoration-none">
+                            <h3><i className="fa fa-home"></i>Dashboard</h3>
+                        </a>
                     </h1>
-                   
-                      
-                     
-                    
+
+
+
+
                     <div className="collapse navbar-collapse" id="navbar-menu">
-                      <div className="d-flex flex-column flex-md-row flex-fill align-items-stretch align-items-md-center">
-                        <ul className="navbar-nav">
-                        <li className="nav-item active ">
+                        <div className="d-flex flex-column flex-md-row flex-fill align-items-stretch align-items-md-center">
+                            <ul className="navbar-nav">
+                                <li className="nav-item active ">
                                     <Link to="/" className="nav-link decoration-none">
-                                        
-                                      Go_Home
+
+                                        Go_Home
                                     </Link>
                                 </li>
                                 <li className="nav-item ">
@@ -90,50 +90,50 @@ const User = () => {
                                         <NavDropdown.Item href="#action/3.1">Arbitrages</NavDropdown.Item>
                                     </NavDropdown>
                                 </li>
-                                
-                        </ul>
-                        <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
-      <ul className="navbar-nav ms-auto">
-        <li className="nav-item">
-          <a className="nav-link decoration-none" >Hello, <b className="text-dark">{Meteor.user().username}</b></a>
-        </li>
-        <li className="nav-item">
-        <Button variant="outline-danger" onClick={onLogout} className="btn rounded-circle mt-1 ml-5 ">
-                                <i className="fa fa-power-off" aria-hidden="true"></i>
-                            </Button>
-        </li>
-      </ul>
-    </div>
-                      </div>
-                    
-                    </div>
-                  </div>
-                  
-            </header>
-                    <div className="container-xl mt-5">
-                        <div className="page-header d-print-none">
-                            <div className="row align-items-center">
-                                
-                                {!show ? <div className="col-auto ms-auto d-print-none">
-                                    <div className="btn-list">
 
-                                        <a onClick={() => setShow(true)} className="btn btn-primary d-none d-sm-inline-block" >
-                                            Create new Mediation
-          </a>
-                                        <a href="#" className="btn btn-primary d-sm-none btn-icon" aria-label="Create new report">
-                                        </a>
-                                    </div>
-                                </div> : null}
+                            </ul>
+                            <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
+                                <ul className="navbar-nav ms-auto">
+                                    <li className="nav-item">
+                                        <a className="nav-link decoration-none" >Hello, <b className="text-dark">{Meteor.user().username}</b></a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Button variant="outline-danger" onClick={onLogout} className="btn rounded-circle mt-1 ml-5 ">
+                                            <i className="fa fa-power-off" aria-hidden="true"></i>
+                                        </Button>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
-                    </div>
 
-             
-            
+                    </div>
+                </div>
+
+            </header>
+            <div className="container-xl mt-5">
+                <div className="page-header d-print-none">
+                    <div className="row align-items-center">
+
+                        {!show ? <div className="col-auto ms-auto d-print-none">
+                            <div className="btn-list">
+
+                                <a onClick={() => setShow(true)} className="btn btn-primary d-none d-sm-inline-block" >
+                                    Create new Mediation
+          </a>
+                                <a href="#" className="btn btn-primary d-sm-none btn-icon" aria-label="Create new report">
+                                </a>
+                            </div>
+                        </div> : null}
+                    </div>
+                </div>
+            </div>
+
+
+
             {show ? <Mediation setShow={setShow} /> : null}
             {!show ? <div className="container">
-            <div className="card-title mb-5"><h3 className="card-label">
-            My mediation files
+                <div className="card-title mb-5"><h3 className="card-label">
+                    My mediation files
                         </h3><span className="d-block text-muted pt-2 font-size-sm">Consult and edit my mediation files</span></div>
                 <div className="col mb-3 col-12 text-center">
                     <div className="row ">

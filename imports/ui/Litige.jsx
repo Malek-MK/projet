@@ -11,14 +11,14 @@ import Mediation from './Mediation';
 import { Media } from 'react-bootstrap';
 
 const notyf = new Notyf({
-    duration: 2000,
-    position: {
-      x: 'left',
-      y: 'top',
-    }
-  })
+  duration: 2000,
+  position: {
+    x: 'left',
+    y: 'top',
+  }
+})
 
-const Litige = ({media,fetch}) => {
+const Litige = ({ media, fetch }) => {
   const { register, handleSubmit, errors } = useForm({
     //resolver: yupResolver(schema)
   });
@@ -27,39 +27,39 @@ const Litige = ({media,fetch}) => {
   const handleShow = () => setShow(true);
 
   const UpdateMediation = data => {
-  Meteor.call('updateMediation', { id: media._id, data }, (err) => {
-    if (err) {
-      console.log('Updated failed')
-      notyf.error("Updated failed")
-    }
-    else {
-      notyf.success("Updated with success")
-      console.log('Updated with success')
-      setShow(false);
-      fetch();
-    }
-  });
-};
-
-    useEffect(() => {
-        fetch();
-      }, []);
-      const Delete = () => {
-        Meteor.call('deleteMediation', media._id, (err) => {
-          if (err) {
-            notyf.error("Deleted failed");
-            console.log('Deleted failed');
-          }
-          else {
-            notyf.success("Deleted with success");
-            console.log('Deleted with success');
-            fetch();
-          }
-        });
+    Meteor.call('updateMediation', { id: media._id, data }, (err) => {
+      if (err) {
+        console.log('Updated failed')
+        notyf.error("Updated failed")
       }
-    return (
-       <>
-       <tr key={media._id}>
+      else {
+        notyf.success("Updated with success")
+        console.log('Updated with success')
+        setShow(false);
+        fetch();
+      }
+    });
+  };
+
+  useEffect(() => {
+    fetch();
+  }, []);
+  const Delete = () => {
+    Meteor.call('deleteMediation', media._id, (err) => {
+      if (err) {
+        notyf.error("Deleted failed");
+        console.log('Deleted failed');
+      }
+      else {
+        notyf.success("Deleted with success");
+        console.log('Deleted with success');
+        fetch();
+      }
+    });
+  }
+  return (
+    <>
+      <tr key={media._id}>
         <td scope="row" ><b>{media.nomsoc}</b><br></br>{media.email}</td>
         <td ><b>{media.nomsoc1}</b><br></br>{media.email1}</td>
         <td ><span className="text-success">Validated</span></td>
@@ -95,7 +95,7 @@ const Litige = ({media,fetch}) => {
         </Modal.Header >
         <Modal.Body >
           <form onSubmit={handleSubmit(UpdateMediation)} id="update">
-            <Mediation/>
+            <Mediation />
           </form>
         </Modal.Body>
         <Modal.Footer>
@@ -104,8 +104,8 @@ const Litige = ({media,fetch}) => {
           </button>
         </Modal.Footer>
       </Modal>
-       </>
-    )
+    </>
+  )
 }
 
 export default Litige

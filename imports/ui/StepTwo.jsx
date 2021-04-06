@@ -1,35 +1,35 @@
-import React ,{useState} from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
 import Schema2 from '../Validation/YupStep2';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-const StepTwo = ({ setData,setStep,data }) => {
-  const [check,setCheck]=useState(false);
+const StepTwo = ({ setData, setStep, data }) => {
+  const [check, setCheck] = useState(false);
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(Schema2),
     defaultValues: {
-      vousB:data.vousB,
-        nomsoc1:data.nomsoc1,
-        formjurid1:data.formjurid1,
-        numid1:data.numid1,
-        prerepleg1:data.prerepleg1,
-        nomrepleg1:data.nomrepleg1,
-        adresse1:data.adresse1,
-        codepos1:data.codepos1,
-        ville1:data.ville1,
-        email1:data.email1,
-        tel1:data.tel1,
-        namelawyer1:data.namelawyer1,
-        firstnamelawyer1:data.firstnamelawyer1,
-        adresslawyer1:data.adresslawyer1,
-        emaillawyer1:data.emaillawyer1,
-        tellawyer1:data.tellawyer1
+      vousB: data.vousB,
+      nomsoc1: data.nomsoc1,
+      formjurid1: data.formjurid1,
+      numid1: data.numid1,
+      prerepleg1: data.prerepleg1,
+      nomrepleg1: data.nomrepleg1,
+      adresse1: data.adresse1,
+      codepos1: data.codepos1,
+      ville1: data.ville1,
+      email1: data.email1,
+      tel1: data.tel1,
+      namelawyer1: data.namelawyer1,
+      firstnamelawyer1: data.firstnamelawyer1,
+      adresslawyer1: data.adresslawyer1,
+      emaillawyer1: data.emaillawyer1,
+      tellawyer1: data.tellawyer1
     }
   });
-const onclickprev=(e)=>{
-  e.preventDefault
-  setStep(0)
-}
+  const onclickprev = (e) => {
+    e.preventDefault
+    setStep(0)
+  }
 
   const onSubmit = (data2) => {
     setData(old => ({ ...old, ...data2 }));
@@ -84,7 +84,7 @@ const onclickprev=(e)=>{
           </div>
         </div>
         <label >ID number</label>
-        <input type="number" name="numid1" ref={register} className="form-control mb-2"  placeholder="Example input"></input>
+        <input type="number" name="numid1" ref={register} className="form-control mb-2" placeholder="Example input"></input>
         <p className="text-danger">{errors.numid1?.message}</p>
         <div className="row mb-2">
           <div className="col">
@@ -99,7 +99,7 @@ const onclickprev=(e)=>{
           </div>
         </div>
         <label >Registered Address</label>
-        <input type="text" name="adresse1" ref={register} className="form-control mb-2"  placeholder="Example input"></input>
+        <input type="text" name="adresse1" ref={register} className="form-control mb-2" placeholder="Example input"></input>
         <p className="text-danger">{errors.adresse1?.message}</p>
         <div className="row mb-2">
           <div className="col">
@@ -126,46 +126,46 @@ const onclickprev=(e)=>{
           </div>
         </div>
         <div className="form-group mb-4">
-        <label>Do you want to add the contact details of a lawyer?</label>
-          <input  type="radio" name="test" value="yes" onClick={()=>setCheck(true)} ></input>
-            <label >Yes</label>
-            <input type="radio" name="test" value="no" onClick={()=>setCheck(false)} ></input>
-            <label >No</label>
-                <p className="text-danger">{errors.verif?.message}</p>
-                </div>
-                {check? <>
-                 <div className="row mb-2">
-                 <div className="col">
-                   <label>First name </label>
-                   <input type="text" name="firstnamelawyer1" ref={register} className="form-control" placeholder="First name" defaultValue="vide" required></input>
-                   <p className="text-danger">{errors.firstnamelawyer1?.message}</p>
-                 </div>
-                 <div className="col">
-                   <label>Name </label>
-                   <input type="text" name="namelawyer1" ref={register} className="form-control" placeholder="First name" defaultValue="vide" required></input>
-                   <p className="text-danger">{errors.namelawyer1?.message}</p>
-                 </div>
-               </div>
-               <label >Address</label>
-               <input type="text" name="adresslawyer1" ref={register} className="form-control mb-2" placeholder="Example input" defaultValue="vide" required></input>
-               <p className="text-danger">{errors.adresslawyer1?.message}</p>
-               <div className="row mb-4">
-          <div className="col">
-            <label>E-mail</label>
-            <input type="email" name="emaillawyer1" ref={register} className="form-control" placeholder="First name" defaultValue="vide@vide.com" required></input>
-            <p className="text-danger">{errors.emaillawyer1?.message}</p>
-          </div>
-          <div className="col">
-            <label>Phone</label>
-            <input type="number" name="tellawyer1" ref={register} className="form-control" placeholder="First name" defaultValue={0} required></input>
-            <p className="text-danger">{errors.tellawyer1?.message}</p>
-          </div>
+          <label>Do you want to add the contact details of a lawyer?</label>
+          <input type="radio" name="test" value="yes" onClick={() => setCheck(true)} ></input>
+          <label >Yes</label>
+          <input type="radio" name="test" value="no" onClick={() => setCheck(false)} ></input>
+          <label >No</label>
+          <p className="text-danger">{errors.verif?.message}</p>
         </div>
-                </>: null}
+        {check ? <>
+          <div className="row mb-2">
+            <div className="col">
+              <label>First name </label>
+              <input type="text" name="firstnamelawyer1" ref={register} className="form-control" placeholder="First name" defaultValue="vide" required></input>
+              <p className="text-danger">{errors.firstnamelawyer1?.message}</p>
+            </div>
+            <div className="col">
+              <label>Name </label>
+              <input type="text" name="namelawyer1" ref={register} className="form-control" placeholder="First name" defaultValue="vide" required></input>
+              <p className="text-danger">{errors.namelawyer1?.message}</p>
+            </div>
+          </div>
+          <label >Address</label>
+          <input type="text" name="adresslawyer1" ref={register} className="form-control mb-2" placeholder="Example input" defaultValue="vide" required></input>
+          <p className="text-danger">{errors.adresslawyer1?.message}</p>
+          <div className="row mb-4">
+            <div className="col">
+              <label>E-mail</label>
+              <input type="email" name="emaillawyer1" ref={register} className="form-control" placeholder="First name" defaultValue="vide@vide.com" required></input>
+              <p className="text-danger">{errors.emaillawyer1?.message}</p>
+            </div>
+            <div className="col">
+              <label>Phone</label>
+              <input type="number" name="tellawyer1" ref={register} className="form-control" placeholder="First name" defaultValue={0} required></input>
+              <p className="text-danger">{errors.tellawyer1?.message}</p>
+            </div>
+          </div>
+        </> : null}
         <button type="button" name='prev' className="btn btn-primary btn-lg pull-left" onClick={onclickprev} >Previous</button>
         <button type="submit" name='next' className="btn btn-primary btn-lg pull-right" >Next</button>
       </form>
-      <a id="Button-1" className="btn btn-outline-primary pull-right" style={{ position: 'absolute',bottom:'50px',left: '1140px' }} href="#" role="button"><h5> <i class="fa fa-arrow-up"></i></h5></a>
+      <a id="Button-1" className="btn btn-outline-primary pull-right" style={{ position: 'absolute', bottom: '50px', left: '1140px' }} href="#" role="button"><h5> <i class="fa fa-arrow-up"></i></h5></a>
     </div>
   )
 }
