@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import Litige from '../ui/Litige';
 import Pagination from '../ui/Pagination';
 import Search from '../ui/Search';
+import NavCheck from '../ui/NavCheck';
 const User = () => {
     const history = useHistory();
     const onLogout = () => {
@@ -15,6 +16,7 @@ const User = () => {
         history.replace('/');
     }
     const [show, setShow] = useState(false);
+    const [show1, setShow1] = useState(false);
     const [mediations, setMediations] = useState([]);
     const [totalItems, setTotalItems] = useState(0);
     const [currentPage, setCurrentPage] = useState(1);
@@ -23,9 +25,7 @@ const User = () => {
     const { field, dir } = sorting;
     const ITEMS_PER_PAGE = 5;
 
-    useEffect(() => {
-        renderMediations();
-    }, [search, currentPage, sorting]);
+  
 
     const headers = [
         { name: "PartieA", field: "nomsoc", sortable: true },
@@ -42,6 +42,10 @@ const User = () => {
                 setTotalItems(totalCount);
             });
     }
+    useEffect(() => {
+        renderMediations();
+    }, [search, currentPage, sorting]);
+    
     useEffect(() => {
         renderMediations();
     }, []);
@@ -127,7 +131,7 @@ const User = () => {
                     </div>
                 </div>
             </div>
-
+            {show1?<NavCheck/>:null}
             {show ? <Mediation setShow={setShow} /> : null}
             {!show ? <div className="container">
                 <div className="card-title mb-5"><h3 className="card-label">

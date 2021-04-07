@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import PrefDate from '../ui/PrefDate';
 const Home = () => {
 
     return (
@@ -60,7 +60,7 @@ const Home = () => {
                     </div>
                 </nav>
             </div>
-       
+       <PrefDate/>
         </div>
 
     )

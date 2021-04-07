@@ -52,7 +52,7 @@ const StepOne = ({ setData, setStep, data }) => {
           <label >You are</label>
           <select name="vousA" ref={register} className="form-control" >
             <option value="CommercialCompany" >A commercial company</option>
-            <option value="IndividualEntrepreneu" >An individual entrepreneur</option>
+            <option value="IndividualEntrepreneur" >An individual entrepreneur</option>
             <option value="CivilSociety" >A civil society</option>
             <option value="LiberalProfession" >A liberal profession</option>
             <option value="Particular" >A particular</option>

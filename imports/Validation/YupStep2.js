@@ -8,7 +8,7 @@ export default Step2 = yup.object().shape({
         .required("Info is required"),
     vousB: yup
         .string("check your field")
-        .oneOf(['CommercialCompany', 'IndividualEntrepreneu','CivilSociety','proLiberalProfessionflib1','Particular'])
+        .oneOf(['CommercialCompany', 'IndividualEntrepreneur','CivilSociety','LiberalProfession','Particular'])
         .required("Is required"),
     nomsoc1: yup
     .string("check your name societe")
