@@ -15,7 +15,6 @@ const User = () => {
         history.replace('/');
     }
     const [show, setShow] = useState(false);
-    const [show1,setShow1]=useState(false);
     const [mediations, setMediations] = useState([]);
     const [totalItems, setTotalItems] = useState(0);
     const [currentPage, setCurrentPage] = useState(1);
@@ -82,13 +81,13 @@ const User = () => {
                                 <li className="nav-item ">
                                     <NavDropdown title="Médiation" >
                                         <NavDropdown.Item onClick={() => setShow(false)}>Mes Médiations</NavDropdown.Item>
-                                        <NavDropdown.Item href="#action/3.2">Mes Litiges</NavDropdown.Item>
+                                        <NavDropdown.Item >Mes Litiges</NavDropdown.Item>
                                         <NavDropdown.Item onClick={() => setShow(true)}>Ajouter une médiation</NavDropdown.Item>
                                     </NavDropdown>
                                 </li>
                                 <li className="nav-item">
                                     <NavDropdown title="Arbitrage" >
-                                        <NavDropdown.Item href="#action/3.1">Arbitrages</NavDropdown.Item>
+                                        <NavDropdown.Item >Arbitrages</NavDropdown.Item>
                                     </NavDropdown>
                                 </li>
 
@@ -128,8 +127,6 @@ const User = () => {
                     </div>
                 </div>
             </div>
-
-
 
             {show ? <Mediation setShow={setShow} /> : null}
             {!show ? <div className="container">
