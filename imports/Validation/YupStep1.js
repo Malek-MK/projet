@@ -4,7 +4,7 @@ import * as yup from "yup";
 export default Step1 = yup.object().shape({
     infoA: yup
         .string("check your info")
-        .oneOf(['TUNISIA', 'ALGERIA','MAROCCO','FRANCE','ITALY'])
+        .oneOf(['Tunisia', 'Algeria','Marocco','France','Italy'])
         .required("Info is required"),
     vousA: yup
         .string("check your field")
@@ -15,7 +15,7 @@ export default Step1 = yup.object().shape({
     .required("name societe is required"), 
     formjurid: yup
         .string("check your form")
-        .oneOf(['CHOOSA', 'SAS','SARL','SA','SNC','GIE'])
+        .oneOf(['Choose', 'SAS','SARL','SA','SNC','GIE'])
         .required("Forme Juridique is required"), 
     numid: yup
         .number("check your Num ID")

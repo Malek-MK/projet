@@ -73,12 +73,12 @@ const StepTwo = ({ setData, setStep, data }) => {
           <div className="col">
             <label>Legal form</label>
             <select name="formjurid1" ref={register} className="form-control" >
-              <option value="choix1" >To choose</option>
-              <option value="sas1" >SAS</option>
-              <option value="sarl1" >SARL</option>
-              <option value="sa1" >SA</option>
-              <option value="snc1" >SNC</option>
-              <option value="gie1" >GIE</option>
+              <option value="Choose" >To choose</option>
+              <option value="SAS" >SAS</option>
+              <option value="SARL" >SARL</option>
+              <option value="SA" >SA</option>
+              <option value="SNC" >SNC</option>
+              <option value="GIE" >GIE</option>
             </select>
             <p className="text-danger">{errors.formjurid1?.message}</p>
           </div>

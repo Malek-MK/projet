@@ -42,7 +42,7 @@ const StepOne = ({ setData, setStep, data }) => {
           <select name="infoA" ref={register} className="form-control" >
             <option value="Tunisia" >Tunisia</option>
             <option value="Algeria" >Algeria</option>
-            <option value="Morocco" >Morocco</option>
+            <option value="Marocco" >Morocco</option>
             <option value="France" >France</option>
             <option value="Italy" >Italy</option>
           </select>
