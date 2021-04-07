@@ -65,9 +65,7 @@ const Home = () => {
                     </div>
                 </nav>
             </div>
-       <NavCheck/>
-       <PrefDate/>
-       <ConvMedia/>
+       
         </div>
 
     )
