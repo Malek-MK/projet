@@ -16,6 +16,7 @@ Please choose a maximum of 10 dates on which you can make yourself available for
        <FullCalendar
        plugins={[ dayGridPlugin, interactionPlugin ]}
        dateClick={this.handleDateClick}
+       selectable={true}
        weekends={false}
        events={[
         { title: 'event', date: data },
