@@ -49,7 +49,7 @@ const StepTwo = ({ setData, setStep, data }) => {
             <option value="Algeria" >Algeria</option>
             <option value="Marocco" >Marocco</option>
             <option value="France" >France</option>
-            <option value="Iataly" >Iataly</option>
+            <option value="Italy" >Italy</option>
           </select>
           <p className="text-danger">{errors.infoB?.message}</p>
         </div>
