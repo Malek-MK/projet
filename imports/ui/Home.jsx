@@ -1,16 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import NavCheck from '../ui/NavCheck';
-import PrefDate from '../ui/PrefDate';
-import ConvMedia from '../ui/ConvMedia';
+
 const Home = () => {
 
     return (
 
         <div>
             <div>
-
-
                 <nav className="navbar navbar-expand-lg navbar-light bg-dark">
                     <a className="navbar-brand text-white " href="#"><i class="fa fa-balance-scale"></i>Community</a>
 
@@ -60,7 +56,6 @@ const Home = () => {
                                     </li>
                                 </ul>
                             </div>
-
                         </ul>
                     </div>
                 </nav>
