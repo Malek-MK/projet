@@ -40,22 +40,22 @@ const StepOne = ({ setData, setStep, data }) => {
           <h5>Information about you: :</h5>
           <label >Country</label>
           <select name="infoA" ref={register} className="form-control" >
-            <option value="tun" >Tunisia</option>
-            <option value="alg" >Algeria</option>
-            <option value="mar" >Morocco</option>
-            <option value="fra" >France</option>
-            <option value="ita" >Italy</option>
+            <option value="Tunisia" >Tunisia</option>
+            <option value="Algeria" >Algeria</option>
+            <option value="Morocco" >Morocco</option>
+            <option value="France" >France</option>
+            <option value="Italy" >Italy</option>
           </select>
           <p className="text-danger">{errors.infoA?.message}</p>
         </div>
         <div className="form-group mb-2">
           <label >You are</label>
           <select name="vousA" ref={register} className="form-control" >
-            <option value="soccom" >A commercial company</option>
-            <option value="entind" >An individual entrepreneur</option>
-            <option value="socciv" >A civil society</option>
-            <option value="proflib" >A liberal profession</option>
-            <option value="part" >A particular</option>
+            <option value="CommercialCompany" >A commercial company</option>
+            <option value="IndividualEntrepreneu" >An individual entrepreneur</option>
+            <option value="CivilSociety" >A civil society</option>
+            <option value="LiberalProfession" >A liberal profession</option>
+            <option value="Particular" >A particular</option>
           </select>
           <p className="text-danger">{errors.vousA?.message}</p>
         </div>
@@ -68,12 +68,12 @@ const StepOne = ({ setData, setStep, data }) => {
           <div className="col">
             <label>Legal form</label>
             <select name="formjurid" ref={register} className="form-control" >
-              <option value="choix" >To choose</option>
-              <option value="sas" >SAS</option>
-              <option value="sarl" >SARL</option>
-              <option value="sa" >SA</option>
-              <option value="snc" >SNC</option>
-              <option value="gie" >GIE</option>
+              <option value="Choose" >To choose</option>
+              <option value="SAS" >SAS</option>
+              <option value="SARL" >SARL</option>
+              <option value="SA" >SA</option>
+              <option value="SNC" >SNC</option>
+              <option value="GIE" >GIE</option>
             </select>
             <p className="text-danger">{errors.formjurid?.message}</p>
           </div>

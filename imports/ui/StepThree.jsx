@@ -29,12 +29,12 @@ const StepThree = ({ setData, setStep,data }) => {
                 <div className="form-group mb-2 mt-3">
                     <label >Type of dispute </label>
                     <select name="objlitige" ref={register} className="form-control" >
-                        <option value="contra" >Contractual</option>
-                        <option value="comm" > Commercial</option>
-                        <option value="vois" >Neighborhood</option>
-                        <option value="copro" >Co-ownership</option>
-                        <option value="conso" >Consumption</option>
-                        <option value="constr" >Construction</option>
+                        <option value="Contractual" >Contractual</option>
+                        <option value="Commercial" > Commercial</option>
+                        <option value="Neighborhood" >Neighborhood</option>
+                        <option value="Coownership" >Co-ownership</option>
+                        <option value="Consumption" >Consumption</option>
+                        <option value="Construction" >Construction</option>
                     </select>
                     <p className="text-danger">{errors.objlitige?.message}</p>
                 </div>

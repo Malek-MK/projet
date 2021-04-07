@@ -41,11 +41,11 @@ const Login = () => {
       else {
         var loggedInUser = Meteor.userId();
         if (Roles.userIsInRole(loggedInUser, 'admin')) {
-          history.push('/admin');
+          history.push('/user');
           console.log('admin login');
         }
         else if (Roles.userIsInRole(loggedInUser, 'user')) {
-          history.push('/user');
+          history.push('/admin');
           console.log('user login');
         }
       }

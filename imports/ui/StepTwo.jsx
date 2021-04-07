@@ -45,22 +45,22 @@ const StepTwo = ({ setData, setStep, data }) => {
           <h5>Information about the other party :</h5>
           <label >Pays</label>
           <select name="infoB" ref={register} className="form-control" >
-            <option value="tun1" >Tunisia</option>
-            <option value="alg1" >Algeria</option>
-            <option value="mar1" >Marocco</option>
-            <option value="fra1" >France</option>
-            <option value="ita1" >Iataly</option>
+            <option value="Tunisia" >Tunisia</option>
+            <option value="Algeria" >Algeria</option>
+            <option value="Marocco" >Marocco</option>
+            <option value="France" >France</option>
+            <option value="Iataly" >Iataly</option>
           </select>
           <p className="text-danger">{errors.infoB?.message}</p>
         </div>
         <div className="form-group mb-2">
           <label >You are</label>
           <select name="vousB" ref={register} className="form-control" >
-            <option value="soccom1" >A commercial company</option>
-            <option value="entind1" >An individual entrepreneur</option>
-            <option value="socciv1" >A civil society</option>
-            <option value="proflib1" >A liberal profession</option>
-            <option value="part1" >A particular</option>
+            <option value="CommercialCompany" >A commercial company</option>
+            <option value="IndividualEntrepreneur" >An individual entrepreneur</option>
+            <option value="CivilSociety" >A civil society</option>
+            <option value="LiberalProfession" >A liberal profession</option>
+            <option value="Particular" >A particular</option>
           </select>
           <p className="text-danger">{errors.vousB?.message}</p>
         </div>
