@@ -133,7 +133,7 @@ const User = () => {
             {show ? <Mediation setShow={setShow} /> : null}
             {!show ? <div className="container">
                 <div className="card-title mb-5"><h3 className="card-label">
-                    My mediation files
+                List of mediation files
                         </h3><span className="d-block text-muted pt-2 font-size-sm">Consult and edit my mediation files</span></div>
                 <div className="col mb-3 col-12 text-center">
                     <div className="row ">

@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import NavCheck from '../ui/NavCheck';
-
+import PrefDate from '../ui/PrefDate';
+import ConvMedia from '../ui/ConvMedia';
 const Home = () => {
 
     return (
@@ -65,6 +66,8 @@ const Home = () => {
                 </nav>
             </div>
        <NavCheck/>
+       <PrefDate/>
+       <ConvMedia/>
         </div>
 
     )

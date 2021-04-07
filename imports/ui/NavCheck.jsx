@@ -47,26 +47,26 @@ const NavCheck = () => {
     <div class={click.class1} onClick={onclick}>
       <div class="card-body">
       <h3><i class="fa fa-exclamation-triangle"></i></h3>
-        <h5 class={click.class2}>Informations personnelles</h5>
-        <p class="card-text">Remplir vos Informations personnelles</p>
+        <h5 class={click.class2}>Personal informations</h5>
+        <p class="card-text">Fill in your Personal Information</p>
       </div>
     </div>
   </div>
   <div class="col-sm-4">
     <div class={click1.class1} onClick={onclick1}>
-      <div class="card-body bg-light">
+      <div class="card-body">
       <h3><i class="fa fa-exclamation-triangle"></i></h3>
-        <h5 class={click1.class2}>Préférences de dates</h5>
-        <p class="card-text">Choisissez vos dates</p>
+        <h5 class={click1.class2}>Date preferences</h5>
+        <p class="card-text">Choose your dates</p>
       </div>
     </div>
   </div>
   <div class="col-sm-4">
     <div class={click2.class1} onClick={onclick2}>
-      <div class="card-body bg-light">
+      <div class="card-body ">
       <h3><i class="fa fa-exclamation-triangle"></i></h3>
-        <h5 class={click2.class2}>Convention de médiation</h5>
-        <p class="card-text">Signez la convention</p>
+        <h5 class={click2.class2}>Mediation agreement</h5>
+        <p class="card-text">Sign the convention</p>
       </div>
     </div>
   </div>
