@@ -12,36 +12,42 @@ export default Step1 = yup.object().shape({
         .required("Is required"),
     nomsoc: yup
     .string("check your name societe")
-    .required("name societe is required"), 
+    .required("Company Name is required"), 
     formjurid: yup
         .string("check your form")
         .oneOf(['Choose', 'SAS','SARL','SA','SNC','GIE'])
         .required("Forme Juridique is required"), 
     numid: yup
-        .number("check your Num ID")
-        .required("Num Id is required"), 
+    .number("check your Num ID")
+    .required("NumberId is required")
+    .positive()
+    .integer(),
     prerepleg: yup
         .string("check your username")
-        .required("Prénom is required"),     
+        .required("First name of the legal representative is required"),     
     nomrepleg: yup
         .string("check your name")
-        .required("Name is required"),
+        .required("Name of legal representative is required"),
     adresse: yup
         .string("check your adresse")
-        .required("Adresse is required"),  
+        .required("Registered Address is required"),  
     codepos: yup
         .number("check your code postal format")
-        .required("Code Postal is required"),         
+        .required("Postal code is required")
+        .positive()
+        .integer(),        
     ville: yup
-    .string("check your ville")
-    .required("Ville is required"),  
+    .string("check your City")
+    .required("City is required"),  
     email:yup
     .string()
     .email("check your email format")
     .required("Email is required"), 
     tel: yup
         .number("check your number phone format")
-        .required("Phone is required"),  
+        .required("Phone is required")  
+        .positive()
+        .integer(),
    /*
 
  firstnamelawyer: yup

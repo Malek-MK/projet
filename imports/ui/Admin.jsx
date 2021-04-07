@@ -15,6 +15,7 @@ const User = () => {
         history.replace('/');
     }
     const [show, setShow] = useState(false);
+    const [show1,setShow1]=useState(false);
     const [mediations, setMediations] = useState([]);
     const [totalItems, setTotalItems] = useState(0);
     const [currentPage, setCurrentPage] = useState(1);
