@@ -20,8 +20,14 @@ const PrefDate = () => {
     console.log(data)
   },[])
     const handleDateClick = (arg) => {
-         setData(v=>[...v,arg.dateStr]);  
+        if(data.length<10){
+          notyf.success("Date Effected ")
+          setData(v=>[...v,arg.dateStr]); 
+        }else{
+          notyf.error("Vous avez atteint le nombre maximum de possibilité de sélection!")
+        }
       }
+
       const [show,setShow]=useState(false);
       const click=()=>{
         Meteor.call(
@@ -34,8 +40,8 @@ const PrefDate = () => {
               }
           }
       );
-       
       }
+      
     return (
         <div className="container">
             {!show?<div className="text-dark text-center bg-warning w-75 ml-2 mr-2 mt-5 mb-3"><i className="fa fa-exclamation-triangle"></i>
@@ -54,7 +60,8 @@ Félicitations ! vos préférences de date de médiation ont bien été enregist
        plugins={[ dayGridPlugin, interactionPlugin ]}
        dateClick={handleDateClick}
        weekends={false}
-       events={data.map(e=>({title:"Partie A",date:e}))}  
+      
+       events={data.map(e=>({title:"Partie A",date:e,allDaySlot: false}))}  
           />
           <div  className="d-flex pull-right ">
           <button  className={clsx("btn btn-primary  btn-lg mt-3 mb-5",{disabled:!data.length})} onClick={click}>VALIDER MES DATES</button>
