@@ -1,54 +1,55 @@
 import React, { useState } from 'react'
-
+import PrefDate from '../ui/PrefDate';
+import ConvMedia from '../ui/ConvMedia';
 const NavCheck = () => {
     const [click,setClick]=useState({
         class1:"card bg-light",
-        class2:"card-title"    
+        show:false   
     });
     const [click1,setClick1]=useState({
         class1:"card bg-light",
-        class2:"card-title"    
+        class2:"card-title",
+        show:false      
     });
     const [click2,setClick2]=useState({
         class1:"card bg-light",
-        class2:"card-title" 
+        class2:"card-title",
+        show:false   
            
     });
     const onclick=()=>{
-        setClick({class1:"card",
-        class2:"card-title text-primary"})
+        setClick({class1:"card",show:true})
         setClick1({class1:"card bg-light",
-        class2:"card-title" })
+        class2:"card-title" ,show:false})
         setClick2({class1:"card bg-light",
-        class2:"card-title" })
+        class2:"card-title" ,show:false})
+
     }
     const onclick1=()=>{
         setClick1({class1:"card",
-        class2:"card-title text-primary"})
-        setClick({class1:"card bg-light",
-        class2:"card-title "})
+        class2:"card-title text-primary",show:true})
+        setClick({class1:"card bg-light",show:false})
         setClick2({class1:"card bg-light",
-        class2:"card-title" })
+        class2:"card-title" ,show:false})
     }
     const onclick2=()=>{
         setClick2({class1:"card",
-        class2:"card-title text-primary"})
+        class2:"card-title text-primary",show:true})
         setClick1({class1:"card bg-light",
-        class2:"card-title "})
-        setClick({class1:"card bg-light",
-        class2:"card-title "})
+        class2:"card-title ",show:false})
+        setClick({class1:"card bg-light",show:false})
     }
   
     return (
         <div>
-            <div className="container text-center mt-2">
-       <div class="row">
-  <div class="col-sm-4">
+            <div className="container text-center  mt-2">
+       <div class="row ">
+  <div class="col-sm-4 text-success  bg-success">
     <div class={click.class1} onClick={onclick}>
       <div class="card-body">
-      <h3><i class="fa fa-exclamation-triangle"></i></h3>
-        <h5 class={click.class2}>Personal informations</h5>
-        <p class="card-text">Fill in your Personal Information</p>
+      <h3><i class="fa fa-check" aria-hidden="true"></i></h3>
+        <h5 class="card-title">Personal informations</h5>
+        <p class="card-text">Verified Information!</p>
       </div>
     </div>
   </div>
@@ -72,6 +73,8 @@ const NavCheck = () => {
   </div>
 </div>
        </div>
+       {click1.show? <PrefDate/>:null}
+       {click2.show?<ConvMedia/> :null}
         </div>
     )
 }

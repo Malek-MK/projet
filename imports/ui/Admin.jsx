@@ -56,6 +56,18 @@ const User = () => {
             dir,
         });
     };
+    const onclick1=()=>{
+        setShow(true)
+        setShow1(false)
+    }
+    const onclick2=()=>{
+        setShow(false)
+        setShow1(false)
+    }
+    const onclick3=()=>{
+        setShow(true)
+        setShow1(false)
+    }
     return (
         <div>
             <header className="navbar navbar-expand-md navbar-light d-print-none">
@@ -84,9 +96,9 @@ const User = () => {
                                 </li>
                                 <li className="nav-item ">
                                     <NavDropdown title="Médiation" >
-                                        <NavDropdown.Item onClick={() => setShow(false)}>Mes Médiations</NavDropdown.Item>
+                                        <NavDropdown.Item onClick={onclick2}>Mes Médiations</NavDropdown.Item>
                                         <NavDropdown.Item >Mes Litiges</NavDropdown.Item>
-                                        <NavDropdown.Item onClick={() => setShow(true)}>Ajouter une médiation</NavDropdown.Item>
+                                        <NavDropdown.Item onClick={onclick3}>Ajouter une médiation</NavDropdown.Item>
                                     </NavDropdown>
                                 </li>
                                 <li className="nav-item">
@@ -118,22 +130,27 @@ const User = () => {
                 <div className="page-header d-print-none">
                     <div className="row align-items-center">
 
-                        {!show ? <div className="col-auto ms-auto d-print-none">
+                       
+                    </div>
+                </div>
+            </div>
+            {show1?<NavCheck/>:null}
+            {!show1? 
+            <>
+            {show ? <Mediation setShow1={setShow1} /> : null}
+            {!show ? <div className="container">
+                <div>
+                <div className="d-flex pull-right">
                             <div className="btn-list">
 
-                                <a onClick={() => setShow(true)} className="btn btn-primary d-none d-sm-inline-block" >
+                                <a onClick={onclick1} className="btn btn-primary d-none d-sm-inline-block" >
                                     Create new Mediation
           </a>
                                 <a href="#" className="btn btn-primary d-sm-none btn-icon" aria-label="Create new report">
                                 </a>
                             </div>
-                        </div> : null}
-                    </div>
+                        </div> 
                 </div>
-            </div>
-            {show1?<NavCheck/>:null}
-            {show ? <Mediation setShow={setShow} /> : null}
-            {!show ? <div className="container">
                 <div className="card-title mb-5"><h3 className="card-label">
                 List of mediation files
                         </h3><span className="d-block text-muted pt-2 font-size-sm">Consult and edit my mediation files</span></div>
@@ -192,12 +209,16 @@ const User = () => {
                                         key={media._id}
                                         media={media}
                                         fetch={renderMediations}
+                                        setShow1={setShow1}
                                     />
                                 );
                             })}
                         </tbody>
                     </table>
                 </div></div> : null}
+            </>
+            :null}
+            
         </div>
     )
 }

@@ -18,13 +18,13 @@ const notyf = new Notyf({
   }
 })
 
-const Litige = ({ media, fetch }) => {
+const Litige = ({ media, fetch ,setShow1}) => {
   const { register, handleSubmit, errors } = useForm({
     //resolver: yupResolver(schema)
   });
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleShow = () => setShow1(true);
 
   const UpdateMediation = data => {
     Meteor.call('updateMediation', { id: media._id, data }, (err) => {
@@ -38,6 +38,7 @@ const Litige = ({ media, fetch }) => {
         setShow(false);
         fetch();
       }
+      
     });
   };
 

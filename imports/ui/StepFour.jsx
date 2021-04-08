@@ -12,7 +12,7 @@ const notyf = new Notyf({
     }
 })
 
-const StepFour = ({ setStep, data, setShow }) => {
+const StepFour = ({ setStep, data, setShow1 }) => {
 
     const [data1, setData1] = useState({
         vousA: data.vousA,
@@ -61,7 +61,8 @@ const StepFour = ({ setStep, data, setShow }) => {
                     notyf.error("Inserted Failed")
                 } else {
                     notyf.success("Inserted with success")
-                    setShow(false)
+                    setShow1(true)
+        
                 }
             }
         );
