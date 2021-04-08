@@ -19,10 +19,10 @@ const ConvMedia = () => {
     return (
         <div>
            <div class="container">
-          {!show? <div class="text-dark text-center bg-warning w-50 ml-2 mr-2 mt-3 mb-5"><i class="fa fa-exclamation-triangle"></i>
+          {!show? <div class="text-dark text-center bg-warning w-50 ml-2 mr-2 mt-5 mb-3"><i class="fa fa-exclamation-triangle"></i>
            Veuillez à présent procéder à la signature de la convention de médiation.
 </div>:null}
-{show?<div class="text-dark text-center bg-success w-75 ml-2 mr-2 mt-3 mb-5"><i class="fa fa-thumbs-up" aria-hidden="true"></i>
+{show?<div class="text-dark text-center bg-success w-75 ml-2 mr-2 mt-5 mb-3"><i class="fa fa-thumbs-up" aria-hidden="true"></i>
 Félicitations ! la convention de médiation a bien été validée.
 </div>:null}
                <div class="kt-forfait kt-portlet text-align-justify" style={{height: "600px",
