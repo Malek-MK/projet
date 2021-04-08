@@ -67,7 +67,7 @@ const Login = () => {
          
             <Form.Group md="3" >
               <Form.Label><h5 className="form-label required" >Email:</h5></Form.Label>
-              <Form.Control type="email" placeholder="name@example.com" name="email" ref={register} className="form-control" autoComplete="off"/>
+              <Form.Control type="email" placeholder="name@example.com" name="email" ref={register} className="form-control" autoComplete="off" />
               <p className="text-danger">{errors.email?.message}</p>
             </Form.Group>
             <Form.Group md="3" >

@@ -73,7 +73,7 @@ const Signup = () => {
           <Form onSubmit={handleSubmit(onSubmit)} id="register" noValidate>
             <Form.Group md="3" >
               <Form.Label><h5 className="form-label required">UserName:</h5></Form.Label>
-              <Form.Control type="text"  placeholder="Tap your UserName..." name="name" ref={register} className="form-control"  autoComplete="off"/>
+              <Form.Control type="text"  placeholder="Tap your UserName..." name="name" ref={register} className="form-control"  autoComplete="off" minlength="2" maxlength="20" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"/>
               <p className="text-danger">{errors.name?.message}</p>
             </Form.Group>
             <Form.Group md="3" >

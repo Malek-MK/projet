@@ -1,18 +1,27 @@
 import React from 'react'
 
 const ConvMedia = () => {
+    
     return (
         <div>
            <div class="container">
-               <div class="kt-forfait kt-portlet text-align-justify">
+           <div class="text-dark text-center bg-warning w-50 ml-2 mr-2 mt-3 mb-5"><i class="fa fa-exclamation-triangle"></i>
+           Veuillez à présent procéder à la signature de la convention de médiation.
+</div>
+               <div class="kt-forfait kt-portlet text-align-justify" style={{height: "600px",
+        overflow: "auto",
+        border: "1px solid grey",
+        padding: "20px",
+        width: "100%",
+        marginTop: "20px"}}>
                    <div class="kt-portlet__body"><div class="kt-section">
                        <div class="kt-section__content">
-                           <div class="form-group form-group-last  p-25 width-75 over-flow-x border-dark" >
+                           <div class="form-group form-group-last " >
                                <div class="row">
                                    <div class="col-lg-12 text-center">
                                        <h2>CONVENTION DE MÉDIATION</h2>
                                        </div>
-                                       </div> 
+                                       </div>
                                        <div class="row">
                                            <div class="col-lg-12">
                                                
@@ -92,6 +101,11 @@ const ConvMedia = () => {
                                                                                           
                                 ........, Médiateur
                             						</div></div></div></div></div></div></div></div> 
+                                                    <div class="d-flex justify-content-center mt-3 mb-5"><button type="submit" class="btn btn-primary pull-right font-weight-bold btn-lg">
+            Valider la convention
+        </button> <button type="submit" class="btn btn-info pull-right font-weight-bold btn-lg">
+            Télécharger en pdf
+        </button></div>
         </div>
     )
 }
