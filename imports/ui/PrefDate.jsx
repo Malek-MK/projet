@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from "@fullcalendar/interaction"
@@ -14,16 +14,16 @@ const notyf = new Notyf({
 
 const PrefDate = () => {
     const[data,setData]=useState([]);
-
+  useEffect(()=>{
+    console.log(data)
+  },[])
     const handleDateClick = (arg) => {
          setData(v=>[...v,arg.dateStr]);  
       }
       const [show,setShow]=useState(false);
       const click=()=>{
-       
         Meteor.call(
           'insertDate', data, (err) => {
-            console.log("data:",data)
               if (err) {
                   notyf.error("Inserted Failed")
               } else {
@@ -32,6 +32,7 @@ const PrefDate = () => {
               }
           }
       );
+       
       }
     return (
         <div className="container">
@@ -54,7 +55,7 @@ Félicitations ! vos préférences de date de médiation ont bien été enregist
        events={data.map(e=>({title:"Partie A",date:e}))}  
           />
           <div  className="d-flex pull-right ">
-          <button className="btn btn-primary  btn-lg mt-3 mb-5" onClick={click}>VALIDER MES DATES</button>
+          <button className="btn btn-primary  btn-lg mt-3 mb-5" onClick={click} disabled={data===[]}>VALIDER MES DATES</button>
           </div>
         </div>
     )
