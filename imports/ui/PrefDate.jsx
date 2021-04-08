@@ -2,6 +2,16 @@ import React, { useState } from 'react'
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from "@fullcalendar/interaction"
+import { Notyf } from 'notyf';
+import 'notyf/notyf.min.css';
+const notyf = new Notyf({
+  duration: 2000,
+  position: {
+      x: 'center',
+      y: 'top',
+  }
+})
+
 const PrefDate = () => {
     const[data,setData]=useState([]);
 
@@ -9,18 +19,32 @@ const PrefDate = () => {
          setData(v=>[...v,arg.dateStr]);  
       }
       const [show,setShow]=useState(false);
+      const click=()=>{
+       
+        Meteor.call(
+          'insertDate', data, (err) => {
+            console.log("data:",data)
+              if (err) {
+                  notyf.error("Inserted Failed")
+              } else {
+                  notyf.success("Inserted with success")
+                  setShow(true)
+              }
+          }
+      );
+      }
     return (
-        <div class="container">
-            {!show?<div class="text-dark text-center bg-warning w-75 ml-2 mr-2 mt-3 mb-5"><i class="fa fa-exclamation-triangle"></i>
+        <div className="container">
+            {!show?<div className="text-dark text-center bg-warning w-75 ml-2 mr-2 mt-3 mb-5"><i className="fa fa-exclamation-triangle"></i>
 Please choose a maximum of 10 dates on which you can make yourself available for the mediation process.</div>:null}
 
-{show?<div class="text-dark text-center bg-success w-75 ml-2 mr-2 mt-3 mb-5"><i class="fa fa-thumbs-up" aria-hidden="true"></i>
+{show?<div className="text-dark text-center bg-success w-75 ml-2 mr-2 mt-3 mb-5"><i className="fa fa-thumbs-up" aria-hidden="true"></i>
 Félicitations ! vos préférences de date de médiation ont bien été enregistrées et notre équipe en a été averti.
 </div>:null}
    <div>
    Vos disponbilités :
    <br></br>
-   {data.map((e)=>{ return <button class="btn btn-primary btn-sm mr-2 ml-2 mt-2 mb-5" style={{margin:"3px"}}>{e}</button>})}
+   {data.map((e)=>{ return <button className="btn btn-primary btn-sm mr-2 ml-2 mt-2 mb-5" style={{margin:"3px"}}>{e}</button>})}
    
    </div>
        <FullCalendar
@@ -29,8 +53,8 @@ Félicitations ! vos préférences de date de médiation ont bien été enregist
        weekends={false}
        events={data.map(e=>({title:"Partie A",date:e}))}  
           />
-          <div  class="d-flex pull-right ">
-          <button className="btn btn-primary  btn-lg mt-3 mb-5" onClick={()=>setShow(true)}>VALIDER MES DATES</button>
+          <div  className="d-flex pull-right ">
+          <button className="btn btn-primary  btn-lg mt-3 mb-5" onClick={click}>VALIDER MES DATES</button>
           </div>
         </div>
     )
