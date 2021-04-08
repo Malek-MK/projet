@@ -29,7 +29,9 @@ Félicitations ! vos préférences de date de médiation ont bien été enregist
        weekends={false}
        events={data.map(e=>({title:"Partie A",date:e}))}  
           />
-         <button className="btn btn-primary pull-right btn-lg mt-5 mb-5" onClick={()=>setShow(true)}>VALIDER MES DATES</button>
+          <div  class="d-flex pull-right ">
+          <button className="btn btn-primary  btn-lg mt-3 mb-5" onClick={()=>setShow(true)}>VALIDER MES DATES</button>
+          </div>
         </div>
     )
    

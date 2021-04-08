@@ -118,9 +118,9 @@ Félicitations ! la convention de médiation a bien été validée.
                                                                                           
                                 ........, Médiateur
                             						</div></div></div></div></div></div></div></div> 
-                                                    <div class="d-flex justify-content-center mt-3 mb-5"><button type="submit" class="btn btn-primary pull-right font-weight-bold btn-lg" style={{marginRight:"10px"}} onClick={onclick}>
+                                                    <div class="d-flex justify-content-center mt-3 mb-5"><button type="submit" class="btn btn-primary  font-weight-bold btn-lg" style={{marginRight:"10px"}} onClick={onclick}>
             Valider la convention
-        </button> <button type="submit" class="btn btn-info pull-right font-weight-bold btn-lg"> 
+        </button> <button type="submit" class="btn btn-info  font-weight-bold btn-lg"> 
             Télécharger en pdf
         </button></div>
         </div>
