@@ -1,13 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Notyf } from 'notyf';
+import 'notyf/notyf.min.css';
+
+const notyf = new Notyf({
+    duration: 2000,
+    position: {
+        x: 'center',
+        y: 'top',
+    }
+})
 
 const ConvMedia = () => {
-    
+    const [show,setShow]=useState(false);
+    const onclick=()=>{
+        setShow(true)
+        notyf.success("Validation with success")
+    }
     return (
         <div>
            <div class="container">
-           <div class="text-dark text-center bg-warning w-50 ml-2 mr-2 mt-3 mb-5"><i class="fa fa-exclamation-triangle"></i>
+          {!show? <div class="text-dark text-center bg-warning w-50 ml-2 mr-2 mt-3 mb-5"><i class="fa fa-exclamation-triangle"></i>
            Veuillez à présent procéder à la signature de la convention de médiation.
-</div>
+</div>:null}
+{show?<div class="text-dark text-center bg-success w-75 ml-2 mr-2 mt-3 mb-5"><i class="fa fa-thumbs-up" aria-hidden="true"></i>
+Félicitations ! la convention de médiation a bien été validée.
+</div>:null}
                <div class="kt-forfait kt-portlet text-align-justify" style={{height: "600px",
         overflow: "auto",
         border: "1px solid grey",
@@ -101,9 +118,9 @@ const ConvMedia = () => {
                                                                                           
                                 ........, Médiateur
                             						</div></div></div></div></div></div></div></div> 
-                                                    <div class="d-flex justify-content-center mt-3 mb-5"><button type="submit" class="btn btn-primary pull-right font-weight-bold btn-lg">
+                                                    <div class="d-flex justify-content-center mt-3 mb-5"><button type="submit" class="btn btn-primary pull-right font-weight-bold btn-lg" style={{marginRight:"10px"}} onClick={onclick}>
             Valider la convention
-        </button> <button type="submit" class="btn btn-info pull-right font-weight-bold btn-lg">
+        </button> <button type="submit" class="btn btn-info pull-right font-weight-bold btn-lg"> 
             Télécharger en pdf
         </button></div>
         </div>
