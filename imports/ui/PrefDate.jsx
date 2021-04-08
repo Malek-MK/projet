@@ -4,6 +4,8 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from "@fullcalendar/interaction"
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
+import clsx from 'clsx';
+
 const notyf = new Notyf({
   duration: 2000,
   position: {
@@ -55,7 +57,7 @@ Félicitations ! vos préférences de date de médiation ont bien été enregist
        events={data.map(e=>({title:"Partie A",date:e}))}  
           />
           <div  className="d-flex pull-right ">
-          <button className="btn btn-primary  btn-lg mt-3 mb-5" onClick={click} disabled={data===[]}>VALIDER MES DATES</button>
+          <button  className={clsx("btn btn-primary  btn-lg mt-3 mb-5",{disabled:!data.length})} onClick={click}>VALIDER MES DATES</button>
           </div>
         </div>
     )
