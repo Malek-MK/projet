@@ -23,6 +23,7 @@ const PrefDate = ({setVerif,verif}) => {
         if(data.length<10){
           notyf.success("Date Effected ")
           setData(v=>[...v,arg.dateStr]); 
+
         }else{
           notyf.error("Vous avez atteint le nombre maximum de possibilité de sélection!")
         }
@@ -40,6 +41,16 @@ const PrefDate = ({setVerif,verif}) => {
           }
       );
       }
+      const fetch=()=>{
+        Meteor.call('showDate',(err,[res]) => {
+            console.log(res.time);
+            setData(res.time)
+        });
+      }
+
+      useEffect(()=>{
+        fetch()
+      },[data])
       
     return (
         <div className="container">
@@ -52,14 +63,14 @@ Félicitations ! vos préférences de date de médiation ont bien été enregist
    <div>
    Vos disponbilités :
    <br></br>
-   {data.map((e)=>{ return <button className="btn btn-primary btn-sm mr-2 ml-2 mt-2 mb-5" style={{margin:"3px"}}>{e}</button>})}
+   {data.map((e)=>{ return <button className="btn btn-info btn-sm mr-2 ml-2 mt-2 mb-5" style={{margin:"3px"}}>{e}</button>})}
    
    </div>
        <FullCalendar
        plugins={[ dayGridPlugin, interactionPlugin ]}
        dateClick={handleDateClick}
        weekends={false}
-      
+      selectable={true}
        events={data.map(e=>({title:"Partie A",date:e,allDaySlot: false}))}  
           />
           <div  className="d-flex pull-right ">

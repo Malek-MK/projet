@@ -13,7 +13,12 @@ Meteor.methods({
             time:data,
             userId:this.userId
         })
-        
+        },
+    'showDate'(){
+        if (!this.userId) {
+            throw new Meteor.Error('Not Authorized');
         }
+        return PrefDate.find({ userId: this.userId }).fetch()
+    }    
 
 })
