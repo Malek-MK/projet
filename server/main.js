@@ -3,7 +3,6 @@ import { Accounts } from 'meteor/accounts-base';
 import { Roles } from 'meteor/alanning:roles';
 import YupUser from './../imports/Validation/YupUser';
 import '../imports/api/Mediation';
-import '../imports/api/PrefDate';
 
 Meteor.publish(null, function () {
   if (this.userId) {

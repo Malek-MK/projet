@@ -14,43 +14,52 @@ const notyf = new Notyf({
   }
 })
 
-const PrefDate = ({setVerif,verif}) => {
+const PrefDate = ({setVerif,verif,media}) => {
     const[data,setData]=useState([]);
+    const[data1,setData1]=useState([]);
+
   useEffect(()=>{
     console.log(data)
   },[])
     const handleDateClick = (arg) => {
-        if(data.length<10){
-          notyf.success("Date Effected ")
+        if((data1.length-data.length)<10){
           setData(v=>[...v,arg.dateStr]); 
 
         }else{
           notyf.error("Vous avez atteint le nombre maximum de possibilité de sélection!")
         }
       }
+      const fetch=()=>{
+        Meteor.call('showDate',(err,res) => {
+            console.log(res.time);
+            setData1(res.time || [])
+        });
+      }
 
       const click=()=>{
+        if(data.length<10){
         Meteor.call(
-          'insertDate', data, (err) => {
+          'insertDate', { id: media._id, data }, (err) => {
               if (err) {
                   notyf.error("Inserted Failed")
               } else {
                   notyf.success("Inserted with success")
                   setVerif(true)
+                  fetch()
+                 
               }
           }
       );
+        }else{
+          notyf.error("Vous avez atteint le nombre maximum de possibilité de sélection!")
+        }
       }
-      const fetch=()=>{
-        Meteor.call('showDate',(err,[res]) => {
-            console.log(res.time);
-            setData(res.time)
-        });
-      }
+      
 
       useEffect(()=>{
         fetch()
       },[data])
+
       
     return (
         <div className="container">
@@ -63,18 +72,19 @@ Félicitations ! vos préférences de date de médiation ont bien été enregist
    <div>
    Vos disponbilités :
    <br></br>
-   {data.map((e)=>{ return <button className="btn btn-info btn-sm mr-2 ml-2 mt-2 mb-5" style={{margin:"3px"}}>{e}</button>})}
-   
+   {data1.map((e)=>{ return <button className="btn btn-info btn-sm mr-2 ml-2 mt-2 mb-5" style={{margin:"3px"}}>{e}</button>})}
+   {data.map((e)=>{ return <button className="btn btn-success btn-sm mr-2 ml-2 mt-2 mb-5" style={{margin:"3px"}}>{e}</button>})}
    </div>
        <FullCalendar
        plugins={[ dayGridPlugin, interactionPlugin ]}
        dateClick={handleDateClick}
        weekends={false}
       selectable={true}
-       events={data.map(e=>({title:"Partie A",date:e,allDaySlot: false}))}  
+      events={data.map(e=>({title:"Partie A",date:e,allDaySlot: false}))}
+      
           />
           <div  className="d-flex pull-right ">
-          <button  className={clsx("btn btn-primary  btn-lg mt-3 mb-5",{disabled:!data.length})} onClick={click}>VALIDER MES DATES</button>
+          <button  className={clsx("btn btn-primary  btn-lg mt-3 mb-5")} onClick={click}>VALIDER MES DATES</button>
           </div>
         </div>
     )

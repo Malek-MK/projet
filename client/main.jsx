@@ -11,19 +11,23 @@ import Notfound from '../imports/ui/Notfound';
 import Authenticated from '../imports/ui/Authenticated';
 //import Authorized from '../imports/ui/Authorized';
 //import 'bootstrap/dist/css/bootstrap.min.css';
+import Media from '../imports/ui/Media';
 
-
-
-
+function BlogPost() {
+  let { id } = useParams();
+}
 const routes = (
   <Router >
     <Switch>
       <Route path="/" exact component={Home} />
-      <Authenticated path="/admin"  component={Admin} />
+      <Route path="/admin/mediation" exact component={Media}/>
+      <Authenticated path="/admin" component={Admin} />
       <Authenticated path="/signup"  component={Signup} />
       <Authenticated path="/signin"  component={Login} />
       <Authenticated path="/user"  component={User} />
       <Route path="*" component={Notfound} />
+       
+        <BlogPost />
     </Switch>
   </Router>
 );

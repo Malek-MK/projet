@@ -9,7 +9,9 @@ import Litige from '../ui/Litige';
 import Pagination from '../ui/Pagination';
 import Search from '../ui/Search';
 import NavCheck from '../ui/NavCheck';
-const User = () => {
+
+const User = ({media}) => {
+    console.log(media)
     const history = useHistory();
     const onLogout = () => {
         Meteor.logout();
@@ -134,7 +136,7 @@ const User = () => {
                     </div>
                 </div>
             </div>
-            {show1?<NavCheck/>:null}
+            
             {!show1? 
             <>
             {show ? <Mediation setShow1={setShow1} /> : null}
@@ -204,6 +206,7 @@ const User = () => {
                         </thead>
                         <tbody>
                             {mediations.map((media) => {
+                                console.log(media)
                                 return (
                                     <Litige
                                         key={media._id}

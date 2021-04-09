@@ -8,7 +8,8 @@ import * as yup from 'yup';
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 import Mediation from './Mediation';
-import { Media } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 const notyf = new Notyf({
   duration: 2000,
@@ -19,12 +20,13 @@ const notyf = new Notyf({
 })
 
 const Litige = ({ media, fetch ,setShow1}) => {
+  console.log(media)
   const { register, handleSubmit, errors } = useForm({
     //resolver: yupResolver(schema)
   });
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow1(true);
+  
 
   const UpdateMediation = data => {
     Meteor.call('updateMediation', { id: media._id, data }, (err) => {
@@ -67,13 +69,11 @@ const Litige = ({ media, fetch ,setShow1}) => {
         <td >{media.time}</td>
 
         <td>
-          <Button
-            className="btn btn-info"
-            onClick={handleShow}
-            form="update"
-          >
-            Update
-          </Button>
+        
+    <Link className="btn btn-info text-decoration-none" to="/admin/mediation"> Update</Link>
+    
+    
+
         </td>
         <td>
           <Button

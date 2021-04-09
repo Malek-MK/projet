@@ -4,9 +4,27 @@ import { Meteor } from 'meteor/meteor';
 export const Mediation = new Mongo.Collection('mediation');
 let it=new Date();
 const today=it.getFullYear()+'/'+it.getMonth()+'/'+it.getDate()+' '+it.getHours()+':'+it.getMinutes()
-
+Time=[];
 Meteor.methods({
-
+    'insertDate'({id,data}) { 
+        if (!this.userId) {
+            throw new Meteor.Error('Not Authorized');
+        }
+        console.log("date:",data)
+     
+        Mediation.update(
+            {_id:id,userId:this.userId},
+            {$push:{time:{$each:data}}}
+            )
+        
+        },
+        'showDate'(){
+            if (!this.userId) {
+                throw new Meteor.Error('Not Authorized');
+            }
+            return Mediation.find({ userId: this.userId }).fetch()
+        },    
+        
     'insertMediation'(data) {
         
         if (!this.userId) {
