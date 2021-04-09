@@ -1,9 +1,15 @@
 import React, { useState } from 'react'
 import PrefDate from '../ui/PrefDate';
 import ConvMedia from '../ui/ConvMedia';
+import clsx from 'clsx';
+
 const NavCheck = () => {
+  const [verif,setVerif]=useState(false);
+  const [veriff,setVeriff]=useState(false);
+
     const [click,setClick]=useState({
         class1:"card bg-light",
+        class2:"card-title",
         show:false   
     });
     const [click1,setClick1]=useState({
@@ -18,7 +24,8 @@ const NavCheck = () => {
            
     });
     const onclick=()=>{
-        setClick({class1:"card",show:true})
+        setClick({class1:"card",
+        class2:"card-title text-primary",show:true})
         setClick1({class1:"card bg-light",
         class2:"card-title" ,show:false})
         setClick2({class1:"card bg-light",
@@ -28,7 +35,8 @@ const NavCheck = () => {
     const onclick1=()=>{
         setClick1({class1:"card",
         class2:"card-title text-primary",show:true})
-        setClick({class1:"card bg-light",show:false})
+        setClick({class1:"card bg-light",
+        class2:"card-title",show:false})
         setClick2({class1:"card bg-light",
         class2:"card-title" ,show:false})
     }
@@ -37,7 +45,8 @@ const NavCheck = () => {
         class2:"card-title text-primary",show:true})
         setClick1({class1:"card bg-light",
         class2:"card-title ",show:false})
-        setClick({class1:"card bg-light",show:false})
+        setClick({class1:"card bg-light",
+        class2:"card-title ",show:false})
     }
   
     return (
@@ -47,25 +56,25 @@ const NavCheck = () => {
   <div class="col-sm-4 text-success  bg-success">
     <div class={click.class1} onClick={onclick}>
       <div class="card-body">
-      <h3><i class="fa fa-check" aria-hidden="true"></i></h3>
-        <h5 class="card-title">Personal informations</h5>
+      <h3><i class="fa fa-check" ></i></h3>
+        <h5 class={click.class2}>Personal informations</h5>
         <p class="card-text">Verified Information!</p>
       </div>
-    </div>
+    </div> 
   </div>
-  <div class="col-sm-4">
+  <div class={clsx(verif?"col-sm-4 text-success  bg-success":"col-sm-4")}>
     <div class={click1.class1} onClick={onclick1}>
       <div class="card-body">
-      <h3><i class="fa fa-exclamation-triangle"></i></h3>
+      <h3><i class={clsx(verif?"fa fa-check":"fa fa-exclamation-triangle")}></i></h3>
         <h5 class={click1.class2}>Date preferences</h5>
         <p class="card-text">Choose your dates</p>
       </div>
     </div>
   </div>
-  <div class="col-sm-4">
+  <div class={clsx(veriff?"col-sm-4 text-success  bg-success":"col-sm-4")} >
     <div class={click2.class1} onClick={onclick2}>
       <div class="card-body ">
-      <h3><i class="fa fa-exclamation-triangle"></i></h3>
+      <h3><i class={clsx(veriff?"fa fa-check":"fa fa-exclamation-triangle")} ></i></h3>
         <h5 class={click2.class2}>Mediation agreement</h5>
         <p class="card-text">Sign the convention</p>
       </div>
@@ -73,8 +82,8 @@ const NavCheck = () => {
   </div>
 </div>
        </div>
-       {click1.show? <PrefDate/>:null}
-       {click2.show?<ConvMedia/> :null}
+       {click1.show? <PrefDate setVerif={setVerif} verif={verif}/>:null}
+       {click2.show?<ConvMedia setVeriff={setVeriff} veriff={veriff}/> :null}
         </div>
     )
 }

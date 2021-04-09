@@ -14,7 +14,7 @@ const notyf = new Notyf({
   }
 })
 
-const PrefDate = () => {
+const PrefDate = ({setVerif,verif}) => {
     const[data,setData]=useState([]);
   useEffect(()=>{
     console.log(data)
@@ -28,7 +28,6 @@ const PrefDate = () => {
         }
       }
 
-      const [show,setShow]=useState(false);
       const click=()=>{
         Meteor.call(
           'insertDate', data, (err) => {
@@ -36,7 +35,7 @@ const PrefDate = () => {
                   notyf.error("Inserted Failed")
               } else {
                   notyf.success("Inserted with success")
-                  setShow(true)
+                  setVerif(true)
               }
           }
       );
@@ -44,10 +43,10 @@ const PrefDate = () => {
       
     return (
         <div className="container">
-            {!show?<div className="text-dark text-center bg-warning w-75 ml-2 mr-2 mt-5 mb-3"><i className="fa fa-exclamation-triangle"></i>
+            {!verif?<div className="text-dark text-center bg-warning w-75 ml-2 mr-2 mt-5 mb-3"><i className="fa fa-exclamation-triangle"></i>
 Please choose a maximum of 10 dates on which you can make yourself available for the mediation process.</div>:null}
 
-{show?<div className="text-dark text-center bg-success w-75 ml-2 mr-2 mt-5 mb-3"><i className="fa fa-thumbs-up" aria-hidden="true"></i>
+{verif?<div className="text-dark text-center bg-success w-75 ml-2 mr-2 mt-5 mb-3"><i className="fa fa-thumbs-up" aria-hidden="true"></i>
 Félicitations ! vos préférences de date de médiation ont bien été enregistrées et notre équipe en a été averti.
 </div>:null}
    <div>
