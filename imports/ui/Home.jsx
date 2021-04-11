@@ -43,7 +43,7 @@ const Home = () => {
                                 <a className="nav-link text-white" href="#">Contact</a>
                             </li>
                             <li className="nav-item active">
-                                <Link to="/admin" className="nav-link text-white decoration-none">My Account <span className="sr-only">(current)</span></Link>
+                                <Link to="/mediations" className="nav-link text-white decoration-none">My Account <span className="sr-only">(current)</span></Link>
                             </li>
                             <div className="position-absolute top-5 end-0">
                                 <ul className="navbar-nav topnav">

@@ -11,7 +11,8 @@ import Notfound from '../imports/ui/Notfound';
 import Authenticated from '../imports/ui/Authenticated';
 //import Authorized from '../imports/ui/Authorized';
 //import 'bootstrap/dist/css/bootstrap.min.css';
-import Media from '../imports/ui/Media';
+import Mediation from '../imports/ui/Mediation';
+import NavCheck from '../imports/ui/NavCheck';
 
 function BlogPost() {
   let { id } = useParams();
@@ -19,9 +20,10 @@ function BlogPost() {
 const routes = (
   <Router >
     <Switch>
+    <Route path="/mediations/create" exact component={Mediation} />
+    <Route path="/mediations/update" exact component={NavCheck} />
       <Route path="/" exact component={Home} />
-      <Route path="/admin/mediation" exact component={Media}/>
-      <Authenticated path="/admin" component={Admin} />
+      <Authenticated path="/mediations" exact component={Admin} />
       <Authenticated path="/signup"  component={Signup} />
       <Authenticated path="/signin"  component={Login} />
       <Authenticated path="/user"  component={User} />

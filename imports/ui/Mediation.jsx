@@ -4,6 +4,7 @@ import StepTwo from '../ui/StepTwo';
 import StepThree from '../ui/StepThree';
 import StepFour from '../ui/StepFour';
 import NavSteps from '../ui/NavSteps';
+import Header from '../ui/Header';
 
 
 const notyf = new Notyf({
@@ -25,7 +26,9 @@ const Mediation = ({ setShow1 }) => {
 
 
   return (
-    <div className="container ">
+    <div>
+      <Header/>
+      <div className="container mt-5">
       <div className="card-title mb-3 text-center"><h3 className="card-label">
         Mediation </h3><span className="d-block text-muted pt-2 font-size-sm">Create your file in less than 5 minutes!</span></div>
       <div className="d-flex justify-content-center ">
@@ -36,6 +39,7 @@ const Mediation = ({ setShow1 }) => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   )
 }

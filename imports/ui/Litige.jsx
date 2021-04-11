@@ -70,7 +70,7 @@ const Litige = ({ media, fetch ,setShow1}) => {
 
         <td>
         
-    <Link className="btn btn-info text-decoration-none" to="/admin/mediation"> Update</Link>
+    <Link className="btn btn-info text-decoration-none" to="/mediations/update"> Update</Link>
     
     
 

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Meteor } from 'meteor/meteor';
-import Button from "react-bootstrap/Button";
-import NavDropdown from 'react-bootstrap/NavDropdown';
+
 import Mediation from './Mediation';
 import { useHistory } from 'react-router-dom'
 import { Link } from 'react-router-dom';
@@ -9,14 +8,11 @@ import Litige from '../ui/Litige';
 import Pagination from '../ui/Pagination';
 import Search from '../ui/Search';
 import NavCheck from '../ui/NavCheck';
-
+import Header from '../ui/Header';
 const User = ({media}) => {
     console.log(media)
     const history = useHistory();
-    const onLogout = () => {
-        Meteor.logout();
-        history.replace('/');
-    }
+    
     const [show, setShow] = useState(false);
     const [show1, setShow1] = useState(false);
     const [mediations, setMediations] = useState([]);
@@ -72,62 +68,7 @@ const User = ({media}) => {
     }
     return (
         <div>
-            <header className="navbar navbar-expand-md navbar-light d-print-none">
-
-                <div className="container-xl">
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <h1 className="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
-                        <a className="nav-link decoration-none">
-                            <h3><i className="fa fa-home"></i>Dashboard</h3>
-                        </a>
-                    </h1>
-
-
-
-
-                    <div className="collapse navbar-collapse" id="navbar-menu">
-                        <div className="d-flex flex-column flex-md-row flex-fill align-items-stretch align-items-md-center">
-                            <ul className="navbar-nav">
-                                <li className="nav-item active ">
-                                    <Link to="/" className="nav-link decoration-none">
-
-                                        Go_Home
-                                    </Link>
-                                </li>
-                                <li className="nav-item ">
-                                    <NavDropdown title="Médiation" >
-                                        <NavDropdown.Item onClick={onclick2}>Mes Médiations</NavDropdown.Item>
-                                        <NavDropdown.Item >Mes Litiges</NavDropdown.Item>
-                                        <NavDropdown.Item onClick={onclick3}>Ajouter une médiation</NavDropdown.Item>
-                                    </NavDropdown>
-                                </li>
-                                <li className="nav-item">
-                                    <NavDropdown title="Arbitrage" >
-                                        <NavDropdown.Item >Arbitrages</NavDropdown.Item>
-                                    </NavDropdown>
-                                </li>
-
-                            </ul>
-                            <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
-                                <ul className="navbar-nav ms-auto">
-                                    <li className="nav-item">
-                                        <a className="nav-link decoration-none" >Hello, <b className="text-dark">{Meteor.user().username}</b></a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Button variant="outline-danger" onClick={onLogout} className="btn rounded-circle mt-1 ml-5 ">
-                                            <i className="fa fa-power-off" aria-hidden="true"></i>
-                                        </Button>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </header>
+            <Header/>
             <div className="container-xl mt-5">
                 <div className="page-header d-print-none">
                     <div className="row align-items-center">
@@ -145,11 +86,9 @@ const User = ({media}) => {
                 <div className="d-flex pull-right">
                             <div className="btn-list">
 
-                                <a onClick={onclick1} className="btn btn-primary d-none d-sm-inline-block" >
-                                    Create new Mediation
-          </a>
-                                <a href="#" className="btn btn-primary d-sm-none btn-icon" aria-label="Create new report">
-                                </a>
+                                <Link to="/admin/mediations/create" onClick={onclick1} className="btn btn-primary d-none d-sm-inline-block text-decoration-none" >
+                                    Create new Mediation</Link>
+                                
                             </div>
                         </div> 
                 </div>

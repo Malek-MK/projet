@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import PrefDate from '../ui/PrefDate';
 import ConvMedia from '../ui/ConvMedia';
 import clsx from 'clsx';
+import Header from '../ui/Header';
 
 const NavCheck = ({media}) => {
   const [verif,setVerif]=useState(false);
@@ -51,6 +52,7 @@ const NavCheck = ({media}) => {
   
     return (
         <div>
+          <Header/>
             <div className="container text-center  mt-2">
        <div class="row ">
   <div class="col-sm-4 text-success  bg-success">
