@@ -32,7 +32,6 @@ const Login = () => {
   });
 
   const onSubmit = (data) => {
-    console.log(data)
     Meteor.loginWithPassword(data.email, data.password, (err) => {
       if (err) {
         console.log("Loginin failed");

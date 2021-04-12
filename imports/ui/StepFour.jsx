@@ -173,8 +173,11 @@ const StepFour = ({ setStep, data, setShow1 }) => {
 
                 </tbody>
             </table>
+            <div className="div mt-4">
             <button type="button" name='prev' className="btn btn-primary btn-lg pull-left" onClick={onclickprev} >Previous</button>
             <button type="button" name='soumettre' className="btn btn-success btn-lg pull-right" onClick={onclick}>Submit</button>
+            <button type="submit" class="btn btn-info btn-lg  pull-right" style={{marginRight:"10px"}}>  Télécharger en pdf </button>
+            </div>
             <a id="Button-1" className="btn btn-outline-primary pull-right" style={{ position: 'absolute', bottom: '50px', left: '1140px' }} href="#" role="button"><h5><i class="fa fa-arrow-up"></i></h5></a>
 
         </div>

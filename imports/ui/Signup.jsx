@@ -56,8 +56,9 @@ const [verif,setVerif]=useState(false);
         else {
           console.log('Inserted user with succes')
           history.push('/signin');
+          setVerif(false)
         }
-        console.log(data);
+       
       });
     }else{
       notyf.error("please verify that you are a human")
@@ -124,7 +125,7 @@ const [verif,setVerif]=useState(false);
             
           
             <Recaptcha
-              sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+              sitekey="6LfO46YaAAAAAFjOeItzZwanytiACcJJI3Mwzrs4"
               render="explicit"
               onloadCallback={recaptchaLoaded}
               verifyCallback={verifyCallback}
