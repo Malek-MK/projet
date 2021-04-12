@@ -45,7 +45,7 @@ const Login = () => {
           console.log('admin login');
         }
         else if (Roles.userIsInRole(loggedInUser, 'user')) {
-          history.push('/admin');
+          history.push('/mediations');
           console.log('user login');
         }
       }

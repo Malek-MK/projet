@@ -4,7 +4,7 @@ import ConvMedia from '../ui/ConvMedia';
 import clsx from 'clsx';
 import Header from '../ui/Header';
 
-const NavCheck = ({media}) => {
+const NavCheck = () => {
   const [verif,setVerif]=useState(false);
   const [veriff,setVeriff]=useState(false);
 
@@ -84,7 +84,7 @@ const NavCheck = ({media}) => {
   </div>
 </div>
        </div>
-       {click1.show? <PrefDate media={media} setVerif={setVerif} verif={verif}/>:null}
+       {click1.show? <PrefDate setVerif={setVerif} verif={verif}/>:null}
        {click2.show?<ConvMedia setVeriff={setVeriff} veriff={veriff}/> :null}
         </div>
     )

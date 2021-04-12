@@ -14,7 +14,7 @@ const notyf = new Notyf({
   }
 })
 
-const PrefDate = ({setVerif,verif,media}) => {
+const PrefDate = ({setVerif,verif}) => {
     const[data,setData]=useState([]);
     const[data1,setData1]=useState([]);
 

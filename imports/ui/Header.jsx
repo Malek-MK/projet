@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import Button from "react-bootstrap/Button";
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Meteor } from 'meteor/meteor';
+import { useHistory } from 'react-router-dom'
 
 const Header = () => {
+    const history = useHistory();
     const onLogout = () => {
         Meteor.logout();
         history.replace('/');

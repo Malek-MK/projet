@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { Meteor } from 'meteor/meteor';
 
 import Mediation from './Mediation';
-import { useHistory } from 'react-router-dom'
 import { Link } from 'react-router-dom';
 import Litige from '../ui/Litige';
 import Pagination from '../ui/Pagination';
@@ -10,9 +9,7 @@ import Search from '../ui/Search';
 import NavCheck from '../ui/NavCheck';
 import Header from '../ui/Header';
 const User = ({media}) => {
-    console.log(media)
-    const history = useHistory();
-    
+    const [sh, setSh] = useState(false);
     const [show, setShow] = useState(false);
     const [show1, setShow1] = useState(false);
     const [mediations, setMediations] = useState([]);
@@ -86,7 +83,7 @@ const User = ({media}) => {
                 <div className="d-flex pull-right">
                             <div className="btn-list">
 
-                                <Link to="/admin/mediations/create" onClick={onclick1} className="btn btn-primary d-none d-sm-inline-block text-decoration-none" >
+                                <Link to="/mediations/create" onClick={onclick1} className="btn btn-primary d-none d-sm-inline-block text-decoration-none" >
                                     Create new Mediation</Link>
                                 
                             </div>
@@ -145,13 +142,13 @@ const User = ({media}) => {
                         </thead>
                         <tbody>
                             {mediations.map((media) => {
-                                console.log(media)
                                 return (
                                     <Litige
                                         key={media._id}
                                         media={media}
                                         fetch={renderMediations}
                                         setShow1={setShow1}
+                                        setData={media}
                                     />
                                 );
                             })}
@@ -160,6 +157,7 @@ const User = ({media}) => {
                 </div></div> : null}
             </>
             :null}
+           
             
         </div>
     )
