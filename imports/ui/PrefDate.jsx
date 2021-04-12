@@ -59,7 +59,12 @@ const PrefDate = ({setVerif,verif}) => {
       useEffect(()=>{
         fetch()
       },[data])
-
+      
+      handleEventClick = (clickInfo) => {
+        if (confirm(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
+          clickInfo.event.remove()
+        }
+      }
       
     return (
         <div className="container">
@@ -78,6 +83,7 @@ Félicitations ! vos préférences de date de médiation ont bien été enregist
        <FullCalendar
        plugins={[ dayGridPlugin, interactionPlugin ]}
        dateClick={handleDateClick}
+       eventClick={handleEventClick}
        weekends={false}
       selectable={true}
       events={data.map(e=>({title:"Partie A",date:e,allDaySlot: false}))}
