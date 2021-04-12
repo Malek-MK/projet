@@ -23,9 +23,11 @@
     "react-bootstrap": "^1.5.2",
     "react-countup": "^4.3.3",
     "react-dom": "^16.13.1",
+    "react-google-recaptcha": "^2.1.0",
     "react-hook-form": "^6.15.5",
     "react-input-checkbox": "^0.1.6",
     "react-multistep": "^5.1.0",
+    "react-recaptcha": "^2.3.10",
     "react-router-dom": "^5.2.0",
     "yup": "^0.32.9"
   },
