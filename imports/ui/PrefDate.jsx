@@ -17,25 +17,23 @@ const notyf = new Notyf({
 
 const PrefDate = ({setVerif,verif}) => {
   const {id} = useParams();
-  console.log(id)
+  
     const[data,setData]=useState([]);
     const[data1,setData1]=useState([]);
-
+    console.log(data)
   useEffect(()=>{
     console.log(data)
   },[])
     const handleDateClick = (arg) => {
         if((data1.length-data.length)<10){
           setData(v=>[...v,arg.dateStr]); 
-
         }else{
           notyf.error("Vous avez atteint le nombre maximum de possibilité de sélection!")
         }
       }
       const fetch=()=>{
         Meteor.call('showDate',id,(err,res) => {
-            console.log(res.Time);
-            setData1(res.Time || [])
+           
         });
       }
 
