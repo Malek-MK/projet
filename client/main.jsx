@@ -21,7 +21,7 @@ const routes = (
   <Router >
     <Switch>
     <Route path="/mediations/create" exact component={Mediation} />
-    <Route path="/mediations/update" exact component={NavCheck} />
+    <Route path="/mediations/update/:id" exact component={NavCheck} />
       <Route path="/" exact component={Home} />
       <Authenticated path="/mediations" exact component={Admin} />
       <Authenticated path="/signup"  component={Signup} />

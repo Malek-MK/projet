@@ -52,7 +52,7 @@ const Litige = ({ media, fetch}) => {
 
         <td>
         
-    <Link className="btn btn-info text-decoration-none" to="/mediations/update" onClick={()=>setShow(true)}> Update</Link>
+    <Link className="btn btn-info text-decoration-none" to={`/mediations/update/${media._id}`} onClick={()=>setShow(true)}> Update</Link>
     
     
 

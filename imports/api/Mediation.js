@@ -12,17 +12,16 @@ Meteor.methods({
         }
         console.log("date:",data)
      
-        Mediation.update(
+        Mediation.insert(
             {_id:id,userId:this.userId},
-            {$push:{time:{$each:data}}}
+            {$push:{Time:{$each:data}}}
             )
-        
         },
-        'showDate'(){
+        'showDate'(id){
             if (!this.userId) {
                 throw new Meteor.Error('Not Authorized');
             }
-            return Mediation.find({ userId: this.userId }).fetch()
+            return Mediation.findOne({ userId: this.userId,_id:id }).Time()
         },    
         
     'insertMediation'(data) {

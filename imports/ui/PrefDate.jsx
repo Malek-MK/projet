@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import FullCalendar from '@fullcalendar/react'
+import FullCalendar, { identity } from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from "@fullcalendar/interaction"
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 import clsx from 'clsx';
+import { useParams } from 'react-router';
 
 const notyf = new Notyf({
   duration: 2000,
@@ -15,6 +16,8 @@ const notyf = new Notyf({
 })
 
 const PrefDate = ({setVerif,verif}) => {
+  const {id} = useParams();
+  console.log(id)
     const[data,setData]=useState([]);
     const[data1,setData1]=useState([]);
 
@@ -30,17 +33,17 @@ const PrefDate = ({setVerif,verif}) => {
         }
       }
       const fetch=()=>{
-        Meteor.call('showDate',(err,res) => {
-            console.log(res.time);
-            setData1(res.time || [])
+        Meteor.call('showDate',id,(err,res) => {
+            console.log(res.Time);
+            setData1(res.Time || [])
         });
       }
 
       const click=()=>{
         if(data.length<10){
         Meteor.call(
-          'insertDate', { id: media._id, data }, (err) => {
-              if (err) {
+          'insertDate', { id, data }, (err) => { 
+            if (err) {
                   notyf.error("Inserted Failed")
               } else {
                   notyf.success("Inserted with success")
@@ -59,13 +62,17 @@ const PrefDate = ({setVerif,verif}) => {
       useEffect(()=>{
         fetch()
       },[data])
-      
+
       handleEventClick = (clickInfo) => {
+        console.log('date',clickInfo.event.date)
         if (confirm(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
           clickInfo.event.remove()
+          const indexToRemove = data.findIndex(date => date.dateStr === clickInfo.dateStr);
+          const result = [...data.slice(0, indexToRemove), ...data.slice(indexToRemove + 1)];
+          setData(result)
         }
       }
-      
+     
     return (
         <div className="container">
             {!verif?<div className="text-dark text-center bg-warning w-75 ml-2 mr-2 mt-5 mb-3"><i className="fa fa-exclamation-triangle"></i>
@@ -87,7 +94,6 @@ Félicitations ! vos préférences de date de médiation ont bien été enregist
        weekends={false}
       selectable={true}
       events={data.map(e=>({title:"Partie A",date:e,allDaySlot: false}))}
-      
           />
           <div  className="d-flex pull-right ">
           <button  className={clsx("btn btn-primary  btn-lg mt-3 mb-5")} onClick={click}>VALIDER MES DATES</button>
