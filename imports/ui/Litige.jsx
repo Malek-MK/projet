@@ -28,7 +28,8 @@ const Litige = ({ media, fetch}) => {
 
   useEffect(() => {
     fetch();
-  }, []);
+  }, []);    const {id} = useParams();
+
   const Delete = () => {
     Meteor.call('deleteMediation', media._id, (err) => {
       if (err) {
