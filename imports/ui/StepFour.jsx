@@ -3,7 +3,6 @@ import { Meteor } from 'meteor/meteor';
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 import jsPDF from 'jspdf';
-import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 
 
@@ -16,7 +15,6 @@ const notyf = new Notyf({
 })
 
 const StepFour = ({ setStep, data, setShow1 }) => {
-    const {id} = useParams();
     const generatePDF=()=>{
         var doc=new jsPDF("p","pt","a4");
         doc.html(document.querySelector("#content"),{
@@ -68,7 +66,6 @@ const StepFour = ({ setStep, data, setShow1 }) => {
     const onclick = () => {
         Meteor.call(
             'insertMediation', data, (err,data) => {
-                console.log(data._id)
                 if (err) {
                     notyf.error("Inserted Failed")
                 } else {
@@ -187,7 +184,7 @@ const StepFour = ({ setStep, data, setShow1 }) => {
             </table>
             <div className="div mt-4">
             <button type="button" name='prev' className="btn btn-primary btn-lg pull-left" onClick={onclickprev} >Previous</button>
-            <Link className="btn btn-success btn-lg pull-right" to={`/mediations/update/${id}`} onClick={onclick}> Submit</Link>
+            <Link className="btn btn-success btn-lg pull-right" to={`/mediations/update/${data}`} onClick={onclick}> Submit</Link>
             <button type="submit" class="btn btn-info btn-lg  pull-right" style={{marginRight:"10px"}} onClick={generatePDF}>  Télécharger en pdf </button>
             </div>
             <a id="Button-1" className="btn btn-outline-primary pull-right" style={{ position: 'absolute', bottom: '50px', left: '1140px' }} href="#" role="button"><h5><i class="fa fa-arrow-up"></i></h5></a>
