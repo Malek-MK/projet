@@ -6,7 +6,6 @@ import StepFour from '../ui/StepFour';
 import NavSteps from '../ui/NavSteps';
 import Header from '../ui/Header';
 
-
 const notyf = new Notyf({
   duration: 2000,
   position: {

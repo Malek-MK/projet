@@ -8,8 +8,7 @@ import Pagination from '../ui/Pagination';
 import Search from '../ui/Search';
 import NavCheck from '../ui/NavCheck';
 import Header from '../ui/Header';
-const User = ({media}) => {
-    const [sh, setSh] = useState(false);
+const User = () => {
     const [show, setShow] = useState(false);
     const [show1, setShow1] = useState(false);
     const [mediations, setMediations] = useState([]);

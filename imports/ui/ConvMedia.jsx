@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 import jsPDF from 'jspdf';
+import Header from '../ui/Header';
+
 const notyf = new Notyf({
     duration: 2000,
     position: {
@@ -26,6 +28,7 @@ const ConvMedia = ({setVeriff,veriff}) => {
     }
     return (
         <div>
+            <Header/>
            <div class="container ">
           {!veriff? <div class="text-dark text-center bg-warning w-50 ml-2 mr-2 mt-5 mb-3"><i class="fa fa-exclamation-triangle"></i>
            Veuillez à présent procéder à la signature de la convention de médiation.

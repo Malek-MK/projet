@@ -2,9 +2,8 @@ import React, { useState } from 'react'
 import PrefDate from '../ui/PrefDate';
 import ConvMedia from '../ui/ConvMedia';
 import clsx from 'clsx';
-import Header from '../ui/Header';
 import Mediation from '../ui/Mediation';
-
+import Header from '../ui/Header';
 
 const NavCheck = () => {
   const [verif,setVerif]=useState(false);
@@ -26,7 +25,7 @@ const NavCheck = () => {
            
     });
     const onclick=()=>{
-        setClick({class1:"card",
+        setClick({class1:"card",show:true,
         class2:"card-title text-primary"})
         setClick1({class1:"card bg-light",
         class2:"card-title" ,show:false})
