@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { Meteor } from 'meteor/meteor';
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
+import jsPDF from 'jspdf';
+import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 
 
 const notyf = new Notyf({
@@ -13,7 +16,15 @@ const notyf = new Notyf({
 })
 
 const StepFour = ({ setStep, data, setShow1 }) => {
-
+    const {id} = useParams();
+    const generatePDF=()=>{
+        var doc=new jsPDF("p","pt","a4");
+        doc.html(document.querySelector("#content"),{
+          callback:function(pdf){
+              pdf.save("Mediation.pdf");
+          }  
+        });
+    }
     const [data1, setData1] = useState({
         vousA: data.vousA,
         nomsoc: data.nomsoc,
@@ -61,7 +72,7 @@ const StepFour = ({ setStep, data, setShow1 }) => {
                     notyf.error("Inserted Failed")
                 } else {
                     notyf.success("Inserted with success")
-                    setShow1(true)
+                    
         
                 }
             }
@@ -72,10 +83,10 @@ const StepFour = ({ setStep, data, setShow1 }) => {
     }, [])
 
     return (
-        <div>
+        <div id="content">
 
             <h2 className="text mb-5">Récapitulatif du dossier de médiation</h2>
-            <h5>Informations concernant le demandeur de la médiation</h5>
+            <h5>Informations concernant le demandeur de la médiation</h5><br></br>
             <table className="table table-bordered " >
                 <tbody>
                     <tr>
@@ -175,8 +186,8 @@ const StepFour = ({ setStep, data, setShow1 }) => {
             </table>
             <div className="div mt-4">
             <button type="button" name='prev' className="btn btn-primary btn-lg pull-left" onClick={onclickprev} >Previous</button>
-            <button type="button" name='soumettre' className="btn btn-success btn-lg pull-right" onClick={onclick}>Submit</button>
-            <button type="submit" class="btn btn-info btn-lg  pull-right" style={{marginRight:"10px"}}>  Télécharger en pdf </button>
+            <Link className="btn btn-success btn-lg pull-right" to={`/mediations/update/${id}`} onClick={onclick}> Submit</Link>
+            <button type="submit" class="btn btn-info btn-lg  pull-right" style={{marginRight:"10px"}} onClick={generatePDF}>  Télécharger en pdf </button>
             </div>
             <a id="Button-1" className="btn btn-outline-primary pull-right" style={{ position: 'absolute', bottom: '50px', left: '1140px' }} href="#" role="button"><h5><i class="fa fa-arrow-up"></i></h5></a>
 

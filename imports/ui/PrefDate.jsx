@@ -17,7 +17,7 @@ const notyf = new Notyf({
 
 const PrefDate = ({setVerif,verif}) => {
   const {id} = useParams();
-  
+  console.log("id :",id)
     const[data,setData]=useState([]);
     const[data1,setData1]=useState([]);
     console.log(data)

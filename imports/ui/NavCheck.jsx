@@ -3,15 +3,16 @@ import PrefDate from '../ui/PrefDate';
 import ConvMedia from '../ui/ConvMedia';
 import clsx from 'clsx';
 import Header from '../ui/Header';
+import Mediation from '../ui/Mediation';
+
 
 const NavCheck = () => {
   const [verif,setVerif]=useState(false);
   const [veriff,setVeriff]=useState(false);
-
     const [click,setClick]=useState({
         class1:"card bg-light",
         class2:"card-title",
-        show:false   
+        show:true   
     });
     const [click1,setClick1]=useState({
         class1:"card bg-light",
@@ -26,7 +27,7 @@ const NavCheck = () => {
     });
     const onclick=()=>{
         setClick({class1:"card",
-        class2:"card-title text-primary",show:true})
+        class2:"card-title text-primary"})
         setClick1({class1:"card bg-light",
         class2:"card-title" ,show:false})
         setClick2({class1:"card bg-light",
@@ -86,6 +87,7 @@ const NavCheck = () => {
        </div>
        {click1.show? <PrefDate setVerif={setVerif} verif={verif}/>:null}
        {click2.show?<ConvMedia setVeriff={setVeriff} veriff={veriff}/> :null}
+        {click.show? <Mediation/>:null}
         </div>
     )
 }

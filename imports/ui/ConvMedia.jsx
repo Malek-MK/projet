@@ -20,13 +20,13 @@ const ConvMedia = ({setVeriff,veriff}) => {
         var doc=new jsPDF("p","pt","a4");
         doc.html(document.querySelector("#content"),{
           callback:function(pdf){
-              pdf.save("mypdf.pdf");
+              pdf.save("Convention.pdf");
           }  
         });
     }
     return (
         <div>
-           <div class="container align-items-center">
+           <div class="container ">
           {!veriff? <div class="text-dark text-center bg-warning w-50 ml-2 mr-2 mt-5 mb-3"><i class="fa fa-exclamation-triangle"></i>
            Veuillez à présent procéder à la signature de la convention de médiation.
 </div>:null}
