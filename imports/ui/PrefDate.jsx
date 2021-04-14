@@ -62,7 +62,8 @@ const PrefDate = ({setVerif,verif}) => {
       },[data])
 
       handleEventClick = (clickInfo) => {
-        console.log('date',clickInfo.event.date)
+        
+        console.log('date',clickInfo.date)
         if (confirm(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
           clickInfo.event.remove()
           const indexToRemove = data.findIndex(date => date.dateStr === clickInfo.dateStr);

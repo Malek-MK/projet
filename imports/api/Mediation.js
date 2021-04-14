@@ -21,7 +21,7 @@ Meteor.methods({
             if (!this.userId) {
                 throw new Meteor.Error('Not Authorized');
             }
-            return Mediation.findOne({ userId: this.userId,_id:id }).Time()
+            return Mediation.findOne({ userId: this.userId,_id:id }).fetch()
         },    
         
     'insertMediation'(data) {
