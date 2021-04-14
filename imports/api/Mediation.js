@@ -30,7 +30,7 @@ Meteor.methods({
             throw new Meteor.Error('Not Authorized');
         }
       
-        Mediation.insert({
+        return Mediation.insert({
             time:today,
             tun:data.tun,
             alg:data.alg,
