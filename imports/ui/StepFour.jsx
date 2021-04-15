@@ -18,7 +18,7 @@ const StepFour = ({ setStep, data, setShow1 }) => {
     const [res,setRes]=useState();
     
     const generatePDF=()=>{
-        var doc=new jsPDF("p","pt","a4");
+        var doc=new jsPDF('p', 'mm', [600, 650]);
         doc.html(document.querySelector("#content"),{
           callback:function(pdf){
               pdf.save("Mediation.pdf");

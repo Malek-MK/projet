@@ -10,8 +10,6 @@ Meteor.methods({
         if (!this.userId) {
             throw new Meteor.Error('Not Authorized');
         }
-        console.log("date:",data)
-     
         Mediation.insert(
             {_id:id,userId:this.userId},
             {$push:{Time:{$each:data}}}
@@ -21,7 +19,7 @@ Meteor.methods({
             if (!this.userId) {
                 throw new Meteor.Error('Not Authorized');
             }
-            return Mediation.findOne({ userId: this.userId,_id:id });
+            return Mediation.findOne({ userId: this.userId,_id:id }).Time;
         },    
         
     'insertMediation'(data) {
@@ -168,7 +166,7 @@ Meteor.methods({
         } catch (e) {
             throw new Meteor.Error(e.message)
         }
-        Mediation.update({ _id: id }, { $set: data });
+        Mediation.update({ _id: id,userId:this.userId }, { $set: data });
     },
     'deleteMediation'(_id) {
         if (!this.userId) {
@@ -191,5 +189,11 @@ Meteor.methods({
             {valid:valid}
             )
         },
+    'showConvMed'(id){
+        if (!this.userId) {
+            throw new Meteor.Error('Not Authorized');
+        }
+        return Mediation.findOne({userId:this.userId,_id:id}).valid;
+    }    
     
 })

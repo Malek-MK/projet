@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 import jsPDF from 'jspdf';
@@ -15,19 +15,26 @@ const ConvMedia = ({setVeriff,veriff,id}) => {
     console.log(id)
     const [valid,setValid]=useState(false);
     const onclick=()=>{
+        setValid(true)
         Meteor.call('insertConvMedia',{id,valid},(err)=>{
             if(err){
                 notyf.error("Convention Failed")
             }else{
                 notyf.success("Convention with success")
                 setVeriff(true)
-                setValid(true)
             }
         })
     }
-
+    const fetch=()=>{
+        Meteor.call('showConvMed',id,(err,res)=>{
+            console.log(res);
+        })
+    }
+    useEffect(()=>{
+        fetch()
+    },[])
     const generatePDF=()=>{
-        var doc=new jsPDF("p","pt","a4");
+        var doc=new jsPDF('p', 'mm', [800, 800]);
         doc.html(document.querySelector("#content"),{
           callback:function(pdf){
               pdf.save("Convention.pdf");
@@ -50,7 +57,7 @@ Félicitations ! la convention de médiation a bien été validée.
         marginLeft: "auto",
         marginRight: "auto",
         padding: "20px",
-        width: "595px",
+        width: "795px",
         marginTop: "20px"}}>
                    <div class="kt-portlet__body" id="content">
                        <div class="kt-section">
