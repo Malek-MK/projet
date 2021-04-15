@@ -4,10 +4,18 @@ import ConvMedia from '../ui/ConvMedia';
 import clsx from 'clsx';
 import Mediation from '../ui/Mediation';
 import Header from '../ui/Header';
-
+import { useParams } from 'react-router';
+import { Meteor } from 'meteor/meteor';
 const NavCheck = () => {
   const [verif,setVerif]=useState(false);
   const [veriff,setVeriff]=useState(false);
+  const [data,setData]=useState([])
+  const {id} = useParams()
+
+  Meteor.call('showMedia',id,(err,res)=>{
+    setData(res);
+  })
+ 
     const [click,setClick]=useState({
         class1:"card bg-light",
         class2:"card-title",
@@ -84,9 +92,9 @@ const NavCheck = () => {
   </div>
 </div>
        </div>
-       {click1.show? <PrefDate setVerif={setVerif} verif={verif}/>:null}
-       {click2.show?<ConvMedia setVeriff={setVeriff} veriff={veriff}/> :null}
-        {click.show? <Mediation/>:null}
+       {click1.show? <PrefDate setVerif={setVerif} verif={verif} id={id}/>:null}
+       {click2.show?<ConvMedia setVeriff={setVeriff} veriff={veriff} id={id}/> :null}
+        {click.show? <Mediation datta={data} show={click.show}/>:null}
         </div>
     )
 }

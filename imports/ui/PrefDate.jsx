@@ -5,7 +5,7 @@ import interactionPlugin from "@fullcalendar/interaction"
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 import clsx from 'clsx';
-import { useParams } from 'react-router';
+
 
 const notyf = new Notyf({
   duration: 2000,
@@ -15,27 +15,24 @@ const notyf = new Notyf({
   }
 })
 
-const PrefDate = ({setVerif,verif}) => {
-  const {id} = useParams();
+const PrefDate = ({setVerif,verif,id}) => {
   console.log("id :",id)
     const[data,setData]=useState([]);
-    const[data1,setData1]=useState([]);
     console.log(data)
-  useEffect(()=>{
-    console.log(data)
-  },[])
+
     const handleDateClick = (arg) => {
-        if((data1.length-data.length)<10){
+      console.log('date :',arg.dateStr)
+        if((data.length-data.length)<10){
           setData(v=>[...v,arg.dateStr]); 
         }else{
           notyf.error("Vous avez atteint le nombre maximum de possibilité de sélection!")
         }
       }
-      const fetch=()=>{
+     {/* const fetch=()=>{
         Meteor.call('showDate',id,(err,res) => {
            
         });
-      }
+      }*/}
 
       const click=()=>{
         if(data.length<10){
@@ -46,7 +43,7 @@ const PrefDate = ({setVerif,verif}) => {
               } else {
                   notyf.success("Inserted with success")
                   setVerif(true)
-                  fetch()
+                  setData(data)
                  
               }
           }
@@ -57,18 +54,17 @@ const PrefDate = ({setVerif,verif}) => {
       }
       
 
-      useEffect(()=>{
+     { /*useEffect(()=>{
         fetch()
-      },[data])
+      },[data])*/}
 
       handleEventClick = (clickInfo) => {
-        
-        console.log('date',clickInfo.date)
+        console.log('date 1',clickInfo.event.start)
         if (confirm(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
           clickInfo.event.remove()
-          const indexToRemove = data.findIndex(date => date.dateStr === clickInfo.dateStr);
+         {/* const indexToRemove = data.findIndex(date => date.dateStr === clickInfo.event.start);
           const result = [...data.slice(0, indexToRemove), ...data.slice(indexToRemove + 1)];
-          setData(result)
+         setData(result)*/}
         }
       }
      
@@ -84,7 +80,6 @@ Félicitations ! vos préférences de date de médiation ont bien été enregist
    <div>
    Vos disponbilités :
    <br></br>
-   {data1.map((e)=>{ return <button className="btn btn-info btn-sm mr-2 ml-2 mt-2 mb-5" style={{margin:"3px"}}>{e}</button>})}
    {data.map((e)=>{ return <button className="btn btn-success btn-sm mr-2 ml-2 mt-2 mb-5" style={{margin:"3px"}}>{e}</button>})}
    </div>
        <FullCalendar

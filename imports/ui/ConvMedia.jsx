@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 import jsPDF from 'jspdf';
-
+import { Meteor } from 'meteor/meteor';
 const notyf = new Notyf({
     duration: 2000,
     position: {
@@ -11,10 +11,19 @@ const notyf = new Notyf({
     }
 })
 
-const ConvMedia = ({setVeriff,veriff}) => {
+const ConvMedia = ({setVeriff,veriff,id}) => {
+    console.log(id)
+    const [valid,setValid]=useState(false);
     const onclick=()=>{
-        notyf.success("Validation with success")
-        setVeriff(true)
+        Meteor.call('insertConvMedia',{id,valid},(err)=>{
+            if(err){
+                notyf.error("Convention Failed")
+            }else{
+                notyf.success("Convention with success")
+                setVeriff(true)
+                setValid(true)
+            }
+        })
     }
 
     const generatePDF=()=>{
@@ -25,6 +34,7 @@ const ConvMedia = ({setVeriff,veriff}) => {
           }  
         });
     }
+    
     return (
         <div>
            <div class="container ">
@@ -137,11 +147,12 @@ Félicitations ! la convention de médiation a bien été validée.
                                                                                           
                                 ........, Médiateur
                             						</div></div></div></div></div></div></div></div> 
-                                                    <div class="d-flex justify-content-center mt-3 mb-5"><button type="submit" class="btn btn-primary  font-weight-bold btn-lg" style={{marginRight:"10px"}} onClick={onclick}>
-            Valider la convention
-        </button> <button onClick={generatePDF} class="btn btn-info  font-weight-bold btn-lg"> 
+     <div class="d-flex justify-content-center mt-3 mb-5">
+        <button onClick={generatePDF} class="btn btn-info  font-weight-bold btn-lg" style={{marginRight:"10px"}}> 
             Télécharger en pdf
-        </button></div>
+        </button>
+        {!valid?<button type="submit" class="btn btn-primary  font-weight-bold btn-lg"  onClick={onclick}> Valider la convention</button>:null}
+        </div>
         </div>
     )
 }

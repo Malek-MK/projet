@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import Litige from '../ui/Litige';
 import Pagination from '../ui/Pagination';
 import Search from '../ui/Search';
-import NavCheck from '../ui/NavCheck';
 import Header from '../ui/Header';
 const User = () => {
     const [show, setShow] = useState(false);

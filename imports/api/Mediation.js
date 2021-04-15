@@ -21,7 +21,7 @@ Meteor.methods({
             if (!this.userId) {
                 throw new Meteor.Error('Not Authorized');
             }
-            return Mediation.findOne({ userId: this.userId,_id:id }).fetch()
+            return Mediation.findOne({ userId: this.userId,_id:id });
         },    
         
     'insertMediation'(data) {
@@ -176,4 +176,20 @@ Meteor.methods({
         }
         Mediation.remove({ _id });
     },
+    'showMedia'(id){
+        if (!this.userId) {
+            throw new Meteor.Error('Not Authorized');
+        }
+       return Mediation.findOne({userId:this.userId,_id:id});
+    },
+    'insertConvMed'(id,valid){
+        if (!this.userId) {
+            throw new Meteor.Error('Not Authorized');
+        }
+        Mediation.insert(
+            {_id:id,userId:this.userId},
+            {valid:valid}
+            )
+        },
+    
 })
