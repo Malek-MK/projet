@@ -35,7 +35,7 @@ Veuillez à présent choisir le forfait de médiation le plus adapté à votre s
   <div class="col-md-4">
     <div class="card">
     <div className="mt-5">
-    <i class="fa fa-diamond fa-5x text-primary" aria-hidden="true" ></i>
+    <i class="fa fa-houzz fa-5x text-primary" aria-hidden="true" ></i>
     <br></br><br></br><br></br>
     <h3>1800€ HT</h3>
     <p>Plus d’un jour
@@ -64,7 +64,7 @@ Rédaction de la transaction​</p>
   <div class="col-md-4">
     <div class="card">
     <div className="mt-5">
-    <i class="fa fa-diamond fa-5x text-primary" aria-hidden="true" ></i>
+    <i class="fa  fa-rebel fa-5x text-primary" aria-hidden="true" ></i>
     <br></br><br></br><br></br>
     <h3>1800€ HT</h3>
     <p>Plus d’un jour
