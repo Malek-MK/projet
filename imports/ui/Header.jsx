@@ -61,11 +61,13 @@ const Header = () => {
                     <li className="nav-item">
                         <a className="nav-link decoration-none" >Hello, <b className="text-dark">{Meteor.user().username}</b></a>
                     </li>
+                   
                     <li className="nav-item">
                         <Button variant="outline-danger" onClick={onLogout} className="btn rounded-circle mt-1 ml-5 ">
                             <i className="fa fa-power-off" aria-hidden="true"></i>
                         </Button>
                     </li>
+                      
                 </ul>
             </div>
         </div>

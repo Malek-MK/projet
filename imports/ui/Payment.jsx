@@ -2,7 +2,7 @@ import React from 'react'
 
 const Payment = ({setVerifff,verifff,id}) => {
     return (
-        <div className="container">
+        <div className="container text-center">
             {!verifff? <div class="alert alert-warning mt-5" role="alert">
   <div class="d-flex">
     <div>
@@ -32,7 +32,8 @@ const Payment = ({setVerifff,verifff,id}) => {
 <div class="row row-deck mt-5">
   <div class="col-md-4">
     <div class="card">
-      <div class="card-body"><i class="fa fa-biohazard"></i>Short content</div>
+      <div class="card-body">
+Short content</div>
     </div>
   </div>
   <div class="col-md-4">
@@ -42,6 +43,7 @@ const Payment = ({setVerifff,verifff,id}) => {
   </div>
   <div class="col-md-4">
     <div class="card">
+    <i class="fa fa-diamond fa-5x text-primary" aria-hidden="true" ></i>
       <div class="card-body">Short content</div>
     </div>
   </div>
