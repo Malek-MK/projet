@@ -4,11 +4,13 @@ import ConvMedia from '../ui/ConvMedia';
 import clsx from 'clsx';
 import Mediation from '../ui/Mediation';
 import Header from '../ui/Header';
+import Payment from '../ui/Payment';
 import { useParams } from 'react-router';
 import { Meteor } from 'meteor/meteor';
 const NavCheck = () => {
   const [verif,setVerif]=useState(false);
   const [veriff,setVeriff]=useState(false);
+  const [verifff,setVerifff]=useState(false);
   const [data,setData]=useState([])
   const {id} = useParams()
 
@@ -32,6 +34,12 @@ const NavCheck = () => {
         show:false   
            
     });
+    const [click3,setClick3]=useState({
+      class1:"card bg-light",
+      class2:"card-title",
+      show:false   
+         
+  });
     const onclick=()=>{
         setClick({class1:"card",show:true,
         class2:"card-title text-primary"})
@@ -39,7 +47,8 @@ const NavCheck = () => {
         class2:"card-title" ,show:false})
         setClick2({class1:"card bg-light",
         class2:"card-title" ,show:false})
-
+        setClick3({class1:"card bg-light",
+        class2:"card-title" ,show:false})
     }
     const onclick1=()=>{
         setClick1({class1:"card",
@@ -47,6 +56,8 @@ const NavCheck = () => {
         setClick({class1:"card bg-light",
         class2:"card-title",show:false})
         setClick2({class1:"card bg-light",
+        class2:"card-title" ,show:false})
+        setClick3({class1:"card bg-light",
         class2:"card-title" ,show:false})
     }
     const onclick2=()=>{
@@ -56,14 +67,27 @@ const NavCheck = () => {
         class2:"card-title ",show:false})
         setClick({class1:"card bg-light",
         class2:"card-title ",show:false})
+        setClick3({class1:"card bg-light",
+        class2:"card-title" ,show:false})
     }
+
+    const onclick3=()=>{
+      setClick3({class1:"card",
+      class2:"card-title text-primary",show:true})
+      setClick1({class1:"card bg-light",
+      class2:"card-title ",show:false})
+      setClick({class1:"card bg-light",
+      class2:"card-title ",show:false})
+      setClick2({class1:"card bg-light",
+      class2:"card-title" ,show:false})
+  }
   
     return (
         <div>
           <Header/>
             <div className="container text-center  mt-2">
        <div class="row ">
-  <div class="col-sm-4 text-success  bg-success">
+  <div class="col-sm-3 text-success  bg-success">
     <div class={click.class1} onClick={onclick}>
       <div class="card-body">
       <h3><i class="fa fa-check" ></i></h3>
@@ -72,7 +96,16 @@ const NavCheck = () => {
       </div>
     </div> 
   </div>
-  <div class={clsx(verif?"col-sm-4 text-success  bg-success":"col-sm-4")}>
+  <div class={clsx(verifff?"col-sm-3 text-success  bg-success":"col-sm-3")} >
+    <div class={click3.class1} onClick={onclick3}>
+      <div class="card-body ">
+      <h3><i class={clsx(verifff?"fa fa-check":"fa fa-exclamation-triangle")} ></i></h3>
+        <h5 class={click3.class2}>Mediation payment</h5>
+        <p class="card-text">Choose the package</p>
+      </div>
+    </div> 
+  </div>
+  <div class={clsx(verif?"col-sm-3 text-success  bg-success":"col-sm-3")}>
     <div class={click1.class1} onClick={onclick1}>
       <div class="card-body">
       <h3><i class={clsx(verif?"fa fa-check":"fa fa-exclamation-triangle")}></i></h3>
@@ -81,7 +114,7 @@ const NavCheck = () => {
       </div>
     </div>
   </div>
-  <div class={clsx(veriff?"col-sm-4 text-success  bg-success":"col-sm-4")} >
+  <div class={clsx(veriff?"col-sm-3 text-success  bg-success":"col-sm-3")} >
     <div class={click2.class1} onClick={onclick2}>
       <div class="card-body ">
       <h3><i class={clsx(veriff?"fa fa-check":"fa fa-exclamation-triangle")} ></i></h3>
@@ -95,6 +128,7 @@ const NavCheck = () => {
        {click1.show? <PrefDate setVerif={setVerif} verif={verif} id={id}/>:null}
        {click2.show?<ConvMedia setVeriff={setVeriff} veriff={veriff} id={id}/> :null}
         {click.show? <Mediation datta={data} show={click.show}/>:null}
+        {click3.show?<Payment setVerifff={setVerifff} verifff={verifff} id={id}/> :null}
         </div>
     )
 }

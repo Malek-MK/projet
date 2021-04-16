@@ -70,12 +70,31 @@ const PrefDate = ({setVerif,verif,id}) => {
     return (
        <div>
          <div className="container">
-            {!verif?<div className="text-dark text-center bg-warning w-75 ml-2 mr-2 mt-5 mb-3"><i className="fa fa-exclamation-triangle"></i>
-Please choose a maximum of 10 dates on which you can make yourself available for the mediation process.</div>:null}
-
-{verif?<div className="text-dark text-center bg-success w-75 ml-2 mr-2 mt-5 mb-3"><i className="fa fa-thumbs-up" aria-hidden="true"></i>
-Félicitations ! vos préférences de date de médiation ont bien été enregistrées et notre équipe en a été averti.
+            {!verif?<div class="alert alert-warning mt-5" role="alert">
+  <div class="d-flex">
+    <div>
+    
+    </div>
+    <div>
+      <div class="alert-title "> <i class="fa fa-exclamation-triangle"></i>Please choose a maximum of 10 dates on which you can make yourself available for the mediation process.</div>
+     
+    </div>
+  </div>
 </div>:null}
+
+{verif?<div class="alert alert-success mt-5" role="alert">
+  <div class="d-flex">
+    <div>
+    
+    </div>
+    <div>
+      <div class="alert-title "> <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+      Congratulations! your mediation date preferences have been saved and our team has been notified.</div>
+     
+    </div>
+  </div>
+</div>:null}
+
    <div>
    Vos disponbilités :
    <br></br>

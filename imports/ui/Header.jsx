@@ -53,6 +53,11 @@ const Header = () => {
             </ul>
             <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
                 <ul className="navbar-nav ms-auto">
+                    <li lassName="nav-item">
+                                        <button type="button" class="btn">
+                                            Notifications <span class="badge bg-green ms-2">4</span>
+                                        </button>
+                    </li>
                     <li className="nav-item">
                         <a className="nav-link decoration-none" >Hello, <b className="text-dark">{Meteor.user().username}</b></a>
                     </li>

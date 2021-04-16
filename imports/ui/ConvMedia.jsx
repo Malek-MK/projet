@@ -45,12 +45,32 @@ const ConvMedia = ({setVeriff,veriff,id}) => {
     return (
         <div>
            <div class="container ">
-          {!veriff? <div class="text-dark text-center bg-warning w-50 ml-2 mr-2 mt-5 mb-3"><i class="fa fa-exclamation-triangle"></i>
-           Veuillez à présent procéder à la signature de la convention de médiation.
+          {!veriff? <div class="alert alert-warning mt-5" role="alert">
+  <div class="d-flex">
+    <div>
+    
+    </div>
+    <div>
+      <div class="alert-title "> <i class="fa fa-exclamation-triangle"></i>
+      Please proceed to the signing of the mediation agreement.</div>
+     
+    </div>
+  </div>
 </div>:null}
-{veriff?<div class="text-dark text-center bg-success w-75 ml-2 mr-2 mt-5 mb-3"><i class="fa fa-thumbs-up" aria-hidden="true"></i>
-Félicitations ! la convention de médiation a bien été validée.
+
+{veriff?<div class="alert alert-success mt-5" role="alert">
+  <div class="d-flex">
+    <div>
+    
+    </div>
+    <div>
+      <div class="alert-title "><i class="fa fa-thumbs-up" aria-hidden="true"></i>
+      Congratulations! your information has been saved and our team has been notified.</div>
+     
+    </div>
+  </div>
 </div>:null}
+
                <div class="kt-forfait kt-portlet text-align-justify " style={{height: "842px",
         overflow: "auto",
         border: "1px solid grey",
@@ -136,7 +156,7 @@ Félicitations ! la convention de médiation a bien été validée.
 										JustiCity
                                     								</div>
                                                                     </div></div></div>
-                                                                     
+                                                                     <hr></hr>
                                                                      <div class="row">
                                                                          <div class="col-lg-12 text-center">
                                                                              <h3>ANNEXE A</h3>
@@ -156,9 +176,10 @@ Félicitations ! la convention de médiation a bien été validée.
                             						</div></div></div></div></div></div></div></div> 
      <div class="d-flex justify-content-center mt-3 mb-5">
         <button onClick={generatePDF} class="btn btn-info  font-weight-bold btn-lg" style={{marginRight:"10px"}}> 
-            Télécharger en pdf
+        <i class="fa fa-download" aria-hidden="true"></i>
+        Download in pdf
         </button>
-        {!valid?<button type="submit" class="btn btn-primary  font-weight-bold btn-lg"  onClick={onclick}> Valider la convention</button>:null}
+        {!valid?<button type="submit" class="btn btn-primary  font-weight-bold btn-lg"  onClick={onclick}> Validate the agreement</button>:null}
         </div>
         </div>
     )
