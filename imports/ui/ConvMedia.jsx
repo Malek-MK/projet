@@ -51,7 +51,7 @@ const ConvMedia = ({setVeriff,veriff,id}) => {
     
     </div>
     <div>
-      <div class="alert-title "> <i class="fa fa-exclamation-triangle"></i>
+      <div class="alert-title "> <i class="fa fa-exclamation-triangle fa-2x"></i>
       Please proceed to the signing of the mediation agreement.</div>
      
     </div>
@@ -64,7 +64,7 @@ const ConvMedia = ({setVeriff,veriff,id}) => {
     
     </div>
     <div>
-      <div class="alert-title "><i class="fa fa-thumbs-up" aria-hidden="true"></i>
+      <div class="alert-title "><i class="fa fa-thumbs-up fa-2x" aria-hidden="true"></i>
       Congratulations! your information has been saved and our team has been notified.</div>
      
     </div>

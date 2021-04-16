@@ -35,7 +35,7 @@ const Mediation = ({ setShow1 ,datta,show}) => {
     
     </div>
     <div>
-      <div class="alert-title "> <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+      <div class="alert-title "> <i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
       Congratulations! your mediation date preferences have been saved and our team has been notified.</div>
      
     </div>
