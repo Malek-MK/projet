@@ -15,14 +15,14 @@ const Payment = ({setVerifff,verifff,id}) => {
     setCount(count+1)
     setTotal(total+600);
     setTva(tva+120);
-    setTtc(total+tva);
+    setTtc(total+tva+720);
   }
   const desincrement=()=>{
     if(count>=2.5){
       setCount(count-1)
       setTotal(total-600);
       setTva(tva-120);
-      setTtc(total+tva);
+      setTtc(total+tva-720);
     }
   }
   const click1=()=>{
