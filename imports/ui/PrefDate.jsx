@@ -16,7 +16,10 @@ const notyf = new Notyf({
 })
 
 const PrefDate = ({setVerif,verif,id}) => {
+  console.log(id)
     const[data,setData]=useState([]);
+    const [dates,setDates]=useState([]);
+    console.log("dates :",dates);
     const handleDateClick = (arg) => {
       console.log('date :',arg.dateStr)
         if((data.length-data.length)<10){
@@ -27,7 +30,7 @@ const PrefDate = ({setVerif,verif,id}) => {
       }
      const fetch=()=>{
         Meteor.call('showDate',id,(err,res) => {
-           console.log('res ',res.Time)
+           setDates(res.Time)
         });
       }
 
@@ -97,7 +100,9 @@ const PrefDate = ({setVerif,verif,id}) => {
    <div>
    Vos disponbilités :
    <br></br>
-   {data.map((e)=>{ return <button className="btn btn-success btn-sm mr-2 ml-2 mt-2 mb-5" style={{margin:"3px"}}>{e}</button>})}
+   {data.map((e)=>{ return <button className="btn btn-primary btn-sm mr-2 ml-2 mt-2 mb-5" style={{margin:"3px"}}>{e}</button>})}
+   {dates.map((e)=>{ return <button className="btn btn-success btn-sm mr-2 ml-2 mt-2 mb-5" style={{margin:"3px"}}>{e}</button>})}
+
    </div>
        <FullCalendar
        plugins={[ dayGridPlugin, interactionPlugin ]}
