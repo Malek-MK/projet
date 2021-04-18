@@ -9,11 +9,28 @@ import { useParams } from 'react-router';
 import { Meteor } from 'meteor/meteor';
 const NavCheck = () => {
   const [verif,setVerif]=useState(false);
+  const [dates,setDates]=useState([]);
   const [veriff,setVeriff]=useState(false);
   const [verifff,setVerifff]=useState(false);
   const [data,setData]=useState([])
+  const [showw,setShow]=useState()
   const {id} = useParams()
-  
+  const fetch1=()=>{
+    Meteor.call('showDate',id,(err,res) => {
+       setDates(res.Time)
+    });
+  }
+  useEffect(()=>{
+    fetch1()
+  },[])
+  const fetch=()=>{
+    Meteor.call('showConvMed',id,(err,res)=>{
+        setShow(res.verif)
+    })
+}
+useEffect(()=>{
+    fetch()
+},[])
     Meteor.call('showMedia',id,(err,res)=>{
       setData(res);
     })
@@ -105,19 +122,19 @@ const NavCheck = () => {
       </div>
     </div> 
   </div>
-  <div class={clsx(verif?"col-sm-3 text-success  bg-success":"col-sm-3")}>
+  <div class={clsx(dates?"col-sm-3 text-success  bg-success":"col-sm-3")}>
     <div class={click1.class1} onClick={onclick1}>
       <div class="card-body">
-      <h3><i class={clsx(verif?"fa fa-check":"fa fa-exclamation-triangle")}></i></h3>
+      <h3><i class={clsx(dates?"fa fa-check":"fa fa-exclamation-triangle")}></i></h3>
         <h5 class={click1.class2}>Date preferences</h5>
         <p class="card-text">Choose your dates</p>
       </div>
     </div>
   </div>
-  <div class={clsx(veriff?"col-sm-3 text-success  bg-success":"col-sm-3")} >
+  <div class={clsx(showw?"col-sm-3 text-success  bg-success":"col-sm-3")} >
     <div class={click2.class1} onClick={onclick2}>
       <div class="card-body ">
-      <h3><i class={clsx(veriff?"fa fa-check":"fa fa-exclamation-triangle")} ></i></h3>
+      <h3><i class={clsx(showw?"fa fa-check":"fa fa-exclamation-triangle")} ></i></h3>
         <h5 class={click2.class2}>Mediation agreement</h5>
         <p class="card-text">Sign the convention</p>
       </div>
@@ -125,8 +142,8 @@ const NavCheck = () => {
   </div>
 </div>
        </div>
-       {click1.show? <PrefDate setVerif={setVerif} verif={verif} id={id}/>:null}
-       {click2.show?<ConvMedia setVeriff={setVeriff} veriff={veriff} id={id}/> :null}
+       {click1.show? <PrefDate setVerif={setVerif} dates={dates} id={id}/>:null}
+       {click2.show?<ConvMedia setVeriff={setVeriff} showw={showw} id={id}/> :null}
         {click.show? <Mediation datta={data} show={click.show}/>:null}
         {click3.show?<Payment setVerifff={setVerifff} verifff={verifff} id={id}/> :null}
         </div>

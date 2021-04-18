@@ -15,11 +15,9 @@ const notyf = new Notyf({
   }
 })
 
-const PrefDate = ({setVerif,verif,id}) => {
-  console.log(id)
+const PrefDate = ({setVerif,dates,id}) => {
     const[data,setData]=useState([]);
-    const [dates,setDates]=useState([]);
-    console.log("dates :",dates);
+    
     const handleDateClick = (arg) => {
       console.log('date :',arg.dateStr)
         if((data.length-data.length)<10){
@@ -28,12 +26,7 @@ const PrefDate = ({setVerif,verif,id}) => {
           notyf.error("Vous avez atteint le nombre maximum de possibilité de sélection!")
         }
       }
-     const fetch=()=>{
-        Meteor.call('showDate',id,(err,res) => {
-           setDates(res.Time)
-        });
-      }
-
+     
       const click=()=>{
         if(data.length<10){
         Meteor.call(
@@ -45,7 +38,6 @@ const PrefDate = ({setVerif,verif,id}) => {
                   notyf.success("Inserted with success")
                   setVerif(true)
                   setData(data)
-                  console.log(data)
               }
           }
       );
@@ -55,9 +47,7 @@ const PrefDate = ({setVerif,verif,id}) => {
       }
       
 
-     useEffect(()=>{
-        fetch()
-      },[])
+     
 
       handleEventClick = (clickInfo) => {
         console.log('date 1',clickInfo.event.start)
@@ -72,7 +62,7 @@ const PrefDate = ({setVerif,verif,id}) => {
     return (
        <div>
          <div className="container">
-            {!verif?<div class="alert alert-warning mt-5" role="alert">
+            {!dates?<div class="alert alert-warning mt-5" role="alert">
   <div class="d-flex">
     <div>
     
@@ -84,7 +74,7 @@ const PrefDate = ({setVerif,verif,id}) => {
   </div>
 </div>:null}
 
-{verif?<div class="alert alert-success mt-5" role="alert">
+{dates?<div class="alert alert-success mt-5" role="alert">
   <div class="d-flex">
     <div>
     
@@ -101,7 +91,7 @@ const PrefDate = ({setVerif,verif,id}) => {
    Vos disponbilités :
    <br></br>
    {data.map((e)=>{ return <button className="btn btn-primary btn-sm mr-2 ml-2 mt-2 mb-5" style={{margin:"3px"}}>{e}</button>})}
-   {dates.map((e)=>{ return <button className="btn btn-success btn-sm mr-2 ml-2 mt-2 mb-5" style={{margin:"3px"}}>{e}</button>})}
+   {dates?dates.map((e)=>{ return <button className="btn btn-success btn-sm mr-2 ml-2 mt-2 mb-5" style={{margin:"3px"}}>{e}</button>}):null}
 
    </div>
        <FullCalendar

@@ -11,7 +11,7 @@ const notyf = new Notyf({
     }
 }) 
 
-const ConvMedia = ({setVeriff,veriff,id}) => {
+const ConvMedia = ({setVeriff,showw,id}) => {
     
     const [valid,setValid]=useState(false);
     const onclick=()=>{
@@ -27,14 +27,7 @@ const ConvMedia = ({setVeriff,veriff,id}) => {
         })
     }
    
-    const fetch=()=>{
-        Meteor.call('showConvMed',id,(err,res)=>{
-            console.log("verif :",res.verif);
-        })
-    }
-    useEffect(()=>{
-        fetch()
-    },[valid])
+    
     const generatePDF=()=>{
         var doc=new jsPDF('p', 'mm', [800, 800]);
         doc.html(document.querySelector("#content"),{
@@ -47,10 +40,10 @@ const ConvMedia = ({setVeriff,veriff,id}) => {
     return (
         <div>
            <div class="container ">
-          {!veriff? <div class="alert alert-warning mt-5" role="alert">
+          {!showw? <div class="alert alert-warning mt-5" role="alert">
   <div class="d-flex">
     <div>
-    
+     
     </div>
     <div>
       <div class="alert-title "> <i class="fa fa-exclamation-triangle fa-2x"></i>
@@ -60,7 +53,7 @@ const ConvMedia = ({setVeriff,veriff,id}) => {
   </div>
 </div>:null}
 
-{veriff?<div class="alert alert-success mt-5" role="alert">
+{showw?<div class="alert alert-success mt-5" role="alert">
   <div class="d-flex">
     <div>
     
