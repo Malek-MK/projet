@@ -9,7 +9,7 @@ const notyf = new Notyf({
         x: 'center',
         y: 'top',
     }
-})
+}) 
 
 const ConvMedia = ({setVeriff,veriff,id}) => {
     
@@ -23,10 +23,10 @@ const ConvMedia = ({setVeriff,veriff,id}) => {
             }else{
                 notyf.success("Convention with success")
                 setVeriff(true)
-                console.log(valid) 
             }
         })
     }
+   
     const fetch=()=>{
         Meteor.call('showConvMed',id,(err,res)=>{
             console.log("verif :",res.verif);
@@ -34,7 +34,7 @@ const ConvMedia = ({setVeriff,veriff,id}) => {
     }
     useEffect(()=>{
         fetch()
-    },[])
+    },[valid])
     const generatePDF=()=>{
         var doc=new jsPDF('p', 'mm', [800, 800]);
         doc.html(document.querySelector("#content"),{
@@ -82,6 +82,7 @@ const ConvMedia = ({setVeriff,veriff,id}) => {
         width: "795px",
         marginTop: "20px"}}>
                    <div class="kt-portlet__body" id="content">
+                      
                        <div class="kt-section">
                        <div class="kt-section__content">
                            <div class="form-group form-group-last " >
