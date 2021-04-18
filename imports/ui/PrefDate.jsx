@@ -17,7 +17,6 @@ const notyf = new Notyf({
 
 const PrefDate = ({setVerif,verif,id}) => {
     const[data,setData]=useState([]);
-
     const handleDateClick = (arg) => {
       console.log('date :',arg.dateStr)
         if((data.length-data.length)<10){
@@ -28,22 +27,22 @@ const PrefDate = ({setVerif,verif,id}) => {
       }
      const fetch=()=>{
         Meteor.call('showDate',id,(err,res) => {
-           console.log('res ',res)
-           console.log('id ',id)
+           console.log('res ',res.Time)
         });
       }
 
       const click=()=>{
         if(data.length<10){
         Meteor.call(
-          'insertDate', { id, data }, (err) => { 
+          'insertDate',{id,data}, (err) => { 
             if (err) {
                   notyf.error("Inserted Failed")
+                  console.log(err)
               } else {
                   notyf.success("Inserted with success")
                   setVerif(true)
                   setData(data)
-                 
+                  console.log(data)
               }
           }
       );

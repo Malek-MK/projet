@@ -132,7 +132,7 @@ Veuillez à présent choisir le forfait de médiation le plus adapté à votre s
         <h3>{total}<sup>€ HT</sup></h3>
         <p className="text-secondary">Plus d’un jour<br></br><small>+ 600€ HT par 1/2 journée supplémentaire</small></p>   
     
-    <input type="number" min="1.5" max="100" defaultValue={num} value={count}></input>
+    <input type="number" min="1.5" max="100" value={count}></input>
     <button className="btn bg-light border btn-sm">jour(s)</button>
     <button className="btn btn-info btn-sm border" onClick={desincrement}><b>-</b></button>
     <button type="submit" className="btn btn-info btn-sm border" onClick={increment}><b>+</b></button>

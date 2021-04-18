@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import PrefDate from '../ui/PrefDate';
 import ConvMedia from '../ui/ConvMedia';
 import clsx from 'clsx';
@@ -13,11 +13,11 @@ const NavCheck = () => {
   const [verifff,setVerifff]=useState(false);
   const [data,setData]=useState([])
   const {id} = useParams()
-
-  Meteor.call('showMedia',id,(err,res)=>{
-    setData(res);
-  })
- 
+  
+    Meteor.call('showMedia',id,(err,res)=>{
+      setData(res);
+    })
+  
     const [click,setClick]=useState({
         class1:"card bg-light",
         class2:"card-title",

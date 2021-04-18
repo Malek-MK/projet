@@ -5,21 +5,23 @@ export const Mediation = new Mongo.Collection('mediation');
 let it=new Date();
 const today=it.getFullYear()+'/'+it.getMonth()+'/'+it.getDate()+' '+it.getHours()+':'+it.getMinutes()
 Time=[];
+console.log(Time)
 Meteor.methods({
     'insertDate'({id,data}) { 
+        console.log(data)
         if (!this.userId) {
             throw new Meteor.Error('Not Authorized');
         }
-        Mediation.insert(
+        Mediation.update(
             {_id:id,userId:this.userId},
-            {$push:{Time:{$each:data}}}
+            {$push:{Time:{$each:[data]}}}
             )
         },
         'showDate'(id){
             if (!this.userId) {
                 throw new Meteor.Error('Not Authorized');
             }
-            return Mediation.findOne({ userId: this.userId,_id:id }).Time;
+            return Mediation.findOne({ userId: this.userId,_id:id });
         },    
         
     'insertMediation'(data) {
@@ -180,20 +182,16 @@ Meteor.methods({
         }
        return Mediation.findOne({userId:this.userId,_id:id});
     },
-    'insertConvMed'(id,valid){
-        if (!this.userId) {
-            throw new Meteor.Error('Not Authorized');
-        }
-        Mediation.insert(
-            {_id:id,userId:this.userId},
-            {valid:valid}
-            )
+    'insertConvMedia'({id,valid}){
+       
+        console.log("verif :",valid);
+        Mediation.update({ _id: id,userId:this.userId },{$set:{verif:valid}});
         },
     'showConvMed'(id){
         if (!this.userId) {
             throw new Meteor.Error('Not Authorized');
         }
-        return Mediation.findOne({userId:this.userId,_id:id}).valid;
+        return Mediation.findOne({userId:this.userId,_id:id});
     }    
     
 })

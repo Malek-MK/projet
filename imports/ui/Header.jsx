@@ -53,7 +53,7 @@ const Header = () => {
             </ul>
             <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
                 <ul className="navbar-nav ms-auto">
-                    <li lassName="nav-item">
+                    <li className="nav-item">
                                         <button type="button" class="btn">
                                             Notifications <span class="badge bg-green ms-2">4</span>
                                         </button>

@@ -12,22 +12,24 @@ const notyf = new Notyf({
 })
 
 const ConvMedia = ({setVeriff,veriff,id}) => {
-    console.log(id)
+    
     const [valid,setValid]=useState(false);
     const onclick=()=>{
         setValid(true)
         Meteor.call('insertConvMedia',{id,valid},(err)=>{
             if(err){
                 notyf.error("Convention Failed")
+                console.log(err)
             }else{
                 notyf.success("Convention with success")
                 setVeriff(true)
+                console.log(valid) 
             }
         })
     }
     const fetch=()=>{
         Meteor.call('showConvMed',id,(err,res)=>{
-            console.log(res);
+            console.log("verif :",res.verif);
         })
     }
     useEffect(()=>{
