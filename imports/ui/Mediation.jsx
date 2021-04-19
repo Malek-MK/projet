@@ -16,13 +16,12 @@ const notyf = new Notyf({
 
 const Components = [StepOne, StepTwo, StepThree, StepFour];
 
-const Mediation = ({ setShow1 ,datta,show}) => {
+const Mediation = ({ setShow1 ,datta,show,fetch}) => {
 
   const [data, setData] = useState({});
   const [step, setStep] = useState(0);
   const Component = Components[step];
 
-  
 
   return (
     <div>
@@ -47,7 +46,7 @@ const Mediation = ({ setShow1 ,datta,show}) => {
         <div className="card w-100 ml-5" >
           <div className="card-body text-center">
             <NavSteps setStep={setStep} step={step} />
-            <Component setStep={setStep} setData={setData} setShow1={setShow1} data={data} datta={datta}/>
+            <Component setStep={setStep} setData={setData} setShow1={setShow1} data={data} datta={datta} fetch={fetch}/>
           </div>
         </div>
       </div>

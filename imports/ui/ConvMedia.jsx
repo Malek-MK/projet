@@ -11,8 +11,10 @@ const notyf = new Notyf({
     }
 }) 
 
-const ConvMedia = ({setVeriff,showw,id}) => {
-    
+const ConvMedia = ({setVeriff,showw,id,fetch}) => {
+    useEffect(() => {
+       fetch()
+    }, [])
     const [valid,setValid]=useState(false);
     const onclick=()=>{
         setValid(true)

@@ -15,20 +15,22 @@ const notyf = new Notyf({
   }
 })
 
-const PrefDate = ({setVerif,dates,id}) => {
+const PrefDate = ({setVerif,verif,dates,id,fetch}) => {
     const[data,setData]=useState([]);
-    
     const handleDateClick = (arg) => {
-      console.log('date :',arg.dateStr)
-        if((data.length-data.length)<10){
-          setData(v=>[...v,arg.dateStr]); 
-        }else{
-          notyf.error("Vous avez atteint le nombre maximum de possibilité de sélection!")
-        }
+      if(data.length+dates.length<=9){   
+      setData(v=>[...v,arg.dateStr]); 
+      }else{
+        notyf.error("Vous avez atteint le nombre maximum de possibilité de sélection!")
+      }
       }
      
+      useEffect(() => {
+        fetch()
+       }, [])
+     
       const click=()=>{
-        if(data.length<10){
+        if(data.length+dates.length<=9){
         Meteor.call(
           'insertDate',{id,data}, (err) => { 
             if (err) {
@@ -46,10 +48,10 @@ const PrefDate = ({setVerif,dates,id}) => {
         }
       }
       
-
+    
      
 
-      handleEventClick = (clickInfo) => {
+      const handleEventClick = (clickInfo) => {
         console.log('date 1',clickInfo.event.start)
         if (confirm(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
           clickInfo.event.remove()
@@ -62,7 +64,7 @@ const PrefDate = ({setVerif,dates,id}) => {
     return (
        <div>
          <div className="container">
-            {!dates?<div class="alert alert-warning mt-5" role="alert">
+            {!dates&&!verif?<div class="alert alert-warning mt-5" role="alert">
   <div class="d-flex">
     <div>
     
@@ -74,13 +76,13 @@ const PrefDate = ({setVerif,dates,id}) => {
   </div>
 </div>:null}
 
-{dates?<div class="alert alert-success mt-5" role="alert">
+{dates||verif?<div class="alert alert-success mt-5" role="alert">
   <div class="d-flex">
     <div>
     
     </div>
     <div>
-      <div class="alert-title "> <i class="fa fa-thumbs-up fa-2x" aria-hidden="true"></i>
+      <div class="alert-title "> <i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
       Congratulations! your mediation date preferences have been saved and our team has been notified.</div>
      
     </div>
@@ -90,18 +92,17 @@ const PrefDate = ({setVerif,dates,id}) => {
    <div>
    Vos disponbilités :
    <br></br>
-   {data.map((e)=>{ return <button className="btn btn-primary btn-sm mr-2 ml-2 mt-2 mb-5" style={{margin:"3px"}}>{e}</button>})}
    {dates?dates.map((e)=>{ return <button className="btn btn-success btn-sm mr-2 ml-2 mt-2 mb-5" style={{margin:"3px"}}>{e}</button>}):null}
-
+   {data.map((e)=>{ return <button className="btn btn-primary btn-sm mr-2 ml-2 mt-2 mb-5" style={{margin:"3px"}}>{e}</button>})}
+ 
    </div>
        <FullCalendar
        plugins={[ dayGridPlugin, interactionPlugin ]}
        dateClick={handleDateClick}
        eventClick={handleEventClick}
        weekends={false}
-      selectable={true}
-      events={data.map(e=>({title:"Partie A",date:e,allDaySlot: false}))}
-          />
+      events={data.map(e=>({title:"Partie A",date:e,allDaySlot: false}))}/>
+      
           <div  className="d-flex pull-right ">
           <button  className={clsx("btn btn-primary  btn-lg mt-3 mb-5")} onClick={click}>VALIDER MES DATES</button>
           </div>

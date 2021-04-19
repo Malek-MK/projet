@@ -8,33 +8,38 @@ import Payment from '../ui/Payment';
 import { useParams } from 'react-router';
 import { Meteor } from 'meteor/meteor';
 const NavCheck = () => {
-  const [verif,setVerif]=useState(false);
   const [dates,setDates]=useState([]);
+  const [verif,setVerif]=useState(false);
   const [veriff,setVeriff]=useState(false);
   const [verifff,setVerifff]=useState(false);
   const [data,setData]=useState([])
   const [showw,setShow]=useState()
   const {id} = useParams()
-  const fetch1=()=>{
+  const fetchDate=()=>{
     Meteor.call('showDate',id,(err,res) => {
        setDates(res.Time)
     });
   }
-  useEffect(()=>{
-    fetch1()
-  },[])
-  const fetch=()=>{
+ 
+  const fetchConv=()=>{
     Meteor.call('showConvMed',id,(err,res)=>{
         setShow(res.verif)
     })
 }
-useEffect(()=>{
-    fetch()
-},[])
+  const fetchMedia=()=>{
     Meteor.call('showMedia',id,(err,res)=>{
       setData(res);
     })
-  
+  }
+  useEffect(() => {
+   fetchDate()
+  }, [dates]);
+  useEffect(() => {
+   fetchMedia()
+  }, [data]);
+  useEffect(() => {
+    fetchConv
+  }, [showw]);
     const [click,setClick]=useState({
         class1:"card bg-light",
         class2:"card-title",
@@ -122,10 +127,10 @@ useEffect(()=>{
       </div>
     </div> 
   </div>
-  <div class={clsx(dates?"col-sm-3 text-success  bg-success":"col-sm-3")}>
+  <div class={clsx(dates||verif?"col-sm-3 text-success  bg-success":"col-sm-3")}>
     <div class={click1.class1} onClick={onclick1}>
       <div class="card-body">
-      <h3><i class={clsx(dates?"fa fa-check":"fa fa-exclamation-triangle")}></i></h3>
+      <h3><i class={clsx(dates||verif?"fa fa-check":"fa fa-exclamation-triangle")}></i></h3>
         <h5 class={click1.class2}>Date preferences</h5>
         <p class="card-text">Choose your dates</p>
       </div>
@@ -142,10 +147,10 @@ useEffect(()=>{
   </div>
 </div>
        </div>
-       {click1.show? <PrefDate setVerif={setVerif} dates={dates} id={id}/>:null}
-       {click2.show?<ConvMedia setVeriff={setVeriff} showw={showw} id={id}/> :null}
-        {click.show? <Mediation datta={data} show={click.show}/>:null}
-        {click3.show?<Payment setVerifff={setVerifff} verifff={verifff} id={id}/> :null}
+       {click1.show? <PrefDate setVerif={setVerif} verif={verif} dates={dates} id={id} fetch={fetchDate}/>:null}
+       {click2.show?<ConvMedia setVeriff={setVeriff} showw={showw} id={id} fetch={fetchMedia}/> :null}
+        {click.show? <Mediation datta={data} show={click.show} fetch={fetchMedia}/>:null}
+        {click3.show?<Payment setVerifff={setVerifff} id={id}/> :null}
         </div>
     )
 }

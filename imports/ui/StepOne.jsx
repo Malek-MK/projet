@@ -1,17 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { useForm } from 'react-hook-form';
 import Schema1 from '../Validation/YupStep1';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-const StepOne = ({ setData, setStep, data,datta }) => {
+const StepOne = ({ setData, setStep, data,datta ,fetch}) => {
   const [check, setCheck] = useState(false);
+  const [dat,setDat]=useState([])
+  useEffect(() => {
+   fetch()
+  }, [])
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(Schema1),
     defaultValues: {
-      vousA: data.vousA,
-      nomsoc: data.nomsoc,
-      formjurid: data.formjurid,
-      numid: data.numid,
+      vousA: data.vousA ,
+      nomsoc: data.nomsoc ,
+      formjurid: data.formjurid ,
+      numid: data.numid ,
       prerepleg: data.prerepleg,
       nomrepleg: data.nomrepleg,
       adresse: data.adresse,
