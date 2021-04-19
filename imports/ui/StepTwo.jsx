@@ -1,13 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { useForm } from 'react-hook-form';
 import Schema2 from '../Validation/YupStep2';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-const StepTwo = ({ setData, setStep, data,datta,fetch}) => {
+const StepTwo = ({ setData, setStep, data,datta}) => {
   const [check, setCheck] = useState(false);
-  useEffect(() => {
-   fetch()
-  }, [])
+ 
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(Schema2),
     defaultValues: {
@@ -46,7 +44,7 @@ const StepTwo = ({ setData, setStep, data,datta,fetch}) => {
           <h2 className="text mb-5">Part B contact details
           </h2>
           <h5>Information about the other party :</h5>
-          <label >Pays</label>
+          <label >Country</label>
           <select name="infoB" ref={register} className="form-control" >
             <option value="Tunisia" >Tunisia</option>
             <option value="Algeria" >Algeria</option>

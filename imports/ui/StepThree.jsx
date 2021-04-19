@@ -4,11 +4,9 @@ import Schema3 from '../Validation/YupStep3';
 import { yupResolver } from '@hookform/resolvers/yup';
 
   
-const StepThree = ({ setData, setStep,data,datta,fetch }) => {
+const StepThree = ({ setData, setStep,data,datta }) => {
 
-    useEffect(() => {
-       fetch()
-    }, [])
+    
     const { register, handleSubmit, errors } = useForm({
         resolver: yupResolver(Schema3),
         defaultValues:{

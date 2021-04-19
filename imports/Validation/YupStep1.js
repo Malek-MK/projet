@@ -1,6 +1,5 @@
 import * as yup from "yup";
 
-
 export default Step1 = yup.object().shape({
     infoA: yup
         .string("check your info")
@@ -35,8 +34,7 @@ export default Step1 = yup.object().shape({
         .number("check your code postal format")
         .required("Postal code is required")
         .positive()
-        .integer()
-        .max(5),        
+        .test('len', 'Zip code needs to be excatly 5 digits', val => val.toString().length === 5),       
     ville: yup
     .string("check your City")
     .required("City is required"),  
@@ -48,7 +46,8 @@ export default Step1 = yup.object().shape({
         .number("check your number phone format")
         .required("Phone is required")  
         .positive()
-        .integer(),
+        .test('len', 'Phone needs to be excatly 8 digits', val => val.toString().length === 8),  
+        
    /*
 
  firstnamelawyer: yup

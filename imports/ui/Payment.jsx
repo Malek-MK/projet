@@ -278,12 +278,12 @@ Veuillez à présent choisir le forfait de médiation le plus adapté à votre s
   <div class="row">
     <div class="col">
       <label>Zip Code :</label>
-      <input type="number" class="form-control" placeholder="Zip code" name="codepos" ref={register}></input>
+      <input type="number" class="form-control" placeholder="Zip code" maxlength="5" name="codepos" ref={register}></input>
       <p className="text-danger">{errors.codepos?.message}</p>    
     </div>
-   
+    
     <div class="col">
-      <label>Ville :</label>
+      <label>City :</label>
       <input type="text" class="form-control" placeholder="Ville" name="ville" ref={register}></input>
       <p className="text-danger">{errors.ville?.message}</p>    
     </div>
