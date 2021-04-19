@@ -3,12 +3,10 @@ import { useForm } from 'react-hook-form';
 import Schema1 from '../Validation/YupStep1';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-const StepOne = ({ setData, setStep, data,datta ,fetch}) => {
+const StepOne = ({ setData, setStep, data,datta }) => {
   const [check, setCheck] = useState(false);
   const [dat,setDat]=useState([])
-  useEffect(() => {
-   fetch()
-  }, [])
+  
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(Schema1),
     defaultValues: {

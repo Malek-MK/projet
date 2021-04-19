@@ -10,6 +10,8 @@ import * as yup from 'yup';
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 import Recaptcha from 'react-recaptcha';
+import Schema from '../Validation/YupRegister';
+
 const notyf = new Notyf({
   duration: 2000,
   position: {
@@ -18,31 +20,11 @@ const notyf = new Notyf({
   }
 })
 
-const schema = yup.object().shape({
-  name: yup.string()
-  .trim()
-  .matches(/^[a-zA-Z0-9]*$/, "Only alphabets are allowed for this field ")
-  .required(),
-  email: yup.string().required().email(),
-  password: yup
-      .string()
-      .required()
-      .min(6)
-      .max(10)
-      .oneOf([yup.ref("password"), null], "password dont match"),
-  password1: yup
-      .string()
-      .required()
-      .oneOf([yup.ref("password"), null], "password dont match"),
-  verif: yup
-      .boolean()
-      .oneOf([true], 'Must Accept Terms and Conditions'),    
-});
 
 const Signup = () => {
   const history = useHistory();
   const { register, handleSubmit, errors } = useForm({
-    resolver: yupResolver(schema)
+    resolver: yupResolver(Schema)
   });
 const [verif,setVerif]=useState(false);
   const onSubmit = (data) => {

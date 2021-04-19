@@ -148,8 +148,8 @@ const NavCheck = () => {
 </div>
        </div>
        {click1.show? <PrefDate setVerif={setVerif} verif={verif} dates={dates} id={id} fetch={fetchDate}/>:null}
-       {click2.show?<ConvMedia setVeriff={setVeriff} showw={showw} id={id} fetch={fetchMedia}/> :null}
-        {click.show? <Mediation datta={data} show={click.show} fetch={fetchMedia}/>:null}
+       {click2.show?<ConvMedia setVeriff={setVeriff} showw={showw} id={id} fetch={fetchConv}/> :null}
+        {click.show? <Mediation datta={data} show={click.show}/>:null}
         {click3.show?<Payment setVerifff={setVerifff} id={id}/> :null}
         </div>
     )

@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Accounts } from 'meteor/accounts-base';
 import { Roles } from 'meteor/alanning:roles';
-import YupUser from './../imports/Validation/YupUser';
+import YupUser from './../imports/Validation/YupRegister';
 import '../imports/api/Mediation';
 
 Meteor.publish(null, function () {

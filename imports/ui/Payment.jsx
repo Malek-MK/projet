@@ -1,6 +1,22 @@
 import React, { useState } from 'react'
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { Notyf } from 'notyf';
+import 'notyf/notyf.min.css';
+import Schema from '../Validation/YupPayment';
+
+const notyf = new Notyf({
+  duration: 2000,
+  position: {
+    x: 'right',
+    y: 'top', 
+  }
+})
 
 const Payment = ({setVerifff,verifff,id}) => {
+  const { register, handleSubmit, errors } = useForm({
+    resolver: yupResolver(Schema)
+  });
   var num=1.5;
   var tot=1800;
   var tv=360;
@@ -36,6 +52,9 @@ const Payment = ({setVerifff,verifff,id}) => {
   const click3=()=>{
     setShow(true);
     setChoix(3);
+  }
+  const onSubmit=()=>{
+    notyf.success('success payment')
   }
     return (
         <div className="container text-center mt-2 mb-5">
@@ -164,6 +183,7 @@ Veuillez à présent choisir le forfait de médiation le plus adapté à votre s
       {show? 
       <div>
       <div className="container">
+      <form onSubmit={handleSubmit(onSubmit)}>
       <div class="row row-deck mt-5 mb-5" >
   <div class="col-md-6 ">
     <div class="card border-0 ">
@@ -245,61 +265,76 @@ Veuillez à présent choisir le forfait de médiation le plus adapté à votre s
         </div>
       
       <br></br>
-      <form>
   <div class="form-group">
-    <input type="text" class="form-control" placeholder="Votre nom ou celui de votre organisation pour la facturation"></input>
-    <br></br>
-    <input type="text" class="form-control" placeholder="Adresse"></input>
+  <label >Nom organisation pour la facturation :</label>
+    <input type="text" class="form-control" placeholder="Votre nom ou celui de votre organisation pour la facturation" name="nom" ref={register}></input>
+    <p className="text-danger">{errors.nom?.message}</p>
+    
+    <label>Adresse :</label>
+    <input type="text" class="form-control" placeholder="Adresse" name="adresse" ref={register}></input>
+    <p className="text-danger">{errors.adresse?.message}</p>    
   </div>
-  <br></br>
+ 
   <div class="row">
     <div class="col">
-      <input type="text" class="form-control" placeholder="Code Postal"></input>
+      <label>Zip Code :</label>
+      <input type="number" class="form-control" placeholder="Zip code" name="codepos" ref={register}></input>
+      <p className="text-danger">{errors.codepos?.message}</p>    
     </div>
-    <br></br>
+   
     <div class="col">
-      <input type="text" class="form-control" placeholder="Ville"></input>
+      <label>Ville :</label>
+      <input type="text" class="form-control" placeholder="Ville" name="ville" ref={register}></input>
+      <p className="text-danger">{errors.ville?.message}</p>    
     </div>
   </div>
-  <br></br>
+  
   <div class="form-group">
-    <input type="text" class="form-control" placeholder="Numéro de la carte"></input>
+    <label>Numéro de la carte :</label>
+    <input type="number" class="form-control" placeholder="1234 1234 1234 1234" name="numcart" ref={register}></input>
+    <p className="text-danger">{errors.numcart?.message}</p>    
   </div>
-  <br></br>
+  
   <div class="row">
     <div class="col">
-      <input type="text" class="form-control" placeholder="Expiration"></input>
+      <label>Expiration :</label>
+      <input type="text" class="form-control" placeholder="Expiration" name="exp" ref={register}></input>
+      <p className="text-danger">{errors.exp?.message}</p>    
     </div>
-    <br></br>
+    
     <div class="col">
-      <input type="text" class="form-control" placeholder="CVC"></input>
+      <label>CVC :</label>
+      <input type="number" class="form-control" placeholder="CVC"  name="cvc" ref={register}></input>
+      <p className="text-danger">{errors.cvc?.message}</p>    
     </div>
   </div>
   <br></br>
   <div class="d-flex justify-content-left">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
-  <label class="form-check-label" for="flexCheckDefault">
+  <input class="form-check-input" type="checkbox"  id="flexCheckDefault" name="condgen" ref={register}></input>
+  <label class="form-check-label" htmlFor="flexCheckDefault">
   J'ai lu et j'accepte <span className="text-primary">les conditions générales</span>.
   </label>
 </div>
+<p className="text-danger">{errors.condgen?.message}</p>    
 <div class="d-flex justify-content-left">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"></input>
-  <label class="form-check-label" for="flexCheckChecked">
+  <input class="form-check-input" type="checkbox"  id="flexCheckChecked" name="cartconf" ref={register}></input>
+  <label class="form-check-label" htmlFor="flexCheckChecked">
   J'ai lu et j'accepte <span className="text-primary"> la charte de confidentialité</span>.
   </label>
 </div>
-</form>
+<p className="text-danger">{errors.cartconf?.message}</p>    
 </div>
     </div>
   </div>
 </div>  
-      </div>
+      
        <div>
        <hr></hr>
-       
         <button className="btn btn-light text-secondary  pull-left mt-3 mb-5" onClick={()=>setShow(false)}>COISIR UN <br></br> AUTRE FORFAIT</button>
         <button className="btn btn-primary  pull-right mt-3 mb-5">VALIDER LA PRE-AUTORISATION</button>
        </div>
+       </form>
+      </div>
       </div>
       :null}
         </div>

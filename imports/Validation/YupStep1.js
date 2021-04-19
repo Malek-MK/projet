@@ -35,7 +35,8 @@ export default Step1 = yup.object().shape({
         .number("check your code postal format")
         .required("Postal code is required")
         .positive()
-        .integer(),        
+        .integer()
+        .max(5),        
     ville: yup
     .string("check your City")
     .required("City is required"),  
