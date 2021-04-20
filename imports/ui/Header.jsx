@@ -4,8 +4,10 @@ import Button from "react-bootstrap/Button";
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Meteor } from 'meteor/meteor';
 import { useHistory } from 'react-router-dom'
+import { useTracker } from "meteor/react-meteor-data";
 
 const Header = () => {
+    const user = useTracker(() => Meteor.user().username);
     const history = useHistory();
     const onLogout = () => {
         Meteor.logout();
@@ -57,9 +59,9 @@ const Header = () => {
                                         <button type="button" class="btn">
                                             Notifications <span class="badge bg-green ms-2">4</span>
                                         </button>
-                    </li>
+                    </li> 
                     <li className="nav-item">
-                        <a className="nav-link decoration-none" >Hello, <b className="text-dark">{Meteor.user().username}</b></a>
+                        <a className="nav-link decoration-none" >Hello, <b className="text-dark">{user}</b></a>
                     </li>
                    
                     <li className="nav-item">

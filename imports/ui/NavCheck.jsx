@@ -33,13 +33,13 @@ const NavCheck = () => {
   }
   useEffect(() => {
    fetchDate()
-  }, [dates]);
+  }, []);
   useEffect(() => {
    fetchMedia()
-  }, [data]);
+  }, []);
   useEffect(() => {
     fetchConv
-  }, [showw]);
+  }, []);
     const [click,setClick]=useState({
         class1:"card bg-light",
         class2:"card-title",

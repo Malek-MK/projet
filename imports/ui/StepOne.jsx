@@ -5,22 +5,21 @@ import { yupResolver } from '@hookform/resolvers/yup';
 
 const StepOne = ({ setData, setStep, data,datta }) => {
   const [check, setCheck] = useState(false);
-  const [dat,setDat]=useState([])
   
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(Schema1),
     defaultValues: {
-      vousA: data.vousA ,
-      nomsoc: data.nomsoc ,
-      formjurid: data.formjurid ,
-      numid: data.numid ,
-      prerepleg: data.prerepleg,
-      nomrepleg: data.nomrepleg,
-      adresse: data.adresse,
-      codepos: data.codepos,
-      ville: data.ville,
-      email: data.email,
-      tel: data.tel,
+      vousA: datta.vousA||(data.vousA || " ") ,
+      nomsoc: (data.nomsoc || " ")|| datta.nomsoc,
+      formjurid: datta.formjurid||(data.formjurid || " ")  ,
+      numid: (data.numid || " ") || datta.numid,
+      prerepleg: (data.prerepleg || " ") || datta.prerepleg, 
+      nomrepleg: (data.nomrepleg || " ") || datta.nomrepleg,
+      adresse: (data.adresse || " ")|| datta.adresse,
+      codepos: (data.codepos || " ") || datta.codepos,
+      ville: (data.ville || " ") || datta.ville,
+      email: (data.email || " ") || datta.email,
+      tel: (data.tel || " ") || datta.tel,
       namelawyer: data.namelawyer || " ",
       firstnamelawyer: data.firstnamelawyer || " ",
       adresslawyer: data.adresslawyer || " ",

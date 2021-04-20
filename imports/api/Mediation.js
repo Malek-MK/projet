@@ -7,14 +7,14 @@ const today=it.getFullYear()+'/'+it.getMonth()+'/'+it.getDate()+' '+it.getHours(
 Time=[];
 console.log(Time)
 Meteor.methods({
-    'insertDate'({id,data}) { 
-        console.log(data)
+    'insertDate'({id,date}) { 
+        console.log(date)
         if (!this.userId) {
             throw new Meteor.Error('Not Authorized');
         }
         Mediation.update(
             {_id:id,userId:this.userId},
-            {$push:{Time:{$each:[data]}}}
+            {$push:{Time:{$each:[date]}}}
             )
         },
         'showDate'(id){

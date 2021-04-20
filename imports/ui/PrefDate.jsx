@@ -5,7 +5,7 @@ import interactionPlugin from "@fullcalendar/interaction"
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 import clsx from 'clsx';
-
+import Moment from 'react-moment';
 
 const notyf = new Notyf({
   duration: 2000,
@@ -17,9 +17,12 @@ const notyf = new Notyf({
 
 const PrefDate = ({setVerif,verif,dates,id,fetch}) => {
     const[data,setData]=useState([]);
+    const[date,setDate]=useState([]);
+    
     const handleDateClick = (arg) => {
       if(data.length+dates.length<=9){   
       setData(v=>[...v,arg.dateStr]); 
+      setDate(v=>[...v,arg.date]); 
       }else{
         notyf.error("Vous avez atteint le nombre maximum de possibilité de sélection!")
       }
@@ -32,14 +35,14 @@ const PrefDate = ({setVerif,verif,dates,id,fetch}) => {
       const click=()=>{
         if(data.length+dates.length<=9){
         Meteor.call(
-          'insertDate',{id,data}, (err) => { 
+          'insertDate',{id,date}, (err) => { 
             if (err) {
                   notyf.error("Inserted Failed")
                   console.log(err)
               } else {
                   notyf.success("Inserted with success")
                   setVerif(true)
-                  setData(data)
+                  setDate(date)
               }
           }
       );
@@ -49,18 +52,19 @@ const PrefDate = ({setVerif,verif,dates,id,fetch}) => {
       }
       
     
-     
 
       const handleEventClick = (clickInfo) => {
         console.log('date 1',clickInfo.event.start)
         if (confirm(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
           clickInfo.event.remove()
-         {/* const indexToRemove = data.findIndex(date => date.dateStr === clickInfo.event.start);
+         
+         {/* const indexToRemove = data.findIndex(date => date.date === clickInfo.event.start);
+          {data.map(e=>console.log(e))}
           const result = [...data.slice(0, indexToRemove), ...data.slice(indexToRemove + 1)];
          setData(result)*/}
+
         }
       }
-     
     return (
        <div>
          <div className="container">
@@ -92,16 +96,16 @@ const PrefDate = ({setVerif,verif,dates,id,fetch}) => {
    <div>
    Vos disponbilités :
    <br></br>
-   {dates?dates.map((e)=>{ return <button className="btn btn-success btn-sm mr-2 ml-2 mt-2 mb-5" style={{margin:"3px"}}>{e}</button>}):null}
-   {data.map((e)=>{ return <button className="btn btn-primary btn-sm mr-2 ml-2 mt-2 mb-5" style={{margin:"3px"}}>{e}</button>})}
+   {dates?dates.map((e)=>{ return <button className="btn btn-success btn-sm mr-2 ml-2 mt-2 mb-5" style={{margin:"3px"}}><Moment format="D MMM YYYY" withTitle>{e}</Moment></button>}):null}
+   {data.map((e)=>{ return  <button className="btn btn-primary btn-sm mr-2 ml-2 mt-2 mb-5" style={{margin:"3px"}}><Moment format="D MMM YYYY" withTitle>{e.date}</Moment></button>})}
  
    </div>
        <FullCalendar
-       plugins={[ dayGridPlugin, interactionPlugin ]}
+       plugins={[ dayGridPlugin, interactionPlugin ]} 
        dateClick={handleDateClick}
-       eventClick={handleEventClick}
+       eventClick={handleEventClick} 
        weekends={false}
-      events={data.map(e=>({title:"Partie A",date:e,allDaySlot: false}))}/>
+      events={data.map(e=>({title:"Partie A",date:e,allDaySlot:false}))}/>
       
           <div  className="d-flex pull-right ">
           <button  className={clsx("btn btn-primary  btn-lg mt-3 mb-5")} onClick={click}>VALIDER MES DATES</button>
