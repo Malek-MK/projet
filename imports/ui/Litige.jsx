@@ -1,16 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import Button from "react-bootstrap/Button";
 import { Meteor } from 'meteor/meteor';
-import Modal from "react-bootstrap/Modal";
 import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
-import Mediation from './Mediation';
 import { Link } from 'react-router-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
-import NavCheck from '../ui/NavCheck';
+;
 const notyf = new Notyf({
   duration: 2000,
   position: {

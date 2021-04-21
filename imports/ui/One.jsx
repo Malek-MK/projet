@@ -3,29 +3,29 @@ import { useForm } from 'react-hook-form';
 import Schema1 from '../Validation/YupStep1';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-const StepOne = ({ setData, setStep, data,datta }) => {
+const One = ({ setData, setStep, data,datta }) => {
   const [check, setCheck] = useState(false);
   
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(Schema1),
     defaultValues: {
-      infoA: data.infoA,
-      vousA: data.vousA ,
-      nomsoc: data.nomsoc,
-      formjurid: data.formjurid  ,
-      numid: data.numid,
-      prerepleg: data.prerepleg, 
-      nomrepleg: data.nomrepleg,
-      adresse: data.adresse,
-      codepos: data.codepos,
-      ville: data.ville,
-      email: data.email,
-      tel: data.tel,
-      namelawyer: data.namelawyer || " ",
-      firstnamelawyer: data.firstnamelawyer || " ",
-      adresslawyer: data.adresslawyer || " ",
-      emaillawyer: data.emaillawyer || "vide@example.com",
-      tellawyer: data.tellawyer || 0,
+      infoA: datta.infoA,
+      vousA: datta.vousA ,
+      nomsoc: datta.nomsoc,
+      formjurid: datta.formjurid  ,
+      numid: datta.numid,
+      prerepleg: datta.prerepleg, 
+      nomrepleg: datta.nomrepleg,
+      adresse: datta.adresse,
+      codepos: datta.codepos,
+      ville: datta.ville,
+      email: datta.email,
+      tel: datta.tel,
+      namelawyer: datta.namelawyer || " ",
+      firstnamelawyer: datta.firstnamelawyer || " ",
+      adresslawyer: datta.adresslawyer || " ",
+      emaillawyer: datta.emaillawyer || "vide@example.com",
+      tellawyer: datta.tellawyer || 0,
     }
   });
   const onSubmit = (data1) => {
@@ -169,4 +169,4 @@ const StepOne = ({ setData, setStep, data,datta }) => {
   )
 }
 
-export default StepOne
+export default One

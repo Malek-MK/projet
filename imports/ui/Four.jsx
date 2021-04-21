@@ -14,7 +14,7 @@ const notyf = new Notyf({
     }
 })
 
-const StepFour = ({ setStep, data, setShow1 }) => {
+const Four = ({ setStep, data, setShow1 }) => {
     const [res,setRes]=useState();
     const generatePDF=()=>{
         var doc=new jsPDF('p', 'mm', [600, 650]);
@@ -207,4 +207,4 @@ const StepFour = ({ setStep, data, setShow1 }) => {
     )
 }
 
-export default StepFour
+export default Four

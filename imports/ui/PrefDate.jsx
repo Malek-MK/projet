@@ -17,11 +17,9 @@ const notyf = new Notyf({
 
 const PrefDate = ({setVerif,verif,dates,id,fetch}) => {
     const[date,setDate]=useState([]);
-    console.log("dates :",dates)
-    console.log("date :",date)
     const handleDateClick = (arg) => {
       if(date.length+(dates?.length || 0)<=9){   
-      setDate(v=>[...v,arg.date]); 
+      setDate(v=>[...v,arg.dateStr]); 
       }else{
         notyf.error("Vous avez atteint le nombre maximum de possibilité de sélection!")
       }

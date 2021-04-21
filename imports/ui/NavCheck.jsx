@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import PrefDate from '../ui/PrefDate';
 import ConvMedia from '../ui/ConvMedia';
 import clsx from 'clsx';
-import Mediation from '../ui/Mediation';
+import UpMediation from '../ui/UpMediation';
 import Header from '../ui/Header';
 import Payment from '../ui/Payment';
 import { useParams } from 'react-router';
@@ -14,7 +14,7 @@ const NavCheck = () => {
   const [verifff,setVerifff]=useState(false);
   const [data,setData]=useState()
   const [showw,setShow]=useState()
-  console.log(showw)
+  console.log("data :",data)
   const {id} = useParams()
   const fetchDate=()=>{
     Meteor.call('showDate',id,(err,res) => {
@@ -28,7 +28,9 @@ const NavCheck = () => {
     })
 }
   const fetchMedia=()=>{
+    console.log("hello")
     Meteor.call('showMedia',id,(err,res)=>{
+      console.log("res :",res)
       setData(res);
     })
   }
@@ -150,7 +152,7 @@ const NavCheck = () => {
        </div>
        {click1.show? <PrefDate setVerif={setVerif} verif={verif} dates={dates} id={id} fetch={fetchDate}/>:null}
        {click2.show?<ConvMedia showw={showw} id={id} fetch={fetchConv}/> :null}
-        {click.show? <Mediation datta={data} show={click.show}/>:null}
+        {click.show && data? <UpMediation datta={data} show={click.show}/>:null}
         {click3.show?<Payment setVerifff={setVerifff} id={id}/> :null}
         </div>
     )
