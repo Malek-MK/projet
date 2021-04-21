@@ -5,7 +5,26 @@ import { yupResolver } from '@hookform/resolvers/yup';
 
 const StepOne = ({ setData, setStep, data,datta }) => {
   const [check, setCheck] = useState(false);
-  
+  console.log("datta :",datta)
+  console.log("data :",data)
+  console.log({
+    vousA: datta.vousA||(data.vousA || " ") ,
+    nomsoc: (data.nomsoc || " ")|| datta.nomsoc,
+    formjurid: datta.formjurid||(data.formjurid || " ")  ,
+    numid: (data.numid || " ") || datta.numid,
+    prerepleg: (data.prerepleg || " ") || datta.prerepleg, 
+    nomrepleg: (data.nomrepleg || " ") || datta.nomrepleg,
+    adresse: (data.adresse || " ")|| datta.adresse,
+    codepos: (data.codepos || " ") || datta.codepos,
+    ville: (data.ville || " ") || datta.ville,
+    email: (data.email || " ") || datta.email,
+    tel: (data.tel || " ") || datta.tel,
+    namelawyer: data.namelawyer || " ",
+    firstnamelawyer: data.firstnamelawyer || " ",
+    adresslawyer: data.adresslawyer || " ",
+    emaillawyer: data.emaillawyer || "vide@example.com",
+    tellawyer: data.tellawyer || 0,
+  })
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(Schema1),
     defaultValues: {

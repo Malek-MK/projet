@@ -12,7 +12,7 @@ const NavCheck = () => {
   const [verif,setVerif]=useState(false);
   const [veriff,setVeriff]=useState(false);
   const [verifff,setVerifff]=useState(false);
-  const [data,setData]=useState([])
+  const [data,setData]=useState()
   const [showw,setShow]=useState()
   const {id} = useParams()
   const fetchDate=()=>{
@@ -149,7 +149,7 @@ const NavCheck = () => {
        </div>
        {click1.show? <PrefDate setVerif={setVerif} verif={verif} dates={dates} id={id} fetch={fetchDate}/>:null}
        {click2.show?<ConvMedia setVeriff={setVeriff} showw={showw} id={id} fetch={fetchConv}/> :null}
-        {click.show? <Mediation datta={data} show={click.show}/>:null}
+        {click.show&&data? <Mediation datta={data} show={click.show}/>:null}
         {click3.show?<Payment setVerifff={setVerifff} id={id}/> :null}
         </div>
     )

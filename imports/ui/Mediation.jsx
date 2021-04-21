@@ -46,7 +46,7 @@ const Mediation = ({ setShow1 ,datta,show,fetch}) => {
         <div className="card w-100 ml-5" >
           <div className="card-body text-center">
             <NavSteps setStep={setStep} step={step} />
-            <Component setStep={setStep} setData={setData} setShow1={setShow1} data={data} datta={datta} fetch={fetch}/>
+            {datta?<Component setStep={setStep} setData={setData} setShow1={setShow1} data={data} datta={datta} fetch={fetch}/>:null}
           </div>
         </div>
       </div>

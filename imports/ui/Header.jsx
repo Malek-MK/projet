@@ -7,7 +7,7 @@ import { useHistory } from 'react-router-dom'
 import { useTracker } from "meteor/react-meteor-data";
 
 const Header = () => {
-    const user = useTracker(() => Meteor.user().username);
+    const user = useTracker(() => Meteor.user()?.username);
     const history = useHistory();
     const onLogout = () => {
         Meteor.logout();

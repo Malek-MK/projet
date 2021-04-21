@@ -18,9 +18,10 @@ const notyf = new Notyf({
 const PrefDate = ({setVerif,verif,dates,id,fetch}) => {
     const[data,setData]=useState([]);
     const[date,setDate]=useState([]);
-    
+    console.log("dates :",dates)
+    console.log("date :",date)
     const handleDateClick = (arg) => {
-      if(data.length+dates.length<=9){   
+      if(data.length+(dates?.length || 0)<=9){   
       setData(v=>[...v,arg.dateStr]); 
       setDate(v=>[...v,arg.date]); 
       }else{
@@ -33,7 +34,7 @@ const PrefDate = ({setVerif,verif,dates,id,fetch}) => {
        }, [])
      
       const click=()=>{
-        if(data.length+dates.length<=9){
+        if(data.length+(dates?.length || 0)<=9){
         Meteor.call(
           'insertDate',{id,date}, (err) => { 
             if (err) {
@@ -58,10 +59,11 @@ const PrefDate = ({setVerif,verif,dates,id,fetch}) => {
         if (confirm(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
           clickInfo.event.remove()
          
-         {/* const indexToRemove = data.findIndex(date => date.date === clickInfo.event.start);
+        const indexToRemove = data.findIndex(date => date === clickInfo.event.start);
+        console.log(indexToRemove)
           {data.map(e=>console.log(e))}
           const result = [...data.slice(0, indexToRemove), ...data.slice(indexToRemove + 1)];
-         setData(result)*/}
+         setData(result)
 
         }
       }
@@ -105,7 +107,8 @@ const PrefDate = ({setVerif,verif,dates,id,fetch}) => {
        dateClick={handleDateClick}
        eventClick={handleEventClick} 
        weekends={false}
-      events={data.map(e=>({title:"Partie A",date:e,allDaySlot:false}))}/>
+       displayEventTime={false}
+      events={[...dates,...data].map(e=>({title:"Partie A",date:e,allDaySlot:true}))}/>
       
           <div  className="d-flex pull-right ">
           <button  className={clsx("btn btn-primary  btn-lg mt-3 mb-5")} onClick={click}>VALIDER MES DATES</button>

@@ -14,7 +14,7 @@ Meteor.methods({
         }
         Mediation.update(
             {_id:id,userId:this.userId},
-            {$push:{Time:{$each:[date]}}}
+            {$push:{Time:{$each:date}}}
             )
         },
         'showDate'(id){
