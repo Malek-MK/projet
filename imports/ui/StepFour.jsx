@@ -26,6 +26,7 @@ const StepFour = ({ setStep, data, setShow1 }) => {
         });
     }
     const [data1, setData1] = useState({
+        infoA:data.infoA,
         vousA: data.vousA,
         nomsoc: data.nomsoc,
         formjurid: data.formjurid,
@@ -37,6 +38,7 @@ const StepFour = ({ setStep, data, setShow1 }) => {
         ville: data.ville,
         email: data.email,
         tel: data.tel,
+        infoB:data.infoB,
         vousB: data.vousB,
         nomsoc1: data.nomsoc1,
         formjurid1: data.formjurid1,
@@ -92,6 +94,10 @@ const StepFour = ({ setStep, data, setShow1 }) => {
             <table className="table table-bordered " >
                 <tbody>
                     <tr>
+                        <th className="w-25">Country</th>
+                        <td className="w-75"> {data1.infoA}</td>
+                    </tr>
+                    <tr>
                         <th className="w-25">Type</th>
                         <td className="w-75">une sociéte :{data1.vousA}</td>
                     </tr>
@@ -133,6 +139,10 @@ const StepFour = ({ setStep, data, setShow1 }) => {
             <h5>Informations concernant l'autre partie</h5>
             <table className="table table-bordered ">
                 <tbody>
+                <tr>
+                        <th className="w-25">Country</th>
+                        <td className="w-75"> {data1.infoB}</td>
+                    </tr>
                     <tr>
                         <th className="w-25">Type</th>
                         <td className="w-75">une sociéte :{data1.vousB}</td>
@@ -190,7 +200,7 @@ const StepFour = ({ setStep, data, setShow1 }) => {
             <button type="button" name='prev' className="btn btn-primary btn-lg pull-left" onClick={onclickprev} >Previous</button>
             <Link className="btn btn-success btn-lg pull-right" to={`/mediations/update/${res}`} onClick={onclick}> Submit</Link>
             <button type="submit" class="btn btn-info btn-lg  pull-right" style={{marginRight:"10px"}} onClick={generatePDF}>  <i class="fa fa-download" aria-hidden="true"></i>
-        Download in pd </button>
+        Download in pdf </button>
             </div>
             <a id="Button-1" className="btn btn-outline-primary pull-right" style={{ position: 'absolute', bottom: '50px', left: '1140px' }} href="#" role="button"><h5><i class="fa fa-arrow-up"></i></h5></a>
 

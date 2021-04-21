@@ -11,20 +11,18 @@ const notyf = new Notyf({
     }
 }) 
 
-const ConvMedia = ({setVeriff,showw,id,fetch}) => {
+const ConvMedia = ({showw,id,fetch}) => {
     useEffect(() => {
        fetch()
     }, [])
-    const [valid,setValid]=useState(false);
+    const valid=false;
     const onclick=()=>{
-        setValid(true)
-        Meteor.call('insertConvMedia',{id,valid},(err)=>{
+        Meteor.call('insertConvMedia',{id,valid:true},(err)=>{
             if(err){
                 notyf.error("Convention Failed")
                 console.log(err)
             }else{
                 notyf.success("Convention with success")
-                setVeriff(true)
             }
         })
     }
@@ -177,7 +175,7 @@ const ConvMedia = ({setVeriff,showw,id,fetch}) => {
         <i class="fa fa-download" aria-hidden="true"></i>
         Download in pdf
         </button>
-        {!valid?<button type="submit" class="btn btn-primary  font-weight-bold btn-lg"  onClick={onclick}> Validate the agreement</button>:null}
+        {!showw?<button type="submit" class="btn btn-primary  font-weight-bold btn-lg"  onClick={onclick}> Validate the agreement</button>:null}
         </div>
         </div>
     )

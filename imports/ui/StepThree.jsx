@@ -10,8 +10,8 @@ const StepThree = ({ setData, setStep,data,datta }) => {
     const { register, handleSubmit, errors } = useForm({
         resolver: yupResolver(Schema3),
         defaultValues:{
-        objlitige:data.objlitige || datta.objlitige,
-        desc:data.desc || datta.desc,
+        objlitige:data.objlitige,
+        desc:data.desc,
         }
     });
     const onSubmit = (data3) => {
