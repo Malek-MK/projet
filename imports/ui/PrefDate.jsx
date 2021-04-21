@@ -16,13 +16,11 @@ const notyf = new Notyf({
 })
 
 const PrefDate = ({setVerif,verif,dates,id,fetch}) => {
-    const[data,setData]=useState([]);
     const[date,setDate]=useState([]);
     console.log("dates :",dates)
     console.log("date :",date)
     const handleDateClick = (arg) => {
-      if(data.length+(dates?.length || 0)<=9){   
-      setData(v=>[...v,arg.dateStr]); 
+      if(date.length+(dates?.length || 0)<=9){   
       setDate(v=>[...v,arg.date]); 
       }else{
         notyf.error("Vous avez atteint le nombre maximum de possibilité de sélection!")
@@ -34,7 +32,7 @@ const PrefDate = ({setVerif,verif,dates,id,fetch}) => {
        }, [])
      
       const click=()=>{
-        if(data.length+(dates?.length || 0)<=9){
+        if(date.length+(dates?.length || 0)<=9){
         Meteor.call(
           'insertDate',{id,date}, (err) => { 
             if (err) {
@@ -57,13 +55,14 @@ const PrefDate = ({setVerif,verif,dates,id,fetch}) => {
       const handleEventClick = (clickInfo) => {
         console.log('date 1',clickInfo.event.start)
         if (confirm(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
+         //const ver= moment(clickInfo.event.start).isSame('2010-02-01', 'day')
           clickInfo.event.remove()
          
-        const indexToRemove = data.findIndex(date => date === clickInfo.event.start);
+        {/*const indexToRemove = data.findIndex(date => date === clickInfo.event.start);
         console.log(indexToRemove)
           {data.map(e=>console.log(e))}
           const result = [...data.slice(0, indexToRemove), ...data.slice(indexToRemove + 1)];
-         setData(result)
+        setData(result)*/}
 
         }
       }
@@ -99,7 +98,7 @@ const PrefDate = ({setVerif,verif,dates,id,fetch}) => {
    Vos disponbilités :
    <br></br>
    {dates?dates.map((e)=>{ return <button className="btn btn-success btn-sm mr-2 ml-2 mt-2 mb-5" style={{margin:"3px"}}><Moment format="D MMM YYYY" withTitle>{e}</Moment></button>}):null}
-   {data.map((e)=>{ return  <button className="btn btn-primary btn-sm mr-2 ml-2 mt-2 mb-5" style={{margin:"3px"}}><Moment format="D MMM YYYY" withTitle>{e.date}</Moment></button>})}
+   {date.map((e)=>{ return  <button className="btn btn-primary btn-sm mr-2 ml-2 mt-2 mb-5" style={{margin:"3px"}}><Moment format="D MMM YYYY" withTitle>{e}</Moment></button>})}
  
    </div>
        <FullCalendar
@@ -108,7 +107,7 @@ const PrefDate = ({setVerif,verif,dates,id,fetch}) => {
        eventClick={handleEventClick} 
        weekends={false}
        displayEventTime={false}
-      events={[...dates,...data].map(e=>({title:"Partie A",date:e,allDaySlot:true}))}/>
+      events={[...dates,...date].map(e=>({title:"Partie A",date:e,allDaySlot:true}))}/>
       
           <div  className="d-flex pull-right ">
           <button  className={clsx("btn btn-primary  btn-lg mt-3 mb-5")} onClick={click}>VALIDER MES DATES</button>
