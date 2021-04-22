@@ -130,11 +130,6 @@ Meteor.methods({
         if (!media) {
             throw new Meteor.Error('it is not found');
         }
-        try {
-            YupPlayer.validate(data)
-        } catch (e) {
-            throw new Meteor.Error(e.message)
-        }
         Mediation.update({ _id: id,userId:this.userId }, { $set: data });
     },
     'deleteMediation'(_id) {
@@ -159,6 +154,19 @@ Meteor.methods({
             throw new Meteor.Error('Not Authorized');
         }
         return Mediation.findOne({userId:this.userId,_id:id});
-    }    
+    },
+    'insertPayment'({id,data}){
+       console.log("payment :",data)
+        Mediation.update({ _id: id,userId:this.userId },
+        {$set:{
+            payment:data
+        }});
+        },
+    'showPayment'(id){
+        if (!this.userId) {
+            throw new Meteor.Error('Not Authorized');
+        }
+        return Mediation.findOne({userId:this.userId,_id:id});
+    }        
     
 })

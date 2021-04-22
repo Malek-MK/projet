@@ -14,24 +14,28 @@ const NavCheck = () => {
   const [verifff,setVerifff]=useState(false);
   const [data,setData]=useState()
   const [showw,setShow]=useState()
-  console.log("data :",data)
+  const [paym,setPaym]=useState([])
   const {id} = useParams()
   const fetchDate=()=>{
     Meteor.call('showDate',id,(err,res) => {
        setDates(res.Time)
     });
   }
- 
   const fetchConv=()=>{
     Meteor.call('showConvMed',id,(err,res)=>{
         setShow(res.verif)
     })
 }
+
   const fetchMedia=()=>{
-    console.log("hello")
     Meteor.call('showMedia',id,(err,res)=>{
-      console.log("res :",res)
       setData(res);
+    })
+  }
+  const fetchPayment=()=>{
+    Meteor.call('showPayment',id,(err,res)=>{
+      console.log("payment :",res.payment)
+      setPaym(res.payment);
     })
   }
   useEffect(() => {
@@ -41,7 +45,10 @@ const NavCheck = () => {
    fetchMedia()
   }, []);
   useEffect(() => {
-    fetchConv
+    fetchConv()
+  }, []);
+  useEffect(() => {
+    fetchPayment()
   }, []);
     const [click,setClick]=useState({
         class1:"card bg-light",
@@ -121,10 +128,10 @@ const NavCheck = () => {
       </div>
     </div> 
   </div>
-  <div class={clsx(verifff?"col-sm-3 text-success  bg-success":"col-sm-3")} >
+  <div class={clsx(paym||verifff?"col-sm-3 text-success  bg-success":"col-sm-3")} >
     <div class={click3.class1} onClick={onclick3}>
       <div class="card-body ">
-      <h3><i class={clsx(verifff?"fa fa-check":"fa fa-exclamation-triangle")} ></i></h3>
+      <h3><i class={clsx(paym||verifff?"fa fa-check":"fa fa-exclamation-triangle")} ></i></h3>
         <h5 class={click3.class2}>Mediation payment</h5>
         <p class="card-text">Choose the package</p>
       </div>
@@ -139,10 +146,10 @@ const NavCheck = () => {
       </div>
     </div>
   </div>
-  <div class={clsx(showw?"col-sm-3 text-success  bg-success":"col-sm-3")} >
+  <div class={clsx(showw||veriff?"col-sm-3 text-success  bg-success":"col-sm-3")} >
     <div class={click2.class1} onClick={onclick2}>
       <div class="card-body ">
-      <h3><i class={clsx(showw?"fa fa-check":"fa fa-exclamation-triangle")} ></i></h3>
+      <h3><i class={clsx(showw||veriff?"fa fa-check":"fa fa-exclamation-triangle")} ></i></h3>
         <h5 class={click2.class2}>Mediation agreement</h5>
         <p class="card-text">Sign the convention</p>
       </div>
@@ -150,10 +157,10 @@ const NavCheck = () => {
   </div>
 </div>
        </div>
-       {click1.show? <PrefDate setVerif={setVerif} verif={verif} dates={dates} id={id} fetch={fetchDate}/>:null}
-       {click2.show?<ConvMedia showw={showw} id={id} fetch={fetchConv}/> :null}
-        {click.show && data? <UpMediation datta={data} show={click.show}/>:null}
-        {click3.show?<Payment setVerifff={setVerifff} id={id}/> :null}
+       {click1.show? <PrefDate setVerif={setVerif} verif={verif} dates={dates} id={id} />:null}
+       {click2.show?<ConvMedia setVeriff={setVeriff} veriff={veriff} showw={showw} id={id} /> :null}
+        {click.show && data? <UpMediation datta={data} show={click.show} id={id}/>:null}
+        {click3.show?<Payment setVerifff={setVerifff} id={id} paym={paym}/> :null}
         </div>
     )
 }

@@ -15,7 +15,8 @@ const notyf = new Notyf({
   }
 })
 
-const PrefDate = ({setVerif,verif,dates,id,fetch}) => {
+const PrefDate = ({setVerif,verif,dates,id}) => {
+  console.log("dates :",dates)
     const[date,setDate]=useState([]);
     const handleDateClick = (arg) => {
       if(date.length+(dates?.length || 0)<=9){   
@@ -25,9 +26,7 @@ const PrefDate = ({setVerif,verif,dates,id,fetch}) => {
       }
       }
      
-      useEffect(() => {
-        fetch()
-       }, [])
+  
      
       const click=()=>{
         if(date.length+(dates?.length || 0)<=9){
@@ -105,7 +104,7 @@ const PrefDate = ({setVerif,verif,dates,id,fetch}) => {
        eventClick={handleEventClick} 
        weekends={false}
        displayEventTime={false}
-      events={[...dates,...date].map(e=>({title:"Partie A",date:e,allDaySlot:true}))}/>
+      events={[...dates||[],...date].map(e=>({title:"Partie A",date:e,allDaySlot:true}))}/>
       
           <div  className="d-flex pull-right ">
           <button  className={clsx("btn btn-primary  btn-lg mt-3 mb-5")} onClick={click}>VALIDER MES DATES</button>

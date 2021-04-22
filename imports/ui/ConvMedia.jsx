@@ -11,11 +11,8 @@ const notyf = new Notyf({
     }
 }) 
 
-const ConvMedia = ({showw,id,fetch}) => {
-    useEffect(() => {
-       fetch()
-    }, [])
-    const valid=false;
+const ConvMedia = ({showw,id,setVeriff,veriff}) => {
+    
     const onclick=()=>{
         Meteor.call('insertConvMedia',{id,valid:true},(err)=>{
             if(err){
@@ -23,11 +20,11 @@ const ConvMedia = ({showw,id,fetch}) => {
                 console.log(err)
             }else{
                 notyf.success("Convention with success")
+                setVeriff(true)
             }
         })
     }
    
-    
     const generatePDF=()=>{
         var doc=new jsPDF('p', 'mm', [800, 800]);
         doc.html(document.querySelector("#content"),{
@@ -36,11 +33,12 @@ const ConvMedia = ({showw,id,fetch}) => {
           }  
         });
     }
-    
+   
+
     return (
         <div>
            <div class="container ">
-          {!showw? <div class="alert alert-warning mt-5" role="alert">
+          {!showw&&!veriff? <div class="alert alert-warning mt-5" role="alert">
   <div class="d-flex">
     <div>
      
@@ -53,13 +51,13 @@ const ConvMedia = ({showw,id,fetch}) => {
   </div>
 </div>:null}
 
-{showw?<div class="alert alert-success mt-5" role="alert">
+{showw||veriff?<div class="alert alert-success mt-5" role="alert">
   <div class="d-flex">
     <div>
     
     </div>
     <div>
-      <div class="alert-title "><i class="fa fa-thumbs-up fa-2x" aria-hidden="true"></i>
+      <div class="alert-title "><i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
       Congratulations! your information has been saved and our team has been notified.</div>
      
     </div>

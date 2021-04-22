@@ -34,7 +34,7 @@ export default Step1 = yup.object().shape({
         .number("check your code postal format")
         .required("Postal code is required")
         .positive()
-        .test('len', 'Zip code needs to be excatly 5 digits', val => val.toString().length === 5),       
+        .test('len', 'Zip code needs to be excatly 4 digits', val => val.toString().length === 4),       
     ville: yup
     .string("check your City")
     .required("City is required"),  

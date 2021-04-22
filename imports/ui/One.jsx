@@ -32,7 +32,7 @@ const One = ({ setData, setStep, data,datta }) => {
     setData(old => ({ ...old, ...data1 }));
     setStep(1)
   }
-
+console.log(data)
   return (
     <div className="mt-5">
       <form onSubmit={handleSubmit(onSubmit)}>

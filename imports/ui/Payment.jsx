@@ -13,7 +13,8 @@ const notyf = new Notyf({
   }
 })
 
-const Payment = ({setVerifff,verifff,id}) => {
+const Payment = ({setVerifff,verifff,id,paym}) => {
+  console.log("payment :",paym)
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(Schema)
   });
@@ -53,12 +54,22 @@ const Payment = ({setVerifff,verifff,id}) => {
     setShow(true);
     setChoix(3);
   }
-  const onSubmit=()=>{
-    notyf.success('success payment')
+  const onSubmit=(data)=>{
+    if(data){
+      Meteor.call('insertPayment',{data,id},(err)=>{
+        if(err){
+          notyf.error('Payment failed')
+          console.log(err)
+        }else{
+          notyf.success('Payment success')
+          setVerifff(true)
+        }
+      })
+    }
   }
     return (
         <div className="container text-center mt-2 mb-5">
-            {!verifff? <div class="alert alert-warning mt-5" role="alert">
+            {!verifff&&!paym? <div class="alert alert-warning mt-5" role="alert">
   <div class="d-flex">
     <div>
     
@@ -73,13 +84,13 @@ Veuillez à présent choisir le forfait de médiation le plus adapté à votre s
   </div>
 </div>:null}
 
-{verifff?<div class="alert alert-success mt-5" role="alert">
+{verifff||paym?<div class="alert alert-success mt-5" role="alert">
   <div class="d-flex">
     <div>
     
     </div>
     <div>
-      <div class="alert-title "><i class="fa fa-thumbs-up fa-2x" aria-hidden="true"></i>
+      <div class="alert-title "><i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
       Congratulations! your information has been saved and our team has been notified.</div>
      
     </div>
@@ -330,8 +341,8 @@ Veuillez à présent choisir le forfait de médiation le plus adapté à votre s
       
        <div>
        <hr></hr>
-        <button className="btn btn-light text-secondary  pull-left mt-3 mb-5" onClick={()=>setShow(false)}>COISIR UN <br></br> AUTRE FORFAIT</button>
-        <button className="btn btn-primary  pull-right mt-3 mb-5">VALIDER LA PRE-AUTORISATION</button>
+        <button className="btn btn-secondary  pull-left mt-3 mb-5" onClick={()=>setShow(false)}>COISIR UN <br></br> AUTRE FORFAIT</button>
+        {!paym?<button type="submit" className="btn btn-primary  pull-right mt-3 mb-5">VALIDER LA PRE-AUTORISATION</button>:null}
        </div>
        </form>
       </div>

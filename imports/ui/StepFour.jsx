@@ -197,7 +197,7 @@ const StepFour = ({ setStep, data, setShow1 }) => {
             </table>
             <div className="div mt-4">
             <button type="button" name='prev' className="btn btn-primary btn-lg pull-left" onClick={onclickprev} >Previous</button>
-            <Link className="btn btn-success btn-lg pull-right" to={`/mediations/update/${res}`} onClick={onclick}> Submit</Link>
+            <Link className="btn btn-success btn-lg pull-right" to={`/mediations/update/${res}`} onClick={onclick}>Save</Link>
             <button type="submit" class="btn btn-info btn-lg  pull-right" style={{marginRight:"10px"}} onClick={generatePDF}>  <i class="fa fa-download" aria-hidden="true"></i>
         Download in pdf </button>
             </div>

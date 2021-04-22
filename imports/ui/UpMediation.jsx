@@ -16,7 +16,7 @@ const notyf = new Notyf({
 
 const Components = [One, Two, Three, Four];
 
-const UpMediation = ({ setShow1 ,datta,show,fetch}) => {
+const UpMediation = ({ setShow1 ,datta,show,fetch,id}) => {
 console.log("data :",datta)
   const [data, setData] = useState({});
   const [step, setStep] = useState(0);
@@ -46,7 +46,7 @@ console.log("data :",datta)
         <div className="card w-100 ml-5" >
           <div className="card-body text-center">
             <NavSteps setStep={setStep} step={step} />
-            <Component setStep={setStep} setData={setData} setShow1={setShow1} data={data} datta={datta} fetch={fetch}/>
+            <Component setStep={setStep} setData={setData} setShow1={setShow1} data={data} datta={datta} fetch={fetch} id={id}/>
           </div>
         </div>
       </div>

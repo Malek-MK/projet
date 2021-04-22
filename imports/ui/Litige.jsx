@@ -43,9 +43,8 @@ const Litige = ({ media, fetch}) => {
      <tr key={media._id}>
         <td scope="row" ><b>{media.nomsoc}</b><br></br>{media.email}</td>
         <td ><b>{media.nomsoc1}</b><br></br>{media.email1}</td>
-        <td ><span className="text-success">Submitted</span></td>
+        <td ><span className="text-success">Saved</span></td>
         <td >{media.time}</td>
-
         <td>
         
     <Link className="btn btn-info text-decoration-none" to={`/mediations/update/${media._id}`} onClick={()=>setShow(true)}> Update</Link>

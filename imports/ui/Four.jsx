@@ -14,8 +14,7 @@ const notyf = new Notyf({
     }
 })
 
-const Four = ({ setStep, data, setShow1 }) => {
-    const [res,setRes]=useState();
+const Four = ({ setStep, data,id }) => {
     const generatePDF=()=>{
         var doc=new jsPDF('p', 'mm', [600, 650]);
         doc.html(document.querySelector("#content"),{
@@ -68,13 +67,12 @@ const Four = ({ setStep, data, setShow1 }) => {
     }
     const onclick = () => {
         Meteor.call(
-            'insertMediation', data, (err,res) => {
-                console.log("res :",res)
+            'updateMediation',{id,data}, (err) => {
                 if (err) {
-                    notyf.error("Inserted Failed")
+                    notyf.error("Updated Failed")
+                    console.log(err)
                 } else {
-                    notyf.success("Inserted with success")
-                    setRes(res)
+                    notyf.success("Updated with success")
         
                 }
             }
@@ -197,8 +195,8 @@ const Four = ({ setStep, data, setShow1 }) => {
             </table>
             <div className="div mt-4">
             <button type="button" name='prev' className="btn btn-primary btn-lg pull-left" onClick={onclickprev} >Previous</button>
-            <Link className="btn btn-success btn-lg pull-right" to={`/mediations/update/${res}`} onClick={onclick}> Submit</Link>
-            <button type="submit" class="btn btn-info btn-lg  pull-right" style={{marginRight:"10px"}} onClick={generatePDF}>  <i class="fa fa-download" aria-hidden="true"></i>
+            <button className="btn btn-success btn-lg pull-right" onClick={onclick}>Update</button>
+            <button class="btn btn-info btn-lg  pull-right" style={{marginRight:"10px"}} onClick={generatePDF}>  <i class="fa fa-download" aria-hidden="true"></i>
         Download in pdf </button>
             </div>
             <a id="Button-1" className="btn btn-outline-primary pull-right" style={{ position: 'absolute', bottom: '50px', left: '1140px' }} href="#" role="button"><h5><i class="fa fa-arrow-up"></i></h5></a>

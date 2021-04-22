@@ -13,7 +13,7 @@ export default Schema = yup.object().shape({
   .number()
   .required("Postal code is required")
   .positive()
-  .test('len', 'Zip code needs to be excatly 5 digits', val => val.toString().length === 5)
+  .test('len', 'Zip code needs to be excatly 4 digits', val => val.toString().length === 4)
   ,
   ville: yup
   .string()
