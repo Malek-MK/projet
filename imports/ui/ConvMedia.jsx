@@ -26,7 +26,7 @@ const ConvMedia = ({showw,id,setVeriff,veriff}) => {
     }
    
     const generatePDF=()=>{
-        var doc=new jsPDF('p', 'mm', [800, 800]);
+        var doc=new jsPDF('p', 'mm', [900, 900]);
         doc.html(document.querySelector("#content"),{
           callback:function(pdf){
               pdf.save("Convention.pdf");
@@ -70,7 +70,7 @@ const ConvMedia = ({showw,id,setVeriff,veriff}) => {
         marginLeft: "auto",
         marginRight: "auto",
         padding: "20px",
-        width: "795px",
+        width: "900px",
         marginTop: "20px"}}>
                    <div class="kt-portlet__body" id="content">
                       

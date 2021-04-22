@@ -39,11 +39,11 @@ const [verif,setVerif]=useState(false);
           console.log('Inserted user with succes')
           history.push('/signin');
           setVerif(false)
-        }
+        } 
        
       });
     }else{
-      notyf.error("please verify that you are a human")
+      notyf.error("Please verify that you are a human, Not a Robot")
     }
     
   }
