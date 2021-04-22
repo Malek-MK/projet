@@ -110,6 +110,7 @@ const PrefDate = ({setVerif,verif,dates,id}) => {
           <button  className={clsx("btn btn-primary  btn-lg mt-3 mb-5")} onClick={click}>VALIDER MES DATES</button>
           </div>
         </div>
+        <a id="Button-1" className="btn btn-outline-primary pull-right" style={{ position: 'absolute', bottom: '50px', left: '1220px' }} href="#" role="button"><h5> <i className="fa fa-arrow-up"></i></h5></a>
        </div>
 
     )

@@ -175,6 +175,7 @@ const ConvMedia = ({showw,id,setVeriff,veriff}) => {
         </button>
         {!showw?<button type="submit" class="btn btn-primary  font-weight-bold btn-lg"  onClick={onclick}> Validate the agreement</button>:null}
         </div>
+        <a id="Button-1" className="btn btn-outline-primary pull-right" style={{ position: 'absolute', bottom: '50px', left: '1220px' }} href="#" role="button"><h5> <i className="fa fa-arrow-up"></i></h5></a>
         </div>
     )
 }
