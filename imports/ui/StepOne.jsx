@@ -50,6 +50,7 @@ const StepOne = ({ setData, setStep, data,datta }) => {
           </select>
           <p className="text-danger">{errors.infoA?.message}</p>
         </div>
+        
         <div className="form-group mb-2">
           <label >You are</label>
           <select name="vousA" ref={register} className="form-control" >

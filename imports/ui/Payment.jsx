@@ -276,11 +276,17 @@ Veuillez à présent choisir le forfait de médiation le plus adapté à votre s
         </div>
       
       <br></br>
+      <div class="form-group">
+      <label class="sr-only">Nom organisation pour la facturation :</label>
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">@</div>
+        </div>
+        <input type="text" class="form-control" placeholder="Votre nom ou celui de votre organisation pour la facturation" name="nom" ref={register}></input>
+        <p className="text-danger">{errors.nom?.message}</p>
+      </div>
+    </div>
   <div class="form-group">
-  <label >Nom organisation pour la facturation :</label>
-    <input type="text" class="form-control" placeholder="Votre nom ou celui de votre organisation pour la facturation" name="nom" ref={register}></input>
-    <p className="text-danger">{errors.nom?.message}</p>
-    
     <label>Adresse :</label>
     <input type="text" class="form-control" placeholder="Adresse" name="adresse" ref={register}></input>
     <p className="text-danger">{errors.adresse?.message}</p>    
