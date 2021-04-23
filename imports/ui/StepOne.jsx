@@ -2,7 +2,7 @@ import React, { useState,useEffect } from 'react'
 import { useForm } from 'react-hook-form';
 import Schema1 from '../Validation/YupStep1';
 import { yupResolver } from '@hookform/resolvers/yup';
-
+import FileUploadComponent from '../ui/FileUpload';
 const StepOne = ({ setData, setStep, data,datta }) => {
   const [check, setCheck] = useState(false);
   
@@ -122,6 +122,10 @@ const StepOne = ({ setData, setStep, data,datta }) => {
             <input type="number" name="tel" ref={register} className="form-control" placeholder="First name"></input>
             <p className="text-danger">{errors.tel?.message}</p>
           </div>
+        </div>
+        <div className="form-group mb-4">
+          <h5>Upload Files :</h5>
+          <FileUploadComponent/>
         </div>
         <div className="form-group mb-4">
           <div>
