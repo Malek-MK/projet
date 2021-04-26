@@ -18,10 +18,10 @@ const Images = new FilesCollection({
     // to check file's "magic-numbers" use `mmmagic` or `file-type` package
     // real extension and mime-type can be checked on client (untrusted side)
     // and on server at `onAfterUpload` hook (trusted side)
-    if (file.size <= 10485760 && /png|jpe?g/i.test(file.ext)) {
+    if (file.size <= 10485760 && /pdf/i.test(file.ext)) {
       return true;
     }
-    return 'Please upload image, with size equal or less than 10MB';
+    return 'Please upload pdf, with size equal or less than 10MB';
   },
   downloadCallback(fileObj) {
     if (this.params.query.download == 'true') {

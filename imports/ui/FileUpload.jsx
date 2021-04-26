@@ -133,9 +133,9 @@ class FileUploadComponent extends Component {
       return <div>
         <div className="row">
           <div className="col-md-12">
-            <p>Upload New File:</p>
+            <p>Upload File:</p>
             <input type="file" id="fileinput" disabled={this.state.inProgress} ref="fileinput"
-                 onChange={this.uploadIt}/>
+                 onChange={this.uploadIt} accept="application/pdf"/>
           </div>
         </div>
 

@@ -35,6 +35,7 @@ class IndividualFile extends Component {
     if (prompt) {
       prompt = prompt.replace(validName, '-');
       prompt.trim();
+      console.log("rename")
     }
 
     if (!(prompt)) {
@@ -57,9 +58,9 @@ class IndividualFile extends Component {
 
       <div className="row">
         <div className="col-md-3">
-          <button onClick={this.renameFile} className="btn btn-outline btn-primary btn-sm">
+          <a onClick={this.renameFile} className="btn btn-outline btn-primary btn-sm">
             Rename
-          </button>
+          </a>
         </div>
 
         <div className="col-md-3">
@@ -68,9 +69,9 @@ class IndividualFile extends Component {
         </div>
 
         <div className="col-md-2">
-          <button onClick={this.removeFile} className="btn btn-outline btn-danger btn-sm">
+          <a onClick={this.removeFile} className="btn btn-outline btn-danger btn-sm">
             Delete
-          </button>
+          </a>
         </div>
 
         <div className="col-md-4">
