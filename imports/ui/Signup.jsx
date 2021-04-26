@@ -11,6 +11,9 @@ import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 import Recaptcha from 'react-recaptcha';
 import Schema from '../Validation/YupRegister';
+//import { sendVerificationEmail as sendVerificationEmailMutation } from '../mutations/Users';
+import PropTypes from 'prop-types';
+import { graphql } from 'react-apollo';
 
 const notyf = new Notyf({
   duration: 2000,
@@ -37,6 +40,7 @@ const [verif,setVerif]=useState(false);
         }
         else {
           console.log('Inserted user with succes')
+          //sendVerificationEmail();
           history.push('/signin');
           setVerif(false)
         } 
@@ -133,3 +137,11 @@ const [verif,setVerif]=useState(false);
 }
 
 export default Signup;
+
+{/*
+  Signup.propTypes = {
+  sendVerificationEmail: PropTypes.func.isRequired,
+};
+  export default graphql(sendVerificationEmailMutation, {
+  name: 'sendVerificationEmail',
+})(Signup);*/}
