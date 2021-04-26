@@ -1,9 +1,9 @@
 import { FilesCollection } from 'meteor/ostrio:files';
 
-const Images = new FilesCollection({
-  storagePath: 'assets/app/uploads/Images',
-  downloadRoute: '/files/images',
-  collectionName: 'Images',
+const Pdf = new FilesCollection({
+  storagePath: '../imports/assets/uploads/Pdf',
+  downloadRoute: '/files/pdf',
+  collectionName: 'Pdf',
   permissions: 0o755,
   allowClientCode: false,
   cacheControl: 'public, max-age=31536000',
@@ -26,19 +26,12 @@ const Images = new FilesCollection({
   downloadCallback(fileObj) {
     if (this.params.query.download == 'true') {
       // Increment downloads counter
-      Images.update(fileObj._id, {$inc: {'meta.downloads': 1}});
+      Pdf.update(fileObj._id, {$inc: {'meta.downloads': 1}});
     }
     // Must return true to continue download
     return true;
-  },
-  protected(fileObj) {
-    // Check if current user is owner of the file
-    if (fileObj.meta.owner === this.userId) {
-      return true;
-    }
-    return false;
   }
 });
 
 // Export FilesCollection instance, so it can be imported in other files
-export default Images;
+export default Pdf;

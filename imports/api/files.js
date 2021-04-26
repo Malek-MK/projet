@@ -2,7 +2,7 @@ import UserFiles from '../api/FilesCol'
 import { Meteor } from 'meteor/meteor';
 
 if (Meteor.isClient) {
-    Meteor.subscribe('files.images.all');
+    Meteor.subscribe('files.pdf.all');
 }
   
 if (Meteor.isServer) {
