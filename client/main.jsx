@@ -13,7 +13,7 @@ import Authenticated from '../imports/ui/Authenticated';
 //import 'bootstrap/dist/css/bootstrap.min.css';
 import Mediation from '../imports/ui/Mediation';
 import NavCheck from '../imports/ui/NavCheck';
-
+import About from '../imports/ui/About';
 function BlogPost() {
   let { id } = useParams();
 }
@@ -22,6 +22,7 @@ const routes = (
     <Switch>
     <Route path="/mediations/create" exact component={Mediation} />
     <Route path="/mediations/update/:id" exact component={NavCheck} />
+    <Route path="/about" exact component={About}/>
       <Route path="/" exact component={Home} />
       <Authenticated path="/mediations" exact component={Admin} />
       <Authenticated path="/signup"  component={Signup} />

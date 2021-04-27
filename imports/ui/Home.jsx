@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 const Home = () => {
 
     return (
@@ -8,13 +7,13 @@ const Home = () => {
         <div>
             <div>
                 <nav className="navbar navbar-expand-lg navbar-light bg-dark">
-                    <a className="navbar-brand text-white " href="#"><i class="fa fa-balance-scale"></i>Community</a>
+                    <a className="navbar-brand text-white " href="#"><i className="fa fa-balance-scale"></i>Community</a>
 
                     <div className="collapse navbar-collapse ml-2" >
                         <ul className="navbar-nav ml-auto topnav">
 
                             <li className="nav-item">
-                                <a className="nav-link text-white" href="#">About</a>
+                                <Link className="nav-link text-white decoration-none" to="/about">About</Link>
                             </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -36,9 +35,7 @@ const Home = () => {
                                 </div>
                             </li>
 
-                            <li className="nav-item">
-                                <a className="nav-link text-white" href="#">About</a>
-                            </li>
+  
                             <li className="nav-item">
                                 <a className="nav-link text-white" href="#">Contact</a>
                             </li>
