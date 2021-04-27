@@ -7,7 +7,7 @@ const Home = () => {
         <div>
             <div>
                 <nav className="navbar navbar-expand-lg navbar-light bg-dark">
-                    <a className="navbar-brand text-white " href="#"><i className="fa fa-balance-scale"></i>Community</a>
+                    <Link className="navbar-brand text-white decoration-none" to="/"><i className="fa fa-balance-scale"></i>Community</Link>
 
                     <div className="collapse navbar-collapse ml-2" >
                         <ul className="navbar-nav ml-auto topnav">
