@@ -6,7 +6,7 @@ const Home = () => {
 
         <div>
             <div>
-                <nav className="navbar navbar-expand-lg navbar-light bg-white ">
+                <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top ">
                     <Link className="navbar-brand text-dark decoration-none" to="/"><i className="fa fa-balance-scale"></i>Community</Link>
 
                     <div className="collapse navbar-collapse ml-2" >
@@ -22,7 +22,7 @@ const Home = () => {
                                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <Link className="dropdown-item " to="/offerDetails">Offer details</Link>
                                     <Link className="dropdown-item" to="/features">Features</Link>
-                                    <a className="dropdown-item" href="#">Prices</a>
+                                    <Link className="dropdown-item" to="/prices">Prices</Link>
                                     <a className="dropdown-item" href="#">FAQ</a>
                                 </div>
                             </li>

@@ -16,6 +16,7 @@ import NavCheck from '../imports/ui/NavCheck';
 import About from '../imports/ui/About';
 import OfferDetails from '../imports/ui/OfferDetails';
 import Features from '../imports/ui/Features';
+import Prices from '../imports/ui/Prices';
 function BlogPost() {
   let { id } = useParams();
 }
@@ -25,6 +26,7 @@ const routes = (
     <Route path="/mediations/create" exact component={Mediation} />
     <Route path="/mediations/update/:id" exact component={NavCheck} />
     <Route path="/about" exact component={About}/>
+    <Route path="/prices" exact component={Prices}/>
     <Route path="/features" exact component={Features}/>
     <Route path="/offerDetails" exact component={OfferDetails}/>
       <Route path="/" exact component={Home} />

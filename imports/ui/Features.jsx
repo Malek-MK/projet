@@ -22,9 +22,9 @@ const Features = () => {
     </div>
   </div>
             </div>
-            <div className="card border-0 mt-5">
+            <div className="card border-0 mt-5 mb-4">
             <div className="card body border-0">
-            <h3>A simple and complete platform</h3>
+            <h3 className="text mb-3">A simple and complete platform</h3>
             <p>Community offers you a multitude of features allowing you to settle your disputes amicably,<br></br> avoiding endless processing delays through the usual channels. The entire process is done online with a simple and efficient tool.</p>
             </div>
             </div>
@@ -41,7 +41,7 @@ const Features = () => {
   <div class="col-sm-4">
     <div class="card mt-5 border-0">
       <div class="card-body border-0">
-      <i class="fa fa-object-ungroup fa-5x text-primary" aria-hidden="true"></i>
+      <i class="fa fa-pie-chart fa-5x text-primary" aria-hidden="true"></i>
       <h3 className="text mt-5">COST SHARING</h3>
         <p className="text mt-3">The party proposing mediation has the option of asking the party who receives the request to share the costs. The latter has the choice to accept or not this proposal. All payments are made online on a secure interface.</p>
       </div>
@@ -64,7 +64,7 @@ const Features = () => {
   <div class="col-sm-4">
     <div class="card mt-5 border-0">
       <div class="card-body">
-      <i class="fa a-pencil-square-o fa-5x text-primary" aria-hidden="true"></i>
+      <i class="fa fa-pencil-square-o fa-5x text-primary" aria-hidden="true"></i>
         <h3 className="text mt-5">SIGNATURE OF DOCUMENTS</h3>
         <p className="text mt-3">Before any intervention by one of our mediators, the parties are invited to sign a mediation agreement which will govern the entire process and protect the parties by ensuring total confidentiality. At the end of the mediation, each party will have to sign a transaction that will seal the agreement.</p>
       </div>
@@ -73,7 +73,7 @@ const Features = () => {
   <div class="col-sm-4">
     <div class="card mt-5 border-0">
       <div class="card-body">
-      <i class="fa fa-address-card-o fa-5x text-primary" aria-hidden="true"></i>
+      <i class="fa fa-male fa-5x text-primary" aria-hidden="true"></i>
       <h3 className="text mt-5">ASSIGNMENT OF A MEDIATOR</h3>
         <p className="text mt-3">Once the agreement has been signed, JustiCity will select a mediator from the list of professionals available on the dates chosen. This will be assigned to the mediation file and will contact the parties for validation of the date finally selected.</p>
       </div>
@@ -82,9 +82,27 @@ const Features = () => {
   <div class="col-sm-4">
     <div class="card mt-5 border-0">
       <div class="card-body">
-      <i class="fa fa-calendar fa-5x text-primary" aria-hidden="true"></i>
+      <i class="fa fa-television fa-5x text-primary" aria-hidden="true"></i>
       <h3 className="text mt-5">MEDIATION BY VISIOCONFERENCE</h3>
         <p className="text mt-3">Both parties receive an email invitation to the online mediation session. On the selected day, they participate, in the presence of the mediator, in the mediation session by videoconference. Depending on the package chosen, the sessions can extend over several days, be shortened or extended.</p>
+      </div>
+    </div>
+  </div>
+</div>
+            </div>
+            <div className="card border-0 bg-primary mt-3">
+            <div class="row">
+  <div class="col-sm-6">
+    <div class="card text-center border-0 bg-primary">
+      <div class="card-body">
+        <h2 className="text-white mt-5 mb-5">Ready to request mediation?</h2>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card text-center border-0 bg-primary">
+      <div class="card-body">
+        <button className="btn btn-success btn-lg mt-5 mb-5">Access the platform</button>
       </div>
     </div>
   </div>
