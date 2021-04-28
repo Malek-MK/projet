@@ -4,6 +4,7 @@ const About = () => {
     return (
         <div>  
             <Home/>
+            <br></br><br></br><br></br>
             <div className="container text-center">
                 <h1 className="text mt-5">About community</h1>
                 <h5 className="text mt-4">The Culture of Understanding is our Priority</h5>
