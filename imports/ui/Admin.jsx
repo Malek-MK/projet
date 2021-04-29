@@ -1,5 +1,7 @@
 import React from 'react'
 import HeaderAdmin from '../ui/HeaderAdmin';
+import { Link } from 'react-router-dom';
+
 const User = () => {
    
     return (
@@ -33,7 +35,7 @@ const User = () => {
       <i class="fa fa-gavel fa-3x text-info" aria-hidden="true"></i>
         <h4 class="text-success mt-3">Manage arbitrators</h4><br></br>
         <p>you can add, modify, see and delete all arbitrators.</p>
-        <a href="#" class="btn btn-primary">Take control</a>
+        <Link to="/manageArbitrators" class="btn btn-primary">Take control</Link>
       </div>
     </div>
   </div>

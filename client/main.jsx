@@ -18,6 +18,8 @@ import OfferDetails from '../imports/ui/OfferDetails';
 import Features from '../imports/ui/Features';
 import Prices from '../imports/ui/Prices';
 import HomeAdmin from '../imports/ui/HomeAdmin';
+import ManageArbitrators from '../imports/ui/ManageArbitrators';
+import CreateArbitrator from '../imports/ui/CreateArbitrator';
 function BlogPost() {
   let { id } = useParams();
 }
@@ -26,6 +28,8 @@ const routes = (
     <Switch>
     <Route path="/mediations/create" exact component={Mediation} />
     <Route path="/mediations/update/:id" exact component={NavCheck} />
+    <Route path="/manageArbitrators" exact component={ManageArbitrators}/>
+    <Route path="/createArbitrator" exact component={CreateArbitrator}/>
     <Route path="/about" exact component={About}/>
     <Route path="/prices" exact component={Prices}/>
     <Route path="/features" exact component={Features}/>
