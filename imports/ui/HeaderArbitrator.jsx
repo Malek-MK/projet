@@ -5,7 +5,7 @@ import { Meteor } from 'meteor/meteor';
 import { useHistory } from 'react-router-dom'
 import { useTracker } from "meteor/react-meteor-data";
 
-const HeaderAdmin = () => {
+const HeaderArbitrator = () => {
     const history = useHistory();
     const user = useTracker(() => Meteor.user()?.username);
     const onLogout = () => {
@@ -33,7 +33,7 @@ const HeaderAdmin = () => {
         <div className="d-flex flex-column flex-md-row flex-fill align-items-stretch align-items-md-center">
             <ul className="navbar-nav">
                 <li className="nav-item active ">
-                    <Link to="/homeAdmin" className="nav-link decoration-none">
+                    <Link to="/homeArbitrator" className="nav-link decoration-none">
 
                         Go_Home
                     </Link>
@@ -49,7 +49,7 @@ const HeaderAdmin = () => {
                                         </button>
                     </li> 
                     <li className="nav-item">
-                        <a className="nav-link decoration-none" >Hello Admin, <b className="text-dark">{user}</b></a>
+                        <a className="nav-link decoration-none" >Hello Arbitrator, <b className="text-dark">{user}</b></a>
                     </li>
                    
                     <li className="nav-item">
@@ -58,7 +58,7 @@ const HeaderAdmin = () => {
                         </Button>
                     </li>
                       
-                </ul>
+                </ul> 
             </div>
         </div>
 
@@ -70,4 +70,4 @@ const HeaderAdmin = () => {
     )
 }
 
-export default HeaderAdmin;
+export default HeaderArbitrator;

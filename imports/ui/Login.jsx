@@ -47,6 +47,10 @@ const Login = () => {
           history.push('/mediations');
           console.log('user login');
         }
+        else if (Roles.userIsInRole(loggedInUser, 'arbitrator')) {
+          history.push('/arbitrator');
+          console.log('arbitrator login');
+        }
       }
     });
   }

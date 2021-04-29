@@ -27,6 +27,21 @@ Meteor.methods({
     );
     Roles.createRole('user', { unlessExists: true });
     Roles.addUsersToRoles(res, 'user');
+  },
+  insertArbitrator(arbitrator) {
+    try {
+      YupUser.validate(arbitrator)
+    } catch (e) {
+      throw new Meteor.Error(e.message)
+    }
+    const res = Accounts.createUser({
+      username: arbitrator.name,
+      email: arbitrator.email,
+      password: arbitrator.password
+    }
+    );
+    Roles.createRole('arbitrator', { unlessExists: true });
+    Roles.addUsersToRoles(res, 'arbitrator');
   }
 
 },

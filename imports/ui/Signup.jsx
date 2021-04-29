@@ -74,26 +74,26 @@ const [verif,setVerif]=useState(false);
         
           <Form onSubmit={handleSubmit(onSubmit)} id="register" noValidate>
             <Form.Group md="3" >
-              <Form.Label><h5 className="form-label required">UserName:</h5></Form.Label>
+              <Form.Label><h5 className="form-label required mt-2">UserName:</h5></Form.Label>
               <Form.Control type="text"  placeholder="Tap your UserName..." name="name" ref={register} className="form-control"  autoComplete="off"/>
               <p className="text-danger">{errors.name?.message}</p>
             </Form.Group>
             <Form.Group md="3" >
-              <Form.Label><h5 className="form-label required">Email:</h5></Form.Label>
+              <Form.Label><h5 className="form-label required mt-2">Email:</h5></Form.Label>
               <Form.Control type="email" placeholder="name@example.com" name="email" ref={register} className="form-control"  autoComplete="off"/>
               <p className="text-danger">{errors.email?.message}</p>
             </Form.Group>
             <Form.Group md="3" >
-              <Form.Label><h5 className="form-label required">Password:</h5></Form.Label>
+              <Form.Label><h5 className="form-label required mt-2">Password:</h5></Form.Label>
               <Form.Control type="password" placeholder="Tap your Password..." name="password" ref={register} className="form-control"  autoComplete="off"/>
               <p className="text-danger">{errors.password?.message}</p>
             </Form.Group>
             <Form.Group md="3" >
-              <Form.Label><h5 className="form-label required">Verify Password:</h5></Form.Label>
+              <Form.Label><h5 className="form-label required mt-2">Verify Password:</h5></Form.Label>
               <Form.Control type="password" placeholder="Tap your Password..." name="password1" ref={register} className="form-control"  autoComplete="off"/>
               <p className="text-danger">{errors.password1?.message}</p>
             </Form.Group>
-            <div className="form-group mb-2">
+            <div className="form-group mb-2 mt-2">
                     <input
                         type="checkbox"
                         name="verif"
