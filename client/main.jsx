@@ -17,6 +17,7 @@ import About from '../imports/ui/About';
 import OfferDetails from '../imports/ui/OfferDetails';
 import Features from '../imports/ui/Features';
 import Prices from '../imports/ui/Prices';
+import HomeAdmin from '../imports/ui/HomeAdmin';
 function BlogPost() {
   let { id } = useParams();
 }
@@ -30,10 +31,11 @@ const routes = (
     <Route path="/features" exact component={Features}/>
     <Route path="/offerDetails" exact component={OfferDetails}/>
       <Route path="/" exact component={Home} />
-      <Authenticated path="/mediations" exact component={Admin} />
+      <Route path="/home" exact component={HomeAdmin} />
+      <Authenticated path="/mediations" exact component={User} />
       <Authenticated path="/signup"  component={Signup} />
       <Authenticated path="/signin"  component={Login} />
-      <Authenticated path="/user"  component={User} />
+      <Authenticated path="/admin"  component={Admin} />
       <Route path="*" component={Notfound} />
        
         <BlogPost />

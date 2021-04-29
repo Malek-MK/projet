@@ -27,13 +27,11 @@ const Signup = () => {
   });
 const [verif,setVerif]=useState(false);
   const onSubmit = (data) => {
-    const {sendVerificationEmail } = this.props
     if(verif){
       Meteor.call('insertAccount', data, (err) => {
         if (err) {
           console.log('Inserted Failed', err)
           notyf.error("Inserted Failed")
-  
         }
         else {
           console.log('Inserted user with succes')

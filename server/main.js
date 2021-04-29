@@ -27,7 +27,6 @@ Meteor.methods({
     );
     Roles.createRole('user', { unlessExists: true });
     Roles.addUsersToRoles(res, 'user');
-    Accounts.sendVerificationEmail(user._id);
   }
 
 },

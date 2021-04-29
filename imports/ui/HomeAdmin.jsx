@@ -42,7 +42,7 @@ const Home = () => {
                                 <a className="nav-link text-dark" href="#">Contact</a>
                             </li>
                             <li className="nav-item active">
-                                <Link to="/mediations" className="nav-link text-dark decoration-none">My Account <span className="sr-only">(current)</span></Link>
+                                <Link to="/admin" className="nav-link text-dark decoration-none">My Account <span className="sr-only">(current)</span></Link>
                             </li>
                             <div className="position-absolute top-5 end-0">
                                 <ul className="navbar-nav topnav">
