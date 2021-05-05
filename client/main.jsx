@@ -22,7 +22,7 @@ import ManageArbitrators from '../imports/ui/ManageArbitrators';
 import CreateArbitrator from '../imports/ui/CreateArbitrator';
 import Arbitrator from '../imports/ui/Arbitrator';
 import HomeArbitrator from '../imports/ui/HomeArbitrator';
-
+import FAQ from '../imports/ui/FAQ';
 function BlogPost() {
   let { id } = useParams();
 }
@@ -34,6 +34,7 @@ const routes = (
     <Route path="/manageArbitrators" exact component={ManageArbitrators}/>
     <Route path="/createArbitrator" exact component={CreateArbitrator}/>
     <Route path="/arbitrator" exact component={Arbitrator}/>
+    <Route path="/faq" exact component={FAQ}/>
     <Route path="/about" exact component={About}/>
     <Route path="/prices" exact component={Prices}/>
     <Route path="/features" exact component={Features}/>

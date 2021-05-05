@@ -6,7 +6,7 @@ const OfferDetails = () => {
         <div>
             <Home/>
             <div class="card mt-0 border-0 text-center mt-5" >
-            <div className="card body" style={{backgroundColor:"rgba(50, 115, 220, 0.3)",alignItems:"center"}}>
+            <div className="card body bg-info">
                 <h1 className="text mt-5 mb-4">The fully paperless mediation and arbitration <br></br>platform for everyone!</h1>
                 <p className="p mb-5">
                 Are you a business or an individual, are you having difficulty settling a dispute and going to court would take <br></br><br></br>

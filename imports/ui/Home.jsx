@@ -23,7 +23,7 @@ const Home = () => {
                                     <Link className="dropdown-item " to="/offerDetails">Offer details</Link>
                                     <Link className="dropdown-item" to="/features">Features</Link>
                                     <Link className="dropdown-item" to="/prices">Prices</Link>
-                                    <a className="dropdown-item" href="#">FAQ</a>
+                                    <Link className="dropdown-item" to="/faq">FAQ</Link>
                                 </div>
                             </li>
                             <li className="nav-item dropdown">
