@@ -32,7 +32,7 @@ const Home = () => {
                     </a>
                                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <Link className="dropdown-item " to="/details-offer-mediators">Offer details</Link>
-                                    <Link className="dropdown-item" >Features</Link>
+                                    <Link className="dropdown-item" to="/mediator-functionalities">Features</Link>
                                     <a className="dropdown-item" href="#">Prices</a>
                                 </div>
                             </li>
