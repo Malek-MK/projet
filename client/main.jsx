@@ -15,6 +15,7 @@ import Mediation from '../imports/ui/Mediation';
 import NavCheck from '../imports/ui/NavCheck';
 import About from '../imports/ui/About';
 import OfferDetails from '../imports/ui/OfferDetails';
+import OfferDetailsMed from '../imports/ui/OfferDetailsMed';
 import Features from '../imports/ui/Features';
 import Prices from '../imports/ui/Prices';
 import HomeAdmin from '../imports/ui/HomeAdmin';
@@ -38,7 +39,8 @@ const routes = (
     <Route path="/about" exact component={About}/>
     <Route path="/prices" exact component={Prices}/>
     <Route path="/features" exact component={Features}/>
-    <Route path="/offerDetails" exact component={OfferDetails}/>
+    <Route path="/details-business-offer" exact component={OfferDetails}/>
+    <Route path="/details-offer-mediators" exact component={OfferDetailsMed}/>
       <Route path="/" exact component={Home} />
       <Route path="/homeAdmin" exact component={HomeAdmin} />
       <Route path="/homeArbitrator" exact component={HomeArbitrator} />

@@ -20,7 +20,7 @@ const Home = () => {
                                     Our offers
                     </a>
                                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <Link className="dropdown-item " to="/offerDetails">Offer details</Link>
+                                    <Link className="dropdown-item " to="/details-business-offer">Offer details</Link>
                                     <Link className="dropdown-item" to="/features">Features</Link>
                                     <Link className="dropdown-item" to="/prices">Prices</Link>
                                     <Link className="dropdown-item" to="/faq">FAQ</Link>
@@ -31,7 +31,7 @@ const Home = () => {
                                     Our mediator offers
                     </a>
                                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a className="dropdown-item " href="#">Offer details</a>
+                                    <Link className="dropdown-item " to="/details-offer-mediators">Offer details</Link>
                                     <Link className="dropdown-item" >Features</Link>
                                     <a className="dropdown-item" href="#">Prices</a>
                                 </div>
