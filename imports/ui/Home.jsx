@@ -9,7 +9,7 @@ const Home = () => {
             <div className="d-flex justify-content-center bg-secondary text-white text-center" >
                      <Link className="text-white text-decoration-none " style={{marginRight:"20px"}} to="/contact" >Tel : 1122334455</Link>
                      <Link className="text-white text-decoration-none " style={{marginRight:"20px"}} to="/what-is-mediation">What is mediation?</Link>
-                     <Link className="text-white text-decoration-none " style={{marginRight:"20px"}} to="/">What is arbitration?</Link>
+                     <Link className="text-white text-decoration-none " style={{marginRight:"20px"}} to="/what-is-arbitration">What is arbitration?</Link>
                      <Link className="text-white text-decoration-none " style={{marginRight:"20px"}} to="/">Mediation and arbitration clauses</Link>
                      <Link className="text-white text-decoration-none " style={{marginRight:"20px"}} to="/">Blog</Link>
 
