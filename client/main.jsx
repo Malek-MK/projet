@@ -25,6 +25,8 @@ import Arbitrator from '../imports/ui/Arbitrator';
 import HomeArbitrator from '../imports/ui/HomeArbitrator';
 import FAQ from '../imports/ui/FAQ';
 import MediatorFunctionalities from '../imports/ui/MediatorFunctionalities';
+import TariffsMediators from '../imports/ui/TariffsMediators';
+import Contact from '../imports/ui/Contact';
 function BlogPost() {
   let { id } = useParams();
 }
@@ -32,6 +34,8 @@ const routes = (
   <Router >
     <Switch>
     <Route path="/mediations/create" exact component={Mediation} />
+    <Route path="/contact" exact component={Contact} />
+    <Route path="/tariffs-mediators" exact component={TariffsMediators} />
     <Route path="/mediator-functionalities" exact component={MediatorFunctionalities} />
     <Route path="/mediations/update/:id" exact component={NavCheck} />
     <Route path="/manageArbitrators" exact component={ManageArbitrators}/>

@@ -33,16 +33,27 @@ const Home = () => {
                                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <Link className="dropdown-item " to="/details-offer-mediators">Offer details</Link>
                                     <Link className="dropdown-item" to="/mediator-functionalities">Features</Link>
-                                    <a className="dropdown-item" href="#">Prices</a>
+                                    <Link className="dropdown-item" to="/tariffs-mediators">Prices</Link>
                                 </div>
                             </li>
 
   
                             <li className="nav-item">
-                                <a className="nav-link text-dark" href="#">Contact</a>
+                                <Link className="nav-link text-dark" to="/contact">Contact</Link>
                             </li>
                             <li className="nav-item active">
                                 <Link to="/mediations" className="nav-link text-dark decoration-none">My Account <span className="sr-only">(current)</span></Link>
+                            </li>
+                            <li className="nav-item" >
+                            <div class="input-group" >
+                            
+                                <input id="search-focus" type="search" id="form1" class="form-control" style={{width:"180px",marginLeft:"20px"}} />
+                                <button type="button" class="btn btn-primary">
+                                <i class="fa fa-search"></i>
+                            </button>
+                         
+                            
+                            </div>
                             </li>
                             <div className="position-absolute top-5 end-0">
                                 <ul className="navbar-nav topnav">
