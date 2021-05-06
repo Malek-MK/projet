@@ -4,16 +4,25 @@ const Home = () => {
 
     return (
 
-        <div>
-            <div>
-                <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top ">
-                    <Link className="navbar-brand text-dark decoration-none" to="/"><i className="fa fa-balance-scale"></i>Community</Link>
+        <div className="div mb-5">
+            <div className="div fixed-top">
+            <div className="d-flex justify-content-center bg-secondary text-white text-center" >
+                     <Link className="text-white text-decoration-none " style={{marginRight:"20px"}} to="/contact" >Tel : 1122334455</Link>
+                     <Link className="text-white text-decoration-none " style={{marginRight:"20px"}} to="/what-is-mediation">What is mediation?</Link>
+                     <Link className="text-white text-decoration-none " style={{marginRight:"20px"}} to="/">What is arbitration?</Link>
+                     <Link className="text-white text-decoration-none " style={{marginRight:"20px"}} to="/">Mediation and arbitration clauses</Link>
+                     <Link className="text-white text-decoration-none " style={{marginRight:"20px"}} to="/">Blog</Link>
+
+              </div>
+                <nav className="navbar navbar-expand-lg navbar-light bg-light  ">
+                 
+                    <Link className="navbar-brand text-dark " to="/"><i className="fa fa-balance-scale"></i>Community</Link>
 
                     <div className="collapse navbar-collapse ml-2" >
                         <ul className="navbar-nav ml-auto topnav">
 
                             <li className="nav-item">
-                                <Link className="nav-link text-dark decoration-none" to="/about">About</Link>
+                                <Link className="nav-link text-dark " to="/about">About</Link>
                             </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -42,7 +51,7 @@ const Home = () => {
                                 <Link className="nav-link text-dark" to="/contact">Contact</Link>
                             </li>
                             <li className="nav-item active">
-                                <Link to="/mediations" className="nav-link text-dark decoration-none">My Account <span className="sr-only">(current)</span></Link>
+                                <Link to="/mediations" className="nav-link text-dark ">My Account <span className="sr-only">(current)</span></Link>
                             </li>
                             <li className="nav-item" >
                             <div class="input-group" >
@@ -69,6 +78,7 @@ const Home = () => {
                         </ul>
                     </div>
                 </nav>
+                
             </div>
         </div>
 

@@ -27,13 +27,15 @@ import FAQ from '../imports/ui/FAQ';
 import MediatorFunctionalities from '../imports/ui/MediatorFunctionalities';
 import TariffsMediators from '../imports/ui/TariffsMediators';
 import Contact from '../imports/ui/Contact';
+import WhatIsMediation from '../imports/ui/WhatIsMediation';
 function BlogPost() {
   let { id } = useParams();
 }
 const routes = (
   <Router >
     <Switch>
-    <Route path="/mediations/create" exact component={Mediation} />
+    <Route path="/mediations/create" exact component={Mediation} /> 
+    <Route path="/what-is-mediation" exact component={WhatIsMediation} />
     <Route path="/contact" exact component={Contact} />
     <Route path="/tariffs-mediators" exact component={TariffsMediators} />
     <Route path="/mediator-functionalities" exact component={MediatorFunctionalities} />
