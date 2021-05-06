@@ -56,7 +56,7 @@ const Home = () => {
                             <li className="nav-item" >
                             <div class="input-group" >
                             
-                                <input id="search-focus" type="search" id="form1" class="form-control" style={{width:"180px",marginLeft:"20px"}} />
+                                <input id="search-focus" type="search" placeholder="Search.." class="form-control" style={{width:"180px",marginLeft:"20px"}} />
                                 <button type="button" class="btn btn-primary">
                                 <i class="fa fa-search"></i>
                             </button>
