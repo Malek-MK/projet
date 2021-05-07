@@ -33,6 +33,7 @@ import ClausesMediationArbitration from '../imports/ui/ClausesMediationArbitrati
 import Blog from '../imports/ui/Blog';
 import Mediators from '../imports/ui/Mediators';
 import NewVersion from '../imports/ui/NewVersion';
+import PrivacyPolicy from '../imports/ui/PrivacyPolicy';
 function BlogPost() {
   let { id } = useParams();
 }
@@ -40,6 +41,7 @@ const routes = (
   <Router >
     <Switch>
     <Route path="/mediations/create" exact component={Mediation} /> 
+    <Route path="/privacy-policy" exact component={PrivacyPolicy} /> 
     <Route path="/new-version-of-community" exact component={NewVersion} /> 
     <Route path="/mediators" exact component={Mediators} /> 
     <Route path="/blog" exact component={Blog} /> 
