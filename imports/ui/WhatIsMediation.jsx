@@ -1,10 +1,10 @@
 import React from 'react'
-import Home from './Home';
+import NavBar from './NavBar';
 
 const WhatIsMediation = () => {
     return (
         <div>
-            <Home/>
+            <NavBar/>
             <br></br>
             <div className="container mt-5 ">
                 <h3 className="text mt-5 text-center mb-5">What is Mediation ?</h3> 

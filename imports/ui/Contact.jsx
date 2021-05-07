@@ -1,9 +1,9 @@
 import React from 'react'
-import Home from '../ui/Home';
+import NavBar from '../ui/NavBar';
 const Contact = () => {
     return (
         <div>
-            <Home/>
+            <NavBar/>
             <div className="container text-center mt-5">
             <div class="row mt-5 border-0">
   <div class="col-sm-6">

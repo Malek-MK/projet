@@ -1,11 +1,11 @@
 import React from 'react'
-import Home from '../ui/Home';
+import NavBar from '../ui/NavBar';
 import { Link } from 'react-router-dom';
 
 const MediatorFunctionalities = () => {
     return (
         <div>
-            <Home/>
+            <NavBar/>
             <div class="card mt-0 border-0 text-center mt-5 mb-5" >
             <div className="card body bg-info text-white">
                 <h1 className="text mt-5 mb-4">Are you mediators? Join us!</h1>

@@ -1,10 +1,10 @@
 import React from 'react'
-import Home from '../ui/Home';
+import NavBar from '../ui/NavBar';
 
 const OfferDetails = () => {
     return (
         <div>
-            <Home/>
+            <NavBar/>
             <div class="card mt-0 border-0 text-center mt-5" >
             <div className="card body bg-info">
                 <h1 className="text mt-5 mb-4">The fully paperless mediation and arbitration <br></br>platform for everyone!</h1>

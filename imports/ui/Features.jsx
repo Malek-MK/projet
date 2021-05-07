@@ -1,9 +1,9 @@
 import React from 'react'
-import Home from '../ui/Home';
+import NavBar from '../ui/NavBar';
 const Features = () => {
     return (
         <div>
-            <Home/>
+            <NavBar/>
             <div className="container text-center">
             <div className="row mt-5">
   <div className="col-sm-6 mt-5">

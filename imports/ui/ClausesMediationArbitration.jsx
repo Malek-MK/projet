@@ -1,9 +1,9 @@
 import React from 'react'
-import Home from '../ui/Home';
+import NavBar from '../ui/NavBar';
 const ClausesMediationArbitration = () => {
     return (
         <div>
-            <Home/>
+            <NavBar/>
             <div className="container mt-5">
                 <br></br>
                 <h3 className="text mt-5 mb-5 text-center">Mediation and arbitration clauses</h3>

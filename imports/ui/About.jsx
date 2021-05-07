@@ -1,9 +1,9 @@
 import React from 'react'
-import Home from '../ui/Home';
+import NavBar from '../ui/NavBar';
 const About = () => {
     return (
         <div>  
-            <Home/>
+            <NavBar/>
             <br></br><br></br><br></br>
             <div className="container text-center">
                 <h1 className="text mt-5">About community</h1>

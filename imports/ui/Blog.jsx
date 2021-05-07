@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import Home from '../ui/Home';
+import NavBar from '../ui/NavBar';
 const Blog = () => {
     const [show,setShow]=useState(true);
     return (
         <div>
-            <Home />
+            <NavBar/>
             <br></br>
             <div class="card bg-dark text-white mt-3" >
                 <img src="./images/image.jpeg" class="card-img" alt="..." style={{ height: "400px" }} />

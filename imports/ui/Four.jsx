@@ -3,7 +3,6 @@ import { Meteor } from 'meteor/meteor';
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 import jsPDF from 'jspdf';
-import { Link, useParams } from 'react-router-dom';
 
 
 const notyf = new Notyf({
