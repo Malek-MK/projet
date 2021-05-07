@@ -13,73 +13,94 @@ const Footer = () => {
 
         <ul class="list-unstyled mb-0">
           <li>
-            <Link class="text-white text-decoration-none">Link 1</Link>
+          <b><span>&#8226;</span></b>
+            <Link class="text-white text-decoration-none" to="/features"> Features</Link>
           </li>
           <li>
-            <Link class="text-white text-decoration-none">Link 2</Link>
+          <b><span>&#8226;</span></b>
+            <Link class="text-white text-decoration-none" to="/details-business-offer"> Our offer</Link>
           </li>
           <li>
-            <Link class="text-white text-decoration-none">Link 3</Link>
+          <b><span>&#8226;</span></b>
+            <Link class="text-white text-decoration-none" to="/prices"> Prices</Link>
           </li>
-          <li>
-            <Link class="text-white text-decoration-none">Link 4</Link>
-          </li>
+         
         </ul>
       </div>
    
       <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-        <h5 class="text-uppercase mb-0">Links</h5>
+        <h5 class="text-uppercase ">About</h5>
 
         <ul class="list-unstyled">
           <li>
-            <Link class="text-white text-decoration-none">Link 1</Link>
+          <b><span>&#8226;</span></b>
+            <Link class="text-white text-decoration-none" to="/about"> About</Link>
           </li>
           <li>
-            <Link class="text-white text-decoration-none">Link 2</Link>
+          <b><span>&#8226;</span></b>
+            <Link class="text-white text-decoration-none"> Privacy Policy</Link>
           </li>
           <li>
-            <Link class="text-white text-decoration-none">Link 3</Link>
+          <b><span>&#8226;</span></b>
+            <Link class="text-white text-decoration-none"> Terms and conditions</Link>
           </li>
           <li>
-            <Link class="text-white text-decoration-none">Link 4</Link>
+          <b><span>&#8226;</span></b>
+            <Link class="text-white text-decoration-none"> Legal Notice</Link>
+          </li>
+          <li>
+          <b><span>&#8226;</span></b>
+            <Link class="text-white text-decoration-none"> Our code of ethics</Link>
           </li>
         </ul>
       </div>
   
       <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-        <h5 class="text-uppercase">Links</h5>
+        <h5 class="text-uppercase">Resources</h5>
 
         <ul class="list-unstyled mb-0">
           <li>
-            <Link class="text-white text-decoration-none">Link 1</Link>
+          <b><span>&#8226;</span></b>
+            <Link class="text-white text-decoration-none" to="/contact"> Phone : 0 806 07 96 96</Link>
           </li>
           <li>
-            <Link class="text-white text-decoration-none">Link 2</Link>
+          <b><span>&#8226;</span></b>
+            <Link class="text-white text-decoration-none" to="/what-is-mediation"> What is mediation?</Link>
           </li>
           <li>
-            <Link class="text-white text-decoration-none">Link 3</Link>
+          <b><span>&#8226;</span></b>
+            <Link class="text-white text-decoration-none" to="/what-is-arbitration"> What is arbitration?</Link>
           </li>
           <li>
-            <Link class="text-white text-decoration-none">Link 4</Link>
+          <b><span>&#8226;</span></b>
+            <Link class="text-white text-decoration-none" to="/clauses-mediation-arbitration"> Mediation and arbitration<br></br> clauses</Link>
+          </li>
+          <li>
+          <b><span>&#8226;</span></b>
+            <Link class="text-white text-decoration-none" to="/blog"> Blog</Link>
           </li>
         </ul>
       </div>
     
       <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-        <h5 class="text-uppercase mb-0">Links</h5>
+        <h5 class="text-uppercase ">Contact</h5>
 
         <ul class="list-unstyled">
           <li>
-            <Link class="text-white text-decoration-none">Link 1</Link>
+          <b><span>&#8226;</span></b>
+            <Link class="text-white text-decoration-none" to="/contact"> Contact</Link>
           </li>
           <li>
-            <Link class="text-white text-decoration-none">Link 2</Link>
+          <b><span>&#8226;</span></b>
+            <Link class="text-white text-decoration-none"> Mediators Access</Link>
           </li>
           <li>
-            <Link class="text-white text-decoration-none">Link 3</Link>
+          <b><span>&#8226;</span></b>
+            <Link class="text-white text-decoration-none" to="/signup"> Create an account</Link>
           </li>
           <li>
-            <Link class="text-white text-decoration-none">Link 4</Link>
+          <b><span>&#8226;</span></b>
+            <Link class="text-white text-decoration-none" to="/signin"> To log in</Link>
           </li>
         </ul>
       </div>
