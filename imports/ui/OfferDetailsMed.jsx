@@ -1,5 +1,7 @@
 import React from 'react'
 import NavBar from '../ui/NavBar';
+import Footer from '../ui/Footer';
+
 const OfferDetailsMed = () => {
     return (
         <div>
@@ -47,6 +49,7 @@ You are in the right place ! To join us, fill out our online form.</h4>
   </div>
 </div>
             </div>
+            <Footer/>
         </div>
     )
 }

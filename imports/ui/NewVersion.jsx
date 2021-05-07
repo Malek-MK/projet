@@ -1,25 +1,22 @@
 import React from 'react'
 import NavBar from '../ui/NavBar';
-import { Link } from 'react-router-dom';
 import Footer from '../ui/Footer';
 
-const MediatorFunctionalities = () => {
+const NewVersion = () => {
     return (
         <div>
             <NavBar/>
-            <div class="card mt-0 border-0 text-center mt-5 mb-5" >
-            <div className="card body bg-info text-white">
-                <h1 className="text mt-5 mb-4">Are you mediators? Join us!</h1>
-                <h5 className="p mb-5">
-                You want to be part of a community of mediators committed to improving access to justice.<br></br> Do you want to use JustiCity to carry out your own online mediations? <br></br>You are in the right place! To join us, fill out our online form.   </h5>
-               <div>
-               <Link className="btn btn-success btn-lg mb-5" to="/signup">Sign up</Link>
-               </div>
-             </div>
-            </div>
-            <div className="container text-center">
-                <h1 className="text text-center mt-2 mb-5">Discover new features</h1>
-                <div className="card border-0 ">
+            <br></br><br></br><br></br>
+            <div className="container mt-5">
+            <h1 className="text mt-5">Relive the launch of the new version of Community</h1>
+            <h5 className="text-secondary mt-3">
+            After almost 1 year of existence 🎂 we are happy to announce the imminent release of the brand new version of our <b>100% online mediation service</b>. It was a joy but also extremely instructive to accompany you in the implementation and the follow-up of the first experiments of our platform.
+            </h5>
+            <h5 className="text-secondary">
+            Indeed, these first months have enabled us to bring to the market a brand new concept responding to an increasingly significant need: the need for alternative justice facilitated by the establishment of a mediation and arbitration platform by videoconference ensuring maximum security, all hosted 100% in France 🇫🇷. and in Canada 🇨🇦
+            </h5>
+            <h1 className="text mt-5 mb-4">Here are the main new features:</h1>
+            <div className="card border-0 ">
                     <div className="card body">
                     <i class="fa fa-clone text-primary fa-3x" aria-hidden="true"></i>
                     <h5 className="text mb-3 mt-2">MEDIATOR SUBSCRIPTION</h5>
@@ -97,4 +94,4 @@ const MediatorFunctionalities = () => {
     )
 }
 
-export default MediatorFunctionalities
+export default NewVersion

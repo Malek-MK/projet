@@ -1,5 +1,7 @@
 import React from 'react'
 import NavBar from '../ui/NavBar';
+import Footer from '../ui/Footer';
+
 const Features = () => {
     return (
         <div>
@@ -108,6 +110,7 @@ const Features = () => {
   </div>
 </div>
             </div>
+            <Footer/>
         </div>
     )
 }

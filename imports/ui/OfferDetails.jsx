@@ -1,5 +1,6 @@
 import React from 'react'
 import NavBar from '../ui/NavBar';
+import Footer from '../ui/Footer';
 
 const OfferDetails = () => {
     return (
@@ -124,6 +125,7 @@ The average time to be heard in court is <b>8 months</b> on average (Key figures
   </div>
 </div>
             </div>
+            <Footer/>
         </div>
     )
 }

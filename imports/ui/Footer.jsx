@@ -92,7 +92,7 @@ const Footer = () => {
           </li>
           <li>
           <b><span>&#8226;</span></b>
-            <Link class="text-white text-decoration-none"> Mediators Access</Link>
+            <Link class="text-white text-decoration-none" to="/mediators"> Mediators Access</Link>
           </li>
           <li>
           <b><span>&#8226;</span></b>

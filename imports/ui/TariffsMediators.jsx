@@ -1,5 +1,7 @@
 import React from 'react'
 import NavBar from '../ui/NavBar';
+import Footer from '../ui/Footer';
+
 const TariffsMediators = () => {
     return (
         <div>
@@ -84,6 +86,7 @@ const TariffsMediators = () => {
   </div>
 </div>
             </div>
+            <Footer/>
         </div> 
     )
 }

@@ -1,5 +1,7 @@
 import React from 'react'
 import NavBar from '../ui/NavBar';
+import Footer from '../ui/Footer';
+
 const FAQ = () => {
   return (
     <div>
@@ -335,6 +337,7 @@ Si au contraire vous avez réglé plus vite où que vous ne désirez pas continu
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   )
 }

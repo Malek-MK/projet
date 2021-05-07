@@ -1,5 +1,7 @@
 import React from 'react'
 import NavBar from '../ui/NavBar';
+import Footer from '../ui/Footer';
+
 const Prices = () => {
     return (
         <div>
@@ -218,6 +220,7 @@ In any case, do not hesitate to contact us free of charge so that we can help us
   </div>
 </div>
             </div>
+            <Footer/>
         </div>
     )
 }

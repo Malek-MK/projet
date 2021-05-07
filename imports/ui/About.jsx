@@ -1,5 +1,7 @@
 import React from 'react'
 import NavBar from '../ui/NavBar';
+import Footer from '../ui/Footer';
+
 const About = () => {
     return (
         <div>  
@@ -80,6 +82,7 @@ The traditional justice system is slow and expensive which generates a lot of di
   </div>
 </div>
 </div>
+<Footer/>
         </div>
     )
 }
