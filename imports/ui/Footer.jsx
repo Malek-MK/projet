@@ -42,15 +42,15 @@ const Footer = () => {
           </li>
           <li>
           <b><span>&#8226;</span></b>
-            <Link class="text-white text-decoration-none"> Terms and conditions</Link>
+            <Link class="text-white text-decoration-none" to="/terms-and-conditions"> Terms and conditions</Link>
           </li>
           <li>
           <b><span>&#8226;</span></b>
-            <Link class="text-white text-decoration-none"> Legal Notice</Link>
+            <Link class="text-white text-decoration-none" to="/legal-notice"> Legal Notice</Link>
           </li>
           <li>
           <b><span>&#8226;</span></b>
-            <Link class="text-white text-decoration-none"> Our code of ethics</Link>
+            <Link class="text-white text-decoration-none" to="/our-code-of-ethics"> Our code of ethics</Link>
           </li>
         </ul>
       </div>
@@ -109,6 +109,7 @@ const Footer = () => {
     
   </div>
  
+  <a id="Button-1" className="btn pull-right bg-white" style={{ position: 'absolute', bottom: '70px', left: '1220px' }} href="#" role="button"><h5><i class="fa fa-arrow-up"></i></h5></a>
 
 
   <div class="text-center p-3 text-white" style={{backgroundColor: "rgba(0, 0, 0, 0.2)"}}>

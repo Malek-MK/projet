@@ -220,7 +220,6 @@ The average time to be heard in court is <b>8 months</b> on average (Key figures
 </div>
             </div>
             <Footer/>
-            <a id="Button-1" className="btn pull-right bg-white" style={{ position: 'absolute', bottom: '70px', left: '1220px' }} href="#" role="button"><h5><i class="fa fa-arrow-up"></i></h5></a>
 
         </div>
 

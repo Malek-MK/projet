@@ -149,9 +149,9 @@ const PrivacyPolicy = () => {
                 </p>
                 <p className="text-secondary mt-3 mb-5"><b><span>&#8226;</span> </b>
                 https://tools.google.com/dlpage/gaoptout<br></br><b><span>&#8226;</span> </b>
-http://www.networkadvertising.org/managing/opt_out.asp<br></br><b><span>&#8226;</span> </b>
-http://optout.aboutaJusticity.info/<br></br><b><span>&#8226;</span> </b>
-http://www.youronlinechoices.com/uk/your-ad-choice
+                http://www.networkadvertising.org/managing/opt_out.asp<br></br><b><span>&#8226;</span> </b>
+                http://optout.aboutaJusticity.info/<br></br><b><span>&#8226;</span> </b>
+                http://www.youronlinechoices.com/uk/your-ad-choice
                 </p>
                 <h5>8. Amendments</h5>
                 <p className="text-secondary mt-3 mb-5">
