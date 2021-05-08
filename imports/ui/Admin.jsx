@@ -15,7 +15,7 @@ const User = () => {
       <i class="fa fa-users fa-3x text-info" aria-hidden="true"></i>
         <h4 class="text-success mt-3">Manage users</h4><br></br>
         <p>you can add, modify, see and delete all users.</p>
-        <a href="#" class="btn btn-primary">Take control</a>
+        <Link class="btn btn-primary" to="/manageUsers">Take control</Link>
       </div>
     </div>
   </div>

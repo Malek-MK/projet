@@ -37,12 +37,14 @@ import PrivacyPolicy from '../imports/ui/PrivacyPolicy';
 import TermsAndConditions from '../imports/ui/TermsAndConditions';
 import LegalNotice from '../imports/ui/LegalNotice';
 import OurCodeOfEthics from '../imports/ui/OurCodeOfEthics';
+import ManageUsers from '../imports/ui/ManageUsers';
 function BlogPost() {
   let { id } = useParams();
 }
 const routes = (
   <Router >
     <Switch>
+    <Route path="/manageUsers" exact component={ManageUsers} /> 
     <Route path="/mediations/create" exact component={Mediation} /> 
     <Route path="/our-code-of-ethics" exact component={OurCodeOfEthics} /> 
     <Route path="/legal-notice" exact component={LegalNotice} /> 
