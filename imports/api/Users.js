@@ -66,6 +66,7 @@ Meteor.methods({
         }
     ];
     const experts =(await Meteor.users.rawCollection().aggregate(aggregation).toArray());
+    console.log(experts);
     return experts;
   }
 },
