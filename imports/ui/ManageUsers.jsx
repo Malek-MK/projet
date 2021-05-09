@@ -22,7 +22,7 @@ const ManageUsers = () => {
                 List of Users
                         </h3><span className="d-block text-muted pt-2 font-size-sm">Consult and edit Arbitrators</span></div>
            {users.map((user)=>{
-               return <p>{user.username}</p>
+               return <p key={user._id}>{user.username}</p>
            })}
            </div>
         </div>
