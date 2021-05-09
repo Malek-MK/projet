@@ -42,7 +42,7 @@ Meteor.methods({
     Roles.createRole('arbitrator', { unlessExists: true });
     Roles.addUsersToRoles(res, 'arbitrator');
   },
-  'showUsers ': async function(){
+  'showUsers': async function(){
     const aggregation = [
         {
             '$lookup': {
@@ -59,14 +59,10 @@ Meteor.methods({
         }, {
             '$match': {
                 'role.role._id': 'user',
-                'archived': {
-                    '$exists': false
-                }
             }
         }
     ];
     const experts =(await Meteor.users.rawCollection().aggregate(aggregation).toArray());
-    console.log(experts);
     return experts;
   }
 },
