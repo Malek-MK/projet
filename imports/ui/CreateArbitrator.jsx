@@ -10,7 +10,6 @@ import { Meteor } from 'meteor/meteor';
 import { useHistory } from 'react-router-dom'
 import Recaptcha from 'react-recaptcha';
 import Button from 'react-bootstrap/Button'
-import { Link } from 'react-router-dom';
 
 const notyf = new Notyf({
     duration: 2000,
@@ -113,8 +112,6 @@ const [verif,setVerif]=useState(false);
             <div><Button type="submit" form="register">Create Account</Button>
             </div>
           </Form>
-          <br></br>
-              If you already have an account ? <Link to="/signin">Signin</Link>
         </div>
 
         <div className="card-footer text-muted text-center">

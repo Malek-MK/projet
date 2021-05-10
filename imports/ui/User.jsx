@@ -53,14 +53,6 @@ const User = () => {
         setShow(true)
         setShow1(false)
     }
-    const onclick2=()=>{
-        setShow(false)
-        setShow1(false)
-    }
-    const onclick3=()=>{
-        setShow(true)
-        setShow1(false)
-    }
     return (
         <div>
             <Header/>

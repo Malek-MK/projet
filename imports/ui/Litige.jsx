@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import Button from "react-bootstrap/Button";
 import { Meteor } from 'meteor/meteor';
-import { useForm } from 'react-hook-form';
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 import { Link } from 'react-router-dom';
-;
+
 const notyf = new Notyf({
   duration: 2000,
   position: {
@@ -16,11 +15,7 @@ const notyf = new Notyf({
 
 const Litige = ({ media, fetch}) => {
   const [show,setShow]=useState(false);
-  const { register, handleSubmit, errors } = useForm({
-    //resolver: yupResolver(schema)
-  });
-
-
+  
   useEffect(() => {
     fetch();
   }, []);    
@@ -45,12 +40,8 @@ const Litige = ({ media, fetch}) => {
         <td ><b>{media.nomsoc1}</b><br></br>{media.email1}</td>
         <td ><span className="text-success">Saved</span></td>
         <td >{media.time}</td>
-        <td>
-        
+        <td>  
     <Link className="btn btn-info text-decoration-none" to={`/mediations/update/${media._id}`} onClick={()=>setShow(true)}> Update</Link>
-    
-    
-
         </td>
         <td>
           <Button
@@ -59,10 +50,7 @@ const Litige = ({ media, fetch}) => {
           >
           <i class="fa fa-trash-o fa-lg"></i>  Delete
           </Button>        </td>
-
       </tr>
-
-     
     </>
   )
 }
