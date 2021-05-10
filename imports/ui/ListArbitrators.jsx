@@ -52,7 +52,6 @@ const ListArbitrators = ({ arbitrator, fetch}) => {
       </div>
       <div class="modal-body"> 
       Show a second modal and hide this one with the button below.
-
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
