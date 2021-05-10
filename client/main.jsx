@@ -20,7 +20,6 @@ import Features from '../imports/ui/Features';
 import Prices from '../imports/ui/Prices';
 import HomeAdmin from '../imports/ui/HomeAdmin';
 import ManageArbitrators from '../imports/ui/ManageArbitrators';
-import CreateArbitrator from '../imports/ui/CreateArbitrator';
 import Arbitrator from '../imports/ui/Arbitrator';
 import HomeArbitrator from '../imports/ui/HomeArbitrator';
 import FAQ from '../imports/ui/FAQ';
@@ -61,7 +60,6 @@ const routes = (
     <Route path="/mediator-functionalities" exact component={MediatorFunctionalities} />
     <Route path="/mediations/update/:id" exact component={NavCheck} />
     <Route path="/manageArbitrators" exact component={ManageArbitrators}/>
-    <Route path="/createArbitrator" exact component={CreateArbitrator}/>
     <Route path="/arbitrator" exact component={Arbitrator}/>
     <Route path="/faq" exact component={FAQ}/>
     <Route path="/about" exact component={About}/>
