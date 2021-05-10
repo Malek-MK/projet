@@ -113,7 +113,7 @@ const ListArbitrators = ({ arbitrator, fetch}) => {
             />
             <p className="text-danger">{errors.password?.message}</p>
           </form>
-        </Modal.Body>
+        </Modal.Body> 
         <Modal.Footer>
           <button className="btn btn-primary" form="update" type="submit">
             Save Update
