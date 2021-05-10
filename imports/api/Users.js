@@ -21,7 +21,7 @@ Meteor.methods({
     const res = Accounts.createUser({
       username: user.name,
       email: user.email,
-      password: user.password
+      password: user.password,
     }
     );
     Roles.createRole('user', { unlessExists: true });
@@ -60,10 +60,37 @@ Meteor.methods({
             '$match': {
                 'role.role._id': 'user',
             }
-        }
+        }    
     ];
     const experts =(await Meteor.users.rawCollection().aggregate(aggregation).toArray());
     return experts;
+  },
+  'showArbitrators': async function(){
+    const aggregation = [
+        {
+            '$lookup': {
+                'from': 'role-assignment',
+                'localField': '_id',
+                'foreignField': 'user._id',
+                'as': 'role'
+            }
+        }, {
+            '$unwind': {
+                'path': '$role',
+                'preserveNullAndEmptyArrays': true
+            }
+        }, {
+            '$match': {
+                'role.role._id': 'arbitrator',
+            }
+        }    
+    ];
+    const experts =(await Meteor.users.rawCollection().aggregate(aggregation).toArray());
+    return experts;
+  },
+  'DeleteUser'(id){
+    db.users.deleteOne( {"_id": ObjectId(id)});
+
   }
 },
 
