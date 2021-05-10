@@ -1,18 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import Button from "react-bootstrap/Button";
-import { Notyf } from 'notyf';
-import 'notyf/notyf.min.css';
-import { Link } from 'react-router-dom';
-import Recaptcha from 'react-recaptcha';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Schema from '../Validation/YupRegister';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 import { Meteor } from 'meteor/meteor';
  import Modal from "react-bootstrap/Modal";
+ import Schema from '../Validation/YupRegister';
 
 const notyf = new Notyf({
     duration: 2000,
@@ -23,14 +17,14 @@ const notyf = new Notyf({
   })
 const ListArbitrators = ({ arbitrator, fetch}) => {
   const { register, handleSubmit, errors } = useForm({
-    resolver: yupResolver()
+    resolver: yupResolver(Schema)
   });
  const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
     const [mail,setMail]=useState([])
-    const UpdatePlayer = data => {
-    Meteor.call('updatePlayer', { id: player._id, data }, (err) => {
+    const UpdateArbitrator = data => {
+    Meteor.call('updateArbitrator', { id: arbitrator._id, data }, (err) => {
       if (err) {
         console.log('Updated failed')
         notyf.error("Updated failed")
@@ -45,7 +39,7 @@ const ListArbitrators = ({ arbitrator, fetch}) => {
   };
 
   const Delete = () => {
-    Meteor.call('deletePlayer', player._id, (err) => {
+    Meteor.call('deleteArbitrator', arbitrator._id, (err) => {
       if (err) {
         notyf.error("Deleted failed");
         console.log('Deleted failed');
@@ -69,11 +63,13 @@ const ListArbitrators = ({ arbitrator, fetch}) => {
                return <td>{e.address}</td>
            })}
            <td>  
-       <Link className="btn btn-info text-decoration-none" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"> Update</Link>
+       <Button className="btn btn-info" onClick={handleShow}
+            form="update" > Update</Button>
            </td>
            <td>
              <Button
                className="btn btn-danger"
+               onClick={Delete}
              >
              <i class="fa fa-trash-o fa-lg"></i>  Delete
              </Button>        </td>
@@ -85,37 +81,37 @@ const ListArbitrators = ({ arbitrator, fetch}) => {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Update this player</Modal.Title>
+          <Modal.Title>Update this Arbitrator</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <form onSubmit={handleSubmit(UpdatePlayer)} id="update">
-            <label>Name :</label>
+          <form onSubmit={handleSubmit(UpdateArbitrator)} id="update">
+            <label>Username :</label>
             <input
               type="text"
-              name="name"
+              name="username"
               ref={register}
-              placeholder="Player Name"
+              placeholder="Arbitrator Name"
               className="form-control"
             />
             <p className="text-danger">{errors.name?.message}</p>
-            <label>Number :</label>
+            <label>Email :</label>
             <input
-              type="number"
-              name="number"
+              type="email"
+              name="email"
               ref={register}
-              placeholder="Number"
+              placeholder="Email"
               className="form-control"
             />
-            <p className="text-danger">{errors.number?.message}</p>
-            <label htmlFor="Role">Role :</label>
+            <p className="text-danger">{errors.email?.message}</p>
+            <label htmlFor="Role">Password :</label>
             <input
               type="text"
-              name="role"
+              name="password"
               ref={register}
-              placeholder="Role"
+              placeholder="Password"
               className="form-control"
             />
-            <p className="text-danger">{errors.role?.message}</p>
+            <p className="text-danger">{errors.password?.message}</p>
           </form>
         </Modal.Body>
         <Modal.Footer>
