@@ -1,7 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import HeaderAdmin from '../ui/HeaderAdmin';
-import { Link } from 'react-router-dom';
 import ListArbitrators from './ListArbitrators';
+import Button from "react-bootstrap/Button";
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { Notyf } from 'notyf';
+import 'notyf/notyf.min.css';
+import { Meteor } from 'meteor/meteor';
+ import Modal from "react-bootstrap/Modal";
+ import Schema from '../Validation/YupRegister';
+
+ const notyf = new Notyf({
+    duration: 2000,
+    position: {
+      x: 'left',
+      y: 'top',
+    }
+  })
 
 const ManageArbitrators = () => {
     const [arbitrators,setArbitrators]=useState([]);
@@ -11,6 +26,26 @@ const ManageArbitrators = () => {
             setArbitrators(res);
         })
     }
+    const { register, handleSubmit, errors } = useForm({
+        resolver: yupResolver(Schema)
+      });
+     const [show, setShow] = useState(false);
+      const handleClose = () => setShow(false);
+      const handleShow = () => setShow(true);
+        const [mail,setMail]=useState([])
+
+        const InsertArbitrator = data => {
+         Meteor.call('insertArbitrator', data, (err) => {
+        if (err) {
+          console.log('Inserted Failed', err)
+          notyf.error("Inserted Failed")
+        }
+        else {
+          console.log('Inserted arbitrator with succes')
+        } 
+       
+      });
+      };
     useEffect(()=>{
         renderArbitrator();
     },[])
@@ -23,8 +58,9 @@ const ManageArbitrators = () => {
                 <div className="d-flex pull-right">
                             <div className="btn-list">
 
-                                <Link to="/createArbitrator" className="btn btn-primary d-none d-sm-inline-block text-decoration-none" >
-                                    Create new Arbitrator</Link>
+                                <Button className="btn btn-primary d-none d-sm-inline-block" onClick={handleShow}
+            form="update">
+                                    Create new Arbitrator</Button>
                                 
                             </div>
                         </div> 
@@ -54,6 +90,61 @@ const ManageArbitrators = () => {
                         </tbody>
                          </table> 
            </div>
+           <Modal
+        show={show}
+        onHide={handleClose}
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Insert New Arbitrator</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <form onSubmit={handleSubmit(InsertArbitrator)} id="update">
+            <label>Username :</label>
+            <input
+              type="text"
+              name="name"
+              ref={register}
+              placeholder="Arbitrator Name"
+              className="form-control"
+            />
+            <p className="text-danger">{errors.name?.message}</p>
+            <label>Email :</label>
+            <input
+              type="email"
+              name="email"
+              ref={register}
+              placeholder="Email"
+              className="form-control"
+            />
+            <p className="text-danger">{errors.email?.message}</p>
+            <label htmlFor="Role">Password :</label>
+            <input
+              type="password"
+              name="password"
+              ref={register}
+              placeholder="Password"
+              className="form-control"
+            />
+            <p className="text-danger">{errors.password?.message}</p>
+            <label htmlFor="Role">Verify Password :</label>
+            <input
+              type="password"
+              name="password1"
+              ref={register}
+              placeholder="Verify Password"
+              className="form-control"
+            />
+            <p className="text-danger">{errors.password1?.message}</p>
+          </form>
+        </Modal.Body> 
+        <Modal.Footer>
+          <Button className="btn btn-success" form="update" type="submit">
+            Save Arbitrator
+          </Button>
+        </Modal.Footer>
+      </Modal>
         </div>
     )
 }

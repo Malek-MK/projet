@@ -88,7 +88,7 @@ const ListArbitrators = ({ arbitrator, fetch}) => {
             <label>Username :</label>
             <input
               type="text"
-              name="username"
+              name="name"
               ref={register}
               placeholder="Arbitrator Name"
               className="form-control"
@@ -105,19 +105,28 @@ const ListArbitrators = ({ arbitrator, fetch}) => {
             <p className="text-danger">{errors.email?.message}</p>
             <label htmlFor="Role">Password :</label>
             <input
-              type="text"
+              type="password"
               name="password"
               ref={register}
               placeholder="Password"
               className="form-control"
             />
             <p className="text-danger">{errors.password?.message}</p>
+            <label htmlFor="Role">Verify Password :</label>
+            <input
+              type="password"
+              name="password1"
+              ref={register}
+              placeholder="Verify Password"
+              className="form-control"
+            />
+            <p className="text-danger">{errors.password1?.message}</p>
           </form>
         </Modal.Body> 
         <Modal.Footer>
-          <button className="btn btn-primary" form="update" type="submit">
+          <Button className="btn btn-primary" form="update" type="submit">
             Save Update
-          </button>
+          </Button>
         </Modal.Footer>
       </Modal>
        </>
