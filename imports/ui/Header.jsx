@@ -11,7 +11,7 @@ const Header = () => {
     const history = useHistory();
     const onLogout = () => {
         Meteor.logout();
-        history.replace('/');
+        history.replace('/signin');
     }
     return (
         <div>
@@ -34,7 +34,7 @@ const Header = () => {
         <div className="d-flex flex-column flex-md-row flex-fill align-items-stretch align-items-md-center">
             <ul className="navbar-nav">
                 <li className="nav-item active ">
-                    <Link to="/" className="nav-link decoration-none">
+                    <Link to="/homeUser" className="nav-link decoration-none">
 
                         Go_Home
                     </Link>

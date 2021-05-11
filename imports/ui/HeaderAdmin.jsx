@@ -10,7 +10,7 @@ const HeaderAdmin = () => {
     const user = useTracker(() => Meteor.user()?.username);
     const onLogout = () => {
         Meteor.logout();
-        history.replace('/');
+        history.replace('/signin');
     }
     return (
         <div>

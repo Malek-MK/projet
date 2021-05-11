@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom'
 import { useTracker } from "meteor/react-meteor-data";
 import Button from "react-bootstrap/Button";
 
-const HomeArbitrator = () => { 
+const HomeUser = () => { 
     const user = useTracker(() => Meteor.user()?.username);
     const history = useHistory();
     const onLogout = () => {
@@ -27,7 +27,7 @@ const HomeArbitrator = () => {
                 </div>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light  ">
 
-                    <Link className="navbar-brand text-dark " to="/homeArbitrator"><i className="fa fa-balance-scale"></i>Community</Link>
+                    <Link className="navbar-brand text-dark " to="/homeUer"><i className="fa fa-balance-scale"></i>Community</Link>
 
                     <div className="collapse navbar-collapse ml-2" >
                         <ul className="navbar-nav ml-auto topnav">
@@ -62,7 +62,7 @@ const HomeArbitrator = () => {
                                 <Link className="nav-link text-dark" to="/contact">Contact</Link>
                             </li>
                             <li className="nav-item active">
-                                <Link className="nav-link text-dark" to="/arbitrator">My Account <span className="sr-only">(current)</span></Link>
+                                <Link className="nav-link text-dark" to="/mediations">My Account <span className="sr-only">(current)</span></Link>
                             </li>
                             
                         </ul>
@@ -73,7 +73,7 @@ const HomeArbitrator = () => {
                                         </button>
                     </li> 
                     <li className="nav-item">
-                        <a className="nav-link decoration-none" >Hello Arbitrator, <b className="text-dark">{user}</b></a>
+                        <a className="nav-link decoration-none" >Hello, <b className="text-dark">{user}</b></a>
                     </li>
                    
                     <li className="nav-item">
@@ -232,4 +232,4 @@ The average time to be heard in court is <b>8 months</b> on average (Key figures
     )
 }
 
-export default HomeArbitrator;
+export default HomeUser;

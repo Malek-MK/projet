@@ -37,12 +37,16 @@ import TermsAndConditions from '../imports/ui/TermsAndConditions';
 import LegalNotice from '../imports/ui/LegalNotice';
 import OurCodeOfEthics from '../imports/ui/OurCodeOfEthics';
 import ManageUsers from '../imports/ui/ManageUsers';
+import ManageMediations from '../imports/ui/ManageMediations';
+import HomeUser from '../imports/ui/HomeUser';
 function BlogPost() {
   let { id } = useParams();
 }
 const routes = (
   <Router >
     <Switch>
+    <Route path="/manageMediations" exact component={ManageMediations} /> 
+    <Route path="/homeUser" exact component={HomeUser} /> 
     <Route path="/manageUsers" exact component={ManageUsers} /> 
     <Route path="/mediations/create" exact component={Mediation} /> 
     <Route path="/our-code-of-ethics" exact component={OurCodeOfEthics} /> 
@@ -60,14 +64,14 @@ const routes = (
     <Route path="/mediator-functionalities" exact component={MediatorFunctionalities} />
     <Route path="/mediations/update/:id" exact component={NavCheck} />
     <Route path="/manageArbitrators" exact component={ManageArbitrators}/>
-    <Route path="/arbitrator" exact component={Arbitrator}/>
+    <Authenticated path="/arbitrator" exact component={Arbitrator}/>
     <Route path="/faq" exact component={FAQ}/>
     <Route path="/about" exact component={About}/>
     <Route path="/prices" exact component={Prices}/>
     <Route path="/features" exact component={Features}/>
     <Route path="/details-business-offer" exact component={OfferDetails}/>
     <Route path="/details-offer-mediators" exact component={OfferDetailsMed}/>
-      <Route path="/" exact component={Home} />
+      <Route path="/home" exact component={Home} />
       <Route path="/homeAdmin" exact component={HomeAdmin} />
       <Route path="/homeArbitrator" exact component={HomeArbitrator} />
       <Authenticated path="/mediations" exact component={User} />

@@ -10,7 +10,6 @@ export default Schema = yup.object().shape({
       .string()
       .required()
       .min(6)
-      .max(10)
       .oneOf([yup.ref("password"), null], "password dont match"),
   password1: yup
       .string()

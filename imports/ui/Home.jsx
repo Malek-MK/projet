@@ -1,8 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../ui/Footer';
-const Home = () => {
+import { Meteor } from 'meteor/meteor';
+import { useHistory } from 'react-router-dom';
 
+const Home = () => {
+    const history = useHistory();
+const verif=()=>{
+        var loggedInUser = Meteor.userId();
+        if (Roles.userIsInRole(loggedInUser, 'admin')) {
+          history.push('/admin');
+        }
+        else if (Roles.userIsInRole(loggedInUser, 'user')) {
+          history.push('/mediations');
+        }
+        else if (Roles.userIsInRole(loggedInUser, 'arbitrator')) {
+          history.push('/arbitrator');
+        }
+        else{
+            history.push('/signin');
+        }
+      
+}
     return (
 
         <div className="div">
@@ -17,7 +36,7 @@ const Home = () => {
                 </div>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light  ">
 
-                    <Link className="navbar-brand text-dark " to="/"><i className="fa fa-balance-scale"></i>Community</Link>
+                    <Link className="navbar-brand text-dark " to="/home"><i className="fa fa-balance-scale"></i>Community</Link>
 
                     <div className="collapse navbar-collapse ml-2" >
                         <ul className="navbar-nav ml-auto topnav">
@@ -51,9 +70,7 @@ const Home = () => {
                             <li className="nav-item">
                                 <Link className="nav-link text-dark" to="/contact">Contact</Link>
                             </li>
-                            <li className="nav-item active">
-                                <Link to="/mediations" className="nav-link text-dark ">My Account <span className="sr-only">(current)</span></Link>
-                            </li>
+                            
                             <li className="nav-item" >
                                 <div class="input-group" >
 

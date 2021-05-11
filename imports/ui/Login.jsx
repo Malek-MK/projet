@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
-import { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
 import { Roles } from 'meteor/alanning:roles';
-import Button from 'react-bootstrap/Button'
+import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -59,7 +59,7 @@ const Login = () => {
   return (
     <div>
 
-      <Link to="/" style={{ color: "black" }}>←Go Home</Link>
+      <Link to="/home" style={{ color: "black" }}>←Go Home</Link>
       <div className="card text border-primary mb-3" style={{ maxWidth: '50%', margin: '0 auto' }}>
         <div className="card-header text-center">
           <h2>Sign In</h2>

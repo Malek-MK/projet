@@ -11,8 +11,8 @@ import { Meteor } from 'meteor/meteor';
 const notyf = new Notyf({
     duration: 2000,
     position: {
-      x: 'left',
-      y: 'top',
+      x: 'center',
+      y: 'center',
     }
   })
 const ListArbitrators = ({ arbitrator, fetch}) => {
@@ -22,24 +22,25 @@ const ListArbitrators = ({ arbitrator, fetch}) => {
  const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-    const [mail,setMail]=useState([])
+    const [mail,setMail]=useState([]);
+
     const UpdateArbitrator = data => {
-    Meteor.call('updateArbitrator', { id: arbitrator._id, data }, (err) => {
+    Meteor.call('UpdateUser', { id: arbitrator._id, data }, (err) => {
       if (err) {
         console.log('Updated failed')
         notyf.error("Updated failed")
       }
       else {
-        notyf.success("Updated with success")
         console.log('Updated with success')
         setShow(false);
+        notyf.success("Updated with success")
         fetch();
       }
     });
   };
 
   const Delete = () => {
-    Meteor.call('deleteArbitrator', arbitrator._id, (err) => {
+    Meteor.call('DeleteUser', arbitrator._id, (err) => {
       if (err) {
         notyf.error("Deleted failed");
         console.log('Deleted failed');
