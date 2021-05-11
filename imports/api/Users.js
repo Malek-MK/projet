@@ -110,13 +110,10 @@ Meteor.methods({
     if (!this.userId) {
       throw new Meteor.Error('Not Authorized');
   }
-    Meteor.users.update(id,{
-      $set:{
-       username:data.name,
-       email:data.email,
-       password:data.password,
-      }
-    });
+  Accounts.setUsername(id,data.name);
+  //Accounts.removeEmail(id,data.email);
+ // Accounts.addEmail(id,data.email);
+  Accounts.setPassword(id,data.password);
   }
 },
 

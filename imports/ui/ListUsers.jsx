@@ -28,7 +28,7 @@ const ListUsers = ({ user, fetch}) => {
   const handleShow = () => setShow(true);
 
     const UpdateUser = data => {
-      Meteor.call('UpdateUser', { id: user._id, data }, (err) => {
+      Meteor.call('UpdateUser', { id: user._id, data,user }, (err) => {
         if (err) {
           console.log('Updated failed')
           notyf.error("Updated failed")

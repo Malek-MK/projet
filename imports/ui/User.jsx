@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { Meteor } from 'meteor/meteor';
-
-import Mediation from './Mediation';
 import { Link } from 'react-router-dom';
 import Litige from './Litige';
 import Pagination from './Pagination';
 import Search from './Search';
 import Header from './Header';
 const User = () => {
-    const [show, setShow] = useState(false);
-    const [show1, setShow1] = useState(false);
     const [mediations, setMediations] = useState([]);
     const [totalItems, setTotalItems] = useState(0);
     const [currentPage, setCurrentPage] = useState(1);
@@ -49,10 +45,7 @@ const User = () => {
             dir,
         });
     };
-    const onclick1=()=>{
-        setShow(true)
-        setShow1(false)
-    }
+   
     return (
         <div>
             <Header/>
@@ -65,15 +58,14 @@ const User = () => {
                 </div>
             </div>
             
-            {!show1? 
+            
             <>
-            {show ? <Mediation setShow1={setShow1} /> : null}
-            {!show ? <div className="container">
+            <div className="container">
                 <div>
                 <div className="d-flex pull-right">
                             <div className="btn-list">
 
-                                <Link to="/mediations/create" onClick={onclick1} className="btn btn-primary d-none d-sm-inline-block text-decoration-none" >
+                                <Link to="/mediations/create"  className="btn btn-primary d-none d-sm-inline-block text-decoration-none" >
                                     Create new Mediation</Link>
                                 
                             </div>
@@ -82,71 +74,73 @@ const User = () => {
                 <div className="card-title mb-5"><h3 className="card-label">
                 List of mediation files
                         </h3><span className="d-block text-muted pt-2 font-size-sm">Consult and edit my mediation files</span></div>
+               
                 <div className="col mb-3 col-12 text-center">
-                    <div className="row ">
-                        <div className="col-md-6">
-                            <Pagination
-                                total={totalItems}
-                                itemsPerPage={ITEMS_PER_PAGE}
-                                currentPage={currentPage}
-                                onPageChange={page => setCurrentPage(page)}
-                            />
-                        </div>
-                        <div className="col-md-6 d-flex flex-row-reverse mb-3">
-                            <Search onSearch={(value) => {
-                                setSearch(value);
-                                setCurrentPage(1);
-                            }}
-                            />
-                        </div>
+                <div className="row ">
+                    <div className="col-md-6">
+                        <Pagination
+                            total={totalItems}
+                            itemsPerPage={ITEMS_PER_PAGE}
+                            currentPage={currentPage}
+                            onPageChange={page => setCurrentPage(page)}
+                        />
                     </div>
-                    <table className="table table-bordered">
-                        <thead className="thead-dark">
-                            <tr>
-                                {headers.map(({ name, sortable, field }) => (
-                                    <th
-                                        key={name}
-                                        onClick={() =>
-                                            handleSort(
-                                                field,
-                                                sorting.field === field
-                                                    ? sorting.dir == "asc"
-                                                        ? "desc"
-                                                        : "asc"
+                    <div className="col-md-6 d-flex flex-row-reverse mb-3">
+                        <Search onSearch={(value) => {
+                            setSearch(value);
+                            setCurrentPage(1);
+                        }}
+                        />
+                    </div>
+                </div>
+                <table className="table table-bordered">
+                    <thead className="thead-dark">
+                        <tr>
+                            {headers.map(({ name, sortable, field }) => (
+                                <th
+                                    key={name}
+                                    onClick={() =>
+                                        handleSort(
+                                            field,
+                                            sorting.field === field
+                                                ? sorting.dir == "asc"
+                                                    ? "desc"
                                                     : "asc"
-                                            )
-                                        }
-                                    >
-                                        {sorting.field === field ? (
-                                            sorting.dir === "asc" ? (
-                                                <i className="fa fa-arrow-up" ></i>
-                                            ) : (
-                                                <i className="fa fa-arrow-down" ></i>
-                                            )
-                                        ) : null}{" "}
-                                        {name}
-                                    </th>
-                                ))}
+                                                : "asc"
+                                        )
+                                    }
+                                >
+                                    {sorting.field === field ? (
+                                        sorting.dir === "asc" ? (
+                                            <i className="fa fa-arrow-up" ></i>
+                                        ) : (
+                                            <i className="fa fa-arrow-down" ></i>
+                                        )
+                                    ) : null}{" "}
+                                    {name}
+                                </th>
+                            ))}
 
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {mediations.map((media) => {
-                                return (
-                                    <Litige
-                                        key={media._id}
-                                        media={media}
-                                        fetch={renderMediations}
-                                        setShow1={setShow1}
-                                        setData={media}
-                                    />
-                                );
-                            })}
-                        </tbody>
-                    </table>
-                </div></div> : null}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {mediations.map((media) => {
+                            return (
+                                <Litige
+                                    key={media._id}
+                                    media={media}
+                                    fetch={renderMediations}
+                                    setData={media}
+                                />
+                            );
+                        })}
+                    </tbody>
+                </table>
+            </div>
+              
+                </div> 
             </>
-            :null}
+           
            
             
         </div>
