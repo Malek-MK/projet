@@ -106,14 +106,21 @@ Meteor.methods({
   }
     Meteor.users.remove(id);  
   },
-  'UpdateUser'({id,data}){
+  'UpdateUser'({id,data,usr}){
     if (!this.userId) {
       throw new Meteor.Error('Not Authorized');
   }
   Accounts.setUsername(id,data.name);
-  //Accounts.removeEmail(id,data.email);
- // Accounts.addEmail(id,data.email);
+  Accounts.removeEmail(id,usr.emails[0].address);
+  Accounts.addEmail(id,data.email);
   Accounts.setPassword(id,data.password);
+  },
+  'findUser'({id}){
+    if (!this.userId) {
+      throw new Meteor.Error('Not Authorized');
+  }
+  const usr= Meteor.users.findOne({_id:id});
+  return usr;
   }
 },
 

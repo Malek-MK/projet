@@ -12,10 +12,10 @@ const NavCheck = () => {
   const [verif,setVerif]=useState(false);
   const [veriff,setVeriff]=useState(false);
   const [verifff,setVerifff]=useState(false);
-  const [data,setData]=useState()
-  const [showw,setShow]=useState()
-  const [paym,setPaym]=useState([])
-  const {id} = useParams()
+  const [data,setData]=useState();
+  const [showw,setShow]=useState();
+  const [paym,setPaym]=useState([]);
+  const {id} = useParams();
   const fetchDate=()=>{
     Meteor.call('showDate',id,(err,res) => {
       console.log("payment :",res.Time)

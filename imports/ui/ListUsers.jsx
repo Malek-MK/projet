@@ -20,15 +20,27 @@ const notyf = new Notyf({
 
 const ListUsers = ({ user, fetch}) => {
     const [mail,setMail]=useState([]);
+    const [usr,setUsr]=useState([]);
+    console.log("usr :",usr)
     const { register, handleSubmit, errors } = useForm({
       resolver: yupResolver(Schema)
     });
     const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+    const findUser=()=>{
+      Meteor.call('findUser',{ id: user._id},(err,res)=>{
+        if (err) {
+          console.log('Find failed')
+        }
+        else {
+          console.log('Find with success')
+          setUsr(res);
+        }
+      })
+    }
     const UpdateUser = data => {
-      Meteor.call('UpdateUser', { id: user._id, data,user }, (err) => {
+      Meteor.call('UpdateUser', { id: user._id, data,usr }, (err) => {
         if (err) {
           console.log('Updated failed')
           notyf.error("Updated failed")

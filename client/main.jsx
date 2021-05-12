@@ -39,6 +39,7 @@ import OurCodeOfEthics from '../imports/ui/OurCodeOfEthics';
 import ManageUsers from '../imports/ui/ManageUsers';
 import ManageMediations from '../imports/ui/ManageMediations';
 import HomeUser from '../imports/ui/HomeUser';
+import Profile from '../imports/ui/Profile';
 function BlogPost() {
   let { id } = useParams();
 }
@@ -46,6 +47,7 @@ const routes = (
   <Router >
     <Switch>
     <Route path="/manageMediations" exact component={ManageMediations} /> 
+    <Route path="/profile" exact component={Profile} /> 
     <Route path="/homeUser" exact component={HomeUser} /> 
     <Route path="/manageUsers" exact component={ManageUsers} /> 
     <Route path="/mediations/create" exact component={Mediation} /> 
