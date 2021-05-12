@@ -18,6 +18,7 @@ const NavCheck = () => {
   const {id} = useParams()
   const fetchDate=()=>{
     Meteor.call('showDate',id,(err,res) => {
+      console.log("payment :",res.Time)
        setDates(res.Time)
     });
   }
@@ -34,7 +35,6 @@ const NavCheck = () => {
   }
   const fetchPayment=()=>{
     Meteor.call('showPayment',id,(err,res)=>{
-      console.log("payment :",res.payment)
       setPaym(res.payment);
     })
   }
@@ -160,7 +160,7 @@ const NavCheck = () => {
        {click1.show? <PrefDate setVerif={setVerif} verif={verif} dates={dates} id={id} />:null}
        {click2.show?<ConvMedia setVeriff={setVeriff} veriff={veriff} showw={showw} id={id} /> :null}
         {click.show && data? <UpMediation datta={data} show={click.show} id={id}/>:null}
-        {click3.show?<Payment setVerifff={setVerifff} id={id} paym={paym}/> :null}
+        {click3.show?<Payment setVerifff={setVerifff} verifff={verifff} id={id} paym={paym}/> :null}
         </div>
     )
 }

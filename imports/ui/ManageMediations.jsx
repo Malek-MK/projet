@@ -1,10 +1,10 @@
 import React from 'react'
-import HomeArbitrator from '../ui/HomeArbitrator';
+import HeaderArbitrator from '../ui/HeaderArbitrator';
 
 const ManageMediations = () => {
     return (
         <div>
-            <HomeArbitrator/>
+            <HeaderArbitrator/>
             <br></br><br></br>
             <div className="container mt-5">
                 <div className="card-title mb-5"><h3 className="card-label">

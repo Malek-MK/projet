@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React  from 'react'
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 import jsPDF from 'jspdf';
