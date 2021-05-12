@@ -49,7 +49,7 @@ const HeaderAdmin = () => {
                                         </button>
                     </li> 
                     <li className="nav-item">
-                        <a className="nav-link decoration-none" >Hello Admin, <b className="text-dark">{user}</b></a>
+                    <button type="button" class="btn btn-light" ><i className="fa fa-user-secret text-primary"></i>Hello Admin, <b className="text-dark">{user}</b></button>
                     </li>
                    
                     <li className="nav-item">

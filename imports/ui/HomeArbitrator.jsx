@@ -73,7 +73,7 @@ const HomeArbitrator = () => {
                                         </button>
                     </li> 
                     <li className="nav-item">
-                        <a className="nav-link decoration-none" >Hello Arbitrator, <b className="text-dark">{user}</b></a>
+                    <button type="button" class="btn btn-light" ><i className="fa fa-black-tie text-primary"></i>Hello Arbitrator, <b className="text-dark">{user}</b></button>
                     </li>
                    
                     <li className="nav-item">

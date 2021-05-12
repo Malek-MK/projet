@@ -5,7 +5,6 @@ import { Meteor } from 'meteor/meteor';
 import { useHistory } from 'react-router-dom'
 import { useTracker } from "meteor/react-meteor-data";
 import Button from "react-bootstrap/Button";
-
 const HomeUser = () => { 
     const user = useTracker(() => Meteor.user()?.username);
     const history = useHistory();
@@ -73,20 +72,22 @@ const HomeUser = () => {
                                         </button>
                     </li> 
                     <li className="nav-item">
-                        <a className="nav-link decoration-none" >Hello, <b className="text-dark">{user}</b></a>
+                        <button type="button" class="btn btn-light" ><i className="fa fa-user text-primary"></i>Hello, <b className="text-dark">{user}</b></button>
                     </li>
-                   
+                    
                     <li className="nav-item">
                         <Button variant="outline-danger" onClick={onLogout} className="btn rounded-circle mt-1 ml-5 ">
                             <i className="fa fa-power-off" aria-hidden="true"></i>
                         </Button>
                     </li>
+                    
                       
                 </ul>
                     </div>
                 </nav>
 
             </div>
+            
             <div className="container mt-5 text-center ">
                 <br></br>
                 <Link class="btn btn-outline-info btn-lg mt-5 border-2" to="/tariffs-mediators">Are you mediators? Enjoy a 30-day free trial</Link>
@@ -226,7 +227,6 @@ The average time to be heard in court is <b>8 months</b> on average (Key figures
 </div>
             </div>
             <Footer/>
-
         </div>
 
     )

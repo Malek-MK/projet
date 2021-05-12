@@ -61,7 +61,7 @@ const Header = () => {
                                         </button>
                     </li> 
                     <li className="nav-item">
-                        <a className="nav-link decoration-none" >Hello, <b className="text-dark">{user}</b></a>
+                    <button type="button" class="btn btn-light" ><i className="fa fa-user text-primary"></i>Hello, <b className="text-dark">{user}</b></button>
                     </li>
                    
                     <li className="nav-item">
