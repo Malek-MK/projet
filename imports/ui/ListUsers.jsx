@@ -21,7 +21,6 @@ const notyf = new Notyf({
 const ListUsers = ({ user, fetch}) => {
     const [mail,setMail]=useState([]);
     const [usr,setUsr]=useState([]);
-    console.log("usr :",usr)
     const { register, handleSubmit, errors } = useForm({
       resolver: yupResolver(Schema)
     });
@@ -68,6 +67,7 @@ const ListUsers = ({ user, fetch}) => {
       });
     }
     useEffect(() => {
+      findUser()
         setMail(user.emails)
         fetch();
       }, []); 
