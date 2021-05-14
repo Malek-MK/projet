@@ -3,12 +3,12 @@ import Header from '../ui/Header';
 import PersonalInformation from '../ui/PersonalInformation';
 import AccessParameter from '../ui/AccessParameter';
 import MyOrders from '../ui/MyOrders';
-const Profile = () => {
+const Profile = () => { 
     return (
         <div>
             <Header/>
              <div className="container mt-5">
-                <div className="card-title mb-5"><h3 className="card-label">
+                <div className="card-title mb-3"><h3 className="card-label">
                 Profile
                         </h3><span className="d-block text-muted pt-2 font-size-sm">Consult and edit Users</span>
                 </div>
@@ -27,18 +27,18 @@ const Profile = () => {
             Country :
         </span>
         <button className="btn btn-light mt-3">
-        <i className="fa fa-user"></i> Personal information
+        <i className="fa fa-user text-success"></i> Personal information
         </button>
         <button className="btn btn-light mt-2">
-        <i className="fa fa-shield"></i> Access parameter
+        <i className="fa fa-shield text-success"></i> Access parameter
         </button>
         <button className="btn btn-light mt-2">
-        <i className="fa fa-file-text-o"></i> My orders
+        <i className="fa fa-file-text-o text-success"></i> My orders
         </button>
       </div>
     </div>
   </div>
-  
+  <MyOrders/>
 </div>
         </div>
         </div>
