@@ -3,6 +3,7 @@ import Header from '../ui/Header';
 import PersonalInformation from '../ui/PersonalInformation';
 import AccessParameter from '../ui/AccessParameter';
 import MyOrders from '../ui/MyOrders';
+import { Link } from 'react-router-dom';
 
 const Profile = () => { 
   const [click1,setClick1]=useState({
@@ -76,9 +77,21 @@ const [click3,setClick3]=useState({
         <div>
             <Header/>
              <div className="container mt-5">
-                <div className="card-title mb-3"><h3 className="card-label">
-                Profile
-                        </h3><span className="d-block text-muted pt-2 font-size-sm">Consult and edit Users</span>
+                <div className="card-title mb-3">
+                <div className="d-flex justify-content-between">
+                 <div>
+                 <h3 className="card-label">Profile</h3>
+                  <span className="d-block text-muted pt-2 font-size-sm">Consult and edit Users</span>
+                 </div>
+               <div>
+               <Link className="btn btn-primary" to="/mediations/create">
+               Add mediation
+              </Link>
+              <button className="btn btn-success" style={{marginLeft:"15px"}}>
+              Submit an application
+              </button>
+               </div>
+                </div>
                 </div>
                 <div class="row">
   <div class="col-sm-3">
