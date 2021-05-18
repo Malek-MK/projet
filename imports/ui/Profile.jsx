@@ -78,7 +78,7 @@ const [click3,setClick3]=useState({
             <Header/>
              <div className="container mt-5">
                 <div className="card-title mb-3">
-                <div className="d-flex justify-content-between">
+                <div className="d-flex justify-content-between align-items-center">
                  <div>
                  <h3 className="card-label">Profile</h3>
                   <span className="d-block text-muted pt-2 font-size-sm">Consult and edit Users</span>

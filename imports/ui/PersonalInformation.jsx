@@ -69,7 +69,7 @@ const PersonalInformation = () => {
                        <>
                     <label htmlFor="upload-input">
                     <img src={AvatarIcon} alt="" draggable={false} style={{width:150,height:150,cursor:"pointer"}}/> 
-                  <p className="text-secondary">Click to upload your avatar 😎 :(Allowed file types: png, jpg, jpeg).</p>
+                  <p className="text-secondary mt-1">Click to upload your avatar 😎 :(Allowed file types: png, jpg, jpeg).</p>
                     </label>
                     <input 
                         type="file" 
