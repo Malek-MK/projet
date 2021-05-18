@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 import Schema from '../Validation/YupProfile';
+const AvatarIcon='./assets/modify.png';
+const CloseIcon='./assets/x.svg';
 
 const notyf = new Notyf({
   duration: 2000,
@@ -29,6 +31,20 @@ const PersonalInformation = () => {
           })
         }
       }
+      const [image,setImage]=useState('')
+      const [isUploaded,setIsUploaded]=useState(false)
+      function HandleImageChange(e){
+        if(e.target.files && e.target.files[0]){
+          let reader=new FileReader()
+          reader.onload=function(e){
+            setImage(e.target.result)
+            setIsUploaded(true)
+          }
+
+          reader.readAsDataURL(e.target.files[0])
+        }
+      }
+
     return (
         <div class="col-sm-9">
             <div className="card">
@@ -46,10 +62,41 @@ const PersonalInformation = () => {
             
             <div class="card-body">
                 <form onSubmit={handleSubmit(onSubmit)}>
-                  <h5>Upload your image</h5>
-                  <p>Upload with preview 😎</p>
-                  <img src="http://www.simpleimageresizer.com/_uploads/photos/4c82a042/avatarhumanpeopleprofileusericon-1320168139431219590_150x150.png" alt=""/>
-                <div className="row mb-4">
+                  <p><i>Change Your Avatar</i></p>
+                  <div className="image-upload mb-2" style={{display:"flex",flexWrap:"wrap"}}>
+                   {
+                     !isUploaded? (
+                       <>
+                    <label htmlFor="upload-input">
+                    <img src={AvatarIcon} alt="" draggable={false} style={{width:150,height:150,cursor:"pointer"}}/> 
+                  <p className="text-secondary">Click to upload your avatar 😎 :(Allowed file types: png, jpg, jpeg).</p>
+                    </label>
+                    <input 
+                        type="file" 
+                        id="upload-input" 
+                        accept=".jpg,.jpeg,.png,.gif" 
+                        style={{display:"none"}}
+                        onChange={HandleImageChange} 
+                    ></input>
+                       </>
+                     ):
+                     (
+                      <div style={{position:"relative",cursor:"pointer"}}>
+                        <img 
+                          src={CloseIcon}
+                          alt="CloseIcon"
+                          style={{position:"absolute",zIndex:"10",right:"5px",top:"10px",cursor:"pointer",backgroundColor:"#000",borderRadius:"15px"}}
+                          onClick={()=>{
+                            setIsUploaded(false)
+                            setImage(null)
+                          }}/>
+                      <img src={image} alt="uploaded-img" id="uploaded-image" style={{width:150,height:150,objectFit:"cover",borderRadius:"20px"}} draggable={false}/>
+                      </div>
+                      )
+                   }
+                    
+                  </div>
+                <div className="row mb-3">
           <div className="col">
             <label>First name</label>
             <input type="text" name="firstname" ref={register} className="form-control bg-light" placeholder="First name"></input>
@@ -61,7 +108,7 @@ const PersonalInformation = () => {
              <p className="text-danger">{errors.lastname?.message}</p>
           </div>
         </div>
-        <div className="row mb-4">
+        <div className="row mb-3">
           <div className="col">
             <label>E-mail</label>
             <input type="email" name="email" ref={register} className="form-control bg-light" placeholder="First name"></input>
@@ -76,7 +123,7 @@ const PersonalInformation = () => {
         <label >Registered Address</label>
         <input type="text" name="adresse" ref={register} className="form-control mb-4 bg-light" placeholder="Example input"></input>
         <p className="text-danger">{errors.adresse?.message}</p>
-        <div className="row mb-4 ">
+        <div className="row mb-3 ">
           <div className="col">
             <label>Postal code</label>
             <input type="number" name="codepos" ref={register} className="form-control bg-light" placeholder="First name"></input>
@@ -88,7 +135,7 @@ const PersonalInformation = () => {
             <p className="text-danger">{errors.ville?.message}</p>
           </div>
         </div>
-        <div className="form-group mb-5">
+        <div className="form-group mb-4">
           <label >Country</label>
           <select name="country" ref={register} className="form-control bg-light" >
             <option value="Tunisia" >Tunisia</option>
