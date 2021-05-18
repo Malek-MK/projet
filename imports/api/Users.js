@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Accounts } from 'meteor/accounts-base';
 import { Roles } from 'meteor/alanning:roles';
 import YupUser from '../Validation/YupRegister';
-
+import Mediations from '../api/Mediation';
 Meteor.publish(null, function () {
   if (this.userId) {
     return Meteor.roleAssignment.find({ 'user._id': this.userId });
@@ -121,11 +121,12 @@ Meteor.methods({
   }
   const usr= Meteor.users.findOne({_id:id});
   return usr;
+  },
+  'findUsersWithMediations'(){
+    const users= Meteor.users.find().fetch();
+    return users.map(e=>({...e,medidations:Mediations.find({userId:e._id}).fetch()}))
   }
-},
-
-
-);
+});
 
 if (!Meteor.users.find().count()) {
   const adminId = Accounts.createUser({ username: 'alkhatib', email: 'admin@test.com', password: 'secret' });
