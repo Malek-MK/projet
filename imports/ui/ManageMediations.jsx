@@ -3,11 +3,11 @@ import HeaderArbitrator from '../ui/HeaderArbitrator';
 import { Meteor } from 'meteor/meteor';
 
 const ManageMediations = () => {
-    const [users,setUsers]=useState([]);
-    console.log("users :",users)
+    const [docs,setDocs]=useState([]);
+    console.log("docs ",docs)
     const renderUsers=()=>{
-        Meteor.call('showUsers',(err,res)=>{
-            setUsers(res);
+        Meteor.call('findUsersWithMediations',(err,res)=>{
+            setDocs(res);
         })
     }
     useEffect(()=>{

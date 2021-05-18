@@ -56,12 +56,12 @@ const Header = () => {
             <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
                 <ul className="navbar-nav ms-auto">
                     <li className="nav-item">
-                                        <button type="button" class="btn">
-                                            Notifications <span class="badge bg-green ms-2">4</span>
+                                        <button type="button" className="btn">
+                                            Notifications <span className="badge bg-green ms-2">4</span>
                                         </button>
                     </li> 
                     <li className="nav-item">
-                    <button type="button" class="btn btn-light" ><i className="fa fa-user text-primary"></i>Hello, <b className="text-dark">{user}</b></button>
+                    <button type="button" className="btn btn-light" ><i className="fa fa-user text-primary"></i>Hello, <b className="text-dark">{user}</b></button>
                     </li>
                    
                     <li className="nav-item">
