@@ -5,6 +5,7 @@ import { Meteor } from 'meteor/meteor';
 import { useHistory } from 'react-router-dom'
 import { useTracker } from "meteor/react-meteor-data";
 import Button from "react-bootstrap/Button";
+import Dropdown from 'react-bootstrap/Dropdown'
 
 const HomeArbitrator = () => { 
     const user = useTracker(() => Meteor.user()?.username);
@@ -36,25 +37,30 @@ const HomeArbitrator = () => {
                                 <Link className="nav-link text-dark " to="/about">About</Link>
                             </li>
                             <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Our offers
-                    </a>
-                                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <Link className="dropdown-item " to="/details-business-offer">Offer details</Link>
-                                    <Link className="dropdown-item" to="/features">Features</Link>
-                                    <Link className="dropdown-item" to="/prices">Prices</Link>
-                                    <Link className="dropdown-item" to="/faq">FAQ</Link>
-                                </div>
+                            <Dropdown>
+                            <Dropdown.Toggle className="btn btn-light text-dark">
+                            Our offers
+                            </Dropdown.Toggle>
+
+                            <Dropdown.Menu>
+                                <Dropdown.Item><Link className="dropdown-item " to="/details-business-offer">Offer details</Link></Dropdown.Item>
+                                <Dropdown.Item><Link className="dropdown-item" to="/features">Features</Link></Dropdown.Item>
+                                <Dropdown.Item><Link className="dropdown-item" to="/prices">Prices</Link></Dropdown.Item>
+                                <Dropdown.Item><Link className="dropdown-item" to="/faq">FAQ</Link></Dropdown.Item>
+                            </Dropdown.Menu>
+                            </Dropdown> 
                             </li>
                             <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Our mediator offers
-                    </a>
-                                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <Link className="dropdown-item " to="/details-offer-mediators">Offer details</Link>
-                                    <Link className="dropdown-item" to="/mediator-functionalities">Features</Link>
-                                    <Link className="dropdown-item" to="/tariffs-mediators">Prices</Link>
-                                </div>
+                            <Dropdown>
+                            <Dropdown.Toggle className="btn btn-light text-dark">
+                            Our mediator offers
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                                <Dropdown.Item><Link className="dropdown-item " to="/details-offer-mediators">Offer details</Link></Dropdown.Item>
+                                <Dropdown.Item><Link className="dropdown-item" to="/mediator-functionalities">Features</Link></Dropdown.Item>
+                                <Dropdown.Item><Link className="dropdown-item" to="/tariffs-mediators">Prices</Link></Dropdown.Item>
+                            </Dropdown.Menu>
+                            </Dropdown>
                             </li>
 
 
