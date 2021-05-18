@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import Schema2 from '../Validation/YupStep2';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-const Two = ({ setData, setStep, data,datta}) => {
+const Two = ({ setData, setStep,datta}) => {
   const [check, setCheck] = useState(false);
  
   const { register, handleSubmit, errors } = useForm({

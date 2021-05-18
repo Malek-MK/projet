@@ -4,7 +4,7 @@ import Schema3 from '../Validation/YupStep3';
 import { yupResolver } from '@hookform/resolvers/yup';
 
   
-const Three = ({ setData, setStep,data,datta }) => {
+const Three = ({ setData, setStep,datta }) => {
 
     
     const { register, handleSubmit, errors } = useForm({
