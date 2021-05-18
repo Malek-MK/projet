@@ -1,9 +1,77 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '../ui/Header';
 import PersonalInformation from '../ui/PersonalInformation';
 import AccessParameter from '../ui/AccessParameter';
 import MyOrders from '../ui/MyOrders';
+
 const Profile = () => { 
+  const [click1,setClick1]=useState({
+    class1:"btn btn-light mt-3 text-primary",
+    class2:"fa fa-user text-primary",
+    show:true   
+});
+const [click2,setClick2]=useState({
+  class1:"btn btn-light mt-2",
+  class2:"fa fa-shield text-success",
+  show:false   
+});
+const [click3,setClick3]=useState({
+  class1:"btn btn-light mt-2 mb-5",
+  class2:"fa fa-file-text-o text-success",
+  show:false   
+});
+  const onclick1=()=>{
+    setClick1({
+      class1:"btn btn-light mt-3 text-primary",
+    class2:"fa fa-user text-primary",
+    show:true 
+    })
+    setClick2({
+      class1:"btn btn-light mt-2",
+  class2:"fa fa-shield text-success",
+  show:false 
+    })
+    setClick3({
+      class1:"btn btn-light mt-2 mb-5",
+  class2:"fa fa-file-text-o text-success",
+  show:false 
+    })
+  }
+  const onclick2=()=>{
+    setClick2({
+      class1:"btn btn-light mt-2 text-primary",
+    class2:"fa fa-shield text-primary",
+    show:true 
+    })
+    setClick1({
+      class1:"btn btn-light mt-3",
+  class2:"fa fa-user text-success",
+  show:false 
+    })
+    setClick3({
+      class1:"btn btn-light mt-2 mb-5",
+  class2:"fa fa-file-text-o text-success",
+  show:false 
+    })
+  }
+  const onclick3=()=>{
+    setClick3({
+      class1:"btn btn-light mt-2 text-primary mb-5",
+    class2:"fa fa-file-text-o text-primary",
+    show:true 
+    })
+    setClick1({
+      class1:"btn btn-light mt-3",
+  class2:"fa fa-user text-success",
+  show:false 
+    })
+    setClick2({
+      class1:"btn btn-light mt-2",
+  class2:"fa fa-shield text-success",
+  show:false 
+    })
+  }
+
     return (
         <div>
             <Header/>
@@ -16,29 +84,26 @@ const Profile = () => {
   <div class="col-sm-3">
     <div class="card">
       <div class="card-body">
-        <h5 className="text mb-3"><b>ALkhatib Malek</b></h5>
-        <span>
-            Email :
-        </span><br></br>
-        <span>
-            Phone :
-        </span><br></br>
-        <span>
-            Country :
-        </span>
-        <button className="btn btn-light mt-3">
-        <i className="fa fa-user text-success"></i> Personal information
+        <h5 className="text mb-4"><b>ALkhatib Malek</b></h5>
+        <p className="text mb-1">Email :</p>
+        <p className="text mb-1">Phone :</p>
+        <p>Country :</p>
+        
+        <button className={click1.class1} onClick={onclick1}>
+        <i className={click1.class2}></i> Personal information
         </button>
-        <button className="btn btn-light mt-2">
-        <i className="fa fa-shield text-success"></i> Access parameter
+        <button className={click2.class1} onClick={onclick2}>
+        <i className={click2.class2}></i> Access parameter
         </button>
-        <button className="btn btn-light mt-2">
-        <i className="fa fa-file-text-o text-success"></i> My orders
+        <button className={click3.class1} onClick={onclick3}>
+        <i className={click3.class2}></i> My orders
         </button>
       </div>
     </div>
   </div>
-  <MyOrders/>
+ {click1.show?<PersonalInformation/>:null}
+ {click2.show?<AccessParameter/>:null}
+ {click3.show?<MyOrders/>:null}
 </div>
         </div>
         </div>
