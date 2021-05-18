@@ -24,7 +24,7 @@ const StepOne = ({ setData, setStep, data,datta }) => {
       namelawyer: data.namelawyer || " ",
       firstnamelawyer: data.firstnamelawyer || " ",
       adresslawyer: data.adresslawyer || " ",
-      emaillawyer: data.emaillawyer || "vide@example.com",
+      emaillawyer: data.emaillawyer || "name@domaine.com",
       tellawyer: data.tellawyer || 0,
     }
   });
@@ -65,7 +65,7 @@ const StepOne = ({ setData, setStep, data,datta }) => {
         <div className="row mb-2">
           <div className="col">
             <label>Company Name</label>
-            <input type="text" className="form-control" name="nomsoc" ref={register} placeholder="First name" ></input>
+            <input type="text" className="form-control" name="nomsoc" ref={register} placeholder="Company Name" ></input>
             <p className="text-danger">{errors.nomsoc?.message}</p>
           </div>
           <div className="col">
@@ -82,44 +82,44 @@ const StepOne = ({ setData, setStep, data,datta }) => {
           </div>
         </div>
         <label >ID number</label>
-        <input type="number" name="numid" ref={register} className="form-control mb-2" placeholder="Example input"></input>
+        <input type="number" name="numid" ref={register} className="form-control mb-2" placeholder="ID number"></input>
         <p className="text-danger">{errors.numid?.message}</p>
         <div className="row mb-2">
           <div className="col">
             <label>First name of the legal representative</label>
-            <input type="text" name="prerepleg" ref={register} className="form-control" placeholder="First name"></input>
+            <input type="text" name="prerepleg" ref={register} className="form-control" placeholder="First name of the legal representative"></input>
             <p className="text-danger">{errors.prerepleg?.message}</p>
           </div>
           <div className="col">
             <label>Name of legal representative</label>
-            <input type="text" name="nomrepleg" ref={register} className="form-control" placeholder="First name"></input>
+            <input type="text" name="nomrepleg" ref={register} className="form-control" placeholder="Name of legal representative"></input>
             <p className="text-danger">{errors.nomrepleg?.message}</p>
           </div>
         </div>
         <label >Registered Address</label>
-        <input type="text" name="adresse" ref={register} className="form-control mb-2" placeholder="Example input"></input>
+        <input type="text" name="adresse" ref={register} className="form-control mb-2" placeholder="Registered Address"></input>
         <p className="text-danger">{errors.adresse?.message}</p>
         <div className="row mb-2">
           <div className="col">
             <label>Postal code</label>
-            <input type="number" name="codepos" ref={register} className="form-control" placeholder="First name"></input>
+            <input type="number" name="codepos" ref={register} className="form-control" placeholder="Postal code"></input>
             <p className="text-danger">{errors.codepos?.message}</p>
           </div>
           <div className="col">
             <label>City</label>
-            <input type="text" name="ville" ref={register} className="form-control" placeholder="First name"></input>
+            <input type="text" name="ville" ref={register} className="form-control" placeholder="City"></input>
             <p className="text-danger">{errors.ville?.message}</p>
           </div>
         </div>
         <div className="row mb-4">
           <div className="col">
             <label>E-mail</label>
-            <input type="email" name="email" ref={register} className="form-control" placeholder="First name"></input>
+            <input type="email" name="email" ref={register} className="form-control" placeholder="name@domaine.com"></input>
             <p className="text-danger">{errors.email?.message}</p>
           </div>
           <div className="col">
             <label>Phone</label>
-            <input type="number" name="tel" ref={register} className="form-control" placeholder="First name"></input>
+            <input type="number" name="tel" ref={register} className="form-control" placeholder="Phone number"></input>
             <p className="text-danger">{errors.tel?.message}</p>
           </div>
         </div>
@@ -149,17 +149,17 @@ const StepOne = ({ setData, setStep, data,datta }) => {
             </div>
           </div>
           <label >Address</label>
-          <input type="text" name="adresslawyer" ref={register} className="form-control mb-2" placeholder="Example input"  required></input>
+          <input type="text" name="adresslawyer" ref={register} className="form-control mb-2" placeholder="Adresse"  required></input>
           <p className="text-danger">{errors.adresslawyer?.message}</p>
           <div className="row mb-4">
             <div className="col">
               <label>E-mail</label>
-              <input type="email" name="emaillawyer" ref={register} className="form-control" placeholder="First name"  required></input>
+              <input type="email" name="emaillawyer" ref={register} className="form-control" placeholder="name@domaine.com"  required></input>
               <p className="text-danger">{errors.emaillawyer?.message}</p>
             </div>
             <div className="col">
               <label>Phone</label>
-              <input type="number" name="tellawyer" ref={register} className="form-control" placeholder="First name"  ></input>
+              <input type="number" name="tellawyer" ref={register} className="form-control" placeholder="Phone number"  ></input>
               <p className="text-danger">{errors.tellawyer?.message}</p>
             </div>
           </div>

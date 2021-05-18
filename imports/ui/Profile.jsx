@@ -4,7 +4,7 @@ import PersonalInformation from '../ui/PersonalInformation';
 import AccessParameter from '../ui/AccessParameter';
 import MyOrders from '../ui/MyOrders';
 import { Link } from 'react-router-dom';
-
+ 
 const Profile = () => { 
   const [click1,setClick1]=useState({
     class1:"btn btn-light mt-3 text-primary",
@@ -72,6 +72,7 @@ const [click3,setClick3]=useState({
   show:false 
     })
   }
+
 
     return (
         <div>

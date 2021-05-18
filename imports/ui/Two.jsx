@@ -24,7 +24,7 @@ const Two = ({ setData, setStep, data,datta}) => {
       namelawyer1: datta.namelawyer1 || " ",
       firstnamelawyer1: datta.firstnamelawyer1 || " ",
       adresslawyer1: datta.adresslawyer1 || " ",
-      emaillawyer1: datta.emaillawyer1 || "vide@example.com",
+      emaillawyer1: datta.emaillawyer1 || "name@domaine.com",
       tellawyer1: datta.tellawyer1 || 0,
     }
   });
@@ -69,7 +69,7 @@ const Two = ({ setData, setStep, data,datta}) => {
         <div className="row mb-2">
           <div className="col">
             <label>Company Name</label>
-            <input type="text" className="form-control" name="nomsoc1" ref={register} placeholder="First name"></input>
+            <input type="text" className="form-control" name="nomsoc1" ref={register} placeholder="Company Name"></input>
             <p className="text-danger">{errors.nomsoc1?.message}</p>
           </div>
           <div className="col">
@@ -86,44 +86,44 @@ const Two = ({ setData, setStep, data,datta}) => {
           </div>
         </div>
         <label >ID number</label>
-        <input type="number" name="numid1" ref={register} className="form-control mb-2" placeholder="Example input"></input>
+        <input type="number" name="numid1" ref={register} className="form-control mb-2" placeholder="ID number"></input>
         <p className="text-danger">{errors.numid1?.message}</p>
         <div className="row mb-2">
           <div className="col">
             <label>First name of legal representative</label>
-            <input type="text" name="prerepleg1" ref={register} className="form-control" placeholder="First name"></input>
+            <input type="text" name="prerepleg1" ref={register} className="form-control" placeholder="First name of legal representative"></input>
             <p className="text-danger">{errors.prerepleg1?.message}</p>
           </div>
           <div className="col">
             <label>Name of legal representative</label>
-            <input type="text" name="nomrepleg1" ref={register} className="form-control" placeholder="First name"></input>
+            <input type="text" name="nomrepleg1" ref={register} className="form-control" placeholder="Name of legal representative"></input>
             <p className="text-danger">{errors.nomrepleg1?.message}</p>
           </div>
         </div>
         <label >Registered Address</label>
-        <input type="text" name="adresse1" ref={register} className="form-control mb-2" placeholder="Example input"></input>
+        <input type="text" name="adresse1" ref={register} className="form-control mb-2" placeholder="Registered Address"></input>
         <p className="text-danger">{errors.adresse1?.message}</p>
         <div className="row mb-2">
           <div className="col">
             <label>Postal code</label>
-            <input type="number" name="codepos1" ref={register} className="form-control" placeholder="First name"></input>
+            <input type="number" name="codepos1" ref={register} className="form-control" placeholder="Postal code"></input>
             <p className="text-danger">{errors.codepos1?.message}</p>
           </div>
           <div className="col">
             <label>City</label>
-            <input type="text" name="ville1" ref={register} className="form-control" placeholder="First name"></input>
+            <input type="text" name="ville1" ref={register} className="form-control" placeholder="City"></input>
             <p className="text-danger">{errors.ville1?.message}</p>
           </div>
         </div>
         <div className="row mb-4">
           <div className="col">
             <label>E-mail</label>
-            <input type="email" name="email1" ref={register} className="form-control" placeholder="First name"></input>
+            <input type="email" name="email1" ref={register} className="form-control" placeholder="name@domaine.com"></input>
             <p className="text-danger">{errors.email1?.message}</p>
           </div>
           <div className="col">
             <label>Phone</label>
-            <input type="number" name="tel1" ref={register} className="form-control" placeholder="First name"></input>
+            <input type="number" name="tel1" ref={register} className="form-control" placeholder="Phone number"></input>
             <p className="text-danger">{errors.tel1?.message}</p>
           </div>
         </div>
@@ -144,22 +144,22 @@ const Two = ({ setData, setStep, data,datta}) => {
             </div>
             <div className="col">
               <label>Name </label>
-              <input type="text" name="namelawyer1" ref={register} className="form-control" placeholder="First name"  required></input>
+              <input type="text" name="namelawyer1" ref={register} className="form-control" placeholder="Name"  required></input>
               <p className="text-danger">{errors.namelawyer1?.message}</p>
             </div>
           </div>
           <label >Address</label>
-          <input type="text" name="adresslawyer1" ref={register} className="form-control mb-2" placeholder="Example input"  required></input>
+          <input type="text" name="adresslawyer1" ref={register} className="form-control mb-2" placeholder="Adresse"  required></input>
           <p className="text-danger">{errors.adresslawyer1?.message}</p>
           <div className="row mb-4">
             <div className="col">
               <label>E-mail</label>
-              <input type="email" name="emaillawyer1" ref={register} className="form-control" placeholder="First name"  required></input>
+              <input type="email" name="emaillawyer1" ref={register} className="form-control" placeholder="name@domaine.com"  required></input>
               <p className="text-danger">{errors.emaillawyer1?.message}</p>
             </div>
             <div className="col">
               <label>Phone</label>
-              <input type="number" name="tellawyer1" ref={register} className="form-control" placeholder="First name"  required></input>
+              <input type="number" name="tellawyer1" ref={register} className="form-control" placeholder="Phone number"  required></input>
               <p className="text-danger">{errors.tellawyer1?.message}</p>
             </div>
           </div>
