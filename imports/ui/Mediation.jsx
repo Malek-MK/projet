@@ -28,13 +28,13 @@ const Mediation = ({ setShow1 ,datta,show,fetch}) => {
       {!show?<Header/>:null}
      
       <div className="container mt-5">
-      {show? <div class="alert alert-success mt-3" role="alert">
-  <div class="d-flex">
+      {show? <div className="alert alert-success mt-3" role="alert">
+  <div className="d-flex">
     <div>
     
     </div>
     <div>
-      <div class="alert-title "> <i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
+      <div className="alert-title "> <i className="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
       Congratulations! your mediation date preferences have been saved and our team has been notified.</div>
      
     </div>

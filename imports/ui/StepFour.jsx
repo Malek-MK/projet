@@ -14,8 +14,9 @@ const notyf = new Notyf({
     }
 })
 
-const StepFour = ({ setStep, data, setShow1 }) => {
+const StepFour = ({ setStep, data}) => {
     const [res,setRes]=useState();
+    console.log("res :",res)
     const generatePDF=()=>{
         var doc=new jsPDF('p', 'mm', [600, 650]);
         doc.html(document.querySelector("#content"),{
@@ -51,6 +52,7 @@ const StepFour = ({ setStep, data, setShow1 }) => {
         tel1: data.tel1,
         objlitige: data.objlitige,
         desc: data.desc,
+        other:data.other,
         namelawyer: data.namelawyer,
         firstnamelawyer: data.firstnamelawyer,
         adresslawyer: data.adresslawyer,
@@ -69,13 +71,11 @@ const StepFour = ({ setStep, data, setShow1 }) => {
     const onclick = () => {
         Meteor.call(
             'insertMediation', data, (err,res) => {
-                console.log("res :",res)
                 if (err) {
                     notyf.error("Inserted Failed")
                 } else {
                     notyf.success("Inserted with success")
                     setRes(res)
-        
                 }
             }
         );
@@ -92,10 +92,6 @@ const StepFour = ({ setStep, data, setShow1 }) => {
             <h5>Informations concernant le demandeur de la médiation</h5><br></br>
             <table className="table table-bordered " >
                 <tbody>
-                <tr>
-                        <th className="w-25">Id Mediation</th>
-                        <td className="w-75"> {res}</td>
-                    </tr>
                     <tr>
                         <th className="w-25">Country</th>
                         <td className="w-75"> {data1.infoA}</td>
@@ -190,7 +186,10 @@ const StepFour = ({ setStep, data, setShow1 }) => {
                 <tbody>
                     <tr>
                         <th className="w-25">Type de litige	</th>
-                        <td className="w-75">{data1.objlitige}</td>
+                        {data1.objlitige==="Other"?
+                        <td className="w-75">{data1.other}</td>
+                        :<td className="w-75">{data1.objlitige}</td>}
+                        
                     </tr>
                     <tr>
                         <th className="w-25">Description du litige </th>

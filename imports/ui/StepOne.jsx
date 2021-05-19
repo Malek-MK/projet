@@ -39,7 +39,7 @@ const StepOne = ({ setData, setStep, data,datta }) => {
 
         <div className="form-group mb-2 mt-5">
           <h2 className="text mb-5">Part A contact details</h2>
-          <h5>Information about you: :</h5>
+          <h5>Information about you :</h5>
           <label >Country</label>
           <select name="infoA" ref={register} className="form-control" >
             <option value="Tunisia" >Tunisia</option>

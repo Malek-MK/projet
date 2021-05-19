@@ -69,13 +69,13 @@ const Payment = ({setVerifff,verifff,id,paym}) => {
   }
     return (
         <div className="container text-center mt-2 mb-5">
-            {!verifff&&!paym? <div class="alert alert-warning mt-5" role="alert">
-  <div class="d-flex">
+            {!verifff&&!paym? <div className="alert alert-warning mt-5" role="alert">
+  <div className="d-flex">
     <div>
     
     </div>
     <div>
-      <div class="alert-title "> <i class="fa fa-exclamation-triangle fa-2x"></i>
+      <div className="alert-title "> <i className="fa fa-exclamation-triangle fa-2x"></i>
       
 Félicitations! votre dossier a bien été créé et notre équipe en a été averti.
 Veuillez à présent choisir le forfait de médiation le plus adapté à votre situation.</div>
@@ -84,13 +84,13 @@ Veuillez à présent choisir le forfait de médiation le plus adapté à votre s
   </div>
 </div>:null}
 
-{verifff||paym?<div class="alert alert-success mt-5" role="alert">
-  <div class="d-flex">
+{verifff||paym?<div className="alert alert-success mt-5" role="alert">
+  <div className="d-flex">
     <div>
     
     </div>
     <div>
-      <div class="alert-title "><i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
+      <div className="alert-title "><i className="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
       Congratulations! your information has been saved and our team has been notified.</div>
      
     </div>
@@ -98,11 +98,11 @@ Veuillez à présent choisir le forfait de médiation le plus adapté à votre s
 </div>:null}
 
       {!show? 
-      <div class="row row-deck mt-5 mb-5">
-      <div class="col-md-4">
-        <div class="card">
+      <div className="row row-deck mt-5 mb-5">
+      <div className="col-md-4">
+        <div className="card">
         <div className="mt-5">
-        <i class="fa fa-houzz fa-5x text-primary" aria-hidden="true" ></i>
+        <i className="fa fa-houzz fa-5x text-primary" aria-hidden="true" ></i>
         <br></br><br></br><br></br>
         <h3>750<sup>€ HT</sup></h3>
         <p className="text-secondary">1/2 journée</p> <br></br><br></br> <br></br>  
@@ -114,11 +114,11 @@ Veuillez à présent choisir le forfait de médiation le plus adapté à votre s
     Rédaction de la transaction</p><br></br>
     <div>
         <br></br>
-    <div class="d-flex justify-content-center mb-3 mt-2 " style={{display:"flex"}}>
+    <div className="d-flex justify-content-center mb-3 mt-2 " style={{display:"flex"}}>
       
-      <label class="form-check form-switch">
+      <label className="form-check form-switch">
         
-        <span class="form-check-label"><input class="form-check-input" type="checkbox"></input>Je souhaite <br></br>partager les<br></br> frais avec</span>
+        <span className="form-check-label"><input className="form-check-input" type="checkbox"></input>Je souhaite <br></br>partager les<br></br> frais avec</span>
       </label>
     </div>
     </div>
@@ -126,10 +126,10 @@ Veuillez à présent choisir le forfait de médiation le plus adapté à votre s
         </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card ">
+      <div className="col-md-4">
+        <div className="card ">
         <div className="mt-5 ">
-        <i class="fa fa-rebel fa-5x text-primary" aria-hidden="true" ></i>
+        <i className="fa fa-rebel fa-5x text-primary" aria-hidden="true" ></i>
         <br></br><br></br><br></br>
         <h3>1200<sup>€ HT</sup></h3>
         <p className="text-secondary">1 journée</p> <br></br><br></br>   <br></br>
@@ -141,11 +141,11 @@ Veuillez à présent choisir le forfait de médiation le plus adapté à votre s
     Rédaction de la transaction</p><br></br>
     <div>
         <br></br>
-    <div class="d-flex justify-content-center mb-3 mt-2 " style={{display:"flex"}}>
+    <div className="d-flex justify-content-center mb-3 mt-2 " style={{display:"flex"}}>
       
-      <label class="form-check form-switch">
+      <label className="form-check form-switch">
         
-        <span class="form-check-label"><input class="form-check-input" type="checkbox"></input>Je souhaite <br></br>partager les<br></br> frais avec</span>
+        <span className="form-check-label"><input className="form-check-input" type="checkbox"></input>Je souhaite <br></br>partager les<br></br> frais avec</span>
       </label>
     </div>
     </div>
@@ -154,10 +154,10 @@ Veuillez à présent choisir le forfait de médiation le plus adapté à votre s
         
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card ">
+      <div className="col-md-4">
+        <div className="card ">
         <div className="mt-5 ">
-        <i class="fa fa-diamond fa-5x text-primary" aria-hidden="true" ></i>
+        <i className="fa fa-diamond fa-5x text-primary" aria-hidden="true" ></i>
         <br></br><br></br><br></br>
         <h3>{total}<sup>€ HT</sup></h3>
         <p className="text-secondary">Plus d’un jour<br></br><small>+ 600€ HT par 1/2 journée supplémentaire</small></p>   
@@ -175,11 +175,11 @@ Veuillez à présent choisir le forfait de médiation le plus adapté à votre s
     Rédaction de la transaction</p><br></br>
     <div>
         
-    <div class="d-flex justify-content-center mb-3 mt-2 " style={{display:"flex"}}>
+    <div className="d-flex justify-content-center mb-3 mt-2 " style={{display:"flex"}}>
       
-      <label class="form-check form-switch">
+      <label className="form-check form-switch">
         
-        <span class="form-check-label"><input class="form-check-input" type="checkbox"></input>Je souhaite <br></br>partager les<br></br> frais avec</span>
+        <span className="form-check-label"><input className="form-check-input" type="checkbox"></input>Je souhaite <br></br>partager les<br></br> frais avec</span>
       </label>
     </div>
     </div>
@@ -195,10 +195,10 @@ Veuillez à présent choisir le forfait de médiation le plus adapté à votre s
       <div>
       <div className="container">
       <form onSubmit={handleSubmit(onSubmit)}>
-      <div class="row row-deck mt-5 mb-5" >
-  <div class="col-md-6 ">
-    <div class="card border-0 ">
-      <div class="card-body border-end">
+      <div className="row row-deck mt-5 mb-5" >
+  <div className="col-md-6 ">
+    <div className="card border-0 ">
+      <div className="card-body border-end">
       Vous avez décidé de prendre la totalité des frais de médiation à<br></br>
       votre seule charge. Veuillez noter que vous ne serez débité du<br></br>
       montant ci-dessous que lorsque<b>Herrera and Curry Co </b>aura<br></br>
@@ -263,79 +263,79 @@ Veuillez à présent choisir le forfait de médiation le plus adapté à votre s
     </div>
     </div>
   </div>
-  <div class="col-md-6">
-    <div class="card border-0">
-      <div class="card-body border-start">
-        <h5><b><i class="fa fa-lock text-secondary" aria-hidden="true"></i> Pré-autorisation sécurisée par carte bancaire</b></h5>
+  <div className="col-md-6">
+    <div className="card border-0">
+      <div className="card-body border-start">
+        <h5><b><i className="fa fa-lock text-secondary" aria-hidden="true"></i> Pré-autorisation sécurisée par carte bancaire</b></h5>
         <div>
-        <i class="fa fa-cc-mastercard text-danger fa-3x " style={{marginRight:"5px"}} aria-hidden="true"></i>
-        <i class="fa fa-credit-card text-primary fa-3x" style={{marginRight:"5px"}} aria-hidden="true"></i>
-        <i class="fa fa-cc-paypal text-info fa-3x" style={{marginRight:"5px"}} aria-hidden="true"></i>
-        <i class="fa fa-cc-visa text-warning fa-3x" style={{marginRight:"5px"}} aria-hidden="true"></i>
-        <i class="fa fa-cc-amex text-success fa-3x" aria-hidden="true"></i>
+        <i className="fa fa-cc-mastercard text-danger fa-3x " style={{marginRight:"5px"}} aria-hidden="true"></i>
+        <i className="fa fa-credit-card text-primary fa-3x" style={{marginRight:"5px"}} aria-hidden="true"></i>
+        <i className="fa fa-cc-paypal text-info fa-3x" style={{marginRight:"5px"}} aria-hidden="true"></i>
+        <i className="fa fa-cc-visa text-warning fa-3x" style={{marginRight:"5px"}} aria-hidden="true"></i>
+        <i className="fa fa-cc-amex text-success fa-3x" aria-hidden="true"></i>
         </div>
       
       <br></br>
-      <div class="form-group">
-      <label class="sr-only">Nom organisation pour la facturation :</label>
-      <div class="input-group mb-2">
-        <div class="input-group-prepend">
-          <div class="input-group-text">@</div>
+      <div className="form-group">
+      <label className="sr-only">Nom organisation pour la facturation :</label>
+      <div className="input-group mb-2">
+        <div className="input-group-prepend">
+          <div className="input-group-text">@</div>
         </div>
-        <input type="text" class="form-control" placeholder="Votre nom ou celui de votre organisation pour la facturation" name="nom" ref={register}></input>
+        <input type="text" className="form-control" placeholder="Votre nom ou celui de votre organisation pour la facturation" name="nom" ref={register}></input>
         <p className="text-danger">{errors.nom?.message}</p>
       </div>
     </div>
-  <div class="form-group">
+  <div className="form-group">
     <label>Adresse :</label>
-    <input type="text" class="form-control" placeholder="Adresse" name="adresse" ref={register}></input>
+    <input type="text" className="form-control" placeholder="Adresse" name="adresse" ref={register}></input>
     <p className="text-danger">{errors.adresse?.message}</p>    
   </div>
  
-  <div class="row">
-    <div class="col">
+  <div className="row">
+    <div className="col">
       <label>Zip Code :</label>
-      <input type="number" class="form-control" placeholder="Zip code" maxlength="5" name="codepos" ref={register}></input>
+      <input type="number" className="form-control" placeholder="Zip code" maxlength="5" name="codepos" ref={register}></input>
       <p className="text-danger">{errors.codepos?.message}</p>    
     </div>
     
-    <div class="col">
+    <div className="col">
       <label>City :</label>
-      <input type="text" class="form-control" placeholder="Ville" name="ville" ref={register}></input>
+      <input type="text" className="form-control" placeholder="Ville" name="ville" ref={register}></input>
       <p className="text-danger">{errors.ville?.message}</p>    
     </div>
   </div>
   
-  <div class="form-group">
+  <div className="form-group">
     <label>Numéro de la carte :</label>
-    <input type="number" class="form-control" placeholder="1234 1234 1234 1234" name="numcart" ref={register}></input>
+    <input type="number" className="form-control" placeholder="1234 1234 1234 1234" name="numcart" ref={register}></input>
     <p className="text-danger">{errors.numcart?.message}</p>    
   </div>
   
-  <div class="row">
-    <div class="col">
+  <div className="row">
+    <div className="col">
       <label>Expiration :</label>
-      <input type="text" class="form-control" placeholder="Expiration" name="exp" ref={register}></input>
+      <input type="text" className="form-control" placeholder="Expiration" name="exp" ref={register}></input>
       <p className="text-danger">{errors.exp?.message}</p>    
     </div>
     
-    <div class="col">
+    <div className="col">
       <label>CVC :</label>
-      <input type="number" class="form-control" placeholder="CVC"  name="cvc" ref={register}></input>
+      <input type="number" className="form-control" placeholder="CVC"  name="cvc" ref={register}></input>
       <p className="text-danger">{errors.cvc?.message}</p>    
     </div>
   </div>
   <br></br>
-  <div class="d-flex justify-content-left">
-  <input class="form-check-input" type="checkbox"  id="flexCheckDefault" name="condgen" ref={register}></input>
-  <label class="form-check-label" htmlFor="flexCheckDefault">
+  <div className="d-flex justify-content-left">
+  <input className="form-check-input" type="checkbox"  id="flexCheckDefault" name="condgen" ref={register}></input>
+  <label className="form-check-label" htmlFor="flexCheckDefault">
   J'ai lu et j'accepte <span className="text-primary">les conditions générales</span>.
   </label>
 </div>
 <p className="text-danger">{errors.condgen?.message}</p>    
-<div class="d-flex justify-content-left">
-  <input class="form-check-input" type="checkbox"  id="flexCheckChecked" name="cartconf" ref={register}></input>
-  <label class="form-check-label" htmlFor="flexCheckChecked">
+<div className="d-flex justify-content-left">
+  <input className="form-check-input" type="checkbox"  id="flexCheckChecked" name="cartconf" ref={register}></input>
+  <label className="form-check-label" htmlFor="flexCheckChecked">
   J'ai lu et j'accepte <span className="text-primary"> la charte de confidentialité</span>.
   </label>
 </div>

@@ -48,6 +48,7 @@ const Four = ({ setStep, data,id }) => {
         email1: data.email1,
         tel1: data.tel1,
         objlitige: data.objlitige,
+        other:data.other,
         desc: data.desc,
         namelawyer: data.namelawyer,
         firstnamelawyer: data.firstnamelawyer,
@@ -183,7 +184,9 @@ const Four = ({ setStep, data,id }) => {
                 <tbody>
                     <tr>
                         <th className="w-25">Type de litige	</th>
-                        <td className="w-75">{data1.objlitige}</td>
+                        {data1.objlitige==="Other"?
+                        <td className="w-75">{data1.other}</td>
+                        :<td className="w-75">{data1.objlitige}</td>}
                     </tr>
                     <tr>
                         <th className="w-25">Description du litige </th>

@@ -4,16 +4,18 @@ import Schema3 from '../Validation/YupStep3';
 import { yupResolver } from '@hookform/resolvers/yup';
 
   
-const StepThree = ({ setData, setStep,data,datta }) => {
+const StepThree = ({ setData, setStep,data,props}) => {
 
     
-    const { register, handleSubmit, errors } = useForm({
+    const { register, handleSubmit, errors,watch } = useForm({
         resolver: yupResolver(Schema3),
         defaultValues:{
         objlitige:data.objlitige,
         desc:data.desc,
+        other:data.other,
         }
     });
+    const objlitige = watch("objlitige");
     const onSubmit = (data3) => {
         setData(old => ({ ...old, ...data3 }));
         setStep(3)
@@ -36,9 +38,17 @@ const StepThree = ({ setData, setStep,data,datta }) => {
                         <option value="Coownership" >Co-ownership</option>
                         <option value="Consumption" >Consumption</option>
                         <option value="Construction" >Construction</option>
+                        <option value="Other">Other</option>
                     </select>
                     <p className="text-danger">{errors.objlitige?.message}</p>
                 </div>
+                {objlitige == "Other" && (
+                <div>
+                   <label >Add your type of dispute</label>
+                    <input type="text" name="other" ref={register} className="form-control mb-2" placeholder="Add your type of dispute"  required></input>
+                    <p className="text-danger">{errors.other?.message}</p>
+                </div>
+                )}
                 <div className="form-group mb-4">
                     <label >Description of the dispute</label>
                     <textarea name="desc" ref={register} className="form-control"  rows="3"></textarea>

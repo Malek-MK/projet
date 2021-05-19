@@ -94,11 +94,11 @@ const verif=()=>{
                             <div className="position-absolute top-5 end-0">
                                 <ul className="navbar-nav topnav">
                                     <li className="nav-item mr-2">
-                                        <Link to="/signin" className="text-success text-decoration-none"><b><i className="fa fa-user"></i>Sign In</b></Link>
+                                        <Link to="/signin" className="text-success text-decoration-none"><b><i className="fa fa-sign-in"></i> Sign In</b></Link>
                                     </li>
                                     <li className="nav-item text-dark">/</li>
                                     <li className="nav-item">
-                                        <Link to="/signup" className="text-info text-decoration-none"><b><i className="fa fa-plus"></i>Sign Up</b></Link>
+                                        <Link to="/signup" className="text-info text-decoration-none"><b><i className="fa fa-user-plus"></i>Sign Up</b></Link>
                                     </li>
                                 </ul>
                             </div>

@@ -7,13 +7,15 @@ import { yupResolver } from '@hookform/resolvers/yup';
 const Three = ({ setData, setStep,datta }) => {
 
     
-    const { register, handleSubmit, errors } = useForm({
+    const { register, handleSubmit, errors,watch} = useForm({
         resolver: yupResolver(Schema3),
         defaultValues:{
         objlitige:datta.objlitige,
         desc:datta.desc,
+        other:datta.other,
         }
     });
+    const objlitige = watch("objlitige");
     const onSubmit = (data3) => {
         setData(old => ({ ...old, ...data3 }));
         setStep(3)
@@ -27,6 +29,7 @@ const Three = ({ setData, setStep,datta }) => {
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <h2 className="text mb-5">Subject of the dispute</h2>
+               
                 <div className="form-group mb-2 mt-3">
                     <label >Type of dispute </label>
                     <select name="objlitige" ref={register} className="form-control" >
@@ -36,9 +39,17 @@ const Three = ({ setData, setStep,datta }) => {
                         <option value="Coownership" >Co-ownership</option>
                         <option value="Consumption" >Consumption</option>
                         <option value="Construction" >Construction</option>
+                        <option value="Other">Other</option>
                     </select>
                     <p className="text-danger">{errors.objlitige?.message}</p>
                 </div>
+                {(objlitige == "Other"||datta.objlitige==="Other") && (
+                <div>
+                   <label >Add your type of dispute</label>
+                    <input type="text" name="other" ref={register} className="form-control mb-2" placeholder="Add your type of dispute"  required></input>
+                    <p className="text-danger">{errors.other?.message}</p>
+                </div>
+                )}
                 <div className="form-group mb-4">
                     <label >Description of the dispute</label>
                     <textarea name="desc" ref={register} className="form-control"  rows="3"></textarea>
