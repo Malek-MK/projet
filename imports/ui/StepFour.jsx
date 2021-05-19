@@ -92,6 +92,10 @@ const StepFour = ({ setStep, data, setShow1 }) => {
             <h5>Informations concernant le demandeur de la médiation</h5><br></br>
             <table className="table table-bordered " >
                 <tbody>
+                <tr>
+                        <th className="w-25">Id Mediation</th>
+                        <td className="w-75"> {res}</td>
+                    </tr>
                     <tr>
                         <th className="w-25">Country</th>
                         <td className="w-75"> {data1.infoA}</td>
