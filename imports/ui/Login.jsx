@@ -59,13 +59,14 @@ const Login = () => {
   return (
     <div>
 
-      <Link to="/home" style={{ color: "black" }}>←Go Home</Link>
-      <div className="card text border-primary mb-3" style={{ maxWidth: '50%', margin: '0 auto' }}>
-        <div className="card-header text-center">
-          <h2>Sign In</h2>
-        </div>
+<div class="card text-center">
+  <div class="row no-gutters">
+    <div class="col-md-5">
+    
+      <div class="card-body">
+        
         <div className="card-body">
-
+        <h2>Sign In</h2>
           <Form onSubmit={handleSubmit(onSubmit)} id="register" noValidate>
          
             <Form.Group md="3" >
@@ -88,10 +89,20 @@ const Login = () => {
           </Form>
         </div>
 
-        <div className="card-footer text-muted text-center">
+        <div className="text-muted">
           © {new Date().getFullYear()} - All rights reserved
         </div>
+      
       </div>
+      
+    </div>
+    <div class="col-md-7">
+      <img src="./images/login.jpg" class="card-img" alt="..."/>
+    </div>
+  </div>
+    </div>
+
+      
     </div>
   )
 }
