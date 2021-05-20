@@ -63,14 +63,18 @@ const Login = () => {
   <div class="row no-gutters">
     <div class="col-md-5">
     
-      <div class="card-body">
+     
         
-        <div className="card-body">
-        <h2>Sign In</h2>
+        <div className="card-body bg-info h-100">
+          <h1 className="mt-4 mb-5"><i className="fa fa-balance-scale"></i>Community</h1>
+          <br></br><br></br>
+        <h2 className="mt-2 mb-2">Log in</h2>
+        <p><span className="mb-5">No account yet?</span><Link to="/signup">Register!</Link></p>
+
           <Form onSubmit={handleSubmit(onSubmit)} id="register" noValidate>
          
             <Form.Group md="3" >
-              <Form.Label><h5 className="form-label required" >Email:</h5></Form.Label>
+              <Form.Label><h5 className="form-label required mt-4" >Email:</h5></Form.Label>
               <Form.Control type="email" placeholder="name@example.com" name="email" ref={register} className="form-control" autoComplete="off" />
               <p className="text-danger">{errors.email?.message}</p>
             </Form.Group>
@@ -80,24 +84,39 @@ const Login = () => {
               <p className="text-danger">{errors.password?.message}</p>
             </Form.Group>
             
-            
+            <div className="form-group mt-2">
+                    <input
+                        type="checkbox"
+                        name="verif"
+                        ref={register} 
+                        defaultChecked={false}
+                    /><label> Remember me</label>
+                <p className="text-danger">{errors.verif?.message}</p>
+                </div>
             <br></br>
             <div><Button type="submit" form="register">Login</Button></div>
-            <br></br>
-            <Link to="/signup">You have an account?</Link>
+            
             
           </Form>
-        </div>
-
-        <div className="text-muted">
+          <div className="mt-5">
           © {new Date().getFullYear()} - All rights reserved
         </div>
+        </div>
+
+       
       
-      </div>
+    
       
     </div>
     <div class="col-md-7">
+      <div className="card-body ">
+      <h3 className="mt-3">Welcome to Community</h3>
+    <p className="text-secondary mt-2">100% online mediation and arbitration platform
+allowing to solve quickly and economically
+all your disputes, conflicts or disputes</p>
       <img src="./images/login.jpg" class="card-img" alt="..."/>
+      </div>
+     
     </div>
   </div>
     </div>
