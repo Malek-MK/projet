@@ -62,11 +62,8 @@ const Login = () => {
 <div class="card text-center">
   <div class="row no-gutters">
     <div class="col-md-5">
-    
-     
-        
         <div className="card-body bg-info h-100">
-          <h1 className="mt-4 mb-5"><i className="fa fa-balance-scale"></i>Community</h1>
+        <Link className="h1 mt-4 mb-5 text-decoration-none text-dark" to="/home"><i className="fa fa-balance-scale"></i>Community</Link>
           <br></br><br></br>
         <h2 className="mt-2 mb-2">Log in</h2>
         <p><span className="mb-5">No account yet?</span><Link to="/signup">Register!</Link></p>
