@@ -65,71 +65,9 @@ const [verif,setVerif]=useState(false);
         <Link className="h1 mt-4 mb-5 text-decoration-none text-dark" to="/home"><i className="fa fa-balance-scale"></i>Community</Link>
           <br></br><br></br>
         <h2 className="mt-2 mb-2">Register</h2>
-        <p><span className="mb-5">If you already have an account ?</span><Link to="/signup">Log In!</Link></p>
+        <p><span className="mb-5">If you already have an account ?</span><Link to="/signin">Log In!</Link></p>
 
-          <Form onSubmit={handleSubmit(onSubmit)} id="register" noValidate>
-         
-            <Form.Group md="3" >
-              <Form.Label><h5 className="form-label required mt-4" >Email:</h5></Form.Label>
-              <Form.Control type="email" placeholder="name@example.com" name="email" ref={register} className="form-control" autoComplete="off" />
-              <p className="text-danger">{errors.email?.message}</p>
-            </Form.Group>
-            <Form.Group md="3" >
-              <Form.Label><h5 className="form-label required">Password:</h5></Form.Label>
-              <Form.Control type="password" placeholder="Tap your Password..." name="password" ref={register} className="form-control"  autoComplete="off"/>
-              <p className="text-danger">{errors.password?.message}</p>
-            </Form.Group>
-            
-            <div className="form-group mt-2">
-                    <input
-                        type="checkbox"
-                        name="verif"
-                        ref={register} 
-                        defaultChecked={false}
-                    /><label> Remember me</label>
-                <p className="text-danger">{errors.verif?.message}</p>
-                </div>
-            <br></br>
-            <div><Button type="submit" form="register">Login</Button></div>
-            
-            
-          </Form>
-          <div className="mt-5">
-          © {new Date().getFullYear()} - All rights reserved
-        </div>
-        </div>
-
-       
-      
-    
-      
-    </div>
-    <div class="col-md-7">
-      <div className="card-body ">
-      <h3 className="mt-3">Welcome to Community</h3>
-    <p className="text-secondary mt-2">100% online mediation and arbitration platform
-allowing to solve quickly and economically
-all your disputes, conflicts or disputes</p>
-      <img src="./images/register.jpg" class="card-img" alt="..."/>
-      </div>
-     
-    </div>
-  </div>
-    </div>
-     {/*  <Link to="/home" style={{color:"black"}}>←Go Home</Link>
-    
-      <div className="card text border-primary mb-3" style={{ maxWidth: '50%', margin: '0 auto' }}>
-        <div className="card-header text-center">
-          <h2>Sign Up</h2>
-        </div>
-        <div>
-         
-
-        </div>
-
-        <div className="card-body">
-        
-          <Form onSubmit={handleSubmit(onSubmit)} id="register" noValidate>
+        <Form onSubmit={handleSubmit(onSubmit)} id="register" noValidate>
             <Form.Group md="3" >
               <Form.Label><h5 className="form-label required mt-2">UserName:</h5></Form.Label>
               <Form.Control type="text"  placeholder="Tap your UserName..." name="name" ref={register} className="form-control"  autoComplete="off"/>
@@ -173,15 +111,29 @@ all your disputes, conflicts or disputes</p>
             <div><Button type="submit" form="register">Create Account</Button>
             </div>
           </Form>
-          <br></br>
-              If you already have an account ? <Link to="/signin">Signin</Link>
+          <br></br><br></br><br></br><br></br>
+          <div className="mt-5">
+          © {new Date().getFullYear()} - All rights reserved
+        </div>
         </div>
 
-        <div className="card-footer text-muted text-center">
-          © {new Date().getFullYear()} - All rights reserved
+       
+      
+    
+      
+    </div>
+    <div class="col-md-7">
+      <div className="card-body ">
+      <h3 className="mt-3">Welcome to Community</h3>
+    <p className="text-secondary mt-2">100% online mediation and arbitration platform
+allowing to solve quickly and economically
+all your disputes, conflicts or disputes</p>
+      <img src="./images/register.jpg" class="card-img" alt="..."/>
+      </div>
+     
+    </div>
   </div>
-      </div> */}
-
+    </div>
     </div>
   )
 }
