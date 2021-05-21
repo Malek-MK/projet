@@ -20,7 +20,7 @@ const notyf = new Notyf({
   }
 })
 
-const Signup = () => {
+const RegisterMediator = () => {
   const history = useHistory();
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(Schema)
@@ -28,13 +28,13 @@ const Signup = () => {
 const [verif,setVerif]=useState(false);
   const onSubmit = (data) => {
     if(verif){
-      Meteor.call('insertAccount', data, (err) => {
+      Meteor.call('insertMediator', data, (err) => {
         if (err) {
           console.log('Inserted Failed', err)
           notyf.error("Inserted Failed")
         }
         else {
-          console.log('Inserted user with succes')
+          console.log('Inserted mediator with succes')
           history.push('/signin');
           setVerif(false)
         } 
@@ -141,11 +141,13 @@ const [verif,setVerif]=useState(false);
       
     </div>
     <div class="col-md-7">
-      <div className="card-body text-center">
+      <div className="card-body h-100 text-center">
       <h3 className="mt-3">Welcome to Community</h3>
-    <p className="text-secondary mt-2">100% online mediation and arbitration platform
-allowing to solve quickly and economically
-all your disputes, conflicts or disputes</p>
+    <p className="text-secondary mt-2">You are a Mediator and wish to use our platform
+to carry out your own mediations online
+and / or simply wish to submit your application
+in order to be part of the JustiCity Mediators team?</p>
+<p className="text-secondary"><b>Nothing could be simpler, register and let yourself be guided!</b></p>
       <img src="./images/register.jpg" class="card-img" alt="..." style={{widht:200,height:700}}/>
       </div>
      
@@ -156,5 +158,5 @@ all your disputes, conflicts or disputes</p>
   )
 }
 
-export default Signup;
+export default RegisterMediator;
 

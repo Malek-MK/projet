@@ -62,26 +62,26 @@ const Login = () => {
 <div class="card text-center">
   <div class="row no-gutters">
     <div class="col-md-5">
-        <div className="card-body bg-info h-100">
-        <Link className="h1 mt-4 mb-5 text-decoration-none text-dark" to="/home"><i className="fa fa-balance-scale"></i>Community</Link>
-          <br></br><br></br>
-        <h2 className="mt-2 mb-2">Log in</h2>
-        <p><span className="mb-5">No account yet?</span><Link to="/signup">Register!</Link></p>
+        <div className="card-body bg-info h-100"><br></br>
+        <Link className="h1 mt-5 mb-5 text-decoration-none text-dark" to="/home"><i className="fa fa-balance-scale"></i>Community</Link>
+          <br></br><br></br><br></br>
+        <h2 className="mt-5 mb-2">Log in</h2>
+        <p><span className="mb-5">No account yet?</span><Link className="text-decoration-none text-success" to="/signup"><b> Register!</b></Link></p>
 
           <Form onSubmit={handleSubmit(onSubmit)} id="register" noValidate>
          
             <Form.Group md="3" >
-              <Form.Label><h5 className="form-label required mt-4" >Email:</h5></Form.Label>
+              <Form.Label><h5 className="form-label required mt-4" style={{textAlign:"left"}}>Email:</h5></Form.Label>
               <Form.Control type="email" placeholder="name@example.com" name="email" ref={register} className="form-control" autoComplete="off" />
               <p className="text-danger">{errors.email?.message}</p>
             </Form.Group>
             <Form.Group md="3" >
-              <Form.Label><h5 className="form-label required">Password:</h5></Form.Label>
+              <Form.Label><h5 className="form-label required" style={{textAlign:"left"}}>Password:</h5></Form.Label>
               <Form.Control type="password" placeholder="Tap your Password..." name="password" ref={register} className="form-control"  autoComplete="off"/>
               <p className="text-danger">{errors.password?.message}</p>
             </Form.Group>
             
-            <div className="form-group mt-2">
+            <div className="form-group mt-2" style={{textAlign:"left"}}>
                     <input
                         type="checkbox"
                         name="verif"
@@ -95,8 +95,11 @@ const Login = () => {
             
             
           </Form>
-          <div className="mt-5">
-          © {new Date().getFullYear()} - All rights reserved
+          <div className="d-flex justify-content-around mt-5">
+           <span>{new Date().getFullYear()} © <b>Community </b> </span>
+           <Link className="text-decoration-none text-dark" to="/about"> About</Link>
+           <Link className="text-decoration-none text-dark" to="/about"> CGV</Link>
+           <Link className="text-decoration-none text-dark" to="/terms-and-conditions"> Contact</Link>
         </div>
         </div>
 
@@ -106,7 +109,7 @@ const Login = () => {
       
     </div>
     <div class="col-md-7">
-      <div className="card-body ">
+      <div className="card-body text-center">
       <h3 className="mt-3">Welcome to Community</h3>
     <p className="text-secondary mt-2">100% online mediation and arbitration platform
 allowing to solve quickly and economically

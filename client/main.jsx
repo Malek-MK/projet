@@ -40,6 +40,7 @@ import ManageUsers from '../imports/ui/ManageUsers';
 import ManageMediations from '../imports/ui/ManageMediations';
 import HomeUser from '../imports/ui/HomeUser';
 import Profile from '../imports/ui/Profile';
+import RegisterMediator from '../imports/ui/RegisterMediator';
 function BlogPost() {
   let { id } = useParams();
 }
@@ -77,6 +78,7 @@ const routes = (
       <Route path="/homeAdmin" exact component={HomeAdmin} />
       <Route path="/homeArbitrator" exact component={HomeArbitrator} />
       <Authenticated path="/mediations" exact component={User} />
+      <Authenticated path="/register_mediator"  component={RegisterMediator} />
       <Authenticated path="/signup"  component={Signup} />
       <Authenticated path="/signin"  component={Login} />
       <Authenticated path="/admin"  component={Admin} />

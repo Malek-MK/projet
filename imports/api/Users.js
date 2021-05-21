@@ -48,6 +48,24 @@ Meteor.methods({
     Roles.createRole('arbitrator', { unlessExists: true });
     Roles.addUsersToRoles(res, 'arbitrator');
   },
+  insertMediator(arbitrator) {
+    if (!this.userId) {
+      throw new Meteor.Error('Not Authorized');
+  }
+    try {
+      YupUser.validate(arbitrator)
+    } catch (e) {
+      throw new Meteor.Error(e.message)
+    }
+    const res = Accounts.createUser({
+      username: arbitrator.name,
+      email: arbitrator.email,
+      password: arbitrator.password
+    }
+    );
+    Roles.createRole('mediator', { unlessExists: true });
+    Roles.addUsersToRoles(res, 'mediator');
+  },
   'showUsers': async function(){
     if (!this.userId) {
       throw new Meteor.Error('Not Authorized');

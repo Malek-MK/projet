@@ -17,5 +17,8 @@ export default Schema = yup.object().shape({
       .oneOf([yup.ref("password"), null], "password dont match"),
   verif: yup
       .boolean()
+      .oneOf([true], 'Must Accept Terms and Conditions'),  
+    veriff: yup
+      .boolean()
       .oneOf([true], 'Must Accept Terms and Conditions'),    
 });
