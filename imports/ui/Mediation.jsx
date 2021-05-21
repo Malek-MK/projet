@@ -6,13 +6,6 @@ import StepFour from '../ui/StepFour';
 import NavSteps from '../ui/NavSteps';
 import Header from '../ui/Header';
 
-const notyf = new Notyf({
-  duration: 2000,
-  position: {
-    x: 'center',
-    y: 'top',
-  }
-})
 
 const Components = [StepOne, StepTwo, StepThree, StepFour];
 
@@ -45,7 +38,7 @@ const Mediation = ({ setShow1 ,datta,show,fetch}) => {
       <div className="d-flex justify-content-center ">
         <div className="card w-100 ml-5" >
           <div className="card-body text-center">
-            <NavSteps setStep={setStep} step={step} />
+            <NavSteps step={step} />
             <Component setStep={setStep} setData={setData} setShow1={setShow1} data={data} datta={datta} fetch={fetch}/>
           </div>
         </div>

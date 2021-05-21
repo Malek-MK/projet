@@ -1,18 +1,18 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useForm } from 'react-hook-form';
 import Schema3 from '../Validation/YupStep3';
 import { yupResolver } from '@hookform/resolvers/yup';
 
   
-const StepThree = ({ setData, setStep,data,props}) => {
+const StepThree = ({ setData, setStep,data}) => {
 
     
-    const { register, handleSubmit, errors,watch } = useForm({
+    const { register, handleSubmit,watch, errors} = useForm({
         resolver: yupResolver(Schema3),
         defaultValues:{
         objlitige:data.objlitige,
         desc:data.desc,
-        other:data.other,
+        other:data.other || "Other",
         }
     });
     const objlitige = watch("objlitige");
@@ -45,7 +45,7 @@ const StepThree = ({ setData, setStep,data,props}) => {
                 {objlitige == "Other" && (
                 <div>
                    <label >Add your type of dispute</label>
-                    <input type="text" name="other" ref={register} className="form-control mb-2" placeholder="Add your type of dispute"  required></input>
+                    <input type="text" name="other" ref={register} className="form-control mb-2" placeholder="Add your type of dispute"></input>
                     <p className="text-danger">{errors.other?.message}</p>
                 </div>
                 )}

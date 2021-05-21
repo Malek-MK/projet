@@ -75,10 +75,7 @@ const Payment = ({setVerifff,verifff,id,paym}) => {
     
     </div>
     <div>
-      <div className="alert-title "> <i className="fa fa-exclamation-triangle fa-2x"></i>
-      
-Félicitations! votre dossier a bien été créé et notre équipe en a été averti.
-Veuillez à présent choisir le forfait de médiation le plus adapté à votre situation.</div>
+      <div className="alert-title "> <i className="fa fa-exclamation-triangle fa-2x"></i> Now please choose the mediation package that best suits your situation.</div>
      
     </div>
   </div>

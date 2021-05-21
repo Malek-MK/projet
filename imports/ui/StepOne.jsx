@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import Schema1 from '../Validation/YupStep1';
 import { yupResolver } from '@hookform/resolvers/yup';
 import FileUploadComponent from '../ui/FileUpload';
-const StepOne = ({ setData, setStep, data,datta }) => {
+const StepOne = ({ setData, setStep, data}) => {
   const [check, setCheck] = useState(false);
   
   const { register, handleSubmit, errors } = useForm({

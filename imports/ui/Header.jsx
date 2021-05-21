@@ -35,7 +35,6 @@ const Header = () => {
             <ul className="navbar-nav">
                 <li className="nav-item active ">
                     <Link to="/home" className="nav-link decoration-none">
-
                         Go_Home
                     </Link>
                 </li>
@@ -43,7 +42,8 @@ const Header = () => {
                     <NavDropdown title="Médiation" >
                         <NavDropdown.Item ><Link to="/mediations" className="text-dark text-decoration-none"><i class="fa fa-crosshairs text-secondary" aria-hidden="true"></i> Mes Médiations</Link></NavDropdown.Item>
                         <NavDropdown.Item ><i class="fa fa-folder-o text-secondary" aria-hidden="true"></i> Mes Litiges</NavDropdown.Item>
-                        <NavDropdown.Item ><Link to="/mediations/create" className="text-dark text-decoration-none">Ajouter une médiation</Link></NavDropdown.Item>
+                        <NavDropdown.Item ><Link to="/mediations/create" className="text-dark text-decoration-none">
+                        <i class="fa fa-plus-square text-secondary" aria-hidden="true"></i> Ajouter une médiation</Link></NavDropdown.Item>
                     </NavDropdown>
                 </li>
                 <li className="nav-item">
@@ -63,7 +63,6 @@ const Header = () => {
                     <li className="nav-item">
                     <button type="button" className="btn btn-light" ><i className="fa fa-user text-primary"></i>Hello, <b className="text-dark">{user}</b></button>
                     </li>
-                   
                     <li className="nav-item">
                         <Button variant="outline-danger" onClick={onLogout} className="btn rounded-circle mt-1 ml-5 ">
                             <i className="fa fa-power-off" aria-hidden="true"></i>

@@ -1,13 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const NavSteps = ({ setStep, step }) => {
-  const [view, setView] = useState();
-  const [view1, setView1] = useState();
-  const [view2, setView2] = useState();
-  const [view3, setView3] = useState();
-
-
-
+const NavSteps = ({step}) => {
   return (
     <div>
       {step == 0 ? <div className="steps mb-5">

@@ -17,7 +17,6 @@ const notyf = new Notyf({
 const Components = [One, Two, Three, Four];
 
 const UpMediation = ({ setShow1 ,datta,show,fetch,id}) => {
-console.log("data :",datta)
   const [data, setData] = useState({});
   const [step, setStep] = useState(0);
   const Component = Components[step];
