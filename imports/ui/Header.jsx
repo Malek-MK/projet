@@ -34,15 +34,15 @@ const Header = () => {
         <div className="d-flex flex-column flex-md-row flex-fill align-items-stretch align-items-md-center">
             <ul className="navbar-nav">
                 <li className="nav-item active ">
-                    <Link to="/homeUser" className="nav-link decoration-none">
+                    <Link to="/home" className="nav-link decoration-none">
 
                         Go_Home
                     </Link>
                 </li>
                 <li className="nav-item ">
                     <NavDropdown title="Médiation" >
-                        <NavDropdown.Item ><Link to="/mediations" className="text-dark text-decoration-none">Mes Médiations</Link></NavDropdown.Item>
-                        <NavDropdown.Item >Mes Litiges</NavDropdown.Item>
+                        <NavDropdown.Item ><Link to="/mediations" className="text-dark text-decoration-none"><i class="fa fa-crosshairs text-secondary" aria-hidden="true"></i> Mes Médiations</Link></NavDropdown.Item>
+                        <NavDropdown.Item ><i class="fa fa-folder-o text-secondary" aria-hidden="true"></i> Mes Litiges</NavDropdown.Item>
                         <NavDropdown.Item ><Link to="/mediations/create" className="text-dark text-decoration-none">Ajouter une médiation</Link></NavDropdown.Item>
                     </NavDropdown>
                 </li>

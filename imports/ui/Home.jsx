@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom';
 import Dropdown from 'react-bootstrap/Dropdown'
 
 const Home = () => {
-    const history = useHistory();
+const history = useHistory();
 const verif=()=>{
         var loggedInUser = Meteor.userId();
         if (Roles.userIsInRole(loggedInUser, 'admin')) {
@@ -19,9 +19,71 @@ const verif=()=>{
           history.push('/arbitrator');
         }
         else{
-            history.push('/signin');
+            history.push('/register_mediator');
         }
-      
+}
+const veriff=()=>{
+    var loggedInUser = Meteor.userId();
+    if (Roles.userIsInRole(loggedInUser, 'admin')) {
+      history.push('/admin');
+    }
+    else if (Roles.userIsInRole(loggedInUser, 'user')) {
+      history.push('/mediations');
+    }
+    else if (Roles.userIsInRole(loggedInUser, 'arbitrator')) {
+      history.push('/arbitrator');
+    }
+    else{
+        history.push('/signin');
+    }
+}
+const verifff=()=>{
+    var loggedInUser = Meteor.userId();
+    if (Roles.userIsInRole(loggedInUser, 'admin')) {
+      history.push('/admin');
+    }
+    else if (Roles.userIsInRole(loggedInUser, 'user')) {
+      history.push('/mediations/create');
+    }
+    else if (Roles.userIsInRole(loggedInUser, 'arbitrator')) {
+      history.push('/arbitrator');
+    }
+    else if (Roles.userIsInRole(loggedInUser, 'mediator')) {
+        history.push('/mediator/create_mediation');
+      }
+    else{
+        history.push('/createMediation');
+    }
+}
+const verif1=()=>{
+    var loggedInUser = Meteor.userId();
+    if (Roles.userIsInRole(loggedInUser, 'admin')) {
+      history.push('/admin');
+    }
+    else if (Roles.userIsInRole(loggedInUser, 'user')) {
+      history.push('/mediations');
+    }
+    else if (Roles.userIsInRole(loggedInUser, 'arbitrator')) {
+      history.push('/arbitrator');
+    }
+    else{
+        history.push('/signin');
+    }
+}
+const verif2=()=>{
+    var loggedInUser = Meteor.userId();
+    if (Roles.userIsInRole(loggedInUser, 'admin')) {
+      history.push('/admin');
+    }
+    else if (Roles.userIsInRole(loggedInUser, 'user')) {
+      history.push('/mediations');
+    }
+    else if (Roles.userIsInRole(loggedInUser, 'arbitrator')) {
+      history.push('/arbitrator');
+    }
+    else{
+        history.push('/signup');
+    }
 }
     return (
 
@@ -79,7 +141,9 @@ const verif=()=>{
                             <li className="nav-item">
                                 <Link className="nav-link text-dark" to="/contact">Contact</Link>
                             </li>
-                            
+                            <li className="nav-item active">
+                                <Link className="nav-link text-dark" onClick={veriff}>My Account <span className="sr-only">(current)</span></Link>
+                            </li>
                             <li className="nav-item" >
                                 <div class="input-group" >
 
@@ -94,11 +158,11 @@ const verif=()=>{
                             <div className="position-absolute top-5 end-0">
                                 <ul className="navbar-nav topnav">
                                     <li className="nav-item mr-2">
-                                        <Link to="/signin" className="text-success text-decoration-none"><b><i className="fa fa-sign-in"></i> Sign In</b></Link>
+                                        <Link onClick={verif1} className="text-success text-decoration-none"><b><i className="fa fa-sign-in"></i> Sign In</b></Link>
                                     </li>
                                     <li className="nav-item text-dark">/</li>
                                     <li className="nav-item">
-                                        <Link to="/signup" className="text-info text-decoration-none"><b><i className="fa fa-user-plus"></i>Sign Up</b></Link>
+                                        <Link onClick={verif2} className="text-info text-decoration-none"><b><i className="fa fa-user-plus"></i>Sign Up</b></Link>
                                     </li>
                                 </ul>
                             </div>
@@ -125,7 +189,7 @@ const verif=()=>{
                                 <h2 className="text mt-3">The solution to quickly settle your disputes</h2>
                                 <h4 className="card-text text-secondary mt-3">Are you an individual, a company or a self-employed person and wish to initiate a mediation file in order to settle a dispute?</h4>
                                 <h4 className="card-text text-secondary mt-3">Community is the tool for you!</h4>
-                                <Link className="btn btn-success btn-lg mt-4" to="/mediations/create">ASK FOR MEDIATION</Link>
+                                <Link className="btn btn-success btn-lg mt-4" onClick={verifff}>ASK FOR MEDIATION</Link>
                             </div>
                         </div>
                     </div>
@@ -137,7 +201,7 @@ const verif=()=>{
                                 <h2 className="text mt-3">The solution to manage all your mediations</h2>
                                 <h4 className="card-text text-secondary mt-3">Are you a mediator and would you like to use the JustiCity tool to carry out your own mediations or would you like to apply to become a JustiCity mediator?</h4>
                                 <h4 className="card-text text-secondary mt-3">You are in the right place !</h4>
-                                <Link className="btn btn-success btn-lg mt-4" to="/signup">SUBSCRIBE</Link>
+                                <Link className="btn btn-success btn-lg mt-4" onClick={verif}>SUBSCRIBE</Link>
                             </div>
                         </div>
                     </div>

@@ -33,7 +33,7 @@ const HeaderArbitrator = () => {
         <div className="d-flex flex-column flex-md-row flex-fill align-items-stretch align-items-md-center">
             <ul className="navbar-nav">
                 <li className="nav-item active ">
-                    <Link to="/homeArbitrator" className="nav-link decoration-none">
+                    <Link to="/home" className="nav-link decoration-none">
 
                         Go_Home
                     </Link>

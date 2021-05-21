@@ -18,10 +18,8 @@ import OfferDetails from '../imports/ui/OfferDetails';
 import OfferDetailsMed from '../imports/ui/OfferDetailsMed';
 import Features from '../imports/ui/Features';
 import Prices from '../imports/ui/Prices';
-import HomeAdmin from '../imports/ui/HomeAdmin';
 import ManageArbitrators from '../imports/ui/ManageArbitrators';
 import Arbitrator from '../imports/ui/Arbitrator';
-import HomeArbitrator from '../imports/ui/HomeArbitrator';
 import FAQ from '../imports/ui/FAQ';
 import MediatorFunctionalities from '../imports/ui/MediatorFunctionalities';
 import TariffsMediators from '../imports/ui/TariffsMediators';
@@ -38,7 +36,6 @@ import LegalNotice from '../imports/ui/LegalNotice';
 import OurCodeOfEthics from '../imports/ui/OurCodeOfEthics';
 import ManageUsers from '../imports/ui/ManageUsers';
 import ManageMediations from '../imports/ui/ManageMediations';
-import HomeUser from '../imports/ui/HomeUser';
 import Profile from '../imports/ui/Profile';
 import RegisterMediator from '../imports/ui/RegisterMediator';
 function BlogPost() {
@@ -49,7 +46,6 @@ const routes = (
     <Switch>
     <Route path="/manageMediations" exact component={ManageMediations} /> 
     <Route path="/profile" exact component={Profile} /> 
-    <Route path="/homeUser" exact component={HomeUser} /> 
     <Route path="/manageUsers" exact component={ManageUsers} /> 
     <Route path="/mediations/create" exact component={Mediation} /> 
     <Route path="/our-code-of-ethics" exact component={OurCodeOfEthics} /> 
@@ -75,8 +71,6 @@ const routes = (
     <Route path="/details-business-offer" exact component={OfferDetails}/>
     <Route path="/details-offer-mediators" exact component={OfferDetailsMed}/>
       <Route path="/home" exact component={Home} />
-      <Route path="/homeAdmin" exact component={HomeAdmin} />
-      <Route path="/homeArbitrator" exact component={HomeArbitrator} />
       <Authenticated path="/mediations" exact component={User} />
       <Authenticated path="/register_mediator"  component={RegisterMediator} />
       <Authenticated path="/signup"  component={Signup} />
