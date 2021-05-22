@@ -61,7 +61,7 @@ const Header = () => {
                                         </button>
                     </li> 
                     <li className="nav-item">
-                    <button type="button" className="btn btn-light" ><i className="fa fa-user text-primary"></i>Hello, <b className="text-dark">{user}</b></button>
+                    <button type="button" className="btn btn-light" ><i className="fa fa-user text-primary"></i> Hello, <b className="text-dark">{user}</b></button>
                     </li>
                     <li className="nav-item">
                         <Button variant="outline-danger" onClick={onLogout} className="btn rounded-circle mt-1 ml-5 ">

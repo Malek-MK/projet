@@ -49,9 +49,6 @@ Meteor.methods({
     Roles.addUsersToRoles(res, 'arbitrator');
   },
   insertMediator(arbitrator) {
-    if (!this.userId) {
-      throw new Meteor.Error('Not Authorized');
-  }
     try {
       YupUser.validate(arbitrator)
     } catch (e) {

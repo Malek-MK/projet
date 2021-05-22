@@ -1,13 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import Button from "react-bootstrap/Button";
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Meteor } from 'meteor/meteor';
 import { useHistory } from 'react-router-dom'
 import { useTracker } from "meteor/react-meteor-data";
 
-const HeaderAdmin = () => {
-    const history = useHistory();
+const HeaderMediator = () => {
     const user = useTracker(() => Meteor.user()?.username);
+    const history = useHistory();
     const onLogout = () => {
         Meteor.logout();
         history.replace('/signin');
@@ -34,11 +35,24 @@ const HeaderAdmin = () => {
             <ul className="navbar-nav">
                 <li className="nav-item active ">
                     <Link to="/home" className="nav-link decoration-none">
-
                         Go_Home
                     </Link>
                 </li>
-               
+                <li className="nav-item ">
+                    <NavDropdown title="Médiation" >
+                        <NavDropdown.Item ><Link to="/mediations" className="text-dark text-decoration-none"><i class="fa fa-crosshairs text-secondary" aria-hidden="true"></i> Mes Médiations</Link></NavDropdown.Item>
+                        <NavDropdown.Item ><Link to="/mediations" className="text-dark text-decoration-none"><i class="fa fa-th-large text-secondary" aria-hidden="true"></i> Médiations Cabinet</Link></NavDropdown.Item>
+                        <NavDropdown.Item ><Link to="/mediations" className="text-dark text-decoration-none"><i class="fa fa-tty text-secondary" aria-hidden="true"></i> Médiations Community</Link></NavDropdown.Item>
+                        <NavDropdown.Item ><i class="fa fa-folder-o text-secondary" aria-hidden="true"></i> Mes Litiges</NavDropdown.Item>
+                        <NavDropdown.Item ><Link to="mediator/create_mediation" className="text-dark text-decoration-none">
+                        <i class="fa fa-plus-square text-secondary" aria-hidden="true"></i> Ajouter une médiation</Link></NavDropdown.Item>
+                    </NavDropdown>
+                </li>
+                <li className="nav-item">
+                    <NavDropdown title="Arbitrage" >
+                        <NavDropdown.Item >Arbitrages</NavDropdown.Item>
+                    </NavDropdown>
+                </li>
 
             </ul>
             <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
@@ -49,9 +63,8 @@ const HeaderAdmin = () => {
                                         </button>
                     </li> 
                     <li className="nav-item">
-                    <button type="button" className="btn btn-light" ><i className="fa fa-user-secret text-primary"></i> Hello Admin, <b className="text-dark">{user}</b></button>
+                    <button type="button" className="btn btn-light" ><i className="fa fa-connectdevelop text-primary"></i> Hello Mediator, <b className="text-dark">{user}</b></button>
                     </li>
-                   
                     <li className="nav-item">
                         <Button variant="outline-danger" onClick={onLogout} className="btn rounded-circle mt-1 ml-5 ">
                             <i className="fa fa-power-off" aria-hidden="true"></i>
@@ -70,4 +83,4 @@ const HeaderAdmin = () => {
     )
 }
 
-export default HeaderAdmin;
+export default HeaderMediator

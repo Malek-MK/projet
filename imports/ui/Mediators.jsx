@@ -2,7 +2,6 @@ import React from 'react'
 import NavBar from '../ui/NavBar';
 import Footer from '../ui/Footer';
 import { Link } from 'react-router-dom';
-
 const Mediators = () => {
     return (
         <div>

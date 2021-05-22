@@ -3,7 +3,7 @@ import React from 'react'
 const NotFound = () => {
     return (
         <div>
-            <h1><i class="fas fa-exclamation-triangle"></i>404 - Not Found Error -</h1>
+            <h1 className="text-center"><i class="fa fa-frown-o" aria-hidden="true"></i>404 - Not Found Error -</h1>
         </div>
     )
 }

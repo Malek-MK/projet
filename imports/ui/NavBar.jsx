@@ -3,46 +3,25 @@ import { Link } from 'react-router-dom';
 import Dropdown from 'react-bootstrap/Dropdown'
 import { Meteor } from 'meteor/meteor';
 import { useHistory } from 'react-router-dom';
-import { useTracker } from "meteor/react-meteor-data";
-import Button from "react-bootstrap/Button";
 
 const NavBar = () => {
-    const user = useTracker(() => Meteor.user()?.username);
     const history = useHistory();
-    const onLogout = () => {
-        Meteor.logout();
-        history.replace('/signin');
-    }
-    const [num,setNum]=useState();
-    var loggedInUser = Meteor.userId();
-    const verif=()=>{  
-            if (Roles.userIsInRole(loggedInUser, 'admin')) {
-              history.push('/homeAdmin');
-            }
-            else if (Roles.userIsInRole(loggedInUser, 'user')) {
-              history.push('/homeUser');
-            }
-            else if (Roles.userIsInRole(loggedInUser, 'arbitrator')) {
-              history.push('/homeArbitrator');
-            }
-            else{
-                history.push('/home');
-            }
+    const veriff=()=>{
+        var loggedInUser = Meteor.userId();
+        if (Roles.userIsInRole(loggedInUser, 'admin')) {
+          history.push('/admin');
         }
-        useEffect(()=>{
-            if (Roles.userIsInRole(loggedInUser, 'admin')) {
-                setNum(1)
-              }
-              else if (Roles.userIsInRole(loggedInUser, 'user')) {
-                setNum(2)
-              }
-              else if (Roles.userIsInRole(loggedInUser, 'arbitrator')) {
-                setNum(3)
-              }
-              else{
-                  setNum(0)
-              }
-        },[])
+        else if (Roles.userIsInRole(loggedInUser, 'user')) {
+          history.push('/mediations');
+        }
+        else if (Roles.userIsInRole(loggedInUser, 'arbitrator')) {
+          history.push('/arbitrator');
+        }
+        else{
+            history.push('/signin');
+        }
+    }
+        
     return (
         <div className="div mb-5">
             <div className="div fixed-top">
@@ -56,7 +35,7 @@ const NavBar = () => {
                 </div>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light  ">
 
-                    <Link className="navbar-brand text-dark " onClick={verif}><i className="fa fa-balance-scale"></i>Community</Link>
+                    <Link className="navbar-brand text-dark " to="/home"><i className="fa fa-balance-scale"></i>Community</Link>
 
                     <div className="collapse navbar-collapse ml-2" >
                         <ul className="navbar-nav ml-auto topnav">
@@ -98,23 +77,14 @@ const NavBar = () => {
                             <li className="nav-item">
                                 <Link className="nav-link text-dark" to="/contact">Contact</Link>
                             </li>
-                           {num===2? 
+                           
                             <li className="nav-item active">
-                            <Link to="/mediations" className="nav-link text-dark ">My Account <span className="sr-only">(current)</span></Link>
+                            <Link className="nav-link text-dark" onClick={veriff}>My Account <span className="sr-only">(current)</span></Link>
                             </li>
-                           :null}
-                           {num===1? 
-                            <li className="nav-item active">
-                            <Link to="/admin" className="nav-link text-dark ">My Account <span className="sr-only">(current)</span></Link>
-                            </li>
-                           :null}
-                           {num===3? 
-                            <li className="nav-item active">
-                            <Link to="/arbitrator" className="nav-link text-dark ">My Account <span className="sr-only">(current)</span></Link>
-                            </li>
-                           :null}
-                           {num===0? 
-                            <>
+                           
+                            
+                          
+                           
                             <li className="nav-item" >
                             <div class="input-group" >
 
@@ -137,67 +107,12 @@ const NavBar = () => {
                                 </li>
                             </ul>
                         </div>
-                            </>
-                           :null}
+                           
 
                         </ul>
-                        {num===1? 
-                         <ul className="navbar-nav ms-auto">
-                         <li className="nav-item">
-                                             <button type="button" class="btn">
-                                                 Notifications <span class="badge bg-green ms-2">4</span>
-                                             </button>
-                         </li> 
-                         <li className="nav-item">
-                         <button type="button" class="btn btn-light" ><i className="fa fa-user-secret text-primary"></i>Hello Admin, <b className="text-dark">{user}</b></button>
-                         </li>
                         
-                         <li className="nav-item">
-                             <Button variant="outline-danger" onClick={onLogout} className="btn rounded-circle mt-1 ml-5 ">
-                                 <i className="fa fa-power-off" aria-hidden="true"></i>
-                             </Button>
-                         </li>
-                           
-                     </ul>
-                        :null}
-                        {num===2? 
-                         <ul className="navbar-nav ms-auto">
-                         <li className="nav-item">
-                                             <button type="button" class="btn">
-                                                 Notifications <span class="badge bg-green ms-2">4</span>
-                                             </button>
-                         </li> 
-                         <li className="nav-item">
-                         <button type="button" class="btn btn-light" ><i className="fa fa-user text-primary"></i>Hello, <b className="text-dark">{user}</b></button>
-                         </li>
                         
-                         <li className="nav-item">
-                             <Button variant="outline-danger" onClick={onLogout} className="btn rounded-circle mt-1 ml-5 ">
-                                 <i className="fa fa-power-off" aria-hidden="true"></i>
-                             </Button>
-                         </li>
-                           
-                     </ul>
-                        :null}
-                        {num===3? 
-                         <ul className="navbar-nav ms-auto">
-                         <li className="nav-item">
-                                             <button type="button" class="btn">
-                                                 Notifications <span class="badge bg-green ms-2">4</span>
-                                             </button>
-                         </li> 
-                         <li className="nav-item">
-                         <button type="button" class="btn btn-light" ><i className="fa fa-black-tie text-primary"></i>Hello Arbitrator, <b className="text-dark">{user}</b></button>
-                         </li>
                         
-                         <li className="nav-item">
-                             <Button variant="outline-danger" onClick={onLogout} className="btn rounded-circle mt-1 ml-5 ">
-                                 <i className="fa fa-power-off" aria-hidden="true"></i>
-                             </Button>
-                         </li>
-                           
-                     </ul>
-                        :null}
                     </div>
                 </nav>
             </div>

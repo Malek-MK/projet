@@ -131,8 +131,8 @@ const [verif,setVerif]=useState(false);
           <div className="d-flex justify-content-around mt-5">
           <span>{new Date().getFullYear()} © <b>Community </b> </span>
            <Link className="text-decoration-none text-dark" to="/about"> About</Link>
-           <Link className="text-decoration-none text-dark" to="/about"> CGV</Link>
-           <Link className="text-decoration-none text-dark" to="/terms-and-conditions"> Contact</Link>        </div>
+           <Link className="text-decoration-none text-dark" to="/terms-and-conditions"> CGV</Link>
+           <Link className="text-decoration-none text-dark" to="/contact"> Contact</Link>        </div>
         </div>
 
        
