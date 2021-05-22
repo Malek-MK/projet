@@ -40,6 +40,7 @@ import Profile from '../imports/ui/Profile';
 import RegisterMediator from '../imports/ui/RegisterMediator';
 import Mediator from '../imports/ui/Mediator';
 import MediatorMediation from '../imports/ui/MediatorMediation';
+import Subscription from '../imports/ui/Subscription';
 function BlogPost() {
   let { id } = useParams();
 }
@@ -48,6 +49,7 @@ const routes = (
     <Switch>
     <Route path="/manageMediations" exact component={ManageMediations} /> 
     <Route path="/profile" exact component={Profile} /> 
+    <Route path="/subscriptions/pricing" exact component={Subscription} /> 
     <Route path="/manageUsers" exact component={ManageUsers} /> 
     <Route path="/mediations/create" exact component={Mediation} /> 
     <Route path="/mediator/create_mediation" exact component={MediatorMediation} /> 

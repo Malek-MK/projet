@@ -48,7 +48,7 @@ const Header = () => {
                 </li>
                 <li className="nav-item">
                     <NavDropdown title="Arbitrage" >
-                        <NavDropdown.Item >Arbitrages</NavDropdown.Item>
+                        <NavDropdown.Item ><Link className="text-dark text-decoration-none">Arbitrages <span class="badge badge-danger bg-danger">Comming Soon</span></Link></NavDropdown.Item>
                     </NavDropdown>
                 </li>
 
