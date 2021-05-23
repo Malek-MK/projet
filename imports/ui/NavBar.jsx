@@ -17,6 +17,9 @@ const NavBar = () => {
         else if (Roles.userIsInRole(loggedInUser, 'arbitrator')) {
           history.push('/arbitrator');
         }
+        else if (Roles.userIsInRole(loggedInUser, 'mediator')) {
+            history.push('/mediator');
+          }
         else{
             history.push('/signin');
         }

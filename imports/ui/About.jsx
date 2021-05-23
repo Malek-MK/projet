@@ -15,7 +15,7 @@ const About = () => {
   <div className="col-sm-6 mt-3">
     <div className="card border-0">
       <div className="card-body">
-      <img src="./images/img1.png" alt="Logo" /> 
+      <img src="../images/img1.png" alt="Logo" /> 
       </div>
     </div>
   </div>
@@ -41,14 +41,14 @@ The traditional justice system is slow and expensive which generates a lot of di
   <div className="col-sm-6 mt-1">
     <div className="card border-0">
       <div className="card-body">
-      <img src="./images/img2.png" alt="Logo" /> 
+      <img src="../images/img2.png" alt="Logo" /> 
       </div>
     </div>
   </div>
   <div className="col-sm-6 mt-5">
     <div className="card border-0">
       <div className="card-body">
-      <img src="./images/img3.png" alt="Logo" /> 
+      <img src="../images/img3.png" alt="Logo" /> 
       </div>
     </div>
   </div>
