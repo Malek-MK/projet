@@ -42,6 +42,7 @@ import Mediator from '../imports/ui/Mediator';
 import MediatorMediation from '../imports/ui/MediatorMediation';
 import Subscription from '../imports/ui/Subscription';
 import ManageMediators from '../imports/ui/ManageMediators';
+import ProfileMediator from '../imports/ui/ProfileMediator';
 function BlogPost() {
   let { id } = useParams();
 }
@@ -51,6 +52,7 @@ const routes = (
     <Route path="/manageMediations" exact component={ManageMediations} /> 
     <Route path="/manageMediators" exact component={ManageMediators} /> 
     <Route path="/profile" exact component={Profile} /> 
+    <Route path="/profile_mediator" exact component={ProfileMediator} /> 
     <Route path="/subscriptions/pricing" exact component={Subscription} /> 
     <Route path="/manageUsers" exact component={ManageUsers} /> 
     <Route path="/mediations/create" exact component={Mediation} /> 
