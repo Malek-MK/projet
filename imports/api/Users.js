@@ -115,6 +115,32 @@ Meteor.methods({
     const experts =(await Meteor.users.rawCollection().aggregate(aggregation).toArray());
     return experts;
   },
+  'showMediators': async function(){
+    if (!this.userId) {
+      throw new Meteor.Error('Not Authorized');
+  }
+    const aggregation = [
+        {
+            '$lookup': {
+                'from': 'role-assignment',
+                'localField': '_id',
+                'foreignField': 'user._id',
+                'as': 'role'
+            }
+        }, {
+            '$unwind': {
+                'path': '$role',
+                'preserveNullAndEmptyArrays': true
+            }
+        }, {
+            '$match': {
+                'role.role._id': 'mediator',
+            }
+        }    
+    ];
+    const experts =(await Meteor.users.rawCollection().aggregate(aggregation).toArray());
+    return experts;
+  },
   'DeleteUser'(id){
     if (!this.userId) {
       throw new Meteor.Error('Not Authorized');

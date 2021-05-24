@@ -34,9 +34,9 @@ const Subscription = () => {
             <HeaderMediator/>
            <div className="container mt-5">
            <div className="card-title mb-5">
-                    <h3 className="card-label">List of mediation files</h3>
+                    <h3 className="card-label">Mediator subscriptions</h3>
                     <span className="d-block text-muted pt-2 font-size-sm">
-                        Consult and edit my mediation files</span>
+                    Create or modify your subscription</span>
             </div>
             <div className="card bg-info">
                 <h4 className="text-white text-center mt-4">Our subscription plans</h4>

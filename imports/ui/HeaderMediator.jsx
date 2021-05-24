@@ -23,7 +23,7 @@ const HeaderMediator = () => {
     </button>
     <h1 className="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
         <a className="nav-link decoration-none">
-            <h3><i className="fa fa-home"></i>Dashboard</h3>
+        <Link className="h3 text-decoration-none" to="/mediator"><i className="fa fa-home"></i>Dashboard</Link>
         </a>
     </h1>
 

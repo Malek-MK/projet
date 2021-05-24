@@ -160,7 +160,7 @@ const NavCheck = () => {
        {click1.show? <PrefDate setVerif={setVerif} verif={verif} dates={dates} id={id} />:null}
        {click2.show?<ConvMedia setVeriff={setVeriff} veriff={veriff} showw={showw} id={id} datta={data}/> :null}
         {click.show && data? <UpMediation datta={data} show={click.show} id={id}/>:null}
-        {click3.show?<Payment setVerifff={setVerifff} verifff={verifff} id={id} paym={paym}/> :null}
+        {click3.show?<Payment setVerifff={setVerifff} verifff={verifff} id={id} paym={paym} datta={data}/> :null}
         </div>
     )
 }
