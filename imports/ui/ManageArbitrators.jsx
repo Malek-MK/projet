@@ -32,8 +32,6 @@ const ManageArbitrators = () => {
      const [show, setShow] = useState(false);
       const handleClose = () => setShow(false);
       const handleShow = () => setShow(true);
-        const [mail,setMail]=useState([])
-
         const InsertArbitrator = data => {
          Meteor.call('insertArbitrator', data, (err) => {
         if (err) {

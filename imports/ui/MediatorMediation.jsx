@@ -5,20 +5,41 @@ import StepThree from '../ui/StepThree';
 import StepFour from '../ui/StepFour';
 import NavSteps from '../ui/NavSteps';
 import HeaderMediator from '../ui/HeaderMediator';
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
 
 
 const Components = [StepOne, StepTwo, StepThree, StepFour];
 
 const MediatorMediation = ({datta,show,fetch}) => {
-
+  const [modal, setModal] = useState(true);
+  const handleClose = () => setModal(false);
+  const handleShow = () => setShow(true);
   const [data, setData] = useState({});
   const [step, setStep] = useState(0);
   const Component = Components[step];
-  const [modal,setModal]=useState(false);
 
   return (
     <div>
       <HeaderMediator/>
+      <Modal
+        show={modal}
+        onHide={handleClose}
+        backdrop="static"
+        keyboard={false}
+      >
+       
+        <Modal.Body>
+         <div>
+         Vous êtes sur le point de créer un dossier de médiation en tant que partie A (le demandeur). Vous désirez utiliser notre plateforme dans le but de gérer vos propres dossiers de médiations en tant que médiateur. Pour cela il vous suffit de choisir l'une de nos formules d'abonnement.
+         </div>
+         <div>
+           <button type="submit">aaaaa</button>
+           <button onClick={()=>{setModal(false)}}>bbbbb</button>
+         </div>
+        </Modal.Body> 
+        
+      </Modal>
       <div className="container mt-5">
       {show? <div className="alert alert-success mt-3" role="alert">
   <div className="d-flex">
