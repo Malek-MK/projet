@@ -124,6 +124,7 @@ const StepOne = ({ setData, setStep, data}) => {
           </div>
         </div>
         <div className="form-group mb-4">
+        <p>Upload File:</p>
           <FileUploadComponent/>
         </div>
         <div className="form-group mb-4">

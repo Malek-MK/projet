@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Notyf } from 'notyf';
+import { Notyf } from 'notyf'; 
 import 'notyf/notyf.min.css';
-import Schema from '../Validation/YupProfile';
+import Schema from '../Validation/YupProfileMediator';
 const AvatarIcon='./assets/modify.png';
 const CloseIcon='./assets/x.svg';
 
@@ -54,7 +54,7 @@ const PersonalInformation = () => {
                <div>
                 <b>Personal informations</b>
                 <br></br>
-                <small className="text-secondary">Mettez à jour vos informations personnelles</small>
+                <small className="text-secondary">Update your personal information</small>
                 <button className="btn btn-info pull-right">Save</button>
                 </div> 
                </div>

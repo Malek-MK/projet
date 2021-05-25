@@ -49,7 +49,7 @@ const HeaderArbitrator = () => {
                                         </button>
                     </li> 
                     <li className="nav-item">
-                    <button type="button" className="btn btn-light" ><i className="fa fa-black-tie text-primary"></i> Hello Arbitrator, <b className="text-dark">{user}</b></button>
+                    <Link type="button" className="btn btn-light" to="/profile_arbitrator"><i className="fa fa-black-tie text-primary"></i> Hello Arbitrator, <b className="text-dark">{user}</b></Link>
                     </li>
                    
                     <li className="nav-item">

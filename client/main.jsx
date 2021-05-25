@@ -43,6 +43,9 @@ import MediatorMediation from '../imports/ui/MediatorMediation';
 import Subscription from '../imports/ui/Subscription';
 import ManageMediators from '../imports/ui/ManageMediators';
 import ProfileMediator from '../imports/ui/ProfileMediator';
+import ProfileAdmin from '../imports/ui/ProfileAdmin';
+import ProfileArbitrator from '../imports/ui/ProfileArbitrator'; 
+import MediatorMediations from '../imports/ui/MediatorMediations';
 function BlogPost() {
   let { id } = useParams();
 }
@@ -52,6 +55,8 @@ const routes = (
     <Route path="/manageMediations" exact component={ManageMediations} /> 
     <Route path="/manageMediators" exact component={ManageMediators} /> 
     <Route path="/profile" exact component={Profile} /> 
+    <Route path="/profile_arbitrator" exact component={ProfileArbitrator} /> 
+    <Route path="/profile_admin" exact component={ProfileAdmin} /> 
     <Route path="/profile_mediator" exact component={ProfileMediator} /> 
     <Route path="/subscriptions/pricing" exact component={Subscription} /> 
     <Route path="/manageUsers" exact component={ManageUsers} /> 
@@ -82,6 +87,7 @@ const routes = (
     <Route path="/details-offer-mediators" exact component={OfferDetailsMed}/>
       <Route path="/home" exact component={Home} />
       <Authenticated path="/mediations" exact component={User} />
+      <Authenticated path="/mediator/mediations" exact component={MediatorMediations} />
       <Authenticated path="/register_mediator"  component={RegisterMediator} />
       <Authenticated path="/signup"  component={Signup} />
       <Authenticated path="/signin"  component={Login} />

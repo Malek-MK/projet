@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Header from '../ui/Header';
+import HeaderMediator from '../ui/HeaderMediator';
 import PersonalInformation from '../ui/PersonalInformation';
 import AccessParameter from '../ui/AccessParameter';
 import MyOrders from '../ui/MyOrders';
@@ -307,7 +307,7 @@ const [click4,setClick4]=useState({
   }
     return (
         <div>
-            <Header/>
+            <HeaderMediator/>
              <div className="container mt-3">
                 <div className="card-title mb-3">
                 <div className="d-flex justify-content-between align-items-center">
@@ -316,7 +316,7 @@ const [click4,setClick4]=useState({
                   <span className="d-block text-muted pt-2 font-size-sm">Consult and edit Users</span>
                  </div>
                <div>
-               <Link className="btn btn-primary" to="/mediations/create">
+               <Link className="btn btn-primary" to="mediator/create_mediation">
                Add mediation
               </Link>
               <button className="btn btn-success" style={{marginLeft:"15px"}}>
@@ -325,13 +325,13 @@ const [click4,setClick4]=useState({
                </div>
                 </div>
                 </div>
-                <div class="row">
-  <div class="col-sm-3">
-    <div class="card">
-      <div class="card-body">
+                <div className="row mb-5">
+  <div className="col-sm-3">
+    <div className="card">
+      <div className="card-body">
         <h5 className="text mb-4"><b>ALkhatib Malek</b></h5>
         <button className="btn btn-secondary btn-lg mb-2">No candidacy</button>
-        <p className="text mb-1">Email :</p>
+        <p className="text mb-1 mt-2">Email :</p>
         <p className="text mb-1">Phone :</p>
         <p>Country :</p>
         
@@ -348,7 +348,7 @@ const [click4,setClick4]=useState({
         <i className={click2.class2}></i> Access parameter
         </button>
         <button className={click6.class1} onClick={onclick6}>
-        <i className={click6.class2}></i> Subscription <span class="badge badge-secondary bg-info text-danger"> New</span>
+        <i className={click6.class2}></i> Subscription <span className="badge badge-secondary bg-info text-danger"> New</span>
         </button>
         <button className={click3.class1} onClick={onclick3}>
         <i className={click3.class2}></i> My orders 
@@ -366,6 +366,7 @@ const [click4,setClick4]=useState({
  {click5.show?<CompanyInformation/>:null}
  {click6.show?<SubscriptionInformation/>:null}
  {click7.show?<BankInformation/>:null}
+ 
 </div>
         </div>
         </div>

@@ -4,7 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 import Schema from '../Validation/YupProfile';
-
+ 
 const notyf = new Notyf({
   duration: 2000,
   position: {
@@ -36,7 +36,7 @@ const AccessParameter = () => {
         <div class="col-sm-9">
             <div className="card">
             
-            <div class="d-flex align-items-center">
+            <div className="d-flex align-items-center">
                <div className="container mt-3">
                <div>
                 <b>Access settings</b>
@@ -46,8 +46,9 @@ const AccessParameter = () => {
                 </div> 
                </div>
             </div>
+
             
-            <div class="card-body">
+            <div className="card-body">
                 <form onSubmit={handleSubmit(onSubmit)}>
        
         <label >Email</label>

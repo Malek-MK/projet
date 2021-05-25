@@ -1,4 +1,4 @@
-import React, { useState ,useEffect} from 'react'
+import React, { useState} from 'react'
 import StepOne from '../ui/StepOne';
 import StepTwo from '../ui/StepTwo';
 import StepThree from '../ui/StepThree';
@@ -9,7 +9,7 @@ import Header from '../ui/Header';
 
 const Components = [StepOne, StepTwo, StepThree, StepFour];
 
-const Mediation = ({ setShow1 ,datta,show,fetch}) => {
+const Mediation = ({datta,show,fetch}) => {
 
   const [data, setData] = useState({});
   const [step, setStep] = useState(0);
@@ -18,8 +18,7 @@ const Mediation = ({ setShow1 ,datta,show,fetch}) => {
 
   return (
     <div>
-      {!show?<Header/>:null}
-     
+    <Header/>
       <div className="container mt-5">
       {show? <div className="alert alert-success mt-3" role="alert">
   <div className="d-flex">
@@ -39,7 +38,7 @@ const Mediation = ({ setShow1 ,datta,show,fetch}) => {
         <div className="card w-100 ml-5" >
           <div className="card-body text-center">
             <NavSteps step={step} />
-            <Component setStep={setStep} setData={setData} setShow1={setShow1} data={data} datta={datta} fetch={fetch}/>
+            <Component setStep={setStep} setData={setData} data={data} datta={datta} fetch={fetch}/>
           </div>
         </div>
       </div>

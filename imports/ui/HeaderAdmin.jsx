@@ -49,7 +49,7 @@ const HeaderAdmin = () => {
                                         </button>
                     </li> 
                     <li className="nav-item">
-                    <button type="button" className="btn btn-light" ><i className="fa fa-user-secret text-primary"></i> Hello Admin, <b className="text-dark">{user}</b></button>
+                    <Link type="button" className="btn btn-light" to="/profile_admin"><i className="fa fa-user-secret text-primary"></i> Hello Admin, <b className="text-dark">{user}</b></Link>
                     </li>
                    
                     <li className="nav-item">

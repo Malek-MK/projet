@@ -32,11 +32,12 @@ export default Schema = yup.object().shape({
         .positive()
         .test('len', 'Zip code needs to be excatly 4 digits', val => val.toString().length === 4),       
     ville: yup
-    .string("check your City")
-    .required("City is required"),      
+        .string("check your City")
+        .required("City is required"),      
     country: yup
-    .string("check your Country")
-    .oneOf(['Tunisa', 'France'])
-    .required("Is required"),
+        .string("check your Country")
+        .oneOf(['Tunisa', 'France'])
+        .required("Is required"), 
+
 
 })

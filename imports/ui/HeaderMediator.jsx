@@ -40,17 +40,18 @@ const HeaderMediator = () => {
                 </li>
                 <li className="nav-item ">
                     <NavDropdown title="Médiation" >
-                        <NavDropdown.Item ><Link to="/mediations" className="text-dark text-decoration-none"><i class="fa fa-crosshairs text-secondary" aria-hidden="true"></i> Mes Médiations</Link></NavDropdown.Item>
-                        <NavDropdown.Item ><Link to="/mediations" className="text-dark text-decoration-none"><i class="fa fa-th-large text-secondary" aria-hidden="true"></i> Médiations Cabinet</Link></NavDropdown.Item>
-                        <NavDropdown.Item ><Link to="/mediations" className="text-dark text-decoration-none"><i class="fa fa-tty text-secondary" aria-hidden="true"></i> Médiations Community</Link></NavDropdown.Item>
-                        <NavDropdown.Item ><i class="fa fa-folder-o text-secondary" aria-hidden="true"></i> Mes Litiges</NavDropdown.Item>
+                        <NavDropdown.Item ><Link to="/mediator/mediations" className="text-dark text-decoration-none"><i class="fa fa-crosshairs text-secondary" aria-hidden="true"></i> My Mediations</Link></NavDropdown.Item>
+                        <NavDropdown.Item ><Link to="/mediations" className="text-dark text-decoration-none"><i class="fa fa-th-large text-secondary" aria-hidden="true"></i> Cabinet mediations</Link></NavDropdown.Item>
+                        <NavDropdown.Item ><Link to="/mediations" className="text-dark text-decoration-none"><i class="fa fa-tty text-secondary" aria-hidden="true"></i> Community mediations</Link></NavDropdown.Item>
+                        <NavDropdown.Item ><i class="fa fa-folder-o text-secondary" aria-hidden="true"></i> My disputes</NavDropdown.Item>
                         <NavDropdown.Item ><Link to="mediator/create_mediation" className="text-dark text-decoration-none">
-                        <i class="fa fa-plus-square text-secondary" aria-hidden="true"></i> Ajouter une médiation</Link></NavDropdown.Item>
+                        <i class="fa fa-plus-square text-secondary" aria-hidden="true"></i> Add mediation</Link></NavDropdown.Item>
                     </NavDropdown>
                 </li>
                 <li className="nav-item">
                     <NavDropdown title="Arbitrage" >
-                        <NavDropdown.Item ><Link className="text-dark text-decoration-none">Arbitrages <span class="badge badge-danger bg-danger">Comming Soon</span></Link></NavDropdown.Item>
+                        <NavDropdown.Item ><Link className="text-dark text-decoration-none">
+                        <i class="fa fa-gavel text-secondary" aria-hidden="true"></i> Arbitration <span class="badge badge-danger bg-danger">Comming Soon</span></Link></NavDropdown.Item>
                     </NavDropdown>
                 </li>
 
@@ -63,7 +64,7 @@ const HeaderMediator = () => {
                                         </button>
                     </li> 
                     <li className="nav-item">
-                    <button type="button" className="btn btn-light" ><i className="fa fa-connectdevelop text-primary"></i> Hello Mediator, <b className="text-dark">{user}</b></button>
+                    <Link type="button" className="btn btn-light" to="/profile_mediator"><i className="fa fa-connectdevelop text-primary"></i> Hello Mediator, <b className="text-dark">{user}</b></Link>
                     </li>
                     <li className="nav-item">
                         <Button variant="outline-danger" onClick={onLogout} className="btn rounded-circle mt-1 ml-5 ">
