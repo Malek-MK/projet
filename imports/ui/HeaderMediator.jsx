@@ -107,7 +107,10 @@ const HeaderMediator = () => {
   <div className="col-sm-12">
     <div className="card">
       <div className="card-body">
-        <button className="btn btn-light"><i className="fa fa-user text-success"></i> Personal information</button>
+          <div className="d-flex justify-content-center align-items-center">
+          <button className="btn btn-light btn-sm" style={{padding:10}}><i className="fa fa-user text-success fa-2x"></i></button>
+          <button className="btn btn-white bg-white"> Personal information<br></br><span className="text-secondary">Update your information</span></button>
+          </div>
         <button className="btn btn-light"><i className="fa fa-shield text-success"></i> Professional information</button>
         <button className="btn btn-light"><i className="fa fa-file-text-o text-success"></i> Organization contact details</button>
         <button className="btn btn-light"><i className="fa fa-list text-primary"></i> Access parameter</button>
