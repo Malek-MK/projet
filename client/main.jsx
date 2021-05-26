@@ -89,7 +89,7 @@ const routes = (
       <Authenticated path="/mediations" exact component={User} />
       <Authenticated path="/mediator/mediations" exact component={MediatorMediations} />
       <Authenticated path="/register_mediator"  component={RegisterMediator} />
-      <Authenticated path="/signup"  component={Signup} />
+      <Authenticated path="/register"  component={Signup} />
       <Authenticated path="/signin"  component={Login} />
       <Authenticated path="/admin"  component={Admin} />
       <Route path="*" component={Notfound} />

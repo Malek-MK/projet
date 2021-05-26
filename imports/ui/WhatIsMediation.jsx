@@ -1,5 +1,6 @@
 import React from 'react'
 import NavBar from './NavBar';
+import Footer from '../ui/Footer';
 
 const WhatIsMediation = () => {
     return (
@@ -59,6 +60,7 @@ Les quatre phases de la médiation selon les étapes de la négociation raisonn�
   </div>
 </div>
             </div>
+            <Footer/>
         </div>
     )
 }

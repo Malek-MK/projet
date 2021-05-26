@@ -70,7 +70,7 @@ const Login = () => {
         <Link className="h1 mt-5 mb-5 text-decoration-none text-dark" to="/home"><i className="fa fa-balance-scale"></i>Community</Link>
           <br></br><br></br><br></br>
         <h2 className="mt-5 mb-2">Log in</h2>
-        <p><span className="mb-5">No account yet?</span><Link className="text-decoration-none text-success" to="/signup"><b> Register!</b></Link></p>
+        <p><span className="mb-5">No account yet?</span><Link className="text-decoration-none text-success" to="/register"><b> Register!</b></Link></p>
 
           <Form onSubmit={handleSubmit(onSubmit)} id="register" noValidate>
          

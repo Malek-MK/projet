@@ -1,5 +1,7 @@
 import React from 'react'
 import NavBar from '../ui/NavBar';
+import Footer from '../ui/Footer';
+
 const ClausesMediationArbitration = () => {
     return (
         <div>
@@ -32,6 +34,7 @@ The costs of the arbitration will be shared between the parties unless otherwise
 The parties hereto agree that the provisions dealing with arbitration which are currently in force in Articles 1442 et seq. Of the Code of Civil Procedure govern as supplementary provisions any arbitration to be held under the provisions of this section. . In the event of a contradiction between one or the other of the provisions of this section and the aforementioned provisions of the Code of Civil Procedure, the provisions of this section shall prevail.
                 </p>
             </div>
+            <Footer/>
         </div>
     )
 }

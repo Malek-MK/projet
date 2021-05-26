@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import NavBar from '../ui/NavBar';
+import Footer from '../ui/Footer';
+
 const Blog = () => {
     const [show,setShow]=useState(true);
     return (
@@ -129,6 +131,7 @@ const Blog = () => {
             <a  className="text text-decoration-none text-success pull-right" style={{cursor:"pointer"}} onClick={()=>setShow(false)}><b>ENTRÉES SUIVANTES »</b></a>
             </div>    
             :null}
+            <Footer/>
         </div>
     )
 }

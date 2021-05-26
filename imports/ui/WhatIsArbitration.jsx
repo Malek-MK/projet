@@ -1,5 +1,6 @@
 import React from 'react'
 import NavBar from './NavBar';
+import Footer from '../ui/Footer';
 
 const WhatIsArbitration = () => {
     return (
@@ -60,6 +61,7 @@ As a general rule, when signing a contract the parties include a so-called arbit
   </div>
 </div>
             </div>
+            <Footer/>
         </div>
     )
 }

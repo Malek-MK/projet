@@ -60,8 +60,10 @@ const HeaderMediator = () => {
                 <ul className="navbar-nav ms-auto">
                     <li className="nav-item">
                                         <button type="button" className="btn">
-                                            Notifications <span className="badge bg-green ms-2">4</span>
+                                        <span class="spinner-grow spinner-grow-sm text-primary" role="status" aria-hidden="true"></span>
+                                            Notifications<span className="badge bg-green ms-2">0</span>
                                         </button>
+                                        
                     </li> 
                     <li className="nav-item">
                     <Link type="button" className="btn btn-light" to="/profile_mediator"><i className="fa fa-connectdevelop text-primary"></i> Hello Mediator, <b className="text-dark">{user}</b></Link>

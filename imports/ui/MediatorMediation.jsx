@@ -6,7 +6,7 @@ import StepFour from '../ui/StepFour';
 import NavSteps from '../ui/NavSteps';
 import HeaderMediator from '../ui/HeaderMediator';
 import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
+import { Link } from 'react-router-dom';
 
 
 const Components = [StepOne, StepTwo, StepThree, StepFour];
@@ -30,12 +30,15 @@ const MediatorMediation = ({datta,show,fetch}) => {
       >
        
         <Modal.Body>
-         <div>
-         Vous êtes sur le point de créer un dossier de médiation en tant que partie A (le demandeur). Vous désirez utiliser notre plateforme dans le but de gérer vos propres dossiers de médiations en tant que médiateur. Pour cela il vous suffit de choisir l'une de nos formules d'abonnement.
+         <div className="div text-center">
+         <i className="fa fa-question-circle fa-5x text-warning mt-4 mb-3" aria-hidden="true"></i>
+         <h5>You are about to create a mediation<br></br> case as Party A (the claimant). You wish<br></br> to use our platform in order to manage <br></br>your own mediation files as a mediator.<br></br>To do this,  all you need to do ischoose<br></br>  one of our subscription packages.</h5>
          </div>
-         <div>
-           <button type="submit">aaaaa</button>
-           <button onClick={()=>{setModal(false)}}>bbbbb</button>
+         
+
+         <div className="div text-center">
+           <Link className="btn btn-primary mt-5 mb-2" to="/subscriptions/pricing">See our formulas</Link> <br></br>
+           <button className="btn btn-danger mb-5" onClick={()=>{setModal(false)}}>Continue as Part A</button>
          </div>
         </Modal.Body> 
         

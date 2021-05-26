@@ -6,335 +6,455 @@ const FAQ = () => {
   return (
     <div>
       <NavBar />
-      <div class="card mt-0 border-0 text-center mt-5 mb-5" >
+      <div className="card mt-0 border-0 text-center mt-5 mb-5" >
         <div className="card body bg-info text-white">
-          <h1 className="text mt-5 mb-4">Foire aux Questions</h1>
+          <br></br>
+          <h1 className="text mt-5 mb-4">Frequently Asked Questions</h1>
           <p className="p mb-5">
-            Vous trouverez ici les questions les plus fréquemment posées à notre équipe. N’hésitez pas à nous poser la vôtre,<br></br> nous sommes à votre disposition pour répondre à toutes vos questions !               </p>
+          Here you will find the most frequently asked questions to our team. Do not hesitate to ask us yours,
+           <br></br> 
+           we are at your disposal to answer all your questions!
+           </p>
           <div>
-            <button className="btn btn-success btn-lg mb-5">POSER VOTRE QUESTIONS</button>
+            <button className="btn btn-success btn-lg mb-5">ASK YOUR QUESTIONS</button>
           </div>
         </div>
       </div>
       <div className="container text-center border-0 mt-5 mb-5">
+      <div className="accordion" id="accordionExample">
         <div className="card mt-5 mb-5">
-          <p>
-
-            <button class="btn btn-light border-0 text-dark" data-toggle="collapse" data-target="#collapseExample" aria-controls="collapseExample">
-              COMBIEN DE TEMPS VA DURER LA MÉDIATION ?
-  </button>
-          </p>
-          <div class="collapse" id="collapseExample">
-            <div class="text-secondary">
-              La durée d’une médiation dépend de la complexité de votre dossier et de la volonté des parties de régler rapidement.
-
-              Par exemple :
-
-              Une demi-journée : Si vous avez une facture impayée, un litige locatif, un problème de voisinage ou un désaccord mineur sur un contrat ou dans le cadre de votre emploi.
-              Une journée complète : Si vous avez une difficulté d’exécution ou d’interprétation d’un contrat, un litige commercial, un conflit avec des copropriétaires ou un litige d’emploi.
-              Une journée et demie : Si vous pensez que la première journée servira à la médiation et la demijournée supplémentaire à la rédaction de la transaction.
-              Deux jours et plus : Si votre litige et complexe, délicat, s’il engage des sommes importantes ou si vous souhaitez être assisté par avocat durant la médiation.
-              Le médiateur pourra vous indiquer, si un accord est sur le point d’être trouvé, de continuer une médiation avec des séances supplémentaires.
-              Vous n’avez pas de limite de temps maximum, et vous pouvez interrompre une médiation à tout moment.
-
-Si vous avez des questions, contactez-nous sans frais et nous nous ferons un plaisir d’y répondre.</div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="card">
-              <div class="card-body">
-                <button class="btn btn-light text-dark border-0" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-controls="collapseExample1">
-                  Est-ce que mon assurance protection juridique peut prendre en charge les frais de la médiation ?
+        <div className="accordion-item">
+    <h2 className="accordion-header" id="headingOne">
+      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+      HOW LONG WILL MEDIATION TAKE?
       </button>
-                <div class="collapse" id="collapseExample1">
-                  <div class="text-secondary mt-3">
-                    Oui, conformément à l’article L. 127-1 du code des assurances, qui prévoit que :
+    </h2>
+    <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div className="accordion-body">
+      The duration of a mediation depends on the complexity of your case and the willingness of the parties to settle quickly.
 
-                    « tout contrat d’assurance de protection juridique stipule explicitement que, lorsqu’il est fait appel à un avocat ou à toute personne qualifiée par la législation ou la réglementation en vigueur pour défendre, représenter ou servir les intérêts de l’assuré, dans les circonstances prévues à l’article L. 127-1, l’assuré a le droit de le choisir »
+For example :
 
-(v. J. Courrouy, Réflexions sur quelques aspects de l’assurance de protection juridique, D. 1992. 169 ; J. Bonnard, L’assurance de protection juridique et la portée du principe du libre choix de l’avocat par l’assuré, D. 2000. 343 )  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="card">
-              <div class="card-body">
-                <button class="btn btn-light text-dark border-0" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
-                  Quand aura lieu la médiation ?
-      </button>
-                <div class="collapse" id="collapseExample2">
-                  <div class="text-secondary mt-3">
-                    Dans les trois mois. Une fois votre dossier déposé, vous aurez accès à un calendrier avec dix choix de dates sur les trois prochains mois, l’autre partie ainsi que le médiateur choisiront une date de médiation parmi celles que vous avez proposées.
+Half a day: If you have an unpaid bill, a rental dispute, a neighborhood problem, or a minor disagreement on a contract or in the course of your employment.
+A full day: If you have a difficulty in performing or interpreting a contract, a commercial dispute, a conflict with co-owners or an employment dispute.
+A day and a half: If you think that the first day will be used for mediation and the additional half day for drafting the transaction.
+Two days or more: If your dispute is complex, delicate, if it involves large sums or if you wish to be assisted by a lawyer during mediation.
+The mediator can tell you, if an agreement is about to be reached, to continue mediation with additional sessions.
+You have no maximum time limit, and you can stop mediation at any time.
+
+If you have any questions, contact us toll-free and we'll be happy to answer them.      </div>
+    </div>
   </div>
-                </div>
+        </div>
+        <div className="row">
+          <div className="col-sm-6">
+            <div className="card">
+              <div className="card-body">
+              <div className="accordion-item">
+    <h2 className="accordion-header" id="headingTwo">
+      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      Can my legal expenses insurance cover the costs of mediation?      </button>
+    </h2>
+    <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div className="accordion-body">
+      Yes, in accordance with Article L. 127-1 of the Insurance Code, which provides that:
+
+“Any legal protection insurance contract explicitly stipulates that, when a lawyer or any person qualified by the legislation or regulations in force is called upon to defend, represent or serve the interests of the insured, in the circumstances provided for in Article L. 127-1, the insured has the right to choose ”
+
+(see J. Courrouy, Reflections on some aspects of legal protection insurance, D. 1992. 169; J. Bonnard, Legal protection insurance and the scope of the principle of free choice of lawyer by the insured, D. 2000. 343)
+       </div>
+    </div>
+  </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-6">
-            <div class="card">
-              <div class="card-body">
-                <button class="btn btn-light text-dark border-0" type="button" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3">
-                  Ai-je le droit de refuser une offre de médiation ?
+          <div className="col-sm-6">
+            <div className="card">
+              <div className="card-body">
+              <div className="accordion-item">
+    <h2 className="accordion-header" id="headingThree">
+      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+      When will mediation take place?      </button>
+    </h2>
+    <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div className="accordion-body">
+      Within three months. Once your case is filed, you will have access to a calendar with ten choice of dates over the next three months, the other party as well as the mediator will choose a mediation date among those you have proposed.      </div>
+    </div>
+  </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-6">
+            <div className="card">
+              <div className="card-body">
+              <div className="accordion-item">
+    <h2 className="accordion-header" id="headingFour">
+      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+      Do I have the right to refuse an offer of mediation?
       </button>
-                <div class="collapse" id="collapseExample3">
-                  <div class="text-secondary mt-3">
-                    Absolument, la médiation est un processus volontaire, l’ensemble des parties doivent accepter la médiation pour quelle puisse avoir lieu. Toutefois, si vous refusez la médiation, la partie demanderesse peut se voir attribuer une attestation de tentative de médiation pouvant être homologuée devant les Tribunaux au tarif de 49€HT.    </div>
-                </div>
+    </h2>
+    <div id="collapseFour" className="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+      <div className="accordion-body">
+      Absolutely, mediation is a voluntary process, all parties must agree to mediation for it to take place. However, if you refuse mediation, the claimant may be granted a certificate of attempted mediation that can be approved before the Courts at the rate of 49 € HT.        </div>
+    </div>
+  </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-6">
-            <div class="card">
-              <div class="card-body">
-                <button class="btn btn-light text-dark border-0" type="button" data-toggle="collapse" data-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample4">
-                  Quelles sont les modalités de partage des coûts ?            </button>
-                <div class="collapse" id="collapseExample4">
-                  <div class="text-secondary mt-3">
-                    La partie proposant la médiation peut demander à la partie qui en reçoit la demande  de partager les frais de médiation. Si la partie recevant la demande de partage accepte, les coûts sont divisés par 2 et chacun paye sa part. Si la partie refuse, l’une ou l’autre des parties peut accepter de payer la totalité des frais pour favoriser le processus de médiation. Les paiements sont effectués en ligne sur la plateforme via notre plateforme sécurisée.       </div>
-                </div>
+          <div className="col-sm-6">
+            <div className="card">
+              <div className="card-body">
+              <div className="accordion-item">
+    <h2 className="accordion-header" id="headingFive">
+      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+      What are the cost sharing arrangements?
+       </button>
+    </h2>
+    <div id="collapseFive" className="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+      <div className="accordion-body">
+      The party proposing mediation may ask the party who receives the request to share the costs of the mediation. If the party receiving the split request accepts, the costs are divided by 2 and everyone pays their share. If the party refuses, either party can agree to pay the full cost to facilitate the mediation process. Payments are made online on the platform via our secure platform.        </div>
+    </div>
+  </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-6">
-            <div class="card">
-              <div class="card-body">
-                <button class="btn btn-light text-dark border-0" type="button" data-toggle="collapse" data-target="#collapseExample5" aria-expanded="false" aria-controls="collapseExample5">
-                  Qu’est-ce q'une convention de médiation ?
+          <div className="col-sm-6">
+            <div className="card">
+              <div className="card-body">
+              <div className="accordion-item">
+    <h2 className="accordion-header" id="headingSix">
+      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+      What is a mediation agreement?
+      </button>
+    </h2>
+    <div id="collapseSix" className="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+      <div className="accordion-body">
+      It is a contract between each of the parties and the mediator validating the rules for the conduct of the mediation and in particular its confidential nature.        </div>
+    </div>
+  </div> 
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-6">
+            <div className="card">
+              <div className="card-body">
+              <div className="accordion-item">
+    <h2 className="accordion-header" id="headingSeven">
+      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+      Can my lawyer be present during the mediation?
+                </button>
+    </h2>
+    <div id="collapseSeven" className="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+      <div className="accordion-body">
+      Absolutely, on the other hand he cannot represent you alone, you must also be present.
+            </div>
+    </div>
+  </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-6">
+            <div className="card">
+              <div className="card-body">
+              <div className="accordion-item">
+    <h2 className="accordion-header" id="headingEight">
+      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+      Does mediation interrupt the prescription?
             </button>
-                <div class="collapse" id="collapseExample5">
-                  <div class="text-secondary mt-3">
-                    C’est un contrat passé entre chacune des parties et le médiateur validant les règles du déroulement de la médiation et notamment son caractère confidentiel.      </div>
+    </h2>
+    <div id="collapseEight" className="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+      <div className="accordion-body">
+      Unfortunately no, you have to make sure you protect your rights during this period.
                 </div>
+    </div>
+  </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-6">
-            <div class="card">
-              <div class="card-body">
-                <button class="btn btn-light text-dark border-0" type="button" data-toggle="collapse" data-target="#collapseExample6" aria-expanded="false" aria-controls="collapseExample6">
-                  Mon avocat peut-il être présent durant la médiation ?            </button>
-                <div class="collapse" id="collapseExample6">
-                  <div class="text-secondary mt-3">
-                    Tout à fait, en revanche il ne peut vous représenter seul, vous devez aussi être présent.        </div>
-                </div>
+          <div className="col-sm-6">
+            <div className="card">
+              <div className="card-body">
+              <div className="accordion-item">
+    <h2 className="accordion-header" id="headingNine">
+      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+      How long do I need to create an account?
+            </button>
+    </h2>
+    <div id="collapseNine" className="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
+      <div className="accordion-body">
+      It takes you about 5 minutes. As a first step, you only have to enter your personal information and those of the party to whom you are offering mediation.
+            </div>
+    </div>
+  </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-6">
-            <div class="card">
-              <div class="card-body">
-                <button class="btn btn-light text-dark border-0" type="button" data-toggle="collapse" data-target="#collapseExample7" aria-expanded="false" aria-controls="collapseExample7">
-                  La médiation interrompt elle la prescription?                  </button>
-                <div class="collapse" id="collapseExample7">
-                  <div class="text-secondary mt-3">
-                    Hélas non, il faut vous assurer de protéger vos droits durant cette période.          </div>
-                </div>
+          <div className="col-sm-6">
+            <div className="card">
+              <div className="card-body">
+              <div className="accordion-item">
+    <h2 className="accordion-header" id="headingTen">
+      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+      A lawsuit has already started, can I go to mediation?
+            </button>
+    </h2>
+    <div id="collapseTen" className="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#accordionExample">
+      <div className="accordion-body">
+      Yes, you can settle your case and have recourse to mediation at any time during the procedure.
+             </div>
+    </div>
+  </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-6">
-            <div class="card">
-              <div class="card-body">
-                <button class="btn btn-light text-dark border-0" type="button" data-toggle="collapse" data-target="#collapseExample8" aria-expanded="false" aria-controls="collapseExample8">
-                  De combien de temps ai-je besoin pour créer un compte ?                        </button>
-                <div class="collapse" id="collapseExample8">
-                  <div class="text-secondary mt-3">
-                    Il vous faut 5 minutes environ. Dans un premier temps, vous devez seulement renseigner vos informations personnelles et celles de la partie à qui vous offrez la médiation.          </div>
-                </div>
+          <div className="col-sm-6">
+            <div className="card">
+              <div className="card-body">
+              <div className="accordion-item">
+    <h2 className="accordion-header" id="headingEleven">
+      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+      Is mediation confidential? 
+      </button>
+    </h2>
+    <div id="collapseEleven" className="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#accordionExample">
+      <div className="accordion-body">
+      Yes, the parties as well as the mediator undertake to keep the content and the discussions of the mediation confidential.
+             </div>
+    </div>
+  </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-6">
-            <div class="card">
-              <div class="card-body">
-                <button class="btn btn-light text-dark border-0" type="button" data-toggle="collapse" data-target="#collapseExample9" aria-expanded="false" aria-controls="collapseExample9">
-                  Un procès est déjà engagé, est-ce que je peux avoir recours à la médiation ?                        </button>
-                <div class="collapse" id="collapseExample9">
-                  <div class="text-secondary mt-3">
-                    Oui, vous pouvez régler votre dossier et avoir recours à la médiation à tout moment durant la procédure.          </div>
-                </div>
+          <div className="col-sm-6">
+            <div className="card">
+              <div className="card-body">
+              <div className="accordion-item">
+    <h2 className="accordion-header" id="headingTwelve">
+      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+      Is the mediation recorded? 
+      </button>
+    </h2>
+    <div id="collapseTwelve" className="accordion-collapse collapse" aria-labelledby="headingTwelve" data-bs-parent="#accordionExample">
+      <div className="accordion-body">
+      No, each party agrees not to do so. If there is a registration, you will be notified and have the option to decline it. In any case, if there is a recording, it can only be used for the purpose of improving the quality of the service.
+                 </div>
+    </div>
+  </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-6">
-            <div class="card">
-              <div class="card-body">
-                <button class="btn btn-light text-dark border-0" type="button" data-toggle="collapse" data-target="#collapseExample10" aria-expanded="false" aria-controls="collapseExample10">
-                  La médiation est-elle confidentielle ?                        </button>
-                <div class="collapse" id="collapseExample10">
-                  <div class="text-secondary mt-3">
-                    Oui les parties ainsi que le médiateur s’engagent à garder confidentiels le contenu et les échanges de la médiation.          </div>
-                </div>
+          <div className="col-sm-6">
+            <div className="card">
+              <div className="card-body">
+              <div className="accordion-item">
+    <h2 className="accordion-header" id="headingThirteen">
+      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
+      Who is Community for 
+      </button>
+    </h2>
+    <div id="collapseThirteen" className="accordion-collapse collapse" aria-labelledby="headingThirteen" data-bs-parent="#accordionExample">
+      <div className="accordion-body">
+      Community is for anyone facing litigation! Whether you are an individual, a professional or a company, we are at your service to settle your dispute amicably within 3 months of your request.
+               </div>
+    </div>
+  </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-6">
-            <div class="card">
-              <div class="card-body">
-                <button class="btn btn-light text-dark border-0" type="button" data-toggle="collapse" data-target="#collapseExample11" aria-expanded="false" aria-controls="collapseExample11">
-                  La médiation est-elle enregistrée ?                        </button>
-                <div class="collapse" id="collapseExample11">
-                  <div class="text-secondary mt-3">
-                    Non, chacune des parties s’interdit de le faire. S’il y a enregistrement, vous en serez informé et aurez la possibilité de le refuser. Dans tous les cas s’il y a enregistrement celui-ci ne pourra servir qu’à des fins d’amélioration de la qualité du service.        </div>
-                </div>
+          <div className="col-sm-6">
+            <div className="card">
+              <div className="card-body">
+              <div className="accordion-item">
+    <h2 className="accordion-header" id="headingFourteen">
+      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
+      What are the payment methods offered?
+      </button>
+    </h2>
+    <div id="collapseFourteen" className="accordion-collapse collapse" aria-labelledby="headingFourteen" data-bs-parent="#accordionExample">
+      <div className="accordion-body">
+      You can pay the costs of the mediation by Visa or MasterCard credit card.
+                 </div>
+    </div>
+  </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-6">
-            <div class="card">
-              <div class="card-body">
-                <button class="btn btn-light text-dark border-0" type="button" data-toggle="collapse" data-target="#collapseExample12" aria-expanded="false" aria-controls="collapseExample12">
-                  A qui s'adresse Justicity                       </button>
-                <div class="collapse" id="collapseExample12">
-                  <div class="text-secondary mt-3">
-                    Justicity s’adresse à toute personne faisant face à un litige ! Que vous soyez un particulier, un professionnel ou une entreprise, nous sommes à votre service pour régler votre litige à l’amiable dans les 3 mois suivants votre demande.      </div>
-                </div>
+          <div className="col-sm-6">
+            <div className="card">
+              <div className="card-body">
+              <div className="accordion-item">
+    <h2 className="accordion-header" id="headingFifteen">
+      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFifteen" aria-expanded="false" aria-controls="collapseFifteen">
+      What do I need to use the platform?
+      </button>
+    </h2>
+    <div id="collapseFifteen" className="accordion-collapse collapse" aria-labelledby="headingFifteen" data-bs-parent="#accordionExample">
+      <div className="accordion-body">
+      You need a computer, smartphone or tablet connected to an internet network. You do not have to provide any documents to register, but a section is available on the platform if you wish to download some for the mediator to have access to.
+                 </div>
+    </div>
+  </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-6">
-            <div class="card">
-              <div class="card-body">
-                <button class="btn btn-light text-dark border-0" type="button" data-toggle="collapse" data-target="#collapseExample13" aria-expanded="false" aria-controls="collapseExample13">
-                  Quels sont les moyens de paiements offerts ?                      </button>
-                <div class="collapse" id="collapseExample13">
-                  <div class="text-secondary mt-3">
-                    Vous pouvez payer les frais de la médiation par carte de crédit Visa ou MasterCard.     </div>
-                </div>
+          <div className="col-sm-6">
+            <div className="card">
+              <div className="card-body">
+              <div className="accordion-item">
+    <h2 className="accordion-header" id="headingSixteen">
+      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSixteen" aria-expanded="false" aria-controls="collapseSixteen">
+      How does mediation work?
+            </button>
+    </h2>
+    <div id="collapseSixteen" className="accordion-collapse collapse" aria-labelledby="headingSixteen" data-bs-parent="#accordionExample">
+      <div className="accordion-body">
+      Mediation begins with an individual and confidential interview with the mediator (premediation) then mediation begins with the presentation of the position of each party. The talent of our mediators is to identify your needs and the solutions adopted to settle your dispute definitively.
+              </div>
+    </div>
+  </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-6">
-            <div class="card">
-              <div class="card-body">
-                <button class="btn btn-light text-dark border-0" type="button" data-toggle="collapse" data-target="#collapseExample14" aria-expanded="false" aria-controls="collapseExample14">
-                  De quoi ai-je besoin pour utiliser la plateforme ?                     </button>
-                <div class="collapse" id="collapseExample14">
-                  <div class="text-secondary mt-3">
-                    Vous avez besoin d’un ordinateur, smartphone ou tablette connecté à un réseau internet. Vous n’avez pas de documents à fournir pour vous inscrire mais une rubrique est proposée sur la plateforme si vous souhaitez en télécharger pour que le médiateur y ait accès.     </div>
-                </div>
+          <div className="col-sm-6">
+            <div className="card">
+              <div className="card-body">
+              <div className="accordion-item">
+    <h2 className="accordion-header" id="headingSeventeen">
+      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeventeen" aria-expanded="false" aria-controls="collapseSeventeen">
+      Is the agreement obtained in mediation as valid as a judgment?      </button>
+    </h2>
+    <div id="collapseSeventeen" className="accordion-collapse collapse" aria-labelledby="headingSeventeen" data-bs-parent="#accordionExample">
+      <div className="accordion-body">
+      The agreement obtained at the end of the mediation is valid and constitutes a contract between the parties who must respect it. However, if one of the parties does not respect it, the agreement will have to be approved (which gives it the same value as a judgment) by the court (very fast procedure) to have the agreement executed by a bailiff, for example.
+                 </div>
+    </div>
+  </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-6">
-            <div class="card">
-              <div class="card-body">
-                <button class="btn btn-light text-dark border-0" type="button" data-toggle="collapse" data-target="#collapseExample15" aria-expanded="false" aria-controls="collapseExample15">
-                  Comment se passe une médiation ?                     </button>
-                <div class="collapse" id="collapseExample15">
-                  <div class="text-secondary mt-3">
-                    La médiation débute par un entretien individuel et confidentiel avec le médiateur (la prémédiation) puis la médiation débute avec la présentation de la position de chaque partie. Le talent de nos médiateurs est de dégager vos besoins et les solutions retenues pour régler définitivement votre différend.    </div>
-                </div>
+          <div className="col-sm-6">
+            <div className="card">
+              <div className="card-body">
+              <div className="accordion-item">
+    <h2 className="accordion-header" id="headingEighteen">
+      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEighteen" aria-expanded="false" aria-controls="collapseEighteen">
+      Can I extend or stop an ongoing mediation? 
+      </button>
+    </h2>
+    <div id="collapseEighteen" className="accordion-collapse collapse" aria-labelledby="headingEighteen" data-bs-parent="#accordionExample">
+      <div className="accordion-body">
+      Yes, if at the end of a mediation session if you need more time you can add more in half-day increments.
+If, on the contrary, you have paid faster or where you do not wish to continue, any half-day or day not started will be refunded to you.   
+    </div>
+    </div>
+  </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-6">
-            <div class="card">
-              <div class="card-body">
-                <button class="btn btn-light text-dark border-0" type="button" data-toggle="collapse" data-target="#collapseExample16" aria-expanded="false" aria-controls="collapseExample16">
-                  L'accord obtenu lors d'une médiation est-il aussi valable qu’un jugement ?                     </button>
-                <div class="collapse" id="collapseExample16">
-                  <div class="text-secondary mt-3">
-                    L’accord obtenu à l’issue de la médiation est valable et constitue un contrat entre les parties qui doivent le respecter. Cependant si une des parties ne le respecte pas il faudra faire homologuer l’accord (ce qui lui donne la même valeur qu’un jugement) par le tribunal (procédure très rapide) pour faire exécuter l’accord par un huissier par exemple.   </div>
-                </div>
+          <div className="col-sm-6">
+            <div className="card">
+              <div className="card-body">
+              <div className="accordion-item">
+    <h2 className="accordion-header" id="headingNineteen">
+      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNineteen" aria-expanded="false" aria-controls="collapseNineteen">
+      What happens if the mediation request is refused? 
+      </button>
+    </h2>
+    <div id="collapseNineteen" className="accordion-collapse collapse" aria-labelledby="headingNineteen" data-bs-parent="#accordionExample">
+      <div className="accordion-body">
+      Both parties have every interest in having recourse to mediation as this will allow the dispute to be settled amicably. However, mediation remains a choice for the parties, if one of them does not wish to continue or participate in it, it is within their rights and therefore mediation will not take place.           </div>
+    </div>
+  </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-6">
-            <div class="card">
-              <div class="card-body">
-                <button class="btn btn-light text-dark border-0" type="button" data-toggle="collapse" data-target="#collapseExample17" aria-expanded="false" aria-controls="collapseExample17">
-                  Puis-je prolonger ou arrêter une médiation en cours ?                     </button>
-                <div class="collapse" id="collapseExample17">
-                  <div class="text-secondary mt-3">
-                    Oui si à l’issue d’une séance de médiation si vous avez besoin de plus de temps vous pouvez en rajouter par tranche d’une demi-journée.
-Si au contraire vous avez réglé plus vite où que vous ne désirez pas continuer, toute demi-journée ou journée non entamées vous seront remboursées.   </div>
-                </div>
+          <div className="col-sm-6">
+            <div className="card">
+              <div className="card-body">
+              <div className="accordion-item">
+    <h2 className="accordion-header" id="headingTwenty">
+      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwenty" aria-expanded="false" aria-controls="collapseTwenty">
+      Are there any additional costs to take into account?
+            </button>
+    </h2>
+    <div id="collapseTwenty" className="accordion-collapse collapse" aria-labelledby="headingTwenty" data-bs-parent="#accordionExample">
+      <div className="accordion-body">
+      The only fees you will have to pay are the mediation fees calculated according to the duration of the mediation. If mediation fails, you will be given a certificate of failure free of charge. If mediation is successful, you have the option of having the settlement agreement approved for an additional fee.
+              </div>
+    </div>
+  </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-6">
-            <div class="card">
-              <div class="card-body">
-                <button class="btn btn-light text-dark border-0" type="button" data-toggle="collapse" data-target="#collapseExample18" aria-expanded="false" aria-controls="collapseExample18">
-                  Que ce passe-t-il en cas de refus de la demande de médiation ?                     </button>
-                <div class="collapse" id="collapseExample18">
-                  <div class="text-secondary mt-3">
-                    Les deux parties ont tout intérêt à avoir recours à la médiation car cela permettra de régler le litige à l’amiable. Cependant, la médiation reste un choix pour les parties, si l’une d’entre elle ne souhaite pas continuer ou y participer, elle est dans son droit et la médiation n’aura donc pas lieu.  </div>
-                </div>
+          <div className="col-sm-6">
+            <div className="card">
+              <div className="card-body">
+              <div className="accordion-item">
+    <h2 className="accordion-header" id="headingTwentyOne">
+      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwentyOne" aria-expanded="false" aria-controls="collapseTwentyOne">
+      What is the difference between mediation and arbitration?
+            </button>
+    </h2>
+    <div id="collapseTwentyOne" className="accordion-collapse collapse" aria-labelledby="headingTwentyOne" data-bs-parent="#accordionExample">
+      <div className="accordion-body">
+      Mediation belongs to the parties, it allows an amicable agreement to be reached, the mediator does not render any decision. Arbitration is more like a traditional trial, but simpler, faster, and the arbitrator makes a final decision (the award) not subject to appeal.
+              </div>
+    </div>
+  </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-6">
-            <div class="card">
-              <div class="card-body">
-                <button class="btn btn-light text-dark border-0" type="button" data-toggle="collapse" data-target="#collapseExample19" aria-expanded="false" aria-controls="collapseExample19">
-                  Y'a-t-il des frais supplémentaires à prendre en compte ?                     </button>
-                <div class="collapse" id="collapseExample19">
-                  <div class="text-secondary mt-3">
-                    Les seuls frais que vous aurez à payer sont les honoraires de médiation calculés en fonction de la durée de la médiation. En cas d’échec de la médiation, une attestation d’échec vous sera remise gratuitement. En cas de réussite de la médiation, vous avez la possibilité de faire homologuer l’accord transactionnel moyennant des frais supplémentaires.  </div>
-                </div>
+          <div className="col-sm-6">
+            <div className="card">
+              <div className="card-body">
+              <div className="accordion-item">
+    <h2 className="accordion-header" id="headingTwentyTwo">
+      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwentyTwo" aria-expanded="false" aria-controls="collapseTwentyTwo">
+      How will I sign the final agreement?
+      </button>
+    </h2>
+    <div id="collapseTwentyTwo" className="accordion-collapse collapse" aria-labelledby="headingTwentyTwo" data-bs-parent="#accordionExample">
+      <div className="accordion-body">
+      You will sign the final agreement using our fully secure electronic signature system accessible through a simple Internet connection.
               </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="card">
-              <div class="card-body">
-                <button class="btn btn-light text-dark border-0" type="button" data-toggle="collapse" data-target="#collapseExample20" aria-expanded="false" aria-controls="collapseExample20">
-                  Quelle est la différence entre une médiation et un arbitrage ?                     </button>
-                <div class="collapse" id="collapseExample20">
-                  <div class="text-secondary mt-3">
-                    La médiation appartient aux parties, elle permet de dégager un accord amiable, le médiateur ne rend aucune décision. L’arbitrage ressemble plus à un procès traditionnel, mais plus simple, plus rapide, et l’arbitre rend une décision finale (la sentence) insusceptible d’appel.  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="card">
-              <div class="card-body">
-                <button class="btn btn-light text-dark border-0" type="button" data-toggle="collapse" data-target="#collapseExample21" aria-expanded="false" aria-controls="collapseExample21">
-                  Comment vais-je signer l’accord final ?                    </button>
-                <div class="collapse" id="collapseExample21">
-                  <div class="text-secondary mt-3">
-                    Vous signerez l’accord final grace à notre système de signature électronique totalement sécurisé et accessible à l’aide d’une simple connexion à Internet.  </div>
-                </div>
+    </div>
+  </div>
               </div>
             </div>
           </div>
           <h3 className="text text-secondary mt-5 mb-3">RESSOURCES</h3>
           <tr className="border-1 text-success "></tr>
           <h2 className="text mt-5 mb-5">Nos derniers articles</h2>
-          <div class="row">
-            <div class="col-sm-4">
-              <div class="card">
-                <img src="./images/img8.png" class="card-img-top" alt="..." />
-                <div class="card-body">
-                  <h5 class="card-title">L’impact environnemental de la médiation en ligne</h5>
-                  <p class="card-text text-secondary">Revue à partir de l’année 2008, la répartition géographique des tribunaux en France n’avait pas été significativement modifiée depuis 1958. Celle-ci était par conséquent considérée comme inadaptée au regard de l’évolution démographique et économique des régions. Avec...</p>
+          <div className="row">
+            <div className="col-sm-4">
+              <div className="card">
+                <img src="./images/img8.png" className="card-img-top" alt="..." />
+                <div className="card-body">
+                  <h5 className="card-title">L’impact environnemental de la médiation en ligne</h5>
+                  <p className="card-text text-secondary">Revue à partir de l’année 2008, la répartition géographique des tribunaux en France n’avait pas été significativement modifiée depuis 1958. Celle-ci était par conséquent considérée comme inadaptée au regard de l’évolution démographique et économique des régions. Avec...</p>
                 </div>
               </div>
             </div>
-            <div class="col-sm-4">
-              <div class="card">
-                <img src="./images/img9.jpeg" class="card-img-top" alt="..." />
-                <div class="card-body">
-                  <h5 class="card-title">Conflits entre actionnaires et dirigeants : ils sont plus nombreux que jamais !</h5>
-                  <p class="card-text text-secondary">L’affectio Sociétatis constitue la base d’une aventure entrepreneuriale réussie.Néanmoins, chemin faisant il n’est pas rare que les retalions aboutissent à des conflits, litiges ou différends structurels et conjoncturels pour lesquels les relations humaines ne sont...</p>
+            <div className="col-sm-4">
+              <div className="card">
+                <img src="./images/img9.jpeg" className="card-img-top" alt="..." />
+                <div className="card-body">
+                  <h5 className="card-title">Conflits entre actionnaires et dirigeants : ils sont plus nombreux que jamais !</h5>
+                  <p className="card-text text-secondary">L’affectio Sociétatis constitue la base d’une aventure entrepreneuriale réussie.Néanmoins, chemin faisant il n’est pas rare que les retalions aboutissent à des conflits, litiges ou différends structurels et conjoncturels pour lesquels les relations humaines ne sont...</p>
                 </div>
               </div>
             </div>
-            <div class="col-sm-4">
-              <div class="card">
-                <img src="./images/img10.jpg" class="card-img-top" alt="..." />
-                <div class="card-body">
-                  <h5 class="card-title">Le règlement intérieur national de la profession d’avocat intègre désormais la médiation comme préalable à une action en justice</h5>
-                  <p class="card-text text-secondary">Le 18 décembre 2020, une décision portant modification du règlement intérieur national (RIN) de la profession d’avocat a été publiée au Journal officiel du 17 janvier 2021 ;  En effet, le texte fait référence à un nouvel alinéa à l’article 6.1 du RIN. Ce...</p>
+            <div className="col-sm-4">
+              <div className="card">
+                <img src="./images/img10.jpg" className="card-img-top" alt="..." />
+                <div className="card-body">
+                  <h5 className="card-title">Le règlement intérieur national de la profession d’avocat intègre désormais la médiation comme préalable à une action en justice</h5>
+                  <p className="card-text text-secondary">Le 18 décembre 2020, une décision portant modification du règlement intérieur national (RIN) de la profession d’avocat a été publiée au Journal officiel du 17 janvier 2021 ;  En effet, le texte fait référence à un nouvel alinéa à l’article 6.1 du RIN. Ce...</p>
                 </div>
               </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
       <Footer/>

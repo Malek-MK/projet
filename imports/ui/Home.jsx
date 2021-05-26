@@ -94,7 +94,7 @@ const verif2=()=>{
       history.push('/mediator');
     }
     else{
-        history.push('/signup');
+        history.push('/register');
     }
 }
     return (
@@ -174,7 +174,7 @@ const verif2=()=>{
                                     </li>
                                     <li className="nav-item text-dark">/</li>
                                     <li className="nav-item">
-                                        <Link onClick={verif2} className="text-info text-decoration-none"><b><i className="fa fa-user-plus"></i>Sign Up</b></Link>
+                                        <Link onClick={verif2} className="text-info text-decoration-none"><b><i className="fa fa-user-plus"></i>Register</b></Link>
                                     </li>
                                 </ul>
                             </div>
