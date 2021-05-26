@@ -66,7 +66,7 @@ const HeaderMediator = () => {
                                         
                     </li> 
                     <li className="nav-item">
-                    <Link type="button" className="btn btn-light" to="/profile_mediator"><i className="fa fa-connectdevelop text-primary"></i> Hello Mediator, <b className="text-dark">{user}</b></Link>
+                    <Link type="button" className="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i className="fa fa-connectdevelop text-primary"></i> Hello Mediator, <b className="text-dark">{user}</b></Link>
                     </li>
                     <li className="nav-item">
                         <Button variant="outline-danger" onClick={onLogout} className="btn rounded-circle mt-1 ml-5 ">
@@ -82,6 +82,44 @@ const HeaderMediator = () => {
 </div>
 
 </header>
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div className="container" style={{padding:15}}>
+  <div class="offcanvas-header">
+    <h5 id="offcanvasRightLabel" className="text mt-1">User profile</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+  <div class="card mb-3 border-0">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="./assets/modify.png" alt="..."/>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Malek Malek</h5>
+        <p class="card-text text-secondary"><i class="fa fa-envelope text-primary" aria-hidden="true"></i> malek2020@gmail.com</p>
+        <button className="btn btn-outline-danger btn-sm">disconnection</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div className="row mb-5">
+  <div className="col-sm-12">
+    <div className="card">
+      <div className="card-body">
+        <button className="btn btn-light"><i className="fa fa-user text-success"></i> Personal information</button>
+        <button className="btn btn-light"><i className="fa fa-shield text-success"></i> Professional information</button>
+        <button className="btn btn-light"><i className="fa fa-file-text-o text-success"></i> Organization contact details</button>
+        <button className="btn btn-light"><i className="fa fa-list text-primary"></i> Access parameter</button>
+        <button className="btn btn-light"><i className="fa fa-indent text-success"></i> Subscription</button><br></br>
+        <button className="btn btn-light"><i className="fa fa-envelope-o text-success"></i> My orders</button>
+      </div>
+    </div>
+  </div>    
+  </div>
+  </div>
+  </div>
+</div>
         </div>
     )
 }
