@@ -59,9 +59,9 @@ const ListArbitrators = ({ arbitrator, fetch}) => {
     return (
         <>
         <tr key={arbitrator._id}>
-           <td>{arbitrator.username}</td>
+           <td key={arbitrator._id}>{arbitrator.username}</td>
            {mail.map(e=>{
-               return <td>{e.address}</td>
+               return <td key={arbitrator._id}>{e.address}</td>
            })}
            <td>  
        <Button className="btn btn-info" onClick={handleShow}

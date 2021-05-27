@@ -85,7 +85,7 @@ const [click3,setClick3]=useState({
                 <div className="d-flex justify-content-between align-items-center">
                  <div>
                  <h3 className="card-label">Profile</h3>
-                  <span className="d-block text-muted pt-2 font-size-sm">Consult and edit Users</span>
+                  <span className="d-block text-muted pt-2 font-size-sm">Consult and edit Admin</span>
                  </div>
                <div>
                <Link className="btn btn-primary" to="/mediations/create">

@@ -60,7 +60,7 @@ const HeaderMediator = () => {
                 <ul className="navbar-nav ms-auto">
                     <li className="nav-item">
                                         <button type="button" className="btn">
-                                        <span className="spinner-grow spinner-grow-sm text-primary" role="status" aria-hidden="true"></span>
+                                        <span className="spinner-grow spinner-grow-sm text-warning" role="status" aria-hidden="true"></span>
                                             Notifications<span className="badge bg-green ms-2">0</span>
                                         </button>
                                         

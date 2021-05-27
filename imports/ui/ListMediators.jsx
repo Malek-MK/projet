@@ -62,9 +62,9 @@ const ListMediators = ({ mediator, fetch}) => {
     return (
         <>
      <tr key={mediator._id}>
-        <td >{mediator.username}</td>
+        <td key={mediator._id}>{mediator.username}</td>
         {mail.map(e=>{
-            return <td>{e.address}</td>
+            return <td key={mediator._id}>{e.address}</td>
         })}
         <td>  
     <Link className="btn btn-info text-decoration-none"

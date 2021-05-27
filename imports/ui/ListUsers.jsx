@@ -74,9 +74,9 @@ const ListUsers = ({ user, fetch}) => {
     return (
         <>
      <tr key={user._id}>
-        <td >{user.username}</td>
+        <td key={user._id}>{user.username}</td>
         {mail.map(e=>{
-            return <td>{e.address}</td>
+            return <td key={user._id}>{e.address}</td>
         })}
         <td>  
     <Link className="btn btn-info text-decoration-none"

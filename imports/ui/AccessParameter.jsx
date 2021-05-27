@@ -52,17 +52,17 @@ const AccessParameter = () => {
                 <form onSubmit={handleSubmit(onSubmit)}>
        
         <label >Email</label>
-        <input type="email" name="email" ref={register} className="form-control mb-4 bg-light" placeholder="example@example.com"></input>
+        <input type="email" name="email" ref={register} className="form-control mb-4 bg-light" placeholder="Tap your E-mail"></input>
         <p className="text-danger">{errors.email?.message}</p>
         <div className="row mb-4 ">
           <div className="col">
             <label>Password</label>
-            <input type="password" name="password" ref={register} className="form-control bg-light" placeholder="First name"></input>
+            <input type="password" name="password" ref={register} className="form-control bg-light" placeholder="Tap your password"></input>
             <p className="text-danger">{errors.password?.message}</p>
           </div>
           <div className="col">
             <label>Confirm password</label>
-            <input type="password" name="password1" ref={register} className="form-control bg-light" placeholder="First name"></input>
+            <input type="password" name="password1" ref={register} className="form-control bg-light" placeholder="Verify your password"></input>
              <p className="text-danger">{errors.password1?.message}</p>
           </div>
         </div>

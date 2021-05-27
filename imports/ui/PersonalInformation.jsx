@@ -99,39 +99,39 @@ const PersonalInformation = () => {
                 <div className="row mb-3">
           <div className="col">
             <label>First name</label>
-            <input type="text" name="firstname" ref={register} className="form-control bg-light" placeholder="First name"></input>
+            <input type="text" name="firstname" ref={register} className="form-control bg-light" placeholder="Tap your first name"></input>
             <p className="text-danger">{errors.firstname?.message}</p>
           </div>
           <div className="col">
             <label>last name</label>
-            <input type="text" name="lastname" ref={register} className="form-control bg-light" placeholder="Last name"></input>
+            <input type="text" name="lastname" ref={register} className="form-control bg-light" placeholder="Tap your last name"></input>
              <p className="text-danger">{errors.lastname?.message}</p>
           </div>
         </div>
         <div className="row mb-3">
           <div className="col">
             <label>E-mail</label>
-            <input type="email" name="email" ref={register} className="form-control bg-light" placeholder="First name"></input>
+            <input type="email" name="email" ref={register} className="form-control bg-light" placeholder="Tap your E-mail"></input>
              <p className="text-danger">{errors.email?.message}</p>
           </div>
           <div className="col">
             <label>Phone</label>
-            <input type="number" name="tel" ref={register} className="form-control bg-light" placeholder="First name"></input>
+            <input type="number" name="tel" ref={register} className="form-control bg-light" placeholder="Tap your phone"></input>
             <p className="text-danger">{errors.tel?.message}</p>
           </div>
         </div>
         <label >Registered Address</label>
-        <input type="text" name="adresse" ref={register} className="form-control mb-4 bg-light" placeholder="Example input"></input>
+        <input type="text" name="adresse" ref={register} className="form-control mb-4 bg-light" placeholder="Tap your registered address"></input>
         <p className="text-danger">{errors.adresse?.message}</p>
         <div className="row mb-3 ">
           <div className="col">
             <label>Postal code</label>
-            <input type="number" name="codepos" ref={register} className="form-control bg-light" placeholder="First name"></input>
+            <input type="number" name="codepos" ref={register} className="form-control bg-light" placeholder="Tap your postal code"></input>
             <p className="text-danger">{errors.codepos?.message}</p>
           </div>
           <div className="col">
             <label>City</label>
-            <input type="text" name="ville" ref={register} className="form-control bg-light" placeholder="First name"></input>
+            <input type="text" name="ville" ref={register} className="form-control bg-light" placeholder="Tap your city"></input>
             <p className="text-danger">{errors.ville?.message}</p>
           </div>
         </div>
