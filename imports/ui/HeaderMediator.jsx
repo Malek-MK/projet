@@ -40,18 +40,18 @@ const HeaderMediator = () => {
                 </li>
                 <li className="nav-item ">
                     <NavDropdown title="Médiation" >
-                        <NavDropdown.Item ><Link to="/mediator/mediations" className="text-dark text-decoration-none"><i class="fa fa-crosshairs text-secondary" aria-hidden="true"></i> My Mediations</Link></NavDropdown.Item>
-                        <NavDropdown.Item ><Link to="/mediations" className="text-dark text-decoration-none"><i class="fa fa-th-large text-secondary" aria-hidden="true"></i> Cabinet mediations</Link></NavDropdown.Item>
-                        <NavDropdown.Item ><Link to="/mediations" className="text-dark text-decoration-none"><i class="fa fa-tty text-secondary" aria-hidden="true"></i> Community mediations</Link></NavDropdown.Item>
-                        <NavDropdown.Item ><i class="fa fa-folder-o text-secondary" aria-hidden="true"></i> My disputes</NavDropdown.Item>
+                        <NavDropdown.Item ><Link to="/mediator/mediations" className="text-dark text-decoration-none"><i className="fa fa-crosshairs text-secondary" aria-hidden="true"></i> My Mediations</Link></NavDropdown.Item>
+                        <NavDropdown.Item ><Link to="/mediations" className="text-dark text-decoration-none"><i className="fa fa-th-large text-secondary" aria-hidden="true"></i> Cabinet mediations</Link></NavDropdown.Item>
+                        <NavDropdown.Item ><Link to="/mediations" className="text-dark text-decoration-none"><i className="fa fa-tty text-secondary" aria-hidden="true"></i> Community mediations</Link></NavDropdown.Item>
+                        <NavDropdown.Item ><i className="fa fa-folder-o text-secondary" aria-hidden="true"></i> My disputes</NavDropdown.Item>
                         <NavDropdown.Item ><Link to="mediator/create_mediation" className="text-dark text-decoration-none">
-                        <i class="fa fa-plus-square text-secondary" aria-hidden="true"></i> Add mediation</Link></NavDropdown.Item>
+                        <i className="fa fa-plus-square text-secondary" aria-hidden="true"></i> Add mediation</Link></NavDropdown.Item>
                     </NavDropdown>
                 </li>
                 <li className="nav-item">
                     <NavDropdown title="Arbitrage" >
                         <NavDropdown.Item ><Link className="text-dark text-decoration-none">
-                        <i class="fa fa-gavel text-secondary" aria-hidden="true"></i> Arbitration <span class="badge badge-danger bg-danger">Comming Soon</span></Link></NavDropdown.Item>
+                        <i className="fa fa-gavel text-secondary" aria-hidden="true"></i> Arbitration <span className="badge badge-danger bg-danger">Comming Soon</span></Link></NavDropdown.Item>
                     </NavDropdown>
                 </li>
 
@@ -60,13 +60,13 @@ const HeaderMediator = () => {
                 <ul className="navbar-nav ms-auto">
                     <li className="nav-item">
                                         <button type="button" className="btn">
-                                        <span class="spinner-grow spinner-grow-sm text-primary" role="status" aria-hidden="true"></span>
+                                        <span className="spinner-grow spinner-grow-sm text-primary" role="status" aria-hidden="true"></span>
                                             Notifications<span className="badge bg-green ms-2">0</span>
                                         </button>
                                         
                     </li> 
                     <li className="nav-item">
-                    <Link type="button" className="btn btn-light" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i className="fa fa-connectdevelop text-primary"></i> Hello Mediator, <b className="text-dark text-capitalize">{user}</b></Link>
+                    <Button type="button" className="btn btn-light" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i className="fa fa-connectdevelop text-primary"></i> Hello Mediator, <b className="text-dark text-capitalize">{user}</b></Button>
                     </li>
                     <li className="nav-item">
                         <Button variant="outline-danger" onClick={onLogout} className="btn rounded-circle mt-1 ml-5 " style={{marginLeft:10}}>
@@ -82,22 +82,22 @@ const HeaderMediator = () => {
 </div>
 
 </header>
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+<div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
   <div className="container" style={{padding:15}}>
-  <div class="offcanvas-header">
+  <div className="offcanvas-header">
     <h5 id="offcanvasRightLabel" className="text mt-1">Mediator profile</h5>
-    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
-  <div class="offcanvas-body">
-  <div class="card mb-3 border-0">
-  <div class="row g-0">
-    <div class="col-md-4">
+  <div className="offcanvas-body">
+  <div className="card mb-3 border-0">
+  <div className="row g-0">
+    <div className="col-md-4">
       <img src="./assets/modify.png" alt="..."/>
     </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title text-capitalize">{user}</h5>
-        <p class="card-text text-secondary"><i class="fa fa-envelope text-primary" aria-hidden="true"></i> malek2020@gmail.com</p>
+    <div className="col-md-8">
+      <div className="card-body">
+        <h5 className="card-title text-capitalize">{user}</h5>
+        <p className="card-text text-secondary"><i className="fa fa-envelope text-primary" aria-hidden="true"></i> malek2020@gmail.com</p>
         <button className="btn btn-outline-danger btn-sm" onClick={onLogout} data-bs-dismiss="offcanvas" aria-label="Close">disconnection</button>
       </div>
     </div>

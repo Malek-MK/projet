@@ -49,7 +49,7 @@ const HeaderArbitrator = () => {
                                         </button>
                     </li> 
                     <li className="nav-item">
-                    <Link type="button" className="btn btn-light" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i className="fa fa-black-tie text-primary"></i> Hello Arbitrator, <b className="text-dark text-capitalize">{user}</b></Link>
+                    <Button type="button" className="btn btn-light" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i className="fa fa-black-tie text-primary"></i> Hello Arbitrator, <b className="text-dark text-capitalize">{user}</b></Button>
                     </li>
                    
                     <li className="nav-item">
@@ -64,24 +64,23 @@ const HeaderArbitrator = () => {
 
     </div>
 </div>
-
 </header>
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+<div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
   <div className="container" style={{padding:15}}>
-  <div class="offcanvas-header">
+  <div className="offcanvas-header">
     <h5 id="offcanvasRightLabel" className="text mt-1">Arbitrator profile</h5>
-    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
-  <div class="offcanvas-body">
-  <div class="card mb-3 border-0">
-  <div class="row g-0">
-    <div class="col-md-4">
+  <div className="offcanvas-body">
+  <div className="card mb-3 border-0">
+  <div className="row g-0">
+    <div className="col-md-4">
       <img src="./assets/modify.png" alt="..."/>
     </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title text-capitalize">{user}</h5>
-        <p class="card-text text-secondary"><i class="fa fa-envelope text-primary" aria-hidden="true"></i> malek2020@gmail.com</p>
+    <div className="col-md-8">
+      <div className="card-body">
+        <h5 className="card-title text-capitalize">{user}</h5>
+        <p className="card-text text-secondary"><i className="fa fa-envelope text-primary" aria-hidden="true"></i> malek2020@gmail.com</p>
         <button className="btn btn-outline-danger btn-sm" onClick={onLogout} data-bs-dismiss="offcanvas" aria-label="Close">disconnection</button>
       </div>
     </div>

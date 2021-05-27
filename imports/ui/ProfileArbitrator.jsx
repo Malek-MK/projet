@@ -89,10 +89,10 @@ const [click3,setClick3]=useState({
                  </div>
                 </div>
                 </div>
-                <div class="row">
-  <div class="col-sm-3">
-    <div class="card">
-      <div class="card-body">
+                <div className="row">
+  <div className="col-sm-3">
+    <div className="card">
+      <div className="card-body">
         <h5 className="text-capitalize mb-4"><b>{user}</b></h5>
         <p className="text mb-1">Email :</p>
         <p className="text mb-1">Phone :</p>
