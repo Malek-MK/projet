@@ -4,8 +4,11 @@ import PersonalInformation from '../ui/PersonalInformation';
 import AccessParameter from '../ui/AccessParameter';
 import MyOrders from '../ui/MyOrders';
 import { Link } from 'react-router-dom';
- 
+import { Meteor } from 'meteor/meteor';
+import { useTracker } from "meteor/react-meteor-data";
+
 const Profile = () => { 
+  const user = useTracker(() => Meteor.user()?.username);
   const [click1,setClick1]=useState({
     class1:"btn btn-light mt-3 text-primary",
     class2:"fa fa-user text-primary",
@@ -98,7 +101,7 @@ const [click3,setClick3]=useState({
   <div class="col-sm-3">
     <div class="card">
       <div class="card-body">
-        <h5 className="text mb-4"><b>ALkhatib Malek</b></h5>
+        <h5 className="text-capitalize mb-4"><b>{user}</b></h5>
         <p className="text mb-1">Email :</p>
         <p className="text mb-1">Phone :</p>
         <p>Country :</p>

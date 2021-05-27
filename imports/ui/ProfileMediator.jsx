@@ -8,8 +8,11 @@ import CompanyInformation from '../ui/CompanyInformation';
 import SubscriptionInformation from '../ui/SubscriptionInformation';
 import BankInformation from '../ui/BankInformation';
 import { Link } from 'react-router-dom';
- 
+import { Meteor } from 'meteor/meteor';
+import { useTracker } from "meteor/react-meteor-data";
+
 const ProfileMediator = () => { 
+  const user = useTracker(() => Meteor.user()?.username);
   const [click1,setClick1]=useState({
     class1:"btn btn-light mt-1",
     class2:"fa fa-user text-success",
@@ -329,7 +332,7 @@ const [click4,setClick4]=useState({
   <div className="col-sm-3">
     <div className="card">
       <div className="card-body">
-        <h5 className="text mb-4"><b>ALkhatib Malek</b></h5>
+        <h5 className="text-capitalize mb-4"><b>{user}</b></h5>
         <button className="btn btn-secondary btn-lg mb-2">No candidacy</button>
         <p className="text mb-1 mt-2">Email :</p>
         <p className="text mb-1">Phone :</p>

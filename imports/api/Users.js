@@ -166,6 +166,13 @@ Meteor.methods({
   'findUsersWithMediations'(){
     const users= Meteor.users.find().fetch();
     return users.map(e=>({...e,medidations:Mediations.find({userId:e._id}).fetch()}))
+  },
+  'showUser'({id}){
+    if (!this.userId) {
+      throw new Meteor.Error('Not Authorized');
+  }
+  const user= Meteor.users.findOne({_id:id});
+  return user;
   }
 });
 

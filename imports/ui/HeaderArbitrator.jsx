@@ -49,11 +49,11 @@ const HeaderArbitrator = () => {
                                         </button>
                     </li> 
                     <li className="nav-item">
-                    <Link type="button" className="btn btn-light" to="/profile_arbitrator"><i className="fa fa-black-tie text-primary"></i> Hello Arbitrator, <b className="text-dark">{user}</b></Link>
+                    <Link type="button" className="btn btn-light" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i className="fa fa-black-tie text-primary"></i> Hello Arbitrator, <b className="text-dark text-capitalize">{user}</b></Link>
                     </li>
                    
                     <li className="nav-item">
-                        <Button variant="outline-danger" onClick={onLogout} className="btn rounded-circle mt-1 ml-5 ">
+                        <Button variant="outline-danger" onClick={onLogout} className="btn rounded-circle mt-1 ml-5 " style={{marginLeft:10}}>
                             <i className="fa fa-power-off" aria-hidden="true"></i>
                         </Button>
                     </li>
@@ -66,6 +66,55 @@ const HeaderArbitrator = () => {
 </div>
 
 </header>
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div className="container" style={{padding:15}}>
+  <div class="offcanvas-header">
+    <h5 id="offcanvasRightLabel" className="text mt-1">Arbitrator profile</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+  <div class="card mb-3 border-0">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="./assets/modify.png" alt="..."/>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title text-capitalize">{user}</h5>
+        <p class="card-text text-secondary"><i class="fa fa-envelope text-primary" aria-hidden="true"></i> malek2020@gmail.com</p>
+        <button className="btn btn-outline-danger btn-sm" onClick={onLogout} data-bs-dismiss="offcanvas" aria-label="Close">disconnection</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div className="row mb-5">
+  <div className="col-sm-12">
+    <div className="card border-0">
+      <div className="card-body">
+         <div className="d-flex align-items-start flex-column mb-3">
+         <Link className="d-flex  align-items-center text-decoration-none" to="/profile_arbitrator" target="_blank">
+          <button className="btn btn-light btn-sm" style={{padding:10}}><i className="fa fa-user text-success fa-2x"></i></button>
+          <button className="btn btn-white bg-white border-0" style={{textAlign:"left"}}> Personal information<br></br><span className="text-secondary">Update your information</span></button>
+          </Link>
+          
+          <Link className="d-flex align-items-center text-decoration-none" to="/profile_arbitrator" target="_blank">
+          <button className="btn btn-light btn-sm" style={{padding:10}}><i className="fa fa-shield text-danger fa-2x"></i></button>
+          <button className="btn btn-white bg-white border-0" style={{textAlign:"left"}}> Access parameter<br></br><span className="text-secondary">Update your access</span></button>
+          </Link>
+          
+          <Link className="d-flex align-items-center text-decoration-none" to="/profile_arbitrator" target="_blank">
+          <button className="btn btn-light btn-sm" style={{padding:10}}><i className="fa fa-file-text-o text-secondary fa-2x"></i></button>
+          <button className="btn btn-white bg-white border-0" style={{textAlign:"left"}}> My orders<br></br><span className="text-secondary">List of all orders</span></button>
+          </Link>
+         </div>
+       
+      </div>
+    </div>
+  </div>    
+  </div>
+  </div>
+  </div>
+</div>
         </div>
     )
 }
