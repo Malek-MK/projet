@@ -1,8 +1,28 @@
 import React from 'react'
 import NavBar from '../ui/NavBar';
 import Footer from '../ui/Footer';
-
+import { Meteor } from 'meteor/meteor';
+import { useHistory } from 'react-router-dom';
 const Features = () => {
+  const history = useHistory();
+  const verif=()=>{
+    var loggedInUser = Meteor.userId();
+    if (Roles.userIsInRole(loggedInUser, 'admin')) {
+      history.push('/admin');
+    }
+    else if (Roles.userIsInRole(loggedInUser, 'user')) {
+      history.push('/mediations');
+    }
+    else if (Roles.userIsInRole(loggedInUser, 'arbitrator')) {
+      history.push('/arbitrator');
+    }
+    else if (Roles.userIsInRole(loggedInUser, 'mediator')) {
+      history.push('/mediator');
+    }
+    else{
+        history.push('/create-mediation');
+    }
+}
     return (
         <div>
             <NavBar/>
@@ -104,7 +124,7 @@ const Features = () => {
   <div class="col-sm-6">
     <div class="card text-center border-0 bg-primary">
       <div class="card-body">
-        <button className="btn btn-success btn-lg mt-5 mb-5">Access the platform</button>
+        <button className="btn btn-success btn-lg mt-5 mb-5" onClick={verif}>Access the platform</button>
       </div>
     </div>
   </div>

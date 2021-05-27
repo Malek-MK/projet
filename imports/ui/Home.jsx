@@ -58,7 +58,7 @@ const verifff=()=>{
         history.push('/mediator/create_mediation');
       }
     else{
-        history.push('/createMediation');
+        history.push('/create-mediation');
     }
 }
 const verif1=()=>{
@@ -251,7 +251,7 @@ const verif2=()=>{
                                 <h2 className="text mt-1">Arbitration</h2>
                                 <h4 className="card-text text-secondary mt-3">Arbitration advantageously replaces a lawsuit. It is perfectly suited to companies wishing to settle a dispute quickly, confidentially with a controlled budget. It is a solution particularly suited to commercial and / or international disputes.</h4>
                                 <h4 className="card-text text-secondary mt-3">Our arbitrators render a final, non-appealable decision that is binding on all parties and can be homologated in court. Arbitration implements a much less restrictive procedure than traditional courts while respecting the adversarial principle.</h4>
-                                <Link className="btn btn-success btn-lg mt-4" to="/what-is-mediation">find out more</Link>
+                                <Link className="btn btn-success btn-lg mt-4" to="/what-is-arbitration">find out more</Link>
                             </div>
                         </div>
                     </div>

@@ -225,24 +225,6 @@ In any case, do not hesitate to contact us free of charge so that we can help us
 </div>
 <button className="btn btn-success btn-lg mt-5">SEE OUR FULL FAQs</button>
             </div>
-            <div className="card border-0 bg-primary">
-            <div className="row">
-  <div className="col-sm-6">
-    <div className="card text-center border-0 bg-primary">
-      <div className="card-body">
-        <h2 className="text-light mt-5 mb-5">Ready to submit your case?</h2>
-      </div>
-    </div>
-  </div>
-  <div className="col-sm-6">
-    <div className="card text-center border-0 bg-primary">
-      <div className="card-body">
-        <button className="btn btn-success btn-lg mt-5 mb-5">Access the platform</button>
-      </div>
-    </div>
-  </div>
-</div>
-            </div>
             <Footer/>
         </div>
     )
