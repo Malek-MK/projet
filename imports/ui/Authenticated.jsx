@@ -38,7 +38,7 @@ const Authenticated = ({ path, component }) => {
   }, [user]);
 
   return loading ? (
-<span><h3><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+<span><h3 className="text-center mt-5"><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
 <span class="sr-only">Loading...</span></h3></span>
 
 ) : (
