@@ -15,7 +15,9 @@ const StepThree = ({ setData, setStep,data}) => {
         other:data.other || "Other",
         }
     });
+    console.log(errors)
     const objlitige = watch("objlitige");
+    console.log(objlitige)
     const onSubmit = (data3) => {
         setData(old => ({ ...old, ...data3 }));
         setStep(3)
@@ -46,7 +48,6 @@ const StepThree = ({ setData, setStep,data}) => {
                 <div>
                    <label >Add your type of dispute</label>
                     <input type="text" name="other" ref={register} className="form-control mb-2" placeholder="Add your type of dispute"></input>
-                    <p className="text-danger">{errors.other?.message}</p>
                 </div>
                 )}
                 <div className="form-group mb-4">

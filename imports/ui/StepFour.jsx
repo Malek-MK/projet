@@ -3,8 +3,7 @@ import { Meteor } from 'meteor/meteor';
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 import jsPDF from 'jspdf';
-import { Link, useParams } from 'react-router-dom';
-
+import { useHistory } from 'react-router-dom';
 
 const notyf = new Notyf({
     duration: 2000,
@@ -16,7 +15,6 @@ const notyf = new Notyf({
 
 const StepFour = ({ setStep, data}) => {
     const [res,setRes]=useState();
-    console.log("res :",res)
     const generatePDF=()=>{
         var doc=new jsPDF('p', 'mm', [600, 650]);
         doc.html(document.querySelector("#content"),{
@@ -68,14 +66,17 @@ const StepFour = ({ setStep, data}) => {
         e.preventDefault
         setStep(2)
     }
+    const router = useHistory();
     const onclick = () => {
         Meteor.call(
             'insertMediation', data, (err,res) => {
+                console.log("res :",res)
                 if (err) {
                     notyf.error("Inserted Failed")
                 } else {
                     notyf.success("Inserted with success")
                     setRes(res)
+                    router.push(`/mediations/update/${res}`)
                 }
             }
         );
@@ -200,7 +201,7 @@ const StepFour = ({ setStep, data}) => {
             </table>
             <div className="div mt-4">
             <button type="button" name='prev' className="btn btn-primary btn-lg pull-left" onClick={onclickprev} >Previous</button>
-            <Link className="btn btn-success btn-lg pull-right" to={`/mediations/update/${res}`} onClick={onclick}>Save</Link>
+            <button className="btn btn-success btn-lg pull-right" onClick={onclick}>Save</button>
             <button type="submit" class="btn btn-info btn-lg  pull-right" style={{marginRight:"10px"}} onClick={generatePDF}>  <i class="fa fa-download" aria-hidden="true"></i>
         Download in pdf </button>
             </div>

@@ -9,9 +9,6 @@ export default Step2 = yup.object().shape({
     desc: yup
     .string("check your description")
     .required("description is required"),
-    other: yup
-    .string("check your other dispute")
-    .required("description is required"),
     verif: yup
     .boolean()
     .oneOf([true], 'Must Accept Terms and Conditions'),

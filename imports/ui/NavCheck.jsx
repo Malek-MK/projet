@@ -13,6 +13,7 @@ const NavCheck = () => {
   const [veriff,setVeriff]=useState(false);
   const [verifff,setVerifff]=useState(false);
   const [data,setData]=useState();
+  console.log("data :",data)
   const [showw,setShow]=useState();
   const [paym,setPaym]=useState([]);
   const {id} = useParams();
