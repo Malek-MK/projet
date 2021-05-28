@@ -5,6 +5,7 @@ import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 import Schema from '../Validation/YupProfile';
 import FileUploadComponent from '../ui/FileUpload';
+import { Meteor } from 'meteor/meteor';
 
 const notyf = new Notyf({
     duration: 2000,
@@ -33,10 +34,10 @@ const ProfessionalInformation = () => {
       }
     return (
         
-        <div class="col-sm-9">
+        <div className="col-sm-9">
         <div className="card">
         
-        <div class="d-flex align-items-center">
+        <div className="d-flex align-items-center">
            <div className="container mt-3">
            <div>
             <b>Professional information</b>
@@ -48,7 +49,7 @@ const ProfessionalInformation = () => {
            </div>
         </div>
         
-        <div class="card-body">
+        <div className="card-body">
         <div className="alert alert-warning mt-3 mb-4" role="alert">
               <i className="fa fa-exclamation-triangle text-warning fa-2x" aria-hidden="true"></i>
               <span> Would you like to be one of the approved mediators on our platform and receive mediation requests from SpeedSolution? Please complete the form below so that we can assess your application. Once this has been validated, we will contact you to guide you in getting started with our application.
@@ -61,9 +62,9 @@ const ProfessionalInformation = () => {
     <input type="text" name="specialty" ref={register} className="form-control mb-4 bg-light" placeholder="Tap your specialty"></input>
     <p className="text-danger">{errors.specialty?.message}</p>
     <label>Your Bio in a few words</label>
-    <div class="form-floating">
-  <textarea class="form-control bg-light" name="description" ref={register} placeholder="Leave a comment here" id="floatingTextarea2" style={{height: "100px"}}></textarea>
-  <label for="floatingTextarea2">Tap your bio</label>
+    <div className="form-floating">
+  <textarea className="form-control bg-light" name="description" ref={register} placeholder="Leave a comment here" id="floatingTextarea2" style={{height: "100px"}}></textarea>
+  <label htmlFor="floatingTextarea2">Tap your bio</label>
   <p className="text-danger">{errors.description?.message}</p>
     </div>
            
@@ -74,68 +75,68 @@ const ProfessionalInformation = () => {
     <div className="d-flex justify-content-between w-50 mb-5 mt-4">
        <label>Language :</label>
        <div>
-       <div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="frensh" ref={register} value="frensh"></input>
-  <label class="form-check-label" for="inlineCheckbox1">FR</label>
+       <div className="form-check form-check-inline">
+  <input className="form-check-input" type="checkbox" id="inlineCheckbox1" name="frensh" ref={register} value="frensh"></input>
+  <label className="form-check-label" htmlFor="inlineCheckbox1">FR</label>
 </div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="english" ref={register} value="english"></input>
-  <label class="form-check-label" for="inlineCheckbox2">EN</label>
+<div className="form-check form-check-inline">
+  <input className="form-check-input" type="checkbox" id="inlineCheckbox2" name="english" ref={register} value="english"></input>
+  <label className="form-check-label" htmlFor="inlineCheckbox2">EN</label>
 </div>
        </div>
     </div>
     <div>
     <h5>Professional experiences</h5>
     <label className="mt-2">Title</label>
-    <div class="input-group mb-3">
-  <input type="text" class="form-control bg-light" name="titleExp" ref={register} placeholder="Tap your title"></input>
-  <button class="btn btn-outline-danger" type="button" style={{marginLeft:10}}>Delete</button>
+    <div className="input-group mb-3">
+  <input type="text" className="form-control bg-light" name="titleExp" ref={register} placeholder="Tap your title"></input>
+  <button className="btn btn-outline-danger" type="button" style={{marginLeft:10}}>Delete</button>
 </div>
-<div class="row">
-  <div class="col">
+<div className="row">
+  <div className="col">
       <label>Start date</label>
-    <input type="date" class="form-control bg-light" name="startdateExp" ref={register} placeholder="YY/MM" />
+    <input type="date" className="form-control bg-light" name="startdateExp" ref={register} placeholder="YY/MM" />
   </div>
-  <div class="col">
+  <div className="col">
   <label>End date</label>
-    <input type="date" class="form-control bg-light" placeholder="YY/MM" name="enddateEp" ref={register}/>
+    <input type="date" className="form-control bg-light" placeholder="YY/MM" name="enddateEp" ref={register}/>
   </div>
 </div>
 <label className="mt-3">Description</label>
-    <div class="form-floating">
-  <textarea class="form-control bg-light" placeholder="Leave a comment here" id="floatingTextarea2" style={{height: "100px"}}></textarea>
-  <label for="floatingTextarea2">Tap your Description</label>
+    <div className="form-floating">
+  <textarea className="form-control bg-light" placeholder="Leave a comment here" id="floatingTextarea2" style={{height: "100px"}}></textarea>
+  <label htmlFor="floatingTextarea2">Tap your Description</label>
     </div>
     <button className="btn btn-primary mt-4">Add experience</button>
     </div>
     <div className="mt-5">
     <h5>Training</h5>
     <label className="mt-2">Title</label>
-    <div class="input-group mb-3">
-  <input type="text" class="form-control bg-light" name="titleFor" ref={register} placeholder="Tap your title"></input>
-  <button class="btn btn-outline-danger" type="button" style={{marginLeft:10}}>Delete</button>
+    <div className="input-group mb-3">
+  <input type="text" className="form-control bg-light" name="titleFor" ref={register} placeholder="Tap your title"></input>
+  <button className="btn btn-outline-danger" type="button" style={{marginLeft:10}}>Delete</button>
 </div>
-<div class="row">
-  <div class="col">
+<div className="row">
+  <div className="col">
       <label>Start date</label>
-    <input type="date" class="form-control bg-light" placeholder="YY/MM" name="startdateFor" ref={register}/>
+    <input type="date" className="form-control bg-light" placeholder="YY/MM" name="startdateFor" ref={register}/>
   </div>
-  <div class="col">
+  <div className="col">
   <label>End date</label>
-    <input type="date" class="form-control bg-light" placeholder="YY/MM" name="enddateFor" ref={register}/>
+    <input type="date" className="form-control bg-light" placeholder="YY/MM" name="enddateFor" ref={register}/>
   </div>
 </div>
 <label className="mt-3">Description</label>
-    <div class="form-floating">
-  <textarea class="form-control bg-light" placeholder="Leave a comment here" id="floatingTextarea2" style={{height: "100px"}}></textarea>
-  <label for="floatingTextarea2">Tap your Description</label>
+    <div className="form-floating">
+  <textarea className="form-control bg-light" placeholder="Leave a comment here" id="floatingTextarea2" style={{height: "100px"}}></textarea>
+  <label htmlFor="floatingTextarea2">Tap your Description</label>
     </div>
     <button className="btn btn-primary mt-4">Add training</button>
     </div>
 
             </form>
         </div>
-        <div class="card-footer">
+        <div className="card-footer">
         <button type="submit" className="btn btn-info pull-right mt-3 mb-3">Save</button>
         </div>
         </div>

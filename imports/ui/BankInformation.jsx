@@ -3,7 +3,8 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
-import Schema from '../Validation/YupProfileMediator';
+import Schema from '/Validation/YupProfile';
+import { Meteor } from 'meteor/meteor';
 
 const notyf = new Notyf({
     duration: 2000,
@@ -14,12 +15,12 @@ const notyf = new Notyf({
   })
 
 const BankInformation = () => {
-    const { register, handleSubmit, errors } = useForm({
-        resolver: yupResolver(Schema)
-    })
+  const { register, handleSubmit, errors } = useForm({
+    resolver: yupResolver(Schema)
+})
     const onSubmit=(data)=>{
         if(data){
-            Meteor.call('InsertBankInfo', { id: user._id, data,usr }, (err) => {
+            Meteor.call('InsertBankInfo', { id,data }, (err) => {
                 if (err) {
                   console.log('Updated failed')
                   notyf.error("Updated failed")
@@ -34,9 +35,9 @@ const BankInformation = () => {
         }
       }
     return (
-        <div class="col-sm-9">
+        <div className="col-sm-9">
         <div className="card">
-        
+        <form onSubmit={handleSubmit(onSubmit)}>
         <div className="d-flex align-items-center">
            <div className="container mt-3">
            <div>
@@ -47,33 +48,28 @@ const BankInformation = () => {
             </div> 
            </div>
         </div>
-
-        
         <div className="card-body">
-            <form onSubmit={handleSubmit(onSubmit)}>
-   
     <label >Name of the bank</label>
     <input type="text" name="namebank" ref={register} className="form-control mb-4 bg-light"></input>
     <p className="text-danger">{errors.namebank?.message}</p>
-    <div class="row g-4 mb-5">
-  <div class="col-sm-9">
+    <div className="row g-4 mb-5">
+  <div className="col-sm-9">
       <label>IBAN</label>
-    <input type="text" name="iban" class="form-control bg-light"></input>
+    <input type="text" name="iban" className="form-control bg-light"></input>
     <p className="text-danger">{errors.iban?.message}</p>
   </div>
-  <div class="col-sm">
+  <div className="col-sm">
   <label>Swift</label>
-    <input type="text" name="swift" class="form-control bg-light"></input>
+    <input type="text" name="swift" className="form-control bg-light"></input>
     <p className="text-danger">{errors.swift?.message}</p>
   </div> 
   
 </div>
-    
-            </form>
         </div>
-        <div class="card-footer">
+        <div className="card-footer">
         <button type="submit" className="btn btn-info pull-right mt-3 mb-3">Save</button>
         </div>
+        </form>
         </div>
     </div>
     )

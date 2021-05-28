@@ -3,9 +3,10 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Notyf } from 'notyf'; 
 import 'notyf/notyf.min.css';
-import Schema from '../Validation/YupProfileMediator';
+import Schema from '../Validation/YupProfile';
 const AvatarIcon='./assets/modify.png';
 const CloseIcon='./assets/x.svg';
+import { Meteor } from 'meteor/meteor';
 
 const notyf = new Notyf({
   duration: 2000,
@@ -46,22 +47,22 @@ const PersonalInformation = () => {
       }
 
     return (
-        <div class="col-sm-9">
+        <div className="col-sm-9">
             <div className="card">
-            
-            <div class="d-flex align-items-center">
+            <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="d-flex align-items-center">
                <div className="container mt-3">
                <div>
                 <b>Personal informations</b>
                 <br></br>
                 <small className="text-secondary">Update your personal information</small>
-                <button className="btn btn-info pull-right">Save</button>
+                <button className="btn btn-info pull-right" type="submit">Save</button>
                 </div> 
                </div>
             </div>
             
-            <div class="card-body">
-                <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="card-body">
+                
                   <p><i>Change Your Avatar</i></p>
                   <div className="image-upload mb-2" style={{display:"flex",flexWrap:"wrap"}}>
                    {
@@ -116,7 +117,7 @@ const PersonalInformation = () => {
           </div>
           <div className="col">
             <label>Phone</label>
-            <input type="number" name="tel" ref={register} className="form-control bg-light" placeholder="Tap your phone"></input>
+            <input type="phone" name="tel" ref={register} className="form-control bg-light" placeholder="Tap your phone"></input>
             <p className="text-danger">{errors.tel?.message}</p>
           </div>
         </div>
@@ -142,12 +143,12 @@ const PersonalInformation = () => {
             <option value="France" >France</option>
           </select>
           <p className="text-danger">{errors.country?.message}</p>
-        </div>
-                </form>
+        </div>     
             </div>
-            <div class="card-footer">
+            <div className="card-footer">
             <button type="submit" className="btn btn-info pull-right mt-3 mb-3">Save</button>
             </div>
+            </form> 
             </div>
         </div>
     )
