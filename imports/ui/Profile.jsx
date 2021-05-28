@@ -6,6 +6,7 @@ import MyOrders from '../ui/MyOrders';
 import { Link } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from "meteor/react-meteor-data";
+import Footerr from './Footerr';
 
 const Profile = () => { 
   const user = useTracker(() => Meteor.user()?.username);
@@ -124,6 +125,7 @@ const [click3,setClick3]=useState({
  {click2.show?<AccessParameter/>:null}
  {click3.show?<MyOrders/>:null}
 </div>
+<Footerr/>
         </div>
         </div>
     )

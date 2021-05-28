@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import HeaderAdmin from '../ui/HeaderAdmin';
 import { Meteor } from 'meteor/meteor';
 import ListMediators from './ListMediators';
+import Footerr from './Footerr';
+
 const ManageMediators = () => {
     const [mediators,setMediators]=useState([]);
     const renderMediators=()=>{
@@ -40,7 +42,9 @@ const ManageMediators = () => {
                         );
                         })}
                         </tbody>
-                         </table>   
+                         </table>  
+                         <br></br><br></br><br></br><br></br><br></br><br></br>
+                         <Footerr/> 
            </div>
         </div>
     )

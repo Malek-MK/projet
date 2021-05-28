@@ -10,6 +10,7 @@ import BankInformation from '../ui/BankInformation';
 import { Link } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from "meteor/react-meteor-data";
+import Footerr from './Footerr';
 
 const ProfileMediator = () => { 
   const user = useTracker(() => Meteor.user()?.username);
@@ -373,6 +374,7 @@ const [click4,setClick4]=useState({
  {click7.show?<BankInformation/>:null}
  
 </div>
+<Footerr/>
         </div>
         </div>
     )

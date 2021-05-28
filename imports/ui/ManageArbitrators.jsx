@@ -9,6 +9,7 @@ import 'notyf/notyf.min.css';
 import { Meteor } from 'meteor/meteor';
  import Modal from "react-bootstrap/Modal";
  import Schema from '../Validation/YupRegister';
+ import Footerr from './Footerr';
 
  const notyf = new Notyf({
     duration: 2000,
@@ -88,6 +89,8 @@ const ManageArbitrators = () => {
                         })}
                         </tbody>
                          </table> 
+                         <br></br><br></br><br></br><br></br><br></br>
+                         <Footerr/>
            </div>
            <Modal
         show={show}

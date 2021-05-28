@@ -5,6 +5,7 @@ import StepThree from '../ui/StepThree';
 import StepFour from '../ui/StepFour';
 import NavSteps from '../ui/NavSteps';
 import Header from '../ui/Header';
+import Footerr from './Footerr';
 
 
 const Components = [StepOne, StepTwo, StepThree, StepFour];
@@ -43,6 +44,7 @@ const Mediation = ({datta,show,fetch}) => {
           </div>
         </div>
       </div>
+      <Footerr/>
     </div>
     </div>
   )

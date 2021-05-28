@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import HeaderAdmin from '../ui/HeaderAdmin';
 import { Meteor } from 'meteor/meteor';
 import ListUsers from './ListUsers';
+import Footerr from './Footerr';
 
 const ManageUsers = () => {
     const [users,setUsers]=useState([]);
@@ -42,7 +43,9 @@ const ManageUsers = () => {
                         );
                         })}
                         </tbody>
-                         </table>   
+                         </table>  
+                         <br></br><br></br><br></br>
+                         <Footerr/> 
            </div>
         </div>
     )

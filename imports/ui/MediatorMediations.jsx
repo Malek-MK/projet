@@ -5,6 +5,8 @@ import Litige from './Litige';
 import Pagination from './Pagination';
 import Search from './Search';
 import HeaderMediator from './HeaderMediator';
+import Footerr from './Footerr';
+
 const MediatorMediations = () => {
     const [mediations, setMediations] = useState([]);
     const [totalItems, setTotalItems] = useState(0);
@@ -140,7 +142,7 @@ const MediatorMediations = () => {
                     </tbody>
                 </table>
             </div>
-              
+              <Footerr/>
                 </div> 
             </>
            

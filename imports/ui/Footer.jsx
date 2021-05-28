@@ -113,7 +113,7 @@ const Footer = () => {
 
 
   <div class="text-center p-3 text-white" style={{backgroundColor: "rgba(0, 0, 0, 0.2)"}}>
-      © {new Date().getFullYear()} - All rights reserved
+       {new Date().getFullYear()} © - Copyright <i>SpeedSolution</i>
   </div>
   
 </footer> 

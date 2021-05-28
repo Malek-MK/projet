@@ -5,6 +5,7 @@ import Three from '../ui/Three';
 import Four from '../ui/Four';
 import NavSteps from '../ui/NavSteps';
 import Header from '../ui/Header';
+import Footerr from './Footerr';
 
 const notyf = new Notyf({
   duration: 2000,
@@ -48,6 +49,7 @@ const UpMediation = ({ setShow1 ,datta,show,fetch,id}) => {
           </div>
         </div>
       </div>
+      <Footerr/>
     </div>
     </div>
   )

@@ -6,6 +6,7 @@ import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 import Schema from '../Validation/YupPayment';
 import { Link } from 'react-router-dom';
+import Footerr from './Footerr';
 
 const notyf = new Notyf({
   duration: 2000,
@@ -579,6 +580,7 @@ const Subscription = () => {
       </div>
       </div>
       :null}
+      <Footerr/>
             </div> 
         </div>
     )

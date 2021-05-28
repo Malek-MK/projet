@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import HeaderMediator from '../ui/HeaderMediator';
+import Footerr from './Footerr';
 
 const Mediator = () => {
     return (
@@ -28,6 +29,7 @@ const Mediator = () => {
     </div>
   </div>
 </div>
+<Footerr/>
             </div>
         </div>
     )

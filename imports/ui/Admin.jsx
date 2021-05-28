@@ -1,6 +1,7 @@
 import React from 'react'
 import HeaderAdmin from '../ui/HeaderAdmin';
 import { Link } from 'react-router-dom';
+import Footerr from './Footerr';
 
 const User = () => {
    
@@ -52,6 +53,8 @@ const User = () => {
     </div>
   </div>
 </div>
+<br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+<Footerr/>
             </div>
         </div>
     )

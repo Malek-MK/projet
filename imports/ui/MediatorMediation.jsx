@@ -7,6 +7,7 @@ import NavSteps from '../ui/NavSteps';
 import HeaderMediator from '../ui/HeaderMediator';
 import Modal from "react-bootstrap/Modal";
 import { Link } from 'react-router-dom';
+import Footerr from './Footerr';
 
 
 const Components = [StepOne, StepTwo, StepThree, StepFour];
@@ -67,6 +68,7 @@ const MediatorMediation = ({datta,show,fetch}) => {
           </div>
         </div>
       </div>
+      <Footerr/>
     </div>
     </div>
   )

@@ -5,6 +5,7 @@ import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 import Schema from '../Validation/YupPayment';
 import { Link } from 'react-router-dom';
+import Footerr from './Footerr';
 
 const notyf = new Notyf({
   duration: 2000,
@@ -354,7 +355,7 @@ const Payment = ({setVerifff,verifff,id,paym,datta}) => {
       </div>
       :null}
             <a id="Button-1" className="btn btn-outline-primary pull-right" style={{ position: 'absolute', bottom: '50px', left: '1220px' }} href="#" role="button"><h5> <i className="fa fa-arrow-up"></i></h5></a>
-
+<Footerr/>
         </div>
     )
 }
