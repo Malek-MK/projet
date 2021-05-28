@@ -2,6 +2,7 @@ import React, { useState,useEffect } from 'react'
 import { useForm } from 'react-hook-form';
 import Schema2 from '../Validation/YupStep2';
 import { yupResolver } from '@hookform/resolvers/yup';
+import Footerr from './Footerr';
 
 const Two = ({ setData, setStep,datta}) => {
   const [check, setCheck] = useState(false);
