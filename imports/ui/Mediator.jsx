@@ -6,6 +6,7 @@ const Mediator = () => {
     return (
         <div>
             <HeaderMediator/>
+            <br></br><br></br><br></br>
             <div className="container">
             <div className="row mt-5">
   <div className="col-sm-6">

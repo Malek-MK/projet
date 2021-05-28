@@ -10,7 +10,7 @@ const TermsAndConditions = () => {
             <h3 className="text mt-5 text-center mb-5">General conditions of service and use of the Community site</h3>
             <h5>ACCEPTANCE</h5>
             <p className="text-secondary mt-3 mb-5">
-            The following general Terms of Service and use of the justicity.com and justicity.fr (GTC) Site constitute a legal agreement between you and LIVE.DIGITAL (JUSTICITY). You must agree to these T & Cs before you can use the Site. You can accept these T & Cs by (a) browsing the Site, or (b) checking a box indicating that you accept the T & Cs, if such a box is made available to you. If you disagree with the following T & Cs, do not browse the Site.            </p>
+            The following general Terms of Service and use of the SpeedSolution.com and SpeedSolution.fr (GTC) Site constitute a legal agreement between you and LIVE.DIGITAL (SpeedSolution). You must agree to these T & Cs before you can use the Site. You can accept these T & Cs by (a) browsing the Site, or (b) checking a box indicating that you accept the T & Cs, if such a box is made available to you. If you disagree with the following T & Cs, do not browse the Site.            </p>
             <h5>ACCESS</h5>
             <p className="text-secondary mt-3 mb-5">
             To use the Site and its Services, you must be of legal age. You must also not be located in a country where, for any reason whatsoever, publication of or access to the Site and its Services is prohibited. Under no circumstances can we affirm that the use of the Site and its content is considered regulatory or is not permitted by the law of all countries. You bear all the risks associated with the use of said Site. It is your exclusive responsibility to act in accordance with the law and / or regulations in force in your country of residence.
@@ -25,26 +25,26 @@ const TermsAndConditions = () => {
             </p>
             <h5>SERVICES</h5>
             <p className="text-secondary mt-3">
-            COMMUNITY offers essentially and without limitation a Mediation and Arbitration Service by mediators and affiliated arbitrators and mediation management for subscribed mediators.
+            SpeedSolution offers essentially and without limitation a Mediation and Arbitration Service by mediators and affiliated arbitrators and mediation management for subscribed mediators.
             </p>
             <p className="text-secondary mt-3">
-            Modification: COMMUNITY reserves the right to modify or discontinue, in whole or in part, temporarily or permanently, at any time or from time to time, with or without notice, the Service. Without limitation of what has been previously established, COMMUNITY may publish on the Site or send you by e-mail at the address that you have communicated to us a notice of modification of the said Service. It is your responsibility to consult our Site and / or your COMMUNITY account to verify if you have received such notices. You agree that COMMUNITY is not liable to you or any third party for any prejudice as a result of any modification or termination of the Service.
+            Modification: SpeedSolution reserves the right to modify or discontinue, in whole or in part, temporarily or permanently, at any time or from time to time, with or without notice, the Service. Without limitation of what has been previously established, SpeedSolution may publish on the Site or send you by e-mail at the address that you have communicated to us a notice of modification of the said Service. It is your responsibility to consult our Site and / or your SpeedSolution account to verify if you have received such notices. You agree that SpeedSolution is not liable to you or any third party for any prejudice as a result of any modification or termination of the Service.
             </p>
             <p className="text-secondary mt-3">
-            Availability: The Service, or any functionality or part thereof, may not be offered in all languages or in all countries and COMMUNITY makes no warranty that such Service, or any functionality or part thereof. of the latter, are adequate, and available in, all geographic locations. To the extent that you choose to access and use the Service, you act on your own initiative and are therefore responsible for compliance with applicable regulations and, in particular, but not limited to, locally applicable legal provisions. .
+            Availability: The Service, or any functionality or part thereof, may not be offered in all languages or in all countries and SpeedSolution makes no warranty that such Service, or any functionality or part thereof. of the latter, are adequate, and available in, all geographic locations. To the extent that you choose to access and use the Service, you act on your own initiative and are therefore responsible for compliance with applicable regulations and, in particular, but not limited to, locally applicable legal provisions. .
             </p>
             <p className="text-secondary mt-3">
-            Liability of mediators and arbitrators: COMMUNITY is an online mediation and arbitration platform. She is in no way a mediator or arbitrator. Mediation and arbitration are subject to a mediation or arbitration agreement between the parties and the mediator or arbitrator. Mediations and arbitrations carried out are carried out under the sole responsibility of the mediators or arbitrators, whether in the context of a mediation or an arbitration carried out by a mediator or an affiliated arbitra or a subscribed mediator.
+            Liability of mediators and arbitrators: SpeedSolution is an online mediation and arbitration platform. She is in no way a mediator or arbitrator. Mediation and arbitration are subject to a mediation or arbitration agreement between the parties and the mediator or arbitrator. Mediations and arbitrations carried out are carried out under the sole responsibility of the mediators or arbitrators, whether in the context of a mediation or an arbitration carried out by a mediator or an affiliated arbitra or a subscribed mediator.
             </p>
             <p className="text-secondary mt-3 mb-5">
-            Affiliated mediators and arbitrators: This is an autonomous and independent mediator or arbitrator under contract with COMMUNITY who carries out mediations or arbitrations that have been the subject of an order and a file submission to the Community site according to the packages chosen on the site.
+            Affiliated mediators and arbitrators: This is an autonomous and independent mediator or arbitrator under contract with SpeedSolution who carries out mediations or arbitrations that have been the subject of an order and a file submission to the SpeedSolution site according to the packages chosen on the site.
             </p>
             <h5>SUBSCRIPTION SERVICE</h5>
             <p className="text-secondary mt-3">
-            The COMMUNITY platform is also accessible by subscription for mediators in order to manage their own mediations.
+            The SpeedSolution platform is also accessible by subscription for mediators in order to manage their own mediations.
             </p>
             <p className="text-secondary mt-3">
-            Available packages: COMMUNITY offers essentially and without limitation the Standard, Premium, Corporate and Education packages. The prices and services included are valid during the subscription period and published on the site justicity.com.
+            Available packages: SpeedSolution offers essentially and without limitation the Standard, Premium, Corporate and Education packages. The prices and services included are valid during the subscription period and published on the site SpeedSolution.com.
             </p>
             <p className="text-secondary mt-3 mb-5">
             No link: the subscription does not create a partnership, company, association or joint venture with COMMUNITY and only constitutes a service contract. COMMUNITY is not responsible for promoting the activities of the mediator. The mediator may, however, indicate that he uses the services of the COMMUNITY platform to carry out his mediations.
@@ -149,7 +149,7 @@ const TermsAndConditions = () => {
             detect, prevent or resolve security, fraud or technical issues;
             </p>
             <p className="text-secondary mt-3">
-            protect the rights, property, or safety of JUSTICITY, its users, or the public as required or permitted by law.
+            protect the rights, property, or safety of SpeedSolution, its users, or the public as required or permitted by law.
             </p>
             <p className="text-secondary mt-3 mb-5">
             Violation: If, while using the Service, you come across any Content that you deem inappropriate or that you believe constitutes a violation of these T & Cs, you can report it by sending an email to

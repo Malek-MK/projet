@@ -22,6 +22,7 @@ const MediatorMediation = ({datta,show,fetch}) => {
   return (
     <div>
       <HeaderMediator/>
+      <br></br><br></br>
       <Modal
         show={modal}
         onHide={handleClose}

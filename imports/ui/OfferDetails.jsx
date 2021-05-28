@@ -31,7 +31,7 @@ const OfferDetails = () => {
                 <h1 className="text mt-5 mb-4">The fully paperless mediation and arbitration <br></br>platform for everyone!</h1>
                 <p className="p mb-5">
                 Are you a business or an individual, are you having difficulty settling a dispute and going to court would take <br></br><br></br>
-                too much time and money? You are in the right place ! JustiCity offers you a 100% online mediation and arbitration<br></br><br></br>
+                too much time and money? You are in the right place ! SpeedSolution offers you a 100% online mediation and arbitration<br></br><br></br>
                  service that allows you to settle your dispute in just a few days with the support <br></br><br></br>
                  of accredited mediators and arbitrators.                </p>
              </div>
@@ -48,7 +48,7 @@ const OfferDetails = () => {
 
 Avec le coût horaire d’un avocat et le temps passé en procédure, vous n’avez ni les moyens ni le temps et vous estimez que le jeu n’en vaut pas la chandelle…
 
-Communty est la solution qu’il vous faut, tous nos prix sont clairs et prévisibles et nous pouvons vous offrir une date de médiation en un délai record.</h4>
+SpeedSolution est la solution qu’il vous faut, tous nos prix sont clairs et prévisibles et nous pouvons vous offrir une date de médiation en un délai record.</h4>
       </div>
     </div>
   </div>
@@ -84,10 +84,10 @@ Thanks to Communty, find an agreement and settle your dispute amicably in just a
       <div className="card-body">
         <h2>Legal professionals and mediators</h2>
         <br></br>
-        <h4 className="card-text text-secondary mt-3"><b>You are a mediator CAUTION! JustiCity subscription is available to perform your own mediations!</b></h4>
+        <h4 className="card-text text-secondary mt-3"><b>You are a mediator CAUTION! SpeedSolution subscription is available to perform your own mediations!</b></h4>
         <h4 className="card-text text-secondary mt-3">You are a Lawyer, Notary, Chartered Accountant or Bailiff, you wish to support your clients towards a rapid settlement of their disputes by initiating a request for Mediation or Arbitration for them.
 
-The JustiCIty platform allows you to manage all these disputes simply and economically thanks to adapted pricing formulas. By reserving a certain number of hours in advance, you gain access to much cheaper rates.</h4>
+The SpeedSolution platform allows you to manage all these disputes simply and economically thanks to adapted pricing formulas. By reserving a certain number of hours in advance, you gain access to much cheaper rates.</h4>
       </div>
     </div>
   </div>
@@ -99,7 +99,7 @@ The JustiCIty platform allows you to manage all these disputes simply and econom
     </div>
   </div>
 </div>
-<h1 className="text mt-5 mb-5">Mediation with Community is:</h1>
+<h1 className="text mt-5 mb-5">Mediation with SpeedSolution is:</h1>
 <div className="d-flex justify-content-center ">
 <div class="d-flex justify-content-center w-75">
 <div class="col-sm-6">
@@ -123,8 +123,8 @@ The JustiCIty platform allows you to manage all these disputes simply and econom
 </div>
 </div>
 <div className="text mt-5 mb-5">
-<h5>The average price of a civil lawsuit in France is <b>€ 5,000</b> (Conseil National des Barreaux) while a half-day mediation at JustiCity costs <b>€ 750</b>, by choosing us, you save <b>€ 4,250</b>.
-The average time to be heard in court is <b>8 months</b> on average (Key figures of justice 2018) while the maximum time to set a mediation at Community is <b>1 month</b>, with us you save at least <b>7 months</b> of your time .</h5>
+<h5>The average price of a civil lawsuit in France is <b>€ 5,000</b> (Conseil National des Barreaux) while a half-day mediation at SpeedSolution costs <b>€ 750</b>, by choosing us, you save <b>€ 4,250</b>.
+The average time to be heard in court is <b>8 months</b> on average (Key figures of justice 2018) while the maximum time to set a mediation at SpeedSolution is <b>1 month</b>, with us you save at least <b>7 months</b> of your time .</h5>
 </div>
             </div>
             <div className="card border-0 bg-primary">

@@ -47,7 +47,7 @@ const Features = () => {
             <div className="card border-0 mt-5 mb-4">
             <div className="card body border-0">
             <h3 className="text mb-3">A simple and complete platform</h3>
-            <p>Community offers you a multitude of features allowing you to settle your disputes amicably,<br></br> avoiding endless processing delays through the usual channels. The entire process is done online with a simple and efficient tool.</p>
+            <p>SpeedSolution offers you a multitude of features allowing you to settle your disputes amicably,<br></br> avoiding endless processing delays through the usual channels. The entire process is done online with a simple and efficient tool.</p>
             </div>
             </div>
             <div class="row">
@@ -97,7 +97,7 @@ const Features = () => {
       <div class="card-body">
       <i class="fa fa-male fa-5x text-primary" aria-hidden="true"></i>
       <h3 className="text mt-5">ASSIGNMENT OF A MEDIATOR</h3>
-        <p className="text mt-3">Once the agreement has been signed, JustiCity will select a mediator from the list of professionals available on the dates chosen. This will be assigned to the mediation file and will contact the parties for validation of the date finally selected.</p>
+        <p className="text mt-3">Once the agreement has been signed, SpeedSolution will select a mediator from the list of professionals available on the dates chosen. This will be assigned to the mediation file and will contact the parties for validation of the date finally selected.</p>
       </div>
     </div>
   </div>

@@ -24,8 +24,7 @@ const UpMediation = ({ setShow1 ,datta,show,fetch,id}) => {
 
   return (
     <div>
-      {!show?<Header/>:null}
-     
+      <Header/>
       <div className="container mt-5">
       {show? <div class="alert alert-success mt-3" role="alert">
   <div class="d-flex">

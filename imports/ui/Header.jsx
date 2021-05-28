@@ -17,7 +17,7 @@ const Header = () => {
     }
     return (
         <div>
-            <header className="navbar navbar-expand-md navbar-light d-print-none">
+            <header className="navbar fixed-top navbar-expand-md navbar-light d-print-none">
 
 <div className="container-xl">
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">

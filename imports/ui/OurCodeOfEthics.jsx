@@ -10,7 +10,7 @@ const OurCodeOfEthics = () => {
             <h3 className="text mt-5 text-center mb-5">Our code of ethics</h3>
             <h5>A – Médiations</h5>
             <p className="text-secondary mt-3 mb-5">
-            We want our mediations to be supervised in order to maintain a high level of quality of our services. The methods of preventing and resolving disputes require great confidence from the public and our customers. This trust is based, among other things, on clear rules that Community mediators must respect.
+            We want our mediations to be supervised in order to maintain a high level of quality of our services. The methods of preventing and resolving disputes require great confidence from the public and our customers. This trust is based, among other things, on clear rules that SpeedSolution mediators must respect.
             </p>
             <h5>1. Freedom of the parties</h5>
             <p className="text-secondary mt-3">

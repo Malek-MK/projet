@@ -16,7 +16,7 @@ const HeaderMediator = () => {
     }
     return (
         <div>
-            <header className="navbar navbar-expand-md navbar-light d-print-none">
+            <header className="navbar fixed-top navbar-expand-md navbar-light d-print-none">
 
 <div className="container-xl">
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
@@ -45,7 +45,7 @@ const HeaderMediator = () => {
                         <NavDropdown.Item ><Link to="/mediations" className="text-dark text-decoration-none"><i className="fa fa-th-large text-secondary" aria-hidden="true"></i> Cabinet mediations</Link></NavDropdown.Item>
                         <NavDropdown.Item ><Link to="/mediations" className="text-dark text-decoration-none"><i className="fa fa-tty text-secondary" aria-hidden="true"></i> Community mediations</Link></NavDropdown.Item>
                         <NavDropdown.Item ><i className="fa fa-folder-o text-secondary" aria-hidden="true"></i> My disputes</NavDropdown.Item>
-                        <NavDropdown.Item ><Link to="mediator/create_mediation" className="text-dark text-decoration-none">
+                        <NavDropdown.Item ><Link to="/mediator/create_mediation" className="text-dark text-decoration-none">
                         <i className="fa fa-plus-square text-secondary" aria-hidden="true"></i> Add mediation</Link></NavDropdown.Item>
                     </NavDropdown>
                 </li>

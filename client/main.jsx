@@ -68,7 +68,7 @@ const routes = (
     <Route path="/legal-notice" exact component={LegalNotice} /> 
     <Route path="/terms-and-conditions" exact component={TermsAndConditions} /> 
     <Route path="/privacy-policy" exact component={PrivacyPolicy} /> 
-    <Route path="/new-version-of-community" exact component={NewVersion} /> 
+    <Route path="/new-version-of-SpeedSolution" exact component={NewVersion} /> 
     <Route path="/mediators" exact component={Mediators} /> 
     <Route path="/blog" exact component={Blog} /> 
     <Route path="/clauses-mediation-arbitration" exact component={ClausesMediationArbitration} /> 
@@ -79,8 +79,8 @@ const routes = (
     <Route path="/mediator-functionalities" exact component={MediatorFunctionalities} />
     <Route path="/mediations/update/:id" exact component={NavCheck} />
     <Route path="/manageArbitrators" exact component={ManageArbitrators}/>
-    <Authenticated path="/arbitrator" exact component={Arbitrator}/>
-    <Authenticated path="/mediator" exact component={Mediator}/>
+    <Route path="/arbitrator" exact component={Arbitrator}/>
+    <Route path="/mediator" exact component={Mediator}/>
     <Route path="/faq" exact component={FAQ}/>
     <Route path="/about" exact component={About}/>
     <Route path="/prices" exact component={Prices}/>
@@ -88,12 +88,12 @@ const routes = (
     <Route path="/details-business-offer" exact component={OfferDetails}/>
     <Route path="/details-offer-mediators" exact component={OfferDetailsMed}/>
       <Route path="/home" exact component={Home} />
-      <Authenticated path="/mediations" exact component={User} />
-      <Authenticated path="/mediator/mediations" exact component={MediatorMediations} />
-      <Authenticated path="/register_mediator"  component={RegisterMediator} />
-      <Authenticated path="/register"  component={Signup} />
-      <Authenticated path="/signin"  component={Login} />
-      <Authenticated path="/admin"  component={Admin} />
+      <Route path="/mediations" exact component={User} />
+      <Route path="/mediator/mediations" exact component={MediatorMediations} />
+      <Route path="/register_mediator"  component={RegisterMediator} />
+      <Route path="/register"  component={Signup} />
+      <Route path="/signin"  component={Login} />
+      <Route path="/admin"  component={Admin} />
       <Route path="*" component={Notfound} />
        
         <BlogPost />

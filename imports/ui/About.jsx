@@ -8,9 +8,9 @@ const About = () => {
             <NavBar/>
             <br></br><br></br><br></br>
             <div className="container text-center">
-                <h1 className="text mt-5">About community</h1>
+                <h1 className="text mt-5">About SpeedSolution</h1>
                 <h5 className="text mt-4">The Culture of Understanding is our Priority</h5>
-                <h5 className="text mt-4">Community is a Mediation and Arbitration Platform that makes justice accessible to everyone.</h5>
+                <h5 className="text mt-4">SpeedSolution is a Mediation and Arbitration Platform that makes justice accessible to everyone.</h5>
                 <div className="row mt-5">
   <div className="col-sm-6 mt-3">
     <div className="card border-0">
@@ -56,7 +56,7 @@ The traditional justice system is slow and expensive which generates a lot of di
     <div className="card border-0">
       <div className="card-body">
         <h2>Our Solution</h2>
-        <h4 className="card-text text-secondary mt-3">Community provides litigants with a videoconferencing Mediation and Arbitration platform allowing them to deal with all the stages of the process in a completely digital way, with the aim of finding a quick solution in the resolution of their disputes. JustiCity is a 100% online solution that guarantees the resolution of your disputes in a minimum of time thanks to a network of accredited mediators and arbitrators.</h4>
+        <h4 className="card-text text-secondary mt-3">SpeedSolution provides litigants with a videoconferencing Mediation and Arbitration platform allowing them to deal with all the stages of the process in a completely digital way, with the aim of finding a quick solution in the resolution of their disputes. SpeedSolution is a 100% online solution that guarantees the resolution of your disputes in a minimum of time thanks to a network of accredited mediators and arbitrators.</h4>
       </div>
     </div>
   </div>

@@ -68,7 +68,7 @@ const ProfessionalInformation = () => {
     </div>
            
     <div className="form-group mb-3 mt-4">
-    <span>Click on it to update your CV. <small className="text-secondary">(Supported formats: pdf, doc, jpg, png ...)</small></span>
+    <span>Click on it to upload your CV. <small className="text-secondary">(Supported formats: pdf, doc, jpg, png ...)</small></span>
           <FileUploadComponent/>
         </div>
     <div className="d-flex justify-content-between w-50 mb-5 mt-4">

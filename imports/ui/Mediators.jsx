@@ -12,8 +12,8 @@ const Mediators = () => {
     <div className="card border-0 mt-5">
       <div className="card-body">
         <h2>Are you a mediator?<br></br> Join us</h2>
-        <h4 className="card-text text-secondary mt-3">You want to be part of a community of mediators committed to improving access to justice. Do you want to use JustiCity to carry out your own online mediations? You are in the right place ! To join us, fill out our online form. <b>WARNING ! The JustiCity subscription will soon be available to perform your own mediations!</b></h4>
-        <Link className="btn btn-primary btn-lg mt-3" to="/new-version-of-community">See all new features</Link>
+        <h4 className="card-text text-secondary mt-3">You want to be part of a SpeedSolution of mediators committed to improving access to justice. Do you want to use JustiCity to carry out your own online mediations? You are in the right place ! To join us, fill out our online form. <b>WARNING ! The JustiCity subscription will soon be available to perform your own mediations!</b></h4>
+        <Link className="btn btn-primary btn-lg mt-3" to="/new-version-of-SpeedSolution">See all new features</Link>
       </div>
     </div>
   </div>

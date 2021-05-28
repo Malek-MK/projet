@@ -32,7 +32,7 @@ facilitated by the establishment of a mediation and arbitration platform by vide
       <div className="card-body">
       <br></br><br></br>
         <h2>Vous êtes médiateurs ? Rejoignez-nous !</h2>
-        <h4 className="card-text text-secondary mt-3">You want to be part of a community of mediators committed to improving access to justice. Do you want to use JustiCity to carry out your own online mediations?
+        <h4 className="card-text text-secondary mt-3">You want to be part of a SpeedSolution of mediators committed to improving access to justice. Do you want to use SpeedSolution to carry out your own online mediations?
 
 You are in the right place ! To join us, fill out our online form.</h4>
       </div>
@@ -42,7 +42,7 @@ You are in the right place ! To join us, fill out our online form.</h4>
             <div class="card bg-light mt-5">
   <div class="card-body">
     <h1 className="text mt-3">Sign up and discover our<br></br> subscriptions</h1>
-    <h3 className="text-secondary mt-3">The Justicity platform makes it easy for mediators to organize<br></br> online mediation sessions. To achieve this, Justicity offers an<br></br> easy-to-use productivity tool with significant functional benefits.</h3>
+    <h3 className="text-secondary mt-3">The SpeedSolution platform makes it easy for mediators to organize<br></br> online mediation sessions. To achieve this, SpeedSolution offers an<br></br> easy-to-use productivity tool with significant functional benefits.</h3>
   <div>
       <button className="btn btn-secondary mt-4 mb-3">SUBSCRIBE</button>
   </div>

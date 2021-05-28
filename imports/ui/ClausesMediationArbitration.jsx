@@ -11,7 +11,7 @@ const ClausesMediationArbitration = () => {
                 <h3 className="text mt-5 mb-5 text-center">Mediation and arbitration clauses</h3>
                 <h5>MEDIATION</h5>
                 <p className="text mb-5 text-secondary">
-                The parties undertake, before resorting to arbitration or ordinary courts, to submit any dispute between them to the Justicity.com mediation platform, which will appoint a mediator and to participate in good faith in the mediation process. If it is impossible to act on the designated platform, a replacement mediator may be appointed by mutual agreement between the parties.
+                The parties undertake, before resorting to arbitration or ordinary courts, to submit any dispute between them to the SpeedSolution.com mediation platform, which will appoint a mediator and to participate in good faith in the mediation process. If it is impossible to act on the designated platform, a replacement mediator may be appointed by mutual agreement between the parties.
 <br></br>
 The costs of the mediation will be shared between the parties unless otherwise agreed by the parties.
 <br></br>
@@ -23,9 +23,9 @@ Any dispute or dispute that cannot be resolved in mediation, within ninety (90) 
                 <p className="text mb-5 text-secondary">
                 Any claim arising from the contract which is the subject of a dispute, any dispute concerning the performance of this contract, including its cancellation, as well as any dispute arising from a problem of interpretation must be submitted to arbitration, and this, to the exclusion of ordinary courts, in accordance with the procedure established below.
 <br></br>
-By mutual agreement between the parties, the Justicity.com arbitration platform is designated as the arbitration center which will appoint a sole arbitrator. Should it be impossible to act on the designated platform, a replacement arbitrator may be appointed by mutual agreement between the parties.
+By mutual agreement between the parties, the SpeedSolution.com arbitration platform is designated as the arbitration center which will appoint a sole arbitrator. Should it be impossible to act on the designated platform, a replacement arbitrator may be appointed by mutual agreement between the parties.
 <br></br>
-Any party with a claim, dispute or disagreement to assert must send Justicity.com an arbitration referral, including a reasonably detailed description of the claim, dispute or disagreement to be submitted to arbitration. Justicity.com will take care of sending a notice of arbitration to the other parties.
+Any party with a claim, dispute or disagreement to assert must send SpeedSolution.com an arbitration referral, including a reasonably detailed description of the claim, dispute or disagreement to be submitted to arbitration. SpeedSolution.com will take care of sending a notice of arbitration to the other parties.
 <br></br>
 Any decision thus rendered is final and without appeal and, upon approval by the court, enforceable with regard to the parties hereto.
 <br></br>

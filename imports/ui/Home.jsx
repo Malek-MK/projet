@@ -111,7 +111,7 @@ const verif2=()=>{
                 </div>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light  ">
 
-                    <Link className="navbar-brand text-dark " to="/home"><i className="fa fa-balance-scale"></i>Community</Link>
+                    <Link className="navbar-brand text-dark " to="/home"><i className="fa fa-balance-scale"></i>SpeedSolution</Link>
 
                     <div className="collapse navbar-collapse ml-2" >
                         <ul className="navbar-nav ml-auto topnav">
@@ -200,7 +200,7 @@ const verif2=()=>{
                                 <small className="text-secondary mb-5">BUSINESS / INDIVIDUALS / LAW PROFESSIONALS OFFER</small>
                                 <h2 className="text mt-3">The solution to quickly settle your disputes</h2>
                                 <h4 className="card-text text-secondary mt-3">Are you an individual, a company or a self-employed person and wish to initiate a mediation file in order to settle a dispute?</h4>
-                                <h4 className="card-text text-secondary mt-3">Community is the tool for you!</h4>
+                                <h4 className="card-text text-secondary mt-3">SpeedSolution is the tool for you!</h4>
                                 <Link className="btn btn-success btn-lg mt-4" onClick={verifff}>ASK FOR MEDIATION</Link>
                             </div>
                         </div>
@@ -211,7 +211,7 @@ const verif2=()=>{
                             <div className="card-body">
                                 <small className="text-secondary mb-5">MEDIATORS OFFER</small>
                                 <h2 className="text mt-3">The solution to manage all your mediations</h2>
-                                <h4 className="card-text text-secondary mt-3">Are you a mediator and would you like to use the JustiCity tool to carry out your own mediations or would you like to apply to become a JustiCity mediator?</h4>
+                                <h4 className="card-text text-secondary mt-3">Are you a mediator and would you like to use the SpeedSolution tool to carry out your own mediations or would you like to apply to become a SpeedSolution mediator?</h4>
                                 <h4 className="card-text text-secondary mt-3">You are in the right place !</h4>
                                 <Link className="btn btn-success btn-lg mt-4" onClick={verif}>SUBSCRIBE</Link>
                             </div>
@@ -225,7 +225,7 @@ const verif2=()=>{
                         </div>
                     </div>
                 </div>
-                <h2 className="text mt-5">Community, what is it?</h2>
+                <h2 className="text mt-5">SpeedSolution, what is it?</h2>
                 <div className="row mt-5">
                     <div className="col-sm-6 mt-3">
                         <div className="card border-0">
@@ -263,14 +263,14 @@ const verif2=()=>{
                         </div>
                     </div>
                     </div>
-                    <h2 className="text mt-5 mb-5">Who is Community for?</h2>
+                    <h2 className="text mt-5 mb-5">Who is SpeedSolution for?</h2>
                     <div className="row mt-3" style={{justifyContent:"center"}}>
             <div className="col-sm-3">
               <div className="card">
                 <img src="./images/img6.png" className="card-img-top" alt="..." />
                 <div className="card-body">
                   <h5 className="card-title">PROFESSIONALS</h5>
-                  <p className="card-text text-secondary">You are, Mediator, Lawyer, Notary, Chartered Accountant or Bailiff and you wish to support your clients towards a rapid settlement of their disputes. The Justicity Platform allows you to submit a mediation file for your clients, benefit from a preferential rate and access dedicated management tools.</p>
+                  <p className="card-text text-secondary">You are, Mediator, Lawyer, Notary, Chartered Accountant or Bailiff and you wish to support your clients towards a rapid settlement of their disputes. The SpeedSolution Platform allows you to submit a mediation file for your clients, benefit from a preferential rate and access dedicated management tools.</p>
                 </div>
               </div>
             </div>
@@ -279,7 +279,7 @@ const verif2=()=>{
                 <img src="./images/img4.png" className="card-img-top" alt="..." />
                 <div className="card-body">
                   <h5 className="card-title">COMPANIES</h5>
-                  <p className="card-text text-secondary">Vous êtes une PME, TPE ou un indépendant, la Plateforme Justicity vous permet d’accéder à moindre coût aux services d’un Médiateur avant toute action judiciaire que vos différends soient internes (Ressources Humaines, harcèlement etc.) ou Externes (Relations Commerciales, Satisfaction client etc.). </p>
+                  <p className="card-text text-secondary">Vous êtes une PME, TPE ou un indépendant, la Plateforme SpeedSolution vous permet d’accéder à moindre coût aux services d’un Médiateur avant toute action judiciaire que vos différends soient internes (Ressources Humaines, harcèlement etc.) ou Externes (Relations Commerciales, Satisfaction client etc.). </p>
                 </div>
               </div>
             </div>
@@ -288,12 +288,12 @@ const verif2=()=>{
                 <img src="./images/img5.png" className="card-img-top" alt="..." />
                 <div className="card-body">
                   <h5 className="card-title">INDIVIDUALS</h5>
-                  <p className="card-text text-secondary">You are an individual and you want to settle a dispute quickly and inexpensively, the Justicity platform will allow you to reach an amicable agreement while avoiding a lawsuit. Our accredited mediators will accompany you in this process in complete confidentiality.</p>
+                  <p className="card-text text-secondary">You are an individual and you want to settle a dispute quickly and inexpensively, the SpeedSolution platform will allow you to reach an amicable agreement while avoiding a lawsuit. Our accredited mediators will accompany you in this process in complete confidentiality.</p>
                 </div>
               </div>
             </div>
           </div>
-          <h1 className="text mt-5 mb-5">Mediation with Community is:</h1>
+          <h1 className="text mt-5 mb-5">Mediation with SpeedSolution is:</h1>
 <div className="d-flex justify-content-center ">
 <div className="d-flex justify-content-center w-75">
 <div className="col-sm-6">
@@ -317,8 +317,8 @@ const verif2=()=>{
 </div>
 </div>
 <div className="text mt-5 mb-5">
-<h5>The average price of a civil lawsuit in France is <b>€ 5,000</b> (Conseil National des Barreaux) while a half-day mediation at JustiCity costs <b>€ 750</b>, by choosing us, you save <b>€ 4,250</b>.
-The average time to be heard in court is <b>8 months</b> on average (Key figures of justice 2018) while the maximum time to set a mediation at Community is <b>1 month</b>, with us you save at least <b>7 months</b> of your time .</h5>
+<h5>The average price of a civil lawsuit in France is <b>€ 5,000</b> (Conseil National des Barreaux) while a half-day mediation at SpeedSolution costs <b>€ 750</b>, by choosing us, you save <b>€ 4,250</b>.
+The average time to be heard in court is <b>8 months</b> on average (Key figures of justice 2018) while the maximum time to set a mediation at SpeedSolution is <b>1 month</b>, with us you save at least <b>7 months</b> of your time .</h5>
 </div>
             </div>
             <Footer/>

@@ -17,42 +17,7 @@ const Authenticated = ({ path, component }) => {
     if (!user  && isAuthenticatedPage) {
       history.replace("/signin");
     }
-    if(user&&isAuthenticatedPage){
-      if (Roles.userIsInRole(user, 'admin')) {
-        history.push('/admin');
-        console.log('admin login');
-      }
-      else if (Roles.userIsInRole(user, 'user')) {
-        history.push('/mediations');
-        console.log('user login');
-      }
-      else if (Roles.userIsInRole(user, 'arbitrator')) {
-        history.push('/arbitrator');
-        console.log('arbitrator login');
-      }
-      else if (Roles.userIsInRole(user, 'mediator')) {
-        history.push('/mediator');
-        console.log('mediator login');
-      }
-    }
-    if(user&&isUnauthenticatedPage){
-      if (Roles.userIsInRole(user, 'admin')) {
-        history.push('/admin');
-        console.log('admin login');
-      }
-      else if (Roles.userIsInRole(user, 'user')) {
-        history.push('/mediations');
-        console.log('user login');
-      }
-      else if (Roles.userIsInRole(user, 'arbitrator')) {
-        history.push('/arbitrator');
-        console.log('arbitrator login');
-      }
-      else if (Roles.userIsInRole(user, 'mediator')) {
-        history.push('/mediator');
-        console.log('mediator login');
-      }
-    }
+    
   }, [user]);
 
   return loading ? (

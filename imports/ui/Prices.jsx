@@ -70,7 +70,7 @@ const Prices = () => {
     </h2>
     <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
       <div className="accordion-body">
-      To keep your costs under control, Justicity offers you packages based on the estimated duration of your mediation. This duration is <br></br> calculated in half a day which is the minimum duration for a successful mediation. You have no maximum <br></br><br></br> time limit.
+      To keep your costs under control, SpeedSolution offers you packages based on the estimated duration of your mediation. This duration is <br></br> calculated in half a day which is the minimum duration for a successful mediation. You have no maximum <br></br><br></br> time limit.
 
 You can stop mediation at any time and you will not be charged for unused half-days.<br></br>
 

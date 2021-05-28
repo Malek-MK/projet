@@ -249,12 +249,12 @@ If you have any questions, contact us toll-free and we'll be happy to answer the
               <div className="accordion-item">
     <h2 className="accordion-header" id="headingThirteen">
       <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
-      Who is Community for 
+      Who is SpeedSolution for 
       </button>
     </h2>
     <div id="collapseThirteen" className="accordion-collapse collapse" aria-labelledby="headingThirteen" data-bs-parent="#accordionExample">
       <div className="accordion-body">
-      Community is for anyone facing litigation! Whether you are an individual, a professional or a company, we are at your service to settle your dispute amicably within 3 months of your request.
+      SpeedSolution is for anyone facing litigation! Whether you are an individual, a professional or a company, we are at your service to settle your dispute amicably within 3 months of your request.
                </div>
     </div>
   </div>

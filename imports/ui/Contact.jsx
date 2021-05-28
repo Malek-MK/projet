@@ -16,7 +16,7 @@ const Contact = () => {
         <div className="div bg-primary rounded mt-4 text-white mb-4">
         <div>
         
-        <h3><i class="fa fa-envelope-square  mt-4" aria-hidden="true"></i> E-mail :<br></br>info@justicity.com</h3>
+        <h3><i class="fa fa-envelope-square  mt-4" aria-hidden="true"></i> E-mail :<br></br>info@SpeedSolution.com</h3>
        
         <h3> <i class="fa fa-map-marker mt-4" aria-hidden="true"></i>ADRESSE :<br></br>
 113 rue de la République<br></br>

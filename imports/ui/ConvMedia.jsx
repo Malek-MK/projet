@@ -93,12 +93,12 @@ const ConvMedia = ({showw,id,setVeriff,veriff,datta}) => {
                                                 <p>{datta.nomsoc1}, {datta.adresse1}, {datta.codepos1} {' '} {datta.ville1} {' '} {datta.infoB}</p> 
                                                 <p class="text-right">(hereinafter referred to as "The Parties")</p>
                                                  <p><strong>AND</strong></p>
-                                                  <p >Community, Khezama Sousse</p> 
+                                                  <p >SpeedSolution, Khezama Sousse</p> 
                                                   <p class="text-right">(hereinafter referred to as "The Mediation Platform")</p>
                                                    <p><strong>ET</strong></p> <p >THE MEDIATOR, designated in Annex A.</p>
                                                     <p class="text-right">(hereinafter referred to as "The Mediator")</p>
                                                     
-                                                     <p>The undersigned parties hereby initiate a mediation process through the Community Remote Mediation Platform. The Community mediation platform will provide technical support for it. Community designates the mediator who will sign this agreement in Appendix A. This mediation process is governed by the following rules:</p>
+                                                     <p>The undersigned parties hereby initiate a mediation process through the SpeedSolution Remote Mediation Platform. The SpeedSolution mediation platform will provide technical support for it. SpeedSolution designates the mediator who will sign this agreement in Appendix A. This mediation process is governed by the following rules:</p>
                                                       
                                                       <h5> 1. ROLE, RESPONSIBILITIES AND POWERS OF THE MEDIATOR</h5><br></br>
                                                        <ul class="convention">
@@ -113,7 +113,7 @@ const ConvMedia = ({showw,id,setVeriff,veriff,datta}) => {
                                                                    <li> c) The parties recognize that the primary responsibility for resolving the dispute rests with the parties and not with the mediator.</li> 
                                                             <li> d) The parties agree to disclose any relevant or necessary financial information regarding the matters being mediated, as well as to have the capacity to reach an agreement.</li> 
                                                            <li> e) The parties can ask the mediator for a private meeting (caucus or private party). The information then transmitted will be treated confidentially by the mediator, unless the party who disclosed it expressly allows the mediator to communicate it to the other parties.</li>
-                                                            <li> f) The parties undertake to register and create an account on the Community.com platform and to carry out the mediation in a private, calm place which can ensure the confidentiality of the exchanges, have a correct outfit and have an internet connection. stable, non-public and with a sufficient speed of at least 8Mb / s to ensure exchanges by videoconference. As such, the parties undertake to use video conferencing and have a webcam of at least 720p.</li>
+                                                            <li> f) The parties undertake to register and create an account on the SpeedSolution.com platform and to carry out the mediation in a private, calm place which can ensure the confidentiality of the exchanges, have a correct outfit and have an internet connection. stable, non-public and with a sufficient speed of at least 8Mb / s to ensure exchanges by videoconference. As such, the parties undertake to use video conferencing and have a webcam of at least 720p.</li>
                                                             </ul> 
                                                             
                                                             <h5> 3. CONFIDENTIALITY</h5> <br></br>
@@ -150,7 +150,7 @@ const ConvMedia = ({showw,id,setVeriff,veriff,datta}) => {
                                                                                <div class="row">
                                                                                    <div class="col-lg-6">
                                                                                        
-										Community
+										SpeedSolution
                                     								</div>
                                                                     </div></div></div>
                                                                      <hr></hr>

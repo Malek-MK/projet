@@ -67,7 +67,7 @@ const Login = () => {
   <div class="row no-gutters">
     <div class="col-md-5">
         <div className="card-body bg-info h-100"><br></br>
-        <Link className="h1 mt-5 mb-5 text-decoration-none text-dark" to="/home"><i className="fa fa-balance-scale"></i>Community</Link>
+        <Link className="h1 mt-5 mb-5 text-decoration-none text-dark" to="/home"><i className="fa fa-balance-scale"></i>SpeedSolution</Link>
           <br></br><br></br>
         <h2 className="mt-5 mb-2">Log in</h2>
         <p><span className="mb-5">No account yet?</span><Link className="text-decoration-none text-success" to="/register"><b> Register!</b></Link></p>
@@ -101,7 +101,7 @@ const Login = () => {
           </Form>
           <br></br><br></br>
           <div className="d-flex justify-content-around mt-5">
-           <span>{new Date().getFullYear()} © <b>Community </b> </span>
+           <span>{new Date().getFullYear()} © <b>SpeedSolution </b> </span>
            <Link className="text-decoration-none text-dark" to="/about"> About</Link>
            <Link className="text-decoration-none text-dark" to="/about"> CGV</Link>
            <Link className="text-decoration-none text-dark" to="/terms-and-conditions"> Contact</Link>
@@ -115,7 +115,7 @@ const Login = () => {
     </div>
     <div class="col-md-7">
       <div className="card-body text-center">
-      <h3 className="mt-3">Welcome to Community</h3>
+      <h3 className="mt-3">Welcome to SpeedSolution</h3>
     <p className="text-secondary mt-2">100% online mediation and arbitration platform
 allowing to solve quickly and economically
 all your disputes, conflicts or disputes</p>
