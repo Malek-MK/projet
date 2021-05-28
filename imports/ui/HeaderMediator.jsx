@@ -43,7 +43,7 @@ const HeaderMediator = () => {
                     <NavDropdown title="Médiation" >
                         <NavDropdown.Item ><Link to="/mediator/mediations" className="text-dark text-decoration-none"><i className="fa fa-crosshairs text-secondary" aria-hidden="true"></i> My Mediations</Link></NavDropdown.Item>
                         <NavDropdown.Item ><Link to="/mediations" className="text-dark text-decoration-none"><i className="fa fa-th-large text-secondary" aria-hidden="true"></i> Cabinet mediations</Link></NavDropdown.Item>
-                        <NavDropdown.Item ><Link to="/mediations" className="text-dark text-decoration-none"><i className="fa fa-tty text-secondary" aria-hidden="true"></i> Community mediations</Link></NavDropdown.Item>
+                        <NavDropdown.Item ><Link to="/mediations" className="text-dark text-decoration-none"><i className="fa fa-tty text-secondary" aria-hidden="true"></i> SpeedSolution mediations</Link></NavDropdown.Item>
                         <NavDropdown.Item ><i className="fa fa-folder-o text-secondary" aria-hidden="true"></i> My disputes</NavDropdown.Item>
                         <NavDropdown.Item ><Link to="/mediator/create_mediation" className="text-dark text-decoration-none">
                         <i className="fa fa-plus-square text-secondary" aria-hidden="true"></i> Add mediation</Link></NavDropdown.Item>

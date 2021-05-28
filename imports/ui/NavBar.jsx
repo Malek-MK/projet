@@ -38,7 +38,7 @@ const NavBar = () => {
                 </div>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light  ">
 
-                    <Link className="navbar-brand text-dark " to="/home"><i className="fa fa-balance-scale"></i>Community</Link>
+                    <Link className="navbar-brand text-dark " to="/home"><i className="fa fa-balance-scale"></i>SpeedSolution</Link>
 
                     <div className="collapse navbar-collapse ml-2" >
                         <ul className="navbar-nav ml-auto topnav">

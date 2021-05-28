@@ -7,7 +7,7 @@ const HeaderUnknown = () => {
             <div className="div fixed-top">
                 <nav className="navbar navbar-expand-lg navbar-light bg-light  ">
 
-                    <Link className="navbar-brand text-dark " to="/home"><i className="fa fa-balance-scale"></i>Community</Link>
+                    <Link className="navbar-brand text-dark " to="/home"><i className="fa fa-balance-scale"></i>SpeedSolution</Link>
                
                 
                     <div className="position-absolute top-5 end-0">

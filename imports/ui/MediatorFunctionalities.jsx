@@ -11,7 +11,7 @@ const MediatorFunctionalities = () => {
             <div className="card body bg-info text-white">
                 <h1 className="text mt-5 mb-4">Are you mediators? Join us!</h1>
                 <h5 className="p mb-5">
-                You want to be part of a community of mediators committed to improving access to justice.<br></br> Do you want to use JustiCity to carry out your own online mediations? <br></br>You are in the right place! To join us, fill out our online form.   </h5>
+                You want to be part of a SpeedSolution of mediators committed to improving access to justice.<br></br> Do you want to use JustiCity to carry out your own online mediations? <br></br>You are in the right place! To join us, fill out our online form.   </h5>
                <div>
                <Link className="btn btn-success btn-lg mb-5" to="/signup">Sign up</Link>
                </div>

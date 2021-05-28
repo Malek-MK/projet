@@ -21,7 +21,7 @@ const Mediator = () => {
   <div className="col-sm-6">
     <div className="card">
     <div className="card-body bg-info" style={{padding:"70px",height:450}}>
-        <h3 className="mb-3">Become a Community Mediator</h3>
+        <h3 className="mb-3">Become a SpeedSolution Mediator</h3>
         <p className="card-text">Do you want to be part of our accredited mediators on our platform and receive mediation requests from our clients? To do this, simply complete our application form by clicking below.</p>
         <Link className="btn btn-danger" to="/profile_mediator">Apply !</Link>
       </div>
