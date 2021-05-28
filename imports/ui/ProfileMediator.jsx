@@ -13,6 +13,7 @@ import { useTracker } from "meteor/react-meteor-data";
 
 const ProfileMediator = () => { 
   const user = useTracker(() => Meteor.user()?.username);
+  const address=useTracker(() =>Meteor.user()?.emails[0].address);
   const [click1,setClick1]=useState({
     class1:"btn btn-light mt-1",
     class2:"fa fa-user text-success",
@@ -334,8 +335,8 @@ const [click4,setClick4]=useState({
       <div className="card-body">
         <h5 className="text-capitalize mb-4"><b>{user}</b></h5>
         <button className="btn btn-secondary btn-lg mb-2">No candidacy</button>
-        <p className="text mb-1 mt-2">Email :</p>
-        <p className="text mb-1">Phone :</p>
+        <p className="text mb-1 mt-2">Email: {address}</p>
+        <p className="text mb-1">Phone:</p>
         <p>Country :</p>
         
         <button className={click1.class1} onClick={onclick1}>

@@ -157,11 +157,11 @@ const verif2=()=>{
                                 <Link className="nav-link text-dark" onClick={veriff}>My Account <span className="sr-only">(current)</span></Link>
                             </li>
                             <li className="nav-item" >
-                                <div class="input-group" >
+                                <div className="input-group" >
 
-                                    <input id="search-focus" type="search" placeholder="Search.." class="form-control" style={{ width: "180px", marginLeft: "20px" }} />
-                                    <button type="button" class="btn btn-primary">
-                                        <i class="fa fa-search"></i>
+                                    <input id="search-focus" type="search" placeholder="Search.." className="form-control" style={{ width: "180px", marginLeft: "20px" }} />
+                                    <button type="button" className="btn btn-primary">
+                                        <i className="fa fa-search"></i>
                                     </button>
 
 
@@ -185,7 +185,7 @@ const verif2=()=>{
             </div>
             <div className="container mt-5 text-center ">
                 <br></br>
-                <Link class="btn btn-outline-info btn-lg mt-5 border-2" to="/tariffs-mediators">Are you mediators? Enjoy a 30-day free trial</Link>
+                <Link className="btn btn-outline-info btn-lg mt-5 border-2" to="/tariffs-mediators">Are you mediators? Enjoy a 30-day free trial</Link>
                 <div className="row mt-5">
                     <div className="col-sm-6 mt-3">
                         <div className="card border-0">
@@ -264,40 +264,40 @@ const verif2=()=>{
                     </div>
                     </div>
                     <h2 className="text mt-5 mb-5">Who is Community for?</h2>
-                    <div class="row mt-3" style={{justifyContent:"center"}}>
-            <div class="col-sm-3">
-              <div class="card">
-                <img src="./images/img6.png" class="card-img-top" alt="..." />
-                <div class="card-body">
-                  <h5 class="card-title">PROFESSIONALS</h5>
-                  <p class="card-text text-secondary">You are, Mediator, Lawyer, Notary, Chartered Accountant or Bailiff and you wish to support your clients towards a rapid settlement of their disputes. The Justicity Platform allows you to submit a mediation file for your clients, benefit from a preferential rate and access dedicated management tools.</p>
+                    <div className="row mt-3" style={{justifyContent:"center"}}>
+            <div className="col-sm-3">
+              <div className="card">
+                <img src="./images/img6.png" className="card-img-top" alt="..." />
+                <div className="card-body">
+                  <h5 className="card-title">PROFESSIONALS</h5>
+                  <p className="card-text text-secondary">You are, Mediator, Lawyer, Notary, Chartered Accountant or Bailiff and you wish to support your clients towards a rapid settlement of their disputes. The Justicity Platform allows you to submit a mediation file for your clients, benefit from a preferential rate and access dedicated management tools.</p>
                 </div>
               </div>
             </div>
-            <div class="col-sm-3">
-              <div class="card">
-                <img src="./images/img4.png" class="card-img-top" alt="..." />
-                <div class="card-body">
-                  <h5 class="card-title">COMPANIES</h5>
-                  <p class="card-text text-secondary">Vous êtes une PME, TPE ou un indépendant, la Plateforme Justicity vous permet d’accéder à moindre coût aux services d’un Médiateur avant toute action judiciaire que vos différends soient internes (Ressources Humaines, harcèlement etc.) ou Externes (Relations Commerciales, Satisfaction client etc.). </p>
+            <div className="col-sm-3">
+              <div className="card">
+                <img src="./images/img4.png" className="card-img-top" alt="..." />
+                <div className="card-body">
+                  <h5 className="card-title">COMPANIES</h5>
+                  <p className="card-text text-secondary">Vous êtes une PME, TPE ou un indépendant, la Plateforme Justicity vous permet d’accéder à moindre coût aux services d’un Médiateur avant toute action judiciaire que vos différends soient internes (Ressources Humaines, harcèlement etc.) ou Externes (Relations Commerciales, Satisfaction client etc.). </p>
                 </div>
               </div>
             </div>
-            <div class="col-sm-3">
-              <div class="card">
-                <img src="./images/img5.png" class="card-img-top" alt="..." />
-                <div class="card-body">
-                  <h5 class="card-title">INDIVIDUALS</h5>
-                  <p class="card-text text-secondary">You are an individual and you want to settle a dispute quickly and inexpensively, the Justicity platform will allow you to reach an amicable agreement while avoiding a lawsuit. Our accredited mediators will accompany you in this process in complete confidentiality.</p>
+            <div className="col-sm-3">
+              <div className="card">
+                <img src="./images/img5.png" className="card-img-top" alt="..." />
+                <div className="card-body">
+                  <h5 className="card-title">INDIVIDUALS</h5>
+                  <p className="card-text text-secondary">You are an individual and you want to settle a dispute quickly and inexpensively, the Justicity platform will allow you to reach an amicable agreement while avoiding a lawsuit. Our accredited mediators will accompany you in this process in complete confidentiality.</p>
                 </div>
               </div>
             </div>
           </div>
           <h1 className="text mt-5 mb-5">Mediation with Community is:</h1>
 <div className="d-flex justify-content-center ">
-<div class="d-flex justify-content-center w-75">
-<div class="col-sm-6">
-    <div class="card text-center border-0 bg-primary text-white">
+<div className="d-flex justify-content-center w-75">
+<div className="col-sm-6">
+    <div className="card text-center border-0 bg-primary text-white">
         <br></br><br></br>
       <h1>4250€</h1>
       <br></br>
@@ -305,8 +305,8 @@ const verif2=()=>{
       <br></br><br></br>
     </div>
   </div>
-  <div class="col-sm-6">
-  <div class="card text-center border-0 bg-primary text-white">
+  <div className="col-sm-6">
+  <div className="card text-center border-0 bg-primary text-white">
         <br></br><br></br>
       <h1>7 MONTHS</h1>
       <br></br>

@@ -8,6 +8,7 @@ import { useTracker } from "meteor/react-meteor-data";
 const HeaderAdmin = () => {
     const history = useHistory();
     const user = useTracker(() => Meteor.user()?.username);
+    const address=useTracker(() =>Meteor.user()?.emails[0].address);
     const onLogout = () => {
         Meteor.logout();
         history.replace('/signin');
@@ -76,12 +77,12 @@ const HeaderAdmin = () => {
   <div className="card mb-3 border-0">
   <div className="row g-0">
     <div className="col-md-4">
-      <img src="./assets/modify.png" alt="..."/>
+      <img src="/assets/modify.png" alt="..."/>
     </div>
     <div className="col-md-8">
       <div className="card-body">
         <h5 className="card-title text-capitalize">{user}</h5>
-        <p className="card-text text-secondary"><i className="fa fa-envelope text-primary" aria-hidden="true"></i> malek2020@gmail.com</p>
+        <p className="card-text text-secondary"><i className="fa fa-envelope text-primary" aria-hidden="true"></i> {address}</p>
         <button className="btn btn-outline-danger btn-sm" onClick={onLogout} data-bs-dismiss="offcanvas" aria-label="Close">disconnection</button>
       </div>
     </div>

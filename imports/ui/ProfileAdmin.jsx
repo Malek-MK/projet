@@ -9,6 +9,7 @@ import { useTracker } from "meteor/react-meteor-data";
 
 const ProfileAdmin = () => { 
   const user = useTracker(() => Meteor.user()?.username);
+  const address=useTracker(() =>Meteor.user()?.emails[0].address);
   const [click1,setClick1]=useState({
     class1:"btn btn-light mt-3 text-primary",
     class2:"fa fa-user text-primary",
@@ -102,8 +103,8 @@ const [click3,setClick3]=useState({
     <div className="card">
       <div className="card-body">
         <h5 className="text-capitalize mb-4"><b>{user}</b></h5>
-        <p className="text mb-1">Email :</p>
-        <p className="text mb-1">Phone :</p>
+        <p className="text mb-1">Email: {address}</p>
+        <p className="text mb-1">Phone:</p>
         <p>Country :</p>
         
         <button className={click1.class1} onClick={onclick1}>

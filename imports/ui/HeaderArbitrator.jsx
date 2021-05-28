@@ -8,7 +8,8 @@ import { useTracker } from "meteor/react-meteor-data";
 const HeaderArbitrator = () => {
     const history = useHistory();
     const user = useTracker(() => Meteor.user()?.username);
-    const onLogout = () => {
+    const address=useTracker(() =>Meteor.user()?.emails[0].address);
+    const onLogout = () => { 
         Meteor.logout();
         history.replace('/signin');
     }
@@ -50,7 +51,7 @@ const HeaderArbitrator = () => {
                                         </button>
                     </li> 
                     <li className="nav-item">
-                    <Button type="button" className="btn btn-light" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i className="fa fa-black-tie text-primary"></i> Hello Arbitrator, <b className="text-dark text-capitalize">{user}</b></Button>
+                    <Button type="button" className="btn btn-light" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i className="fa fa-gavel text-primary"></i> Hello Arbitrator, <b className="text-dark text-capitalize">{user}</b></Button>
                     </li>
                    
                     <li className="nav-item">
@@ -76,12 +77,12 @@ const HeaderArbitrator = () => {
   <div className="card mb-3 border-0">
   <div className="row g-0">
     <div className="col-md-4">
-      <img src="./assets/modify.png" alt="..."/>
+      <img src="/assets/modify.png" alt="..."/>
     </div>
     <div className="col-md-8">
       <div className="card-body">
         <h5 className="card-title text-capitalize">{user}</h5>
-        <p className="card-text text-secondary"><i className="fa fa-envelope text-primary" aria-hidden="true"></i> malek2020@gmail.com</p>
+        <p className="card-text text-secondary"><i className="fa fa-envelope text-primary" aria-hidden="true"></i> {address}</p>
         <button className="btn btn-outline-danger btn-sm" onClick={onLogout} data-bs-dismiss="offcanvas" aria-label="Close">disconnection</button>
       </div>
     </div>
