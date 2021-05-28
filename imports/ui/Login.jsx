@@ -119,7 +119,7 @@ const Login = () => {
     <p className="text-secondary mt-2">100% online mediation and arbitration platform
 allowing to solve quickly and economically
 all your disputes, conflicts or disputes</p>
-      <img src="./images/login.jpg" class="card-img" alt="..."/>
+      <img src="/images/login.jpg" class="card-img" alt="..."/>
       </div>
      
     </div>
