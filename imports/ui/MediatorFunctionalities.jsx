@@ -11,7 +11,7 @@ const MediatorFunctionalities = () => {
             <div className="card body bg-info text-white">
                 <h1 className="text mt-5 mb-4">Are you mediators? Join us!</h1>
                 <h5 className="p mb-5">
-                You want to be part of a SpeedSolution of mediators committed to improving access to justice.<br></br> Do you want to use JustiCity to carry out your own online mediations? <br></br>You are in the right place! To join us, fill out our online form.   </h5>
+                You want to be part of a SpeedSolution of mediators committed to improving access to justice.<br></br> Do you want to use SpeedSolution to carry out your own online mediations? <br></br>You are in the right place! To join us, fill out our online form.   </h5>
                <div>
                <Link className="btn btn-success btn-lg mb-5" to="/signup">Sign up</Link>
                </div>
@@ -24,7 +24,7 @@ const MediatorFunctionalities = () => {
                     <i class="fa fa-clone text-primary fa-3x" aria-hidden="true"></i>
                     <h5 className="text mb-3 mt-2">MEDIATOR SUBSCRIPTION</h5>
                     
-                     <p className="text text-secondary"><b>Main new feature :</b>you can use JustiCity for your own mediations. Once registered, you can choose one of our subscription formulas and thus manage your files in an efficient and intelligent way: invitation of the parties, payment of fees, mediation agreement, videoconference sessions and transactional agreement in one and the same. in law ! </p>                 
+                     <p className="text text-secondary"><b>Main new feature :</b>you can use SpeedSolution for your own mediations. Once registered, you can choose one of our subscription formulas and thus manage your files in an efficient and intelligent way: invitation of the parties, payment of fees, mediation agreement, videoconference sessions and transactional agreement in one and the same. in law ! </p>                 
                     </div>
                 </div>
                 <div className="card border-0 ">
@@ -40,7 +40,7 @@ const MediatorFunctionalities = () => {
                     <i class="fa fa-credit-card text-primary fa-3x mt-3" aria-hidden="true"></i>
                     <h5 className="text mb-3 mt-2">REGULATION MANAGEMENT</h5>
                     <p className="text text-secondary">
-                    By subscribing to JustiCity, you can request a deposit or the full settlement of the mediation via our secure payment platform. You can in particular propose or not the sharing of costs to the parties and choose to have them paid before or after the mediation service.</p>                   
+                    By subscribing to SpeedSolution, you can request a deposit or the full settlement of the mediation via our secure payment platform. You can in particular propose or not the sharing of costs to the parties and choose to have them paid before or after the mediation service.</p>                   
                     </div>
                 </div>
                 <div className="card border-0 ">
@@ -56,7 +56,7 @@ const MediatorFunctionalities = () => {
                     <i class="fa fa-pencil-square-o text-primary fa-3x mt-3" aria-hidden="true"></i>
                     <h5 className="text mb-3 mt-2">SIGNATURE OF DOCUMENTS</h5>
                     <p className="text text-secondary">
-                    Justicity provides you with a SaaS platform allowing you to dematerialize the signing of documents such as the mediation agreement (to come), contracts and the transactional memorandum of understanding.</p>                   
+                    SpeedSolution provides you with a SaaS platform allowing you to dematerialize the signing of documents such as the mediation agreement (to come), contracts and the transactional memorandum of understanding.</p>                   
                     </div>
                 </div>
                 <div className="card border-0 ">

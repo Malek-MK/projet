@@ -12,7 +12,7 @@ const Mediators = () => {
     <div className="card border-0 mt-5">
       <div className="card-body">
         <h2>Are you a mediator?<br></br> Join us</h2>
-        <h4 className="card-text text-secondary mt-3">You want to be part of a SpeedSolution of mediators committed to improving access to justice. Do you want to use JustiCity to carry out your own online mediations? You are in the right place ! To join us, fill out our online form. <b>WARNING ! The JustiCity subscription will soon be available to perform your own mediations!</b></h4>
+        <h4 className="card-text text-secondary mt-3">You want to be part of a SpeedSolution of mediators committed to improving access to justice. Do you want to use SpeedSolution to carry out your own online mediations? You are in the right place ! To join us, fill out our online form. <b>WARNING ! The SpeedSolution subscription will soon be available to perform your own mediations!</b></h4>
         <Link className="btn btn-primary btn-lg mt-3" to="/new-version-of-SpeedSolution">See all new features</Link>
       </div>
     </div>
@@ -29,7 +29,7 @@ const Mediators = () => {
   <div class="card bg-light mt-5 text-center">
   <div class="card-body">
     <h1 className="text mt-3">Your online mediation platform</h1>
-    <h3 className="text-secondary mt-3">The Justicity platform makes it easy for mediators to organize online mediation sessions. To achieve this, Justicity offers an easy-to-use productivity tool with significant functional benefits.</h3>
+    <h3 className="text-secondary mt-3">The SpeedSolution platform makes it easy for mediators to organize online mediation sessions. To achieve this, SpeedSolution offers an easy-to-use productivity tool with significant functional benefits.</h3>
   <div>
       <button className="btn btn-secondary mt-4 mb-3">ACCESS THE PLATFORM</button>
   </div>
@@ -41,7 +41,7 @@ const Mediators = () => {
       <div className="card-body">
       <i class="fa fa-pencil-square-o text-primary fa-5x mt-3 mb-3" aria-hidden="true"></i>
       <p>SIGNATURE OF DOCUMENTS</p>
-      <p className="text-secondary">Justicity provides you with a SaaS platform allowing you to dematerialize the signing of documents such as the mediation agreement, contracts, memorandum of understanding or the mediation attempt certificate.</p>
+      <p className="text-secondary">SpeedSolution provides you with a SaaS platform allowing you to dematerialize the signing of documents such as the mediation agreement, contracts, memorandum of understanding or the mediation attempt certificate.</p>
       </div>
     </div>
   </div>

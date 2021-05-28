@@ -51,7 +51,7 @@ const ProfessionalInformation = () => {
         <div class="card-body">
         <div className="alert alert-warning mt-3 mb-4" role="alert">
               <i className="fa fa-exclamation-triangle text-warning fa-2x" aria-hidden="true"></i>
-              <span> Would you like to be one of the approved mediators on our platform and receive mediation requests from JustiCity? Please complete the form below so that we can assess your application. Once this has been validated, we will contact you to guide you in getting started with our application.
+              <span> Would you like to be one of the approved mediators on our platform and receive mediation requests from SpeedSolution? Please complete the form below so that we can assess your application. Once this has been validated, we will contact you to guide you in getting started with our application.
              <br></br>
              <b>In any case, this information is only used for evaluation purposes by our team. They will under no circumstances be published or distributed without your prior consent.</b>
               </span>

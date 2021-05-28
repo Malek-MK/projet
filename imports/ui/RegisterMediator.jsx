@@ -63,7 +63,7 @@ const [verif,setVerif]=useState(false);
     <div class="col-md-5">
         <div className="card-body bg-info h-100"><br></br>
     <div className="text-center">
-    <Link className="h1 mt-4 text-decoration-none text-dark" to="/home"><i className="fa fa-balance-scale text-center"></i>Community</Link>
+    <Link className="h1 mt-4 text-decoration-none text-dark" to="/home"><i className="fa fa-balance-scale text-center"></i>SpeedSolution</Link>
     </div>
           <br></br><br></br>
         <h2 className="mt-2 mb-2 text-center">Register</h2>
@@ -129,7 +129,7 @@ const [verif,setVerif]=useState(false);
           </Form>
           <br></br>
           <div className="d-flex justify-content-around mt-5">
-          <span>{new Date().getFullYear()} © <b>Community </b> </span>
+          <span>{new Date().getFullYear()} © <b>SpeedSolution </b> </span>
            <Link className="text-decoration-none text-dark" to="/about"> About</Link>
            <Link className="text-decoration-none text-dark" to="/terms-and-conditions"> CGV</Link>
            <Link className="text-decoration-none text-dark" to="/contact"> Contact</Link>        </div>
@@ -142,11 +142,11 @@ const [verif,setVerif]=useState(false);
     </div>
     <div className="col-md-7">
       <div className="card-body h-100 text-center">
-      <h3 className="mt-3">Welcome to Community</h3>
+      <h3 className="mt-3">Welcome to SpeedSolution</h3>
     <p className="text-secondary mt-2">You are a Mediator and wish to use our platform
 to carry out your own mediations online
 and / or simply wish to submit your application
-in order to be part of the JustiCity Mediators team?</p>
+in order to be part of the SpeedSolution Mediators team?</p>
 <p className="text-secondary"><b>Nothing could be simpler, register and let yourself be guided!</b></p>
       <img src="./images/register.jpg" className="card-img" alt="..." style={{widht:200,height:700}}/>
       </div>
