@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
-import Schema from '/Validation/YupProfile';
+import Schema from '../Validation/YupProfile';
 import { Meteor } from 'meteor/meteor';
 
 const notyf = new Notyf({
@@ -31,6 +31,7 @@ const AccessParameter = () => {
               });
         }
       }
+      
     return (
         <div className="col-sm-9">
             <div className="card">
