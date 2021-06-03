@@ -19,5 +19,27 @@ Meteor.methods({
             country:data.country,
         })
         },
+    'InsertBankInfo'({data}){
+        if (!this.userId) {
+            throw new Meteor.Error('Not Authorized');
+        }
+        Profile.insert({
+            userId:this.userId,
+            namebank:data.namebank,
+            iban:data.iban,
+            swift:data.swift, 
+        })
+    },
+    'insertCompInfo'({data}){
+        if (!this.userId) {
+            throw new Meteor.Error('Not Authorized');
+        }
+        Profile.insert({
+            userId:this.userId,
+            nameorganisation:data.nameorganisation,
+            sirensiret:data.sirensiret,
+            website:data.website,
+        })
+    }    
 
 })

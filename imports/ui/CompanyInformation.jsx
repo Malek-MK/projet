@@ -19,7 +19,7 @@ const CompanyInformation = () => {
     })
     const onSubmit=(data)=>{
         if(data){
-            Meteor.call('insertCompInfo', { id,data}, (err) => {
+            Meteor.call('insertCompInfo', {data}, (err) => {
                 if (err) {
                   console.log('Updated failed')
                   notyf.error("Updated failed")

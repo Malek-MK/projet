@@ -20,7 +20,7 @@ const BankInformation = () => {
 })
     const onSubmit=(data)=>{
         if(data){
-            Meteor.call('InsertBankInfo', { id,data }, (err) => {
+            Meteor.call('InsertBankInfo', {data }, (err) => {
                 if (err) {
                   console.log('Updated failed')
                   notyf.error("Updated failed")
@@ -63,7 +63,7 @@ const BankInformation = () => {
     <input type="text" name="swift" className="form-control bg-light"></input>
     <p className="text-danger">{errors.swift?.message}</p>
   </div> 
-  
+   
 </div>
         </div>
         <div className="card-footer">
