@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Footerr = () => {
     return (
         <div>
-            <footer className="bg-light mt-5">
+            <footer className="bg-light mt-4">
             <div className="d-flex justify-content-between">
             <div>
             <p><span className="text-secondary">{new Date().getFullYear()} ©</span><Link target="_blank" className="text-decoration-none text-dark" to="/home"><i> SpeedSolution</i></Link></p>
