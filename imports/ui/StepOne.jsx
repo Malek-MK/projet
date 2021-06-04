@@ -1,11 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form';
 import Schema1 from '../Validation/YupStep1';
+import { Meteor } from 'meteor/meteor';
 import { yupResolver } from '@hookform/resolvers/yup';
 import FileUploadComponent from '../ui/FileUpload';
+import SelectMediators from './SelectMediators';
+
 const StepOne = ({ setData, setStep, data}) => {
   const [check, setCheck] = useState(false);
-  
+  const [mediators,setMediators]=useState([]);
+    const renderMediators=()=>{
+        Meteor.call('showMediators',(err,res)=>{
+            setMediators(res);
+        })
+    }
+    useEffect(()=>{
+        renderMediators();
+    },[])
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(Schema1),
     defaultValues: {
@@ -39,7 +50,17 @@ const StepOne = ({ setData, setStep, data}) => {
 
         <div className="form-group mb-2 mt-5">
           <h2 className="text mb-5">Part A contact details</h2>
-          <h5>Information about you :</h5>
+          <label>Choose your mediator </label>
+          {mediators.map((mediator)=>{
+            return(
+              <SelectMediators
+                  key={mediator._id}
+                  mediator={mediator}
+                  fetch={renderMediators}
+              />
+          ); 
+            })}
+          <h5 className="mt-4 mb-3">Information about you :</h5>
           <label >Country</label>
           <select name="infoA" ref={register} className="form-control" >
             <option value="Tunisia" >Tunisia</option>
