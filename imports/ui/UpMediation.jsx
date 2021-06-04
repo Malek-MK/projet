@@ -7,13 +7,6 @@ import NavSteps from '../ui/NavSteps';
 import Header from '../ui/Header';
 import Footerr from './Footerr';
 
-const notyf = new Notyf({
-  duration: 2000,
-  position: {
-    x: 'center',
-    y: 'top',
-  }
-})
 
 const Components = [One, Two, Three, Four];
 
