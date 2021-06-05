@@ -77,7 +77,7 @@ const Payment = ({setVerifff,verifff,id,paym,datta}) => {
     
     </div>
     <div>
-      <div className="alert-title "> <i className="fa fa-exclamation-triangle fa-2x"></i> Now please choose the mediation package that best suits your situation.</div>
+      <div className="alert-title "> <i className="fa fa-exclamation-triangle fa-2x"></i> Now please choose the dispute package that best suits your situation.</div>
      
     </div>
   </div>

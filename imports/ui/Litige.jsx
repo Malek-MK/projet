@@ -48,7 +48,7 @@ const Litige = ({ media, fetch}) => {
             className="btn btn-danger"
             onClick={Delete}
           >
-          <i class="fa fa-trash-o fa-lg"></i>  Delete
+          <i className="fa fa-trash-o fa-lg"></i>  Delete
           </Button>        </td>
       </tr>
     </>

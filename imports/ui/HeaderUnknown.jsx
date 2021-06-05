@@ -13,7 +13,7 @@ const HeaderUnknown = () => {
                     <div className="position-absolute top-5 end-0">
                                 <ul className="navbar-nav topnav">
                                     <li className="nav-item" style={{marginRight:15}}>
-                                        <Link className="btn btn-light" to="/signin"><i class="fa fa-user-plus fa-2x text-info" aria-hidden="true"></i></Link>
+                                        <Link className="btn btn-light" to="/signin"><i className="fa fa-user-plus fa-2x text-info" aria-hidden="true"></i></Link>
                                      </li>
                                 </ul>
                             </div>

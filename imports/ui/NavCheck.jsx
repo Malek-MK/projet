@@ -120,40 +120,40 @@ const NavCheck = () => {
           <Header/>
           <br></br><br></br><br></br>
             <div className="container text-center  mt-2">
-       <div class="row ">
-  <div class="col-sm-3 text-success  bg-success">
-    <div class={click.class1} onClick={onclick}>
-      <div class="card-body">
-      <h3><i class="fa fa-check" ></i></h3>
-        <h5 class={click.class2}>Personal informations</h5>
-        <p class="card-text">Verified Information!</p>
+       <div className="row ">
+  <div className="col-sm-3 text-success  bg-success">
+    <div className={click.class1} onClick={onclick}>
+      <div className="card-body">
+      <h3><i className="fa fa-check" ></i></h3>
+        <h5 className={click.class2}>Personal informations</h5>
+        <p className="card-text">Verified Information!</p>
       </div>
     </div> 
   </div>
-  <div class={clsx(paym||verifff?"col-sm-3 text-success  bg-success":"col-sm-3")} >
-    <div class={click3.class1} onClick={onclick3}>
-      <div class="card-body ">
-      <h3><i class={clsx(paym||verifff?"fa fa-check":"fa fa-exclamation-triangle")} ></i></h3>
-        <h5 class={click3.class2}>Mediation payment</h5>
-        <p class="card-text">Choose the package</p>
+  <div className={clsx(paym||verifff?"col-sm-3 text-success  bg-success":"col-sm-3")} >
+    <div className={click3.class1} onClick={onclick3}>
+      <div className="card-body ">
+      <h3><i className={clsx(paym||verifff?"fa fa-check":"fa fa-exclamation-triangle")} ></i></h3>
+        <h5 className={click3.class2}>Dispute payment</h5>
+        <p className="card-text">Choose the package</p>
       </div>
     </div> 
   </div>
-  <div class={clsx(dates||verif?"col-sm-3 text-success  bg-success":"col-sm-3")}>
-    <div class={click1.class1} onClick={onclick1}>
-      <div class="card-body">
-      <h3><i class={clsx(dates||verif?"fa fa-check":"fa fa-exclamation-triangle")}></i></h3>
-        <h5 class={click1.class2}>Date preferences</h5>
-        <p class="card-text">Choose your dates</p>
+  <div className={clsx(dates||verif?"col-sm-3 text-success  bg-success":"col-sm-3")}>
+    <div className={click1.class1} onClick={onclick1}>
+      <div className="card-body">
+      <h3><i className={clsx(dates||verif?"fa fa-check":"fa fa-exclamation-triangle")}></i></h3>
+        <h5 className={click1.class2}>Date preferences</h5>
+        <p className="card-text">Choose your dates</p>
       </div>
     </div>
   </div>
-  <div class={clsx(showw||veriff?"col-sm-3 text-success  bg-success":"col-sm-3")} >
-    <div class={click2.class1} onClick={onclick2}>
-      <div class="card-body ">
-      <h3><i class={clsx(showw||veriff?"fa fa-check":"fa fa-exclamation-triangle")} ></i></h3>
-        <h5 class={click2.class2}>Mediation agreement</h5>
-        <p class="card-text">Sign the convention</p>
+  <div className={clsx(showw||veriff?"col-sm-3 text-success  bg-success":"col-sm-3")} >
+    <div className={click2.class1} onClick={onclick2}>
+      <div className="card-body ">
+      <h3><i className={clsx(showw||veriff?"fa fa-check":"fa fa-exclamation-triangle")} ></i></h3>
+        <h5 className={click2.class2}>Dispute agreement</h5>
+        <p className="card-text">Sign the convention</p>
       </div>
     </div>
   </div>

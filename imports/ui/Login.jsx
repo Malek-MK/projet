@@ -63,9 +63,9 @@ const Login = () => {
   return (
     <div>
 
-<div class="card text-center">
-  <div class="row no-gutters">
-    <div class="col-md-5">
+<div className="card text-center">
+  <div className="row no-gutters">
+    <div className="col-md-5">
         <div className="card-body bg-info h-100"><br></br>
         <Link className="h1 mt-5 mb-5 text-decoration-none text-dark" to="/home"><i className="fa fa-balance-scale"></i>SpeedSolution</Link>
           <br></br><br></br>
@@ -113,13 +113,13 @@ const Login = () => {
     
       
     </div>
-    <div class="col-md-7">
+    <div className="col-md-7">
       <div className="card-body text-center">
       <h3 className="mt-3">Welcome to SpeedSolution</h3>
     <p className="text-secondary mt-2">100% online mediation and arbitration platform
 allowing to solve quickly and economically
 all your disputes, conflicts or disputes</p>
-      <img src="/images/login.jpg" class="card-img" alt="..."/>
+      <img src="/images/login.jpg" className="card-img" alt="..."/>
       </div>
      
     </div>

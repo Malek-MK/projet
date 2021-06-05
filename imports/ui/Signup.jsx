@@ -58,9 +58,9 @@ const [verif,setVerif]=useState(false);
 
   return (
     <div>
-      <div class="card ">
-  <div class="row no-gutters">
-    <div class="col-md-5">
+      <div className="card ">
+  <div className="row no-gutters">
+    <div className="col-md-5">
         <div className="card-body bg-info h-100"><br></br>
     <div className="text-center">
     <Link className="h1 mt-4 text-decoration-none text-dark" to="/home"><i className="fa fa-balance-scale text-center"></i>SpeedSolution</Link>
@@ -140,13 +140,13 @@ const [verif,setVerif]=useState(false);
     
       
     </div>
-    <div class="col-md-7">
+    <div className="col-md-7">
       <div className="card-body text-center">
       <h3 className="mt-3">Welcome to SpeedSolution</h3>
     <p className="text-secondary mt-2">100% online mediation and arbitration platform
 allowing to solve quickly and economically
 all your disputes, conflicts or disputes</p>
-      <img src="/images/register.jpg" class="card-img" alt="..." style={{widht:200,height:700}}/>
+      <img src="/images/register.jpg" className="card-img" alt="..." style={{widht:200,height:700}}/>
       </div>
      
     </div>

@@ -26,7 +26,7 @@ const OfferDetails = () => {
     return (
         <div>
             <NavBar/>
-            <div class="card mt-0 border-0 text-center mt-5" >
+            <div className="card mt-0 border-0 text-center mt-5" >
             <div className="card body bg-info">
                 <h1 className="text mt-5 mb-4">The fully paperless mediation and arbitration <br></br>platform for everyone!</h1>
                 <p className="p mb-5">
@@ -101,9 +101,9 @@ The SpeedSolution platform allows you to manage all these disputes simply and ec
 </div>
 <h1 className="text mt-5 mb-5">Mediation with SpeedSolution is:</h1>
 <div className="d-flex justify-content-center ">
-<div class="d-flex justify-content-center w-75">
-<div class="col-sm-6">
-    <div class="card text-center border-0 bg-primary text-white">
+<div className="d-flex justify-content-center w-75">
+<div className="col-sm-6">
+    <div className="card text-center border-0 bg-primary text-white">
         <br></br><br></br>
       <h1>4250€</h1>
       <br></br>
@@ -111,8 +111,8 @@ The SpeedSolution platform allows you to manage all these disputes simply and ec
       <br></br><br></br>
     </div>
   </div>
-  <div class="col-sm-6">
-  <div class="card text-center border-0 bg-primary text-white">
+  <div className="col-sm-6">
+  <div className="card text-center border-0 bg-primary text-white">
         <br></br><br></br>
       <h1>7 MONTHS</h1>
       <br></br>
@@ -128,17 +128,17 @@ The average time to be heard in court is <b>8 months</b> on average (Key figures
 </div>
             </div>
             <div className="card border-0 bg-primary">
-            <div class="row">
-  <div class="col-sm-6">
-    <div class="card text-center border-0 bg-primary">
-      <div class="card-body">
+            <div className="row">
+  <div className="col-sm-6">
+    <div className="card text-center border-0 bg-primary">
+      <div className="card-body">
         <h2 className="text-white mt-5 mb-5">Ready to submit your case?</h2>
       </div>
     </div>
   </div>
-  <div class="col-sm-6">
-    <div class="card text-center border-0 bg-primary">
-      <div class="card-body">
+  <div className="col-sm-6">
+    <div className="card text-center border-0 bg-primary">
+      <div className="card-body">
         <button className="btn btn-success btn-lg mt-5 mb-5" onClick={verif}>Access the platform</button>
       </div>
     </div>

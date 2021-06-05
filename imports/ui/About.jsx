@@ -62,19 +62,19 @@ The traditional justice system is slow and expensive which generates a lot of di
   </div>
 </div>
             </div>
-            <div class="card mt-5 border-0 text-center" style={{backgroundColor:"LightGray",alignItems:"center"}}>
-            <div class="row" >
-  <div class="col-sm-6">
-    <div class="card" style={{backgroundColor:"LightGray"}}>
-      <div class="card-body">
+            <div className="card mt-5 border-0 text-center" style={{backgroundColor:"LightGray",alignItems:"center"}}>
+            <div className="row" >
+  <div className="col-sm-6">
+    <div className="card" style={{backgroundColor:"LightGray"}}>
+      <div className="card-body">
         <h2>Our mission</h2>
         <h5>Our mission is to offer you a simple, comprehensive solution at the best price as well as to support you throughout the Mediation and Arbitration process in order to obtain an amicable agreement or an arbitration award.</h5>
       </div>
     </div>
   </div>
-  <div class="col-sm-6">
-    <div class="card" style={{backgroundColor:"LightGray"}}>
-      <div class="card-body">
+  <div className="col-sm-6">
+    <div className="card" style={{backgroundColor:"LightGray"}}>
+      <div className="card-body">
         <h2>Our ambition</h2>
         <h5>Our ambition is simple: Make justice accessible to all. We want to modernize Alternative Dispute Resolution Methods and transform the culture of trial into a culture of understanding.</h5>
       </div>

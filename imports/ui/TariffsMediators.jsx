@@ -27,10 +27,10 @@ const TariffsMediators = () => {
             </div>
             <h3 className="text mt-5 text-secondary">Our mediator subscriptions</h3>
             <small className="text text-secondary mb-5">Nos tarifs mensuels</small>
-            <div class="row mt-3">
-  <div class="col-sm-4">
-    <div class="card border-0">
-      <div class="card-body">
+            <div className="row mt-3">
+  <div className="col-sm-4">
+    <div className="card border-0">
+      <div className="card-body">
       <img src="../images/img10.png" alt="" /> 
       <div>
           <button className="btn btn-primary btn-lg mt-3 mb-4">TO CHOOSE</button>
@@ -38,17 +38,17 @@ const TariffsMediators = () => {
       </div>
     </div>
   </div>
-  <div class="col-sm-4">
-    <div class="card border-0">
-      <div class="card-body">
+  <div className="col-sm-4">
+    <div className="card border-0">
+      <div className="card-body">
       <img src="../images/img11.png" alt="" /> 
       <button className="btn btn-primary btn-lg mt-3 mb-4">TO CHOOSE</button>
       </div>
     </div>
   </div>
-  <div class="col-sm-4">
-    <div class="card border-0">
-      <div class="card-body">
+  <div className="col-sm-4">
+    <div className="card border-0">
+      <div className="card-body">
       <img src="../images/img12.png" alt="" /> 
       <button className="btn btn-primary btn-lg mt-3 mb-4">TO CHOOSE</button>
       </div>
@@ -57,10 +57,10 @@ const TariffsMediators = () => {
 </div>
 <h3 className="text mt-5 text-secondary">Our mediator subscriptions</h3>
             <small className="text text-secondary mb-5">Nos tarifs annuals</small>
-            <div class="row mt-3">
-  <div class="col-sm-4">
-    <div class="card border-0">
-      <div class="card-body">
+            <div className="row mt-3">
+  <div className="col-sm-4">
+    <div className="card border-0">
+      <div className="card-body">
       <img src="../images/img13.png" alt="" /> 
       <div>
           <button className="btn btn-primary btn-lg mt-5 mb-4">TO CHOOSE</button>
@@ -68,17 +68,17 @@ const TariffsMediators = () => {
       </div>
     </div>
   </div>
-  <div class="col-sm-4">
-    <div class="card border-0">
-      <div class="card-body">
+  <div className="col-sm-4">
+    <div className="card border-0">
+      <div className="card-body">
       <img src="../images/img14.png" alt="" /> 
       <button className="btn btn-primary btn-lg mt-2 mb-4">TO CHOOSE</button>
       </div>
     </div>
   </div>
-  <div class="col-sm-4">
-    <div class="card border-0">
-      <div class="card-body">
+  <div className="col-sm-4">
+    <div className="card border-0">
+      <div className="card-body">
       <img src="../images/img15.png" alt="" /> 
       <button className="btn btn-primary btn-lg mt-5 mb-4">TO CHOOSE</button>
       </div>

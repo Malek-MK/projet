@@ -6,7 +6,7 @@ const OfferDetailsMed = () => {
     return (
         <div>
             <NavBar/>
-            <div class="card mt-0 border-0 text-center mt-5 mb-5" >
+            <div className="card mt-0 border-0 text-center mt-5 mb-5" >
             <div className="card body bg-info text-white">
                 <h1 className="text mt-5 mb-4">An innovative tool to carry out your<br></br> mediations</h1>
                 <p className="p mb-5">
@@ -39,8 +39,8 @@ You are in the right place ! To join us, fill out our online form.</h4>
     </div>
   </div>
             </div>
-            <div class="card bg-light mt-5">
-  <div class="card-body">
+            <div className="card bg-light mt-5">
+  <div className="card-body">
     <h1 className="text mt-3">Sign up and discover our<br></br> subscriptions</h1>
     <h3 className="text-secondary mt-3">The SpeedSolution platform makes it easy for mediators to organize<br></br> online mediation sessions. To achieve this, SpeedSolution offers an<br></br> easy-to-use productivity tool with significant functional benefits.</h3>
   <div>

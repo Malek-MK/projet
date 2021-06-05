@@ -58,9 +58,9 @@ const [verif,setVerif]=useState(false);
 
   return (
     <div>
-      <div class="card ">
-  <div class="row no-gutters">
-    <div class="col-md-5">
+      <div className="card ">
+  <div className="row no-gutters">
+    <div className="col-md-5">
         <div className="card-body bg-info h-100"><br></br>
     <div className="text-center">
     <Link className="h1 mt-4 text-decoration-none text-dark" to="/home"><i className="fa fa-balance-scale text-center"></i>SpeedSolution</Link>

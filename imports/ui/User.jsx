@@ -69,15 +69,15 @@ const User = () => {
                             <div className="btn-list">
 
                                 <Link to="/mediations/create"  className="btn btn-primary d-none d-sm-inline-block text-decoration-none" >
-                                    Create new Mediation</Link>
+                                    Create New Dispute</Link>
                                 
                             </div>
                         </div> 
                 </div>
                 <div className="card-title mb-5">
-                    <h3 className="card-label">List of mediation files</h3>
+                    <h3 className="card-label">List of disputes files</h3>
                     <span className="d-block text-muted pt-2 font-size-sm">
-                        Consult and edit my mediation files</span>
+                        Consult and edit my dispute files</span>
                 </div>
                
                 <div className="col mb-3 col-12 text-center">

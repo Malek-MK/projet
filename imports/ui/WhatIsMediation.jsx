@@ -63,17 +63,17 @@ Les quatre phases de la médiation selon les étapes de la négociation raisonn�
           
             </div>
             <div className="card border-0 bg-primary">
-            <div class="row">
-  <div class="col-sm-6">
-    <div class="card text-center border-0 bg-primary">
-      <div class="card-body">
+            <div className="row">
+  <div className="col-sm-6">
+    <div className="card text-center border-0 bg-primary">
+      <div className="card-body">
         <h2 className="text-white mt-5 mb-5">Ready to create your file?</h2>
       </div>
     </div>
   </div>
-  <div class="col-sm-6">
-    <div class="card text-center border-0 bg-primary">
-      <div class="card-body">
+  <div className="col-sm-6">
+    <div className="card text-center border-0 bg-primary">
+      <div className="card-body">
         <button className="btn btn-success btn-lg mt-5 mb-5" onClick={verif}>Access the platform</button>
       </div>
     </div>

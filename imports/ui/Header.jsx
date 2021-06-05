@@ -42,16 +42,15 @@ const Header = () => {
                 </li>
                 <li className="nav-item ">
                     <NavDropdown title="Médiation" >
-                        <NavDropdown.Item ><Link to="/mediations" className="text-dark text-decoration-none"><i className="fa fa-crosshairs text-secondary" aria-hidden="true"></i> My Mediations</Link></NavDropdown.Item>
-                        <NavDropdown.Item ><i className="fa fa-folder-o text-secondary" aria-hidden="true"></i> My disputes</NavDropdown.Item>
+                        <NavDropdown.Item ><Link to="/mediations" className="text-dark text-decoration-none"><i className="fa fa-folder-o text-primary" aria-hidden="true"></i> My disputes</Link></NavDropdown.Item>
                         <NavDropdown.Item ><Link to="/mediations/create" className="text-dark text-decoration-none">
-                        <i className="fa fa-plus-square text-secondary" aria-hidden="true"></i> Add mediation</Link></NavDropdown.Item>
+                        <i className="fa fa-plus-square text-primary" aria-hidden="true"></i> Add dispute</Link></NavDropdown.Item>
                     </NavDropdown>
                 </li>
                 <li className="nav-item">
                     <NavDropdown title="Arbitrage" >
                         <NavDropdown.Item ><Link className="text-dark text-decoration-none">
-                        <i className="fa fa-gavel text-secondary" aria-hidden="true"></i> Arbitration <span className="badge badge-danger bg-danger">Comming Soon</span></Link></NavDropdown.Item>
+                        <i className="fa fa-gavel text-primary" aria-hidden="true"></i> Arbitration <span className="badge badge-danger bg-danger">Comming Soon</span></Link></NavDropdown.Item>
                     </NavDropdown>
                 </li>
 

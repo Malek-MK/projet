@@ -89,11 +89,11 @@ const NavBar = () => {
                           
                            
                             <li className="nav-item" >
-                            <div class="input-group" >
+                            <div className="input-group" >
 
-                                <input id="search-focus" type="search" placeholder="Search.." class="form-control" style={{ width: "180px", marginLeft: "20px" }} />
-                                <button type="button" class="btn btn-primary">
-                                    <i class="fa fa-search"></i>
+                                <input id="search-focus" type="search" placeholder="Search.." className="form-control" style={{ width: "180px", marginLeft: "20px" }} />
+                                <button type="button" className="btn btn-primary">
+                                    <i className="fa fa-search"></i>
                                 </button>
 
 

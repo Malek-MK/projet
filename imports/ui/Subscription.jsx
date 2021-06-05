@@ -109,10 +109,10 @@ const Subscription = () => {
                 </div>
             </div>
             {click1.show? 
-            <div class="row bg-info mb-3 text-center">
-            <div class="col-sm-4">
-              <div class="card border-0 mb-3">
-                <div class="card-body">
+            <div className="row bg-info mb-3 text-center">
+            <div className="col-sm-4">
+              <div className="card border-0 mb-3">
+                <div className="card-body">
                 <img src="../images/img10.png" alt="" /> 
                 <div>
                     <button className="btn btn-primary btn-lg mt-3 mb-4" onClick={onClick1}>TO CHOOSE</button>
@@ -120,17 +120,17 @@ const Subscription = () => {
                 </div>
               </div>
             </div>
-            <div class="col-sm-4">
-              <div class="card border-0">
-                <div class="card-body">
+            <div className="col-sm-4">
+              <div className="card border-0">
+                <div className="card-body">
                 <img src="../images/img11.png" alt="" /> 
                 <button className="btn btn-primary btn-lg mt-3 mb-4" onClick={onClick2}>TO CHOOSE</button>
                 </div>
               </div>
             </div>
-            <div class="col-sm-4">
-              <div class="card border-0">
-                <div class="card-body">
+            <div className="col-sm-4">
+              <div className="card border-0">
+                <div className="card-body">
                 <img src="../images/img12.png" alt="" /> 
                 <button className="btn btn-primary btn-lg mt-3 mb-4" onClick={onClick3}>TO CHOOSE</button>
                 </div>
@@ -139,10 +139,10 @@ const Subscription = () => {
           </div>
             :null}
             {click2.show? 
-            <div class="row bg-info mb-3 text-center">
-            <div class="col-sm-4">
-              <div class="card border-0 mb-3">
-                <div class="card-body">
+            <div className="row bg-info mb-3 text-center">
+            <div className="col-sm-4">
+              <div className="card border-0 mb-3">
+                <div className="card-body">
                 <img src="../images/img13.png" alt="" /> 
                 <div>
                     <button className="btn btn-primary btn-lg mt-5 mb-3" onClick={onClick4}>TO CHOOSE</button>
@@ -150,17 +150,17 @@ const Subscription = () => {
                 </div>
               </div>
             </div>
-            <div class="col-sm-4">
-              <div class="card border-0">
-                <div class="card-body">
+            <div className="col-sm-4">
+              <div className="card border-0">
+                <div className="card-body">
                 <img src="../images/img14.png" alt="" /> 
                 <button className="btn btn-primary btn-lg  mb-3" onClick={onClick5}>TO CHOOSE</button>
                 </div>
               </div>
             </div>
-            <div class="col-sm-4">
-              <div class="card border-0">
-                <div class="card-body">
+            <div className="col-sm-4">
+              <div className="card border-0">
+                <div className="card-body">
                 <img src="../images/img15.png" alt="" /> 
                 <button className="btn btn-primary btn-lg mt-5 mb-3" onClick={onClick6}>TO CHOOSE</button>
                 </div>
@@ -183,9 +183,9 @@ const Subscription = () => {
       <br></br>
 
       
-        <h5 class="text-uppercase">Standard Formula</h5>
+        <h5 className="text-uppercase">Standard Formula</h5>
 
-        <ul class="list-unstyled mb-0">
+        <ul className="list-unstyled mb-0">
           <li>
           <b><span>&#8226;</span></b>
             <span> Unlimited access to the mediation tool</span>
@@ -233,9 +233,9 @@ const Subscription = () => {
       <br></br>
 
       
-        <h5 class="text-uppercase">Premium Formula</h5>
+        <h5 className="text-uppercase">Premium Formula</h5>
 
-        <ul class="list-unstyled mb-0">
+        <ul className="list-unstyled mb-0">
           <li>
           <b><span>&#8226;</span></b>
             <span> Unlimited access to the mediation tool</span>
@@ -283,9 +283,9 @@ const Subscription = () => {
       <br></br>
 
       
-        <h5 class="text-uppercase">Corporate Formula</h5>
+        <h5 className="text-uppercase">Corporate Formula</h5>
 
-        <ul class="list-unstyled mb-0">
+        <ul className="list-unstyled mb-0">
           <li>
           <b><span>&#8226;</span></b>
             <span> Unlimited access to the mediation tool</span>
@@ -333,9 +333,9 @@ const Subscription = () => {
       <br></br>
 
       
-        <h5 class="text-uppercase">Standard Formula</h5>
+        <h5 className="text-uppercase">Standard Formula</h5>
 
-        <ul class="list-unstyled mb-0">
+        <ul className="list-unstyled mb-0">
           <li>
           <b><span>&#8226;</span></b>
             <span> Unlimited access to the mediation tool</span>
@@ -383,9 +383,9 @@ const Subscription = () => {
       <br></br>
 
       
-        <h5 class="text-uppercase">Premium Formula</h5>
+        <h5 className="text-uppercase">Premium Formula</h5>
 
-        <ul class="list-unstyled mb-0">
+        <ul className="list-unstyled mb-0">
           <li>
           <b><span>&#8226;</span></b>
             <span> Unlimited access to the mediation tool</span>
@@ -433,9 +433,9 @@ const Subscription = () => {
       <br></br>
 
       
-        <h5 class="text-uppercase">Corporate Formula</h5>
+        <h5 className="text-uppercase">Corporate Formula</h5>
 
-        <ul class="list-unstyled mb-0">
+        <ul className="list-unstyled mb-0">
           <li>
           <b><span>&#8226;</span></b>
             <span> Unlimited access to the mediation tool</span>

@@ -66,33 +66,33 @@ const PrefDate = ({setVerif,verif,dates,id}) => {
     return (
        <div>
          <div className="container">
-            {!dates&&!verif?<div class="alert alert-warning mt-5" role="alert">
-  <div class="d-flex">
+            {!dates&&!verif?<div className="alert alert-warning mt-5" role="alert">
+  <div className="d-flex">
     <div>
     
     </div>
     <div>
-      <div class="alert-title "> <i class="fa fa-exclamation-triangle fa-2x"></i>Please choose a maximum of 10 dates on which you can make yourself available for the mediation process.</div>
+      <div className="alert-title "> <i className="fa fa-exclamation-triangle fa-2x"></i>Please choose a maximum of 10 dates on which you can make yourself available for the dispute process.</div>
      
     </div>
   </div>
 </div>:null}
 
-{dates||verif?<div class="alert alert-success mt-5" role="alert">
-  <div class="d-flex">
+{dates||verif?<div className="alert alert-success mt-5" role="alert">
+  <div className="d-flex">
     <div>
     
     </div>
     <div>
-      <div class="alert-title "> <i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
-      Congratulations! your mediation date preferences have been saved and our team has been notified.</div>
+      <div className="alert-title "> <i className="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
+      Congratulations! your dispute date preferences have been saved and our team has been notified.</div>
      
     </div>
   </div>
 </div>:null}
 
    <div>
-   Vos disponbilités :
+   Your availability:
    <br></br>
    {dates?dates.map((e)=>{ return <button className="btn btn-success btn-sm mr-2 ml-2 mt-2 mb-5" style={{margin:"3px"}}><Moment format="D MMM YYYY" withTitle>{e}</Moment></button>}):null}
    {date.map((e)=>{ return  <button className="btn btn-primary btn-sm mr-2 ml-2 mt-2 mb-5" style={{margin:"3px"}}><Moment format="D MMM YYYY" withTitle>{e}</Moment></button>})}
