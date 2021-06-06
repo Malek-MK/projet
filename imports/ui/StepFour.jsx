@@ -89,8 +89,8 @@ const StepFour = ({ setStep, data}) => {
     return (
         <div id="content">
 
-            <h2 className="text mb-5">Summary of the mediation file</h2>
-            <h5>Information about the mediation requester</h5><br></br>
+            <h2 className="text mb-5">Summary of the dispute file</h2>
+            <h5>Information about the dispute requester</h5><br></br>
             <table className="table table-bordered " >
                 <tbody>
                     <tr>
