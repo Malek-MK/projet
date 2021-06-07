@@ -26,7 +26,8 @@ const Features = () => {
     return (
         <div>
             <NavBar/>
-            <div className="container text-center">
+          <br></br>
+            <div className="container text-center mt-5">
             <div className="row mt-5">
   <div className="col-sm-6 mt-5">
     <div className="card border-0">
