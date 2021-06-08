@@ -1,14 +1,30 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState , useEffect} from 'react'
 import { useForm } from 'react-hook-form';
 import Schema1 from '../Validation/YupStep1';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { Meteor } from 'meteor/meteor';
+import SelectMediators from './SelectMediators';
 
 const One = ({ setData, setStep,datta }) => {
   const [check, setCheck] = useState(false);
-  
+  const [namemed,setNamemed]=useState()
+    Meteor.call('showMediator',datta.mediator,(err,res)=>{
+        setNamemed(res.username);
+        
+    })
+    const [mediators,setMediators]=useState([]);
+    const renderMediators=()=>{
+        Meteor.call('showMediators',(err,res)=>{
+            setMediators(res);
+        })
+    }
+    useEffect(()=>{
+        renderMediators();
+    },[])
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(Schema1),
     defaultValues: {
+      mediator:namemed,
       infoA: datta.infoA,
       vousA: datta.vousA ,
       nomsoc: datta.nomsoc,
@@ -38,6 +54,18 @@ const One = ({ setData, setStep,datta }) => {
 
         <div className="form-group mb-2 mt-5">
           <h2 className="text mb-5">Part A contact details</h2>
+          <label>Choose your mediator </label>
+          <select name="mediator" ref={register} className="form-control" >
+          {mediators.map((mediator)=>{
+            return(
+              <SelectMediators
+                  key={mediator._id}
+                  mediator={mediator}
+                  fetch={renderMediators}
+              />
+          ); 
+            })}
+            </select>
           <h5>Information about you: :</h5>
           <label >Country</label>
           <select name="infoA" ref={register} className="form-control" >

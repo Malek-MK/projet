@@ -161,6 +161,7 @@ Meteor.methods({
        console.log("payment :",data)
         Mediation.update({ _id: id,userId:this.userId },
         {$set:{
+            isPayment:true,
             payment:data
         }});
         },

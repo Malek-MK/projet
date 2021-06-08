@@ -13,9 +13,9 @@ const NavCheck = () => {
   const [veriff,setVeriff]=useState(false);
   const [verifff,setVerifff]=useState(false);
   const [data,setData]=useState();
-  console.log("data :",data)
   const [showw,setShow]=useState();
-  const [paym,setPaym]=useState([]);
+  const [paym,setPaym]=useState(false);
+  console.log("isPayment :",paym)
   const {id} = useParams();
   const fetchDate=()=>{
     Meteor.call('showDate',id,(err,res) => {
@@ -36,7 +36,7 @@ const NavCheck = () => {
   }
   const fetchPayment=()=>{
     Meteor.call('showPayment',id,(err,res)=>{
-      setPaym(res.payment);
+      //setPaym(res.isPayment);
     })
   }
   useEffect(() => {

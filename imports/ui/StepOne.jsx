@@ -20,6 +20,7 @@ const StepOne = ({ setData, setStep, data}) => {
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(Schema1),
     defaultValues: {
+      mediator:data.mediator,
       infoA: data.infoA,
       vousA: data.vousA ,
       nomsoc: data.nomsoc,

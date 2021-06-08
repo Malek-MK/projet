@@ -294,7 +294,7 @@ const Payment = ({setVerifff,verifff,id,paym,datta}) => {
   <div className="row">
     <div className="col">
       <label>Zip Code :</label>
-      <input type="number" className="form-control" placeholder="Zip code" maxlength="5" name="codepos" ref={register}></input>
+      <input type="number" className="form-control" placeholder="Zip code" name="codepos" ref={register}></input>
       <p className="text-danger">{errors.codepos?.message}</p>    
     </div>
     
@@ -355,7 +355,6 @@ const Payment = ({setVerifff,verifff,id,paym,datta}) => {
       </div>
       :null}
             <a id="Button-1" className="btn btn-outline-primary pull-right" style={{ position: 'absolute', bottom: '50px', left: '1220px' }} href="#" role="button"><h5> <i className="fa fa-arrow-up"></i></h5></a>
-<Footerr/>
         </div>
     )
 }
