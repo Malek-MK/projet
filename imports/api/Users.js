@@ -173,7 +173,7 @@ Meteor.methods({
   },
   'findUsersWithMediations'(){
     const users= Meteor.users.find().fetch();
-    return users.map(e=>({...e,medidations:Mediations.find({userId:e._id}).fetch()}))
+    return users.map(e=>({...e,mediations:Mediations.find({isPayment:true}).fetch()}))
   },
 });
 

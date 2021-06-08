@@ -157,10 +157,10 @@ Meteor.methods({
         }
         return Mediation.findOne({userId:this.userId,_id:id});
     },
-    'insertPayment'({id,data}){
+    'insertPayment'({id,data,payee}){
         Mediation.update({ _id: id,userId:this.userId },
         {$set:{
-            isPayment:true,
+            isPayment:payee,
             payment:data
         }});
         },

@@ -58,7 +58,7 @@ const Payment = ({setVerifff,verifff,id,paym,datta}) => {
   }
   const onSubmit=(data)=>{
     if(data){
-      Meteor.call('insertPayment',{data,id},(err)=>{
+      Meteor.call('insertPayment',{data,payee:true,id},(err)=>{
         if(err){
           notyf.error('Payment failed')
           console.log(err)
