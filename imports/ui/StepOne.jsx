@@ -40,7 +40,7 @@ const StepOne = ({ setData, setStep, data}) => {
     }
   });
   const onSubmit = (data1) => {
-    console.log(data1);setData(old => ({ ...old, ...data1 }));
+    setData(old => ({ ...old, ...data1 }));
     setStep(1)
   }
   

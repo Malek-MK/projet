@@ -20,10 +20,11 @@ const StepFour = ({ setStep, data}) => {
         doc.html(document.querySelector("#content"),{
           callback:function(pdf){
               pdf.save("Mediation.pdf");
-          }  
+          }   
         });
     }
     const [data1, setData1] = useState({
+        mediator:data.mediator,
         infoA:data.infoA,
         vousA: data.vousA,
         nomsoc: data.nomsoc,
