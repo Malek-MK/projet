@@ -1,17 +1,12 @@
-import React, { useState,useEffect } from 'react'
+import React, {useEffect } from 'react'
 
-const SelectMediators =({mediator,fetch,setChoix}) => {
-    console.log("num :",mediator._id)
-    const renderChoix=()=>{
-        setChoix(mediator._id)
-    }
+const SelectMediators =({mediator,fetch}) => {
     useEffect(()=>{
         fetch()
-        renderChoix()
     },[])
     return (
     <>
-    <option key={mediator._id} onClick={()=>{renderChoix}}>{mediator.username}</option>
+    <option key={mediator._id} value={mediator._id}>{mediator.username}</option>
     </>
 )
 }

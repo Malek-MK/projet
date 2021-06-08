@@ -63,6 +63,9 @@ Meteor.methods({
     Roles.createRole('mediator', { unlessExists: true });
     Roles.addUsersToRoles(res, 'mediator');
   },
+  'showMediator':async function(id){
+    return Meteor.users.findOne({_id:id})
+  },
   'showUsers': async function(){
     if (!this.userId) {
       throw new Meteor.Error('Not Authorized');
