@@ -70,6 +70,7 @@ const Payment = ({setVerifff,verifff,id,paym,datta}) => {
     }
   }
     return (
+      
         <div className="container text-center mt-2 mb-5">
             {!verifff&&!paym? <div className="alert alert-warning mt-5" role="alert">
   <div className="d-flex">
@@ -344,7 +345,6 @@ const Payment = ({setVerifff,verifff,id,paym,datta}) => {
     </div>
   </div>
 </div>  
-      
        <div>
        <hr></hr>
         <button className="btn btn-secondary  pull-left mt-3 mb-5" onClick={()=>setShow(false)}>CHOOSE ONE <br></br> OTHER PACKAGE</button>
@@ -356,6 +356,7 @@ const Payment = ({setVerifff,verifff,id,paym,datta}) => {
       :null}
             <a id="Button-1" className="btn btn-outline-primary pull-right" style={{ position: 'absolute', bottom: '50px', left: '1220px' }} href="#" role="button"><h5> <i className="fa fa-arrow-up"></i></h5></a>
         </div>
+       
     )
 }
 

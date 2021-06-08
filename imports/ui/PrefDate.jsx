@@ -94,8 +94,8 @@ const PrefDate = ({setVerif,verif,dates,id}) => {
    <div>
    Your availability:
    <br></br>
-   {dates?dates.map((e)=>{ return <button className="btn btn-success btn-sm mr-2 ml-2 mt-2 mb-5" style={{margin:"3px"}}><Moment format="D MMM YYYY" withTitle>{e}</Moment></button>}):null}
-   {date.map((e)=>{ return  <button className="btn btn-primary btn-sm mr-2 ml-2 mt-2 mb-5" style={{margin:"3px"}}><Moment format="D MMM YYYY" withTitle>{e}</Moment></button>})}
+   {dates?dates.map((e)=>{ return <button key={e._id} className="btn btn-success btn-sm mr-2 ml-2 mt-2 mb-5" style={{margin:"3px"}}><Moment format="D MMM YYYY" withTitle>{e}</Moment></button>}):null}
+   {date.map((e)=>{ return  <button key={e._id} className="btn btn-primary btn-sm mr-2 ml-2 mt-2 mb-5" style={{margin:"3px"}}><Moment format="D MMM YYYY" withTitle>{e}</Moment></button>})}
  
    </div>
        <FullCalendar

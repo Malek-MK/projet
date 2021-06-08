@@ -36,7 +36,7 @@ const NavCheck = () => {
   }
   const fetchPayment=()=>{
     Meteor.call('showPayment',id,(err,res)=>{
-      //setPaym(res.isPayment);
+      setPaym(res.isPayment);
     })
   }
   useEffect(() => {
