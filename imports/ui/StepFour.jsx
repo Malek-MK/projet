@@ -16,7 +16,7 @@ const notyf = new Notyf({
 const StepFour = ({ setStep, data}) => {
     const [res,setRes]=useState();
     const generatePDF=()=>{
-        var doc=new jsPDF('p', 'mm', [600, 650]);
+        var doc=new jsPDF('p', 'mm', [650, 680]);
         doc.html(document.querySelector("#content"),{
           callback:function(pdf){
               pdf.save("Mediation.pdf");
@@ -82,7 +82,11 @@ const StepFour = ({ setStep, data}) => {
             }
         );
     }
-    
+    const [namemed,setNamemed]=useState()
+    Meteor.call('showMediator',data1.mediator,(err,res)=>{
+        setNamemed(res.username);
+        
+    })
     useEffect(() => {
         setData1(data)
     }, [])
@@ -94,6 +98,10 @@ const StepFour = ({ setStep, data}) => {
             <h5>Information about the dispute requester</h5><br></br>
             <table className="table table-bordered " >
                 <tbody>
+                    <tr>
+                        <th className="w-25">Mediator responsable<br></br> with your dispute</th>
+                        <td className="w-75"> {namemed}</td>
+                    </tr>
                     <tr>
                         <th className="w-25">Country</th>
                         <td className="w-75"> {data1.infoA}</td>

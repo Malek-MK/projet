@@ -32,6 +32,7 @@ Meteor.methods({
       
         return Mediation.insert({
             time:today,
+            mediator:data.mediator,
             infoA:data.infoA,
             vousA:data.vousA,
             nomsoc:data.nomsoc,

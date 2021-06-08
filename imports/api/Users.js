@@ -89,6 +89,14 @@ Meteor.methods({
     const experts =(await Meteor.users.rawCollection().aggregate(aggregation).toArray());
     return experts;
   },
+  'showMediator': async function(id){
+    if (!this.userId) {
+      throw new Meteor.Error('Not Authorized');
+  }
+  return Meteor.users.findOne({_id:id});
+  }
+
+  ,
   'showArbitrators': async function(){
     if (!this.userId) {
       throw new Meteor.Error('Not Authorized');
