@@ -40,11 +40,10 @@ const StepOne = ({ setData, setStep, data}) => {
     }
   });
   const onSubmit = (data1) => {
-    setData(old => ({ ...old, ...data1 }));
+    console.log(data1);setData(old => ({ ...old, ...data1 }));
     setStep(1)
   }
-  const [choix,setChoix]=useState();
-  console.log('choix :',choix) 
+  
   return (
     <div className="mt-5">
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -52,14 +51,13 @@ const StepOne = ({ setData, setStep, data}) => {
         <div className="form-group mb-2 mt-5">
           <h2 className="text mb-5">Part A contact details</h2>
           <label>Choose your mediator </label>
-          <select name="mediator" className="form-control" >
+          <select name="mediator" ref={register} className="form-control" >
           {mediators.map((mediator)=>{
             return(
               <SelectMediators
                   key={mediator._id}
                   mediator={mediator}
                   fetch={renderMediators}
-                  setChoix={setChoix}
               />
           ); 
             })}
