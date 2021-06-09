@@ -55,7 +55,7 @@ const One = ({ setData, setStep,datta }) => {
         <div className="form-group mb-2 mt-5">
           <h2 className="text mb-5">Part A contact details</h2>
           <label>Choose your mediator </label>
-          <select name="mediator" ref={register} className="form-control" >
+          <select name="mediator" ref={register} className="form-select" >
           {mediators.map((mediator)=>{
             return(
               <SelectMediators
@@ -68,7 +68,7 @@ const One = ({ setData, setStep,datta }) => {
             </select>
           <h5>Information about you: :</h5>
           <label >Country</label>
-          <select name="infoA" ref={register} className="form-control" >
+          <select name="infoA" ref={register} className="form-select" >
             <option value="Tunisia" >Tunisia</option>
             <option value="Algeria" >Algeria</option>
             <option value="Marocco" >Morocco</option>
@@ -79,7 +79,7 @@ const One = ({ setData, setStep,datta }) => {
         </div>
         <div className="form-group mb-2">
           <label >You are</label>
-          <select name="vousA" ref={register} className="form-control" >
+          <select name="vousA" ref={register} className="form-select" >
             <option value="CommercialCompany" >A commercial company</option>
             <option value="IndividualEntrepreneur" >An individual entrepreneur</option>
             <option value="CivilSociety" >A civil society</option>
@@ -96,7 +96,7 @@ const One = ({ setData, setStep,datta }) => {
           </div>
           <div className="col">
             <label>Legal form</label>
-            <select name="formjurid" ref={register} className="form-control" >
+            <select name="formjurid" ref={register} className="form-select" >
               <option value="Choose" >To choose</option>
               <option value="SAS" >SAS</option>
               <option value="SARL" >SARL</option>

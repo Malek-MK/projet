@@ -32,7 +32,7 @@ const Three = ({ setData, setStep,datta }) => {
                
                 <div className="form-group mb-2 mt-3">
                     <label >Type of dispute </label>
-                    <select name="objlitige" ref={register} className="form-control" >
+                    <select name="objlitige" ref={register} className="form-select" >
                         <option value="Contractual" >Contractual</option>
                         <option value="Commercial" > Commercial</option>
                         <option value="Neighborhood" >Neighborhood</option>

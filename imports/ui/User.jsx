@@ -19,8 +19,8 @@ const User = () => {
   
 
     const headers = [
-        { name: "PartieA", field: "nomsoc", sortable: true },
-        { name: "PartieB", field: "nomsoc1", sortable: true },
+        { name: "Part A", field: "nomsoc", sortable: true },
+        { name: "Part B", field: "nomsoc1", sortable: true },
         { name: "Status", field: "status", sortable: false },
         { name: "Date", field: "time", sortable: true },
         { name: "Update", field: "update", sortable: false },

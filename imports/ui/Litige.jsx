@@ -14,7 +14,6 @@ const notyf = new Notyf({
 })
 
 const Litige = ({ media, fetch}) => {
-  const [show,setShow]=useState(false);
   
   useEffect(() => {
     fetch();
@@ -41,7 +40,7 @@ const Litige = ({ media, fetch}) => {
         <td ><span className="text-success">Saved</span></td>
         <td >{media.time}</td>
         <td>  
-    <Link className="btn btn-info text-decoration-none" to={`/mediations/update/${media._id}`} onClick={()=>setShow(true)}> Update</Link>
+    <Link className="btn btn-info text-decoration-none" to={`/mediations/update/${media._id}`} target="_blank"> Update</Link>
         </td>
         <td>
           <Button

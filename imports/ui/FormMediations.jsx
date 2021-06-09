@@ -1,23 +1,39 @@
-import React, { useEffect } from 'react';
-import Button from 'react-bootstrap/Button';
+import React from 'react'
 import { Link } from 'react-router-dom';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button'
+import { useForm } from 'react-hook-form';
 
-const ListeMediations = ({doc,renderUsersWithMediations}) => {
-    console.log("doc :",doc.mediations);
-    useEffect(()=>{
-        renderUsersWithMediations()
-    },[])
+const FormMediations = ({doc}) => {
+    const { register, handleSubmit, errors } = useForm({
+    
+    });
+    const onSubmit = (data) => {
+        Meteor.call('InsertResult', data, (err) => {
+          if (err) {
+            console.log('Judged failed', err)
+            notyf.error("Judged failed")
+          }
+          else {
+            console.log('Judged with succes')
+            notyf.success("Judged with succes")
+            
+          } 
+         
+        });
+    }
     return (
         <>
+        <Form onSubmit={handleSubmit(onSubmit)} id="judge">
                {doc.mediations.map((e)=>{
                   if(e.isPayment===true){
                    return (
                        <>
-        <tr key={e._id} name="id">
+        <tr key={e._id} name="id" ref={register}>
            <td ><b>{e.nomsoc}</b><br></br>{e.email}</td>
            <td ><b>{e.nomsoc1}</b><br></br>{e.email1}</td>
            <td >
-               <select className="form-select" name="judgement">
+               <select className="form-select" name="judgement" ref={register}>
                    <option value="submitted">Submitted ✅</option>
                    <option value="inprogress">In progress ⌛</option>
                    <option value="judjed">Judged ⚡️</option>
@@ -28,7 +44,7 @@ const ListeMediations = ({doc,renderUsersWithMediations}) => {
        <Link className="btn btn-info text-decoration-none" to={`/mediation/show/${e._id}`} target="_blank"> Show</Link>
            </td>
            <td>
-           <select className="form-select" name="result">
+           <select className="form-select" name="result" ref={register}>
                    <option value="wait_please" selected>Put your judgment ✍️</option>
                    <option value="Part_A_Winner">Part A is winner 🏆</option>
                    <option value="Part_B_Winner">Part B is winner 🏆</option>
@@ -42,9 +58,9 @@ const ListeMediations = ({doc,renderUsersWithMediations}) => {
                    )
                   }
                })}
-             
+               </Form>
            </>
     )
 }
 
-export default ListeMediations
+export default FormMediations

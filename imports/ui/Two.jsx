@@ -47,7 +47,7 @@ const Two = ({ setData, setStep,datta}) => {
           </h2>
           <h5>Information about the other party :</h5>
           <label >Country</label>
-          <select name="infoB" ref={register} className="form-control" >
+          <select name="infoB" ref={register} className="form-select" >
             <option value="Tunisia" >Tunisia</option>
             <option value="Algeria" >Algeria</option>
             <option value="Marocco" >Marocco</option>
@@ -58,7 +58,7 @@ const Two = ({ setData, setStep,datta}) => {
         </div>
         <div className="form-group mb-2">
           <label >You are</label>
-          <select name="vousB" ref={register} className="form-control" >
+          <select name="vousB" ref={register} className="form-select" >
             <option value="CommercialCompany" >A commercial company</option>
             <option value="IndividualEntrepreneur" >An individual entrepreneur</option>
             <option value="CivilSociety" >A civil society</option>
@@ -75,7 +75,7 @@ const Two = ({ setData, setStep,datta}) => {
           </div>
           <div className="col">
             <label>Legal form</label>
-            <select name="formjurid1" ref={register} className="form-control" >
+            <select name="formjurid1" ref={register} className="form-select" >
               <option value="Choose" >To choose</option>
               <option value="SAS" >SAS</option>
               <option value="SARL" >SARL</option>
