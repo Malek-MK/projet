@@ -42,8 +42,8 @@ const HeaderMediator = () => {
                 <li className="nav-item ">
                     <NavDropdown title="Médiation" >
                         <NavDropdown.Item ><Link to="/mediator/mediations" className="text-dark text-decoration-none"><i className="fa fa-folder-o text-primary" aria-hidden="true"></i> My Mediations</Link></NavDropdown.Item>
-                        <NavDropdown.Item ><Link to="/mediations" className="text-dark text-decoration-none"><i className="fa fa-th-large text-primary" aria-hidden="true"></i> Cabinet mediations</Link></NavDropdown.Item>
-                        <NavDropdown.Item ><Link to="/mediations" className="text-dark text-decoration-none"><i className="fa fa-crosshairs text-primary" aria-hidden="true"></i> SpeedSolution mediations</Link></NavDropdown.Item>
+                        <NavDropdown.Item ><Link to="/" className="text-dark text-decoration-none"><i className="fa fa-th-large text-primary" aria-hidden="true"></i> Cabinet mediations</Link></NavDropdown.Item>
+                        <NavDropdown.Item ><Link to="/mediator/SpeedSolution-Mediations" className="text-dark text-decoration-none"><i className="fa fa-crosshairs text-primary" aria-hidden="true"></i> SpeedSolution mediations</Link></NavDropdown.Item>
                         <NavDropdown.Item ><Link to="/mediator/create_mediation" className="text-dark text-decoration-none">
                         <i className="fa fa-plus-square text-primary" aria-hidden="true"></i> Add Mediation</Link></NavDropdown.Item>
                     </NavDropdown>

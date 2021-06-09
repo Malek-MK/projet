@@ -35,7 +35,7 @@ const Litige = ({ media, fetch}) => {
   return (
     <>
      <tr key={media._id}>
-        <td scope="row" ><b>{media.nomsoc}</b><br></br>{media.email}</td>
+        <td ><b>{media.nomsoc}</b><br></br>{media.email}</td>
         <td ><b>{media.nomsoc1}</b><br></br>{media.email1}</td>
         <td ><span className="text-success">Saved</span></td>
         <td >{media.time}</td>

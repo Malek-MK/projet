@@ -48,10 +48,12 @@ import ProfileArbitrator from '../imports/ui/ProfileArbitrator';
 import MediatorMediations from '../imports/ui/MediatorMediations';
 import MediationUnknown from '../imports/ui/MediationUnknown'; 
 import MediationShow from '../imports/ui/MediationShow';
+import MediationsMediator from '../imports/ui/MediationsMediator';
 const routes = (
   <Router >
     <Switch>
     <Route path="/manageMediations" exact component={ManageMediations} /> 
+    <Route path="/mediator/SpeedSolution-Mediations" exact component={MediationsMediator} /> 
     <Route path="/create-mediation" exact component={MediationUnknown} /> 
     <Route path="/manageMediators" exact component={ManageMediators} /> 
     <Route path="/profile" exact component={Profile} /> 
