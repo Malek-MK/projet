@@ -47,9 +47,7 @@ import ProfileAdmin from '../imports/ui/ProfileAdmin';
 import ProfileArbitrator from '../imports/ui/ProfileArbitrator'; 
 import MediatorMediations from '../imports/ui/MediatorMediations';
 import MediationUnknown from '../imports/ui/MediationUnknown'; 
-function BlogPost() {
-  let { id } = useParams();
-}
+import MediationShow from '../imports/ui/MediationShow';
 const routes = (
   <Router >
     <Switch>
@@ -78,6 +76,7 @@ const routes = (
     <Route path="/tariffs-mediators" exact component={TariffsMediators} />
     <Route path="/mediator-functionalities" exact component={MediatorFunctionalities} />
     <Route path="/mediations/update/:id" exact component={NavCheck} />
+    <Route path="/mediation/show/:id" exact component={MediationShow} />
     <Route path="/manageArbitrators" exact component={ManageArbitrators}/>
     <Route path="/arbitrator" exact component={Arbitrator}/>
     <Route path="/mediator" exact component={Mediator}/>
@@ -95,8 +94,6 @@ const routes = (
       <Route path="/signin"  component={Login} />
       <Route path="/admin"  component={Admin} />
       <Route path="*" component={Notfound} />
-       
-        <BlogPost />
     </Switch>
   </Router>
 );

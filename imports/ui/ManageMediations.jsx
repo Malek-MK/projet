@@ -38,12 +38,13 @@ const ManageMediations = () => {
                          <tbody>
                          {docs.map((doc)=>{
                         return (
+                            <>
                             <ListeMediations
                             key={doc._id}
                             doc={doc}
-                            setData={setData}
                             renderUsersWithMediations={renderUsersWithMediations}
                             />
+                            </>
                         )
                         })}
                         </tbody>

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
-
+import FormMediations from '../ui/FormMediations';
 const ListeMediations = ({doc,renderUsersWithMediations}) => {
     console.log("doc :",doc.mediations);
     useEffect(()=>{
@@ -29,7 +29,7 @@ const ListeMediations = ({doc,renderUsersWithMediations}) => {
            </td>
            <td>
            <select className="form-select" name="result">
-                   <option value="wait_please" selected>Put your judgment ✍️</option>
+                   <option value="wait_please" defaultValue>Put your judgment ✍️</option>
                    <option value="Part_A_Winner">Part A is winner 🏆</option>
                    <option value="Part_B_Winner">Part B is winner 🏆</option>
                    <option value="equality">Equality ⚖</option>
