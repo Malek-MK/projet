@@ -28,7 +28,7 @@ const ConvMedia = ({showw,id,setVeriff,veriff,datta}) => {
         var doc=new jsPDF('p', 'mm', [900, 900]);
         doc.html(document.querySelector("#content"),{
           callback:function(pdf){
-              pdf.save("Convention.pdf");
+              pdf.save(`${id}.pdf`);
           }  
         });
     }

@@ -78,62 +78,71 @@ const Four = ({ setStep, data,id }) => {
             }
         );
     }
-    
+    const [namemed,setNamemed]=useState()
+    Meteor.call('showMediator',data1.mediator,(err,res)=>{
+        setNamemed(res.username);
+        
+    })
     useEffect(() => {
         setData1(data)
     }, [])
 
     return (
         <div id="content">
-
-            <h2 className="text mb-5">Récapitulatif du dossier de médiation</h2>
-            <h5>Informations concernant le demandeur de la médiation</h5><br></br>
+            <h2 className="text mb-5">Summary of the dispute file</h2>
+            <h5>Information about the dispute requester</h5><br></br>
+            <p className="text pull-right "><strong className="text-success">Id Dispute: </strong> {id}</p>
+            
             <table className="table table-bordered " >
                 <tbody>
+                <tr>
+                        <th className="w-25">Mediator responsable<br></br> with your dispute</th>
+                        <td className="w-75"> {namemed}</td>
+                    </tr>
                     <tr>
                         <th className="w-25">Country</th>
                         <td className="w-75"> {data1.infoA}</td>
                     </tr>
                     <tr>
                         <th className="w-25">Type</th>
-                        <td className="w-75">une sociéte :{data1.vousA}</td>
+                        <td className="w-75">a society :{data1.vousA}</td>
                     </tr>
                     <tr>
-                        <th className="w-25">Nom de la société	</th>
+                        <th className="w-25">Company Name	</th>
                         <td className="w-75">{data1.nomsoc}</td>
                     </tr>
                     <tr>
-                        <th className="w-25">Forme juridique	</th>
+                        <th className="w-25">Legal form		</th>
                         <td className="w-75">{data1.formjurid}</td>
                     </tr>
                     <tr>
-                        <th className="w-25">Numéro d'identification	</th>
+                        <th className="w-25">ID number	</th>
                         <td className="w-75">{data1.numid}</td>
                     </tr>
                     <tr>
-                        <th className="w-25">Représentant légal	</th>
+                        <th className="w-25">Legal representative	</th>
                         <td className="w-75">{data1.prerepleg}{' '}{data1.nomrepleg}</td>
                     </tr>
                     <tr>
-                        <th className="w-25">Adresse	</th>
+                        <th className="w-25">Address	</th>
                         <td className="w-75">{data1.adresse},{data1.codepos},{data1.ville}</td>
                     </tr>
                     <tr>
-                        <th className="w-25">Email</th>
+                        <th className="w-25">E-mail</th>
                         <td className="w-75">{data1.email}</td>
                     </tr>
                     <tr>
-                        <th className="w-25">Téléphone	</th>
+                        <th className="w-25">Phone	</th>
                         <td className="w-75">{data1.tel}</td>
                     </tr>
                     <tr>
-                        <th className="w-25">Téléphone Avocat</th>
+                        <th className="w-25">Lawyer Phone</th>
                         <td className="w-75">{data1.tellawyer}</td>
                     </tr>
                 </tbody>
             </table>
 
-            <h5>Informations concernant l'autre partie</h5>
+            <h5>Information about the other party</h5>
             <table className="table table-bordered ">
                 <tbody>
                 <tr>
@@ -142,54 +151,54 @@ const Four = ({ setStep, data,id }) => {
                     </tr>
                     <tr>
                         <th className="w-25">Type</th>
-                        <td className="w-75">une sociéte :{data1.vousB}</td>
+                        <td className="w-75">a society :{data1.vousB}</td>
                     </tr>
                     <tr>
-                        <th className="w-25">Nom de la société	</th>
+                        <th className="w-25">Company Name	</th>
                         <td className="w-75">{data1.nomsoc1}</td>
                     </tr>
                     <tr>
-                        <th className="w-25">Forme juridique	</th>
+                        <th className="w-25">Legal form	</th>
                         <td className="w-75">{data1.formjurid1}</td>
                     </tr>
                     <tr>
-                        <th className="w-25">Numéro d'identification	</th>
+                        <th className="w-25">ID number	</th>
                         <td className="w-75">{data1.numid1}</td>
                     </tr>
                     <tr>
-                        <th className="w-25">Représentant légal	</th>
+                        <th className="w-25">Legal representative	</th>
                         <td className="w-75">{data1.prerepleg1}{' '}{data1.nomrepleg1}</td>
                     </tr>
                     <tr>
-                        <th className="w-25">Adresse	</th>
+                        <th className="w-25">Adress	</th>
                         <td className="w-75">{data1.adresse},{data1.codepos1},{data1.ville1}</td>
                     </tr>
                     <tr>
-                        <th className="w-25">Email</th>
+                        <th className="w-25">E-mail</th>
                         <td className="w-75">{data1.email1}</td>
                     </tr>
                     <tr>
-                        <th className="w-25">Téléphone	</th>
+                        <th className="w-25">Phonr	</th>
                         <td className="w-75">{data1.tel1}</td>
                     </tr>
                     <tr>
-                        <th className="w-25">Téléphone Avocat</th>
+                        <th className="w-25">Lawyer phone </th>
                         <td className="w-75">{data1.tellawyer1}</td>
                     </tr>
                 </tbody>
             </table>
 
-            <h5>Objet du litige</h5>
+            <h5>Subject of the dispute</h5>
             <table className="table table-bordered ">
                 <tbody>
                     <tr>
-                        <th className="w-25">Type de litige	</th>
+                        <th className="w-25">Type of dispute	</th>
                         {data1.objlitige==="Other"?
                         <td className="w-75">{data1.other}</td>
                         :<td className="w-75">{data1.objlitige}</td>}
                     </tr>
                     <tr>
-                        <th className="w-25">Description du litige </th>
+                        <th className="w-25">Description of the dispute </th>
                         <td className="w-75">{data1.desc}</td>
                     </tr>
 

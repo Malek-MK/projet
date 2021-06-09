@@ -47,7 +47,9 @@ const PrefDate = ({setVerif,verif,dates,id}) => {
         }
       }
       
-    
+    const handleSelectAllow= (selectInfo) => {
+      console.log('select Allow :',selectInfo.event);
+    }
 
       const handleEventClick = (clickInfo) => {
         console.log('date 1',clickInfo.event.start)
@@ -102,6 +104,7 @@ const PrefDate = ({setVerif,verif,dates,id}) => {
        plugins={[ dayGridPlugin, interactionPlugin ]} 
        dateClick={handleDateClick}
        eventClick={handleEventClick} 
+       selectAllow={handleSelectAllow}
        weekends={false}
        displayEventTime={false}
       events={[...dates||[],...date].map(e=>({title:"Partie A",date:e,allDaySlot:true}))}/>

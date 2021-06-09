@@ -127,7 +127,7 @@ const StepFour = ({ setStep, data}) => {
                         <td className="w-75">{data1.prerepleg}{' '}{data1.nomrepleg}</td>
                     </tr>
                     <tr>
-                        <th className="w-25">Addresse	</th>
+                        <th className="w-25">Address	</th>
                         <td className="w-75">{data1.adresse},{data1.codepos},{data1.ville}</td>
                     </tr>
                     <tr>
@@ -173,7 +173,7 @@ const StepFour = ({ setStep, data}) => {
                         <td className="w-75">{data1.prerepleg1}{' '}{data1.nomrepleg1}</td>
                     </tr>
                     <tr>
-                        <th className="w-25">Addresse	</th>
+                        <th className="w-25">Address	</th>
                         <td className="w-75">{data1.adresse},{data1.codepos1},{data1.ville1}</td>
                     </tr>
                     <tr>
