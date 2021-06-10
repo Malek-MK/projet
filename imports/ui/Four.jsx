@@ -18,7 +18,7 @@ const Four = ({ setStep, data,id }) => {
         var doc=new jsPDF('p', 'mm', [600, 650]);
         doc.html(document.querySelector("#content"),{
           callback:function(pdf){
-              pdf.save("Mediation.pdf");
+              pdf.save(`Mediation-${id}.pdf`);
           }  
         });
     }
@@ -90,7 +90,7 @@ const Four = ({ setStep, data,id }) => {
     return (
         <div id="content">
             <h2 className="text mb-5">Summary of the dispute file</h2>
-            <h5>Information about the dispute requester</h5><br></br>
+            <h5>Information about the dispute requester</h5><br></br> 
             <p className="text pull-right "><strong className="text-success">Id Dispute: </strong> {id}</p>
             
             <table className="table table-bordered " >
