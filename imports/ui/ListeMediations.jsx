@@ -1,49 +1,56 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
-import FormMediations from '../ui/FormMediations';
-const ListeMediations = ({doc,renderUsersWithMediations}) => {
-    console.log("doc :",doc.mediations);
+import { Notyf } from 'notyf';
+import 'notyf/notyf.min.css';
+import { useForm } from 'react-hook-form';
+
+const notyf = new Notyf({
+  duration: 2000,
+  position: {
+    x: 'right',
+    y: 'top',
+  }
+})
+
+const ListeMediations = ({data,renderMediationsPayment}) => {
+    const { register, handleSubmit, errors } = useForm();
+    const [save,setSave]=useState();
+    
+    const onSubmit=(data)=>{
+        console.log("datta :",data)
+        console.log("save :",save)
+    }
     useEffect(()=>{
-        renderUsersWithMediations()
+        renderMediationsPayment()
     },[])
     return (
-        <>
-               {doc.mediations.map((e)=>{
-                  if(e.isPayment===true){
-                   return (
-                       <>
-        <tr key={e._id} name="id">
-           <td ><b>{e.nomsoc}</b><br></br>{e.email}</td>
-           <td ><b>{e.nomsoc1}</b><br></br>{e.email1}</td>
+            <tr key={data._id}> 
+           <td ><b>{data.nomsoc}</b><br></br>{data.email}</td>
+           <td ><b>{data.nomsoc1}</b><br></br>{data.email1}</td>
            <td >
-               <select className="form-select" name="judgement">
+               <form key={data._id} id={`${data._id}`} onSubmit={handleSubmit(onSubmit)}></form>
+               <select className="form-select" name="judgement" form={`${data._id}`} ref={register}>
                    <option value="submitted">Submitted ✅</option>
                    <option value="inprogress">In progress ⌛</option>
                    <option value="judjed">Judged ⚡️</option>
                </select>
            </td>
-           <td >{e.time}</td>
+           
+           <td>{data.time}</td>
            <td>  
-       <Link className="btn btn-info text-decoration-none" to={`/mediation/show/${e._id}`} target="_blank"> Show</Link>
+       <Link className="btn btn-info text-decoration-none" to={`/mediation/show/${data._id}`} target="_blank"> Show</Link>
            </td>
            <td>
-           <select className="form-select" name="result">
+           <select key={data._id} className="form-select" name="result" form={`${data._id}`} ref={register}>
                    <option value="wait_please" defaultValue>Put your judgment ✍️</option>
                    <option value="Part_A_Winner">Part A is winner 🏆</option>
                    <option value="Part_B_Winner">Part B is winner 🏆</option>
                    <option value="equality">Equality ⚖</option>
            </select>
            </td>
-           <td><Button className="btn btn-primary" type="submit" form="judge">Send</Button></td>
-           
+           <td><Button key={data._id} className="btn btn-primary" type="submit" form={`${data._id}`} onClick={()=>setSave(data._id)}>Send</Button></td>          
          </tr>
-       </>
-                   )
-                  }
-               })}
-             
-           </>
     )
 }
 

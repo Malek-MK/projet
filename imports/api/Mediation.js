@@ -158,6 +158,12 @@ Meteor.methods({
         }
        return Mediation.find({mediator:id}).fetch();
     },
+    'fetchMediationsPayment'(){
+        if (!this.userId) {
+            throw new Meteor.Error('Not Authorized');
+        }
+       return Mediation.find({isPayment:true}).fetch();
+    },
     'insertConvMedia'({id,valid}){
        
         console.log("verif :",valid);

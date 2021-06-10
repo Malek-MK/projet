@@ -107,7 +107,7 @@ const Login = () => {
            <Link className="text-decoration-none text-dark" to="/terms-and-conditions"> Contact</Link>
         </div>
         </div>
-
+ 
        
       
     

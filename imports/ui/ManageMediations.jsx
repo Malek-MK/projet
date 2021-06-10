@@ -6,14 +6,20 @@ import ListeMediations from '../ui/ListeMediations';
 const ManageMediations = () => {
     const [docs,setDocs]=useState([]);
     const [data,setData]=useState([]);
-    console.log("docs :",docs)
+    
+    const renderMediationsPayment=()=>{
+        Meteor.call('fetchMediationsPayment',(err,res)=>{
+            setData(res);
+        })
+    }
+
     const renderUsersWithMediations=()=>{
         Meteor.call('findUsersWithMediations',(err,res)=>{
             setDocs(res);
         })
     }
     useEffect(() => {
-        renderUsersWithMediations()
+        renderMediationsPayment()
     }, [])
     return (
         <div>
@@ -35,19 +41,24 @@ const ManageMediations = () => {
                         <th><b>Eventually</b></th>
                         </tr>
                          </thead>
+                
                          <tbody>
-                         {docs.map((doc)=>{
-                        return (
-                            <>
-                            <ListeMediations
-                            key={doc._id}
-                            doc={doc}
-                            renderUsersWithMediations={renderUsersWithMediations}
-                            />
-                            </>
-                        )
-                        })}
+                        
+                           {data.map((data)=>{
+                               return (
+                                  
+                                <ListeMediations
+                                key={data._id}
+                                data={data}
+                                renderMediationsPayment={renderMediationsPayment}
+                                />
+                              
+                               )
+                           
+                           })}
+                           
                         </tbody>
+                        
                          </table>  
         
                      
