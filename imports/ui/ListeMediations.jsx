@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 import { useForm } from 'react-hook-form';
+import { Meteor } from 'meteor/meteor';
 
 const notyf = new Notyf({
   duration: 2000,
@@ -15,11 +16,19 @@ const notyf = new Notyf({
 
 const ListeMediations = ({data,renderMediationsPayment}) => {
     const { register, handleSubmit, errors } = useForm();
-    const [save,setSave]=useState();
+    const [id,setId]=useState();
     
     const onSubmit=(data)=>{
-        console.log("datta :",data)
-        console.log("save :",save)
+        Meteor.call('insertResult',{id,data},(err,res)=>{
+            if(err){
+                console.log("Insert result failed")
+                notyf.success("Arbitration failed")  
+            }
+            else{
+                console.log("Insert result with success")
+                notyf.success("Arbitration with success")  
+            }
+        })
     }
     useEffect(()=>{
         renderMediationsPayment()
@@ -49,7 +58,7 @@ const ListeMediations = ({data,renderMediationsPayment}) => {
                    <option value="equality">Equality ⚖</option>
            </select>
            </td>
-           <td><Button key={data._id} className="btn btn-primary" type="submit" form={`${data._id}`} onClick={()=>setSave(data._id)}>Send</Button></td>          
+           <td><Button key={data._id} className="btn btn-primary" type="submit" form={`${data._id}`} onClick={()=>setId(data._id)}>Send</Button></td>          
          </tr>
     )
 }

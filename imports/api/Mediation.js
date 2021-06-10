@@ -165,9 +165,22 @@ Meteor.methods({
        return Mediation.find({isPayment:true}).fetch();
     },
     'insertConvMedia'({id,valid}){
-       
-        console.log("verif :",valid);
+        if (!this.userId) {
+            throw new Meteor.Error('Not Authorized');
+        }
         Mediation.update({ _id: id,userId:this.userId },{$set:{verif:valid}});
+        },
+    'insertResult'({id,data}){
+        if (!this.userId) {
+            throw new Meteor.Error('Not Authorized');
+        }
+        Mediation.update({ _id: id },{$set:{result:data}});
+        },
+        'showResult'(id){
+            if (!this.userId) {
+                throw new Meteor.Error('Not Authorized');
+            }
+            return Mediation.findOne({userId:this.userId,_id:id});
         },
     'showConvMed'(id){
         if (!this.userId) {
@@ -176,6 +189,9 @@ Meteor.methods({
         return Mediation.findOne({userId:this.userId,_id:id});
     },
     'insertPayment'({id,data,payee}){
+        if (!this.userId) {
+            throw new Meteor.Error('Not Authorized');
+        }
         Mediation.update({ _id: id,userId:this.userId },
         {$set:{
             isPayment:payee,

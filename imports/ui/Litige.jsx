@@ -14,11 +14,10 @@ const notyf = new Notyf({
 })
 
 const Litige = ({ media, fetch}) => {
-  
+ console.log("res :",media.result)
   useEffect(() => {
     fetch();
   }, []);    
-
   const Delete = () => {
     Meteor.call('deleteMediation', media._id, (err) => {
       if (err) {
