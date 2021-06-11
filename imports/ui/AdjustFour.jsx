@@ -16,7 +16,7 @@ const notyf = new Notyf({
 const AdjustFour = ({ setStep, data,id }) => {
     console.log("data :",data)
     const generatePDF=()=>{
-        var doc=new jsPDF('p', 'mm', [680, 650]);
+        var doc=new jsPDF('p', 'mm', [680, 680]);
         doc.html(document.querySelector("#content"),{
           callback:function(pdf){
               pdf.save(`Mediation-${id}.pdf`);
