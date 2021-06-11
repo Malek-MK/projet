@@ -48,7 +48,7 @@ const ListeMediations = ({data,renderMediationsPayment}) => {
            
            <td>{data.time}</td>
            <td>  
-       <Link className="btn btn-info text-decoration-none" to={`/mediation/show/${data._id}`} target="_blank"> Show</Link>
+       <Link className="btn btn-info text-decoration-none" to={`mediation/show/${data._id}`} target="_blank"> Show</Link>
            </td>
            <td>
            <select key={data._id} className="form-select" name="result" form={`${data._id}`} ref={register}>

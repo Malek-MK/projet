@@ -1,16 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import Button from "react-bootstrap/Button";
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Meteor } from 'meteor/meteor';
 import { useHistory } from 'react-router-dom'
 import { useTracker } from "meteor/react-meteor-data";
 
-const HeaderMediator = () => {
+const HeaderLegalProf = () => {
+    const history = useHistory();
     const user = useTracker(() => Meteor.user()?.username);
     const address=useTracker(() =>Meteor.user()?.emails[0].address);
-    const history = useHistory();
-    const onLogout = () => {
+    const onLogout = () => { 
         Meteor.logout();
         history.replace('/signin');
     }
@@ -24,7 +23,7 @@ const HeaderMediator = () => {
     </button>
     <h1 className="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
         <a className="nav-link decoration-none">
-        <Link className="h3 text-decoration-none" to="/mediator"><i className="fa fa-home"></i>Dashboard</Link>
+        <Link className="h3 text-decoration-none" to="/arbitrator"><i className="fa fa-home"></i>Dashboard</Link>
         </a>
     </h1>
 
@@ -36,23 +35,11 @@ const HeaderMediator = () => {
             <ul className="navbar-nav">
                 <li className="nav-item active ">
                     <Link to="/home" className="nav-link decoration-none">
+
                         Go_Home
                     </Link>
                 </li>
-                <li className="nav-item ">
-                    <NavDropdown title="Médiation" >
-                        <NavDropdown.Item ><Link to="/mediator/mediations" className="text-dark text-decoration-none"><i className="fa fa-folder-o text-primary" aria-hidden="true"></i> My Mediations</Link></NavDropdown.Item>
-                        <NavDropdown.Item ><Link to="/mediator/disputes" className="text-dark text-decoration-none"><i className="fa fa-th-large text-primary" aria-hidden="true"></i> Cabinet mediations</Link></NavDropdown.Item>
-                        <NavDropdown.Item ><Link to="/mediator/create_mediation" className="text-dark text-decoration-none">
-                        <i className="fa fa-plus-square text-primary" aria-hidden="true"></i> Add Mediation</Link></NavDropdown.Item>
-                    </NavDropdown>
-                </li>
-                <li className="nav-item">
-                    <NavDropdown title="Arbitrage" >
-                        <NavDropdown.Item ><Link className="text-dark text-decoration-none">
-                        <i className="fa fa-gavel text-primary" aria-hidden="true"></i> Arbitration <span className="badge badge-danger bg-danger">Comming Soon</span></Link></NavDropdown.Item>
-                    </NavDropdown>
-                </li>
+               
 
             </ul>
             <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
@@ -60,31 +47,30 @@ const HeaderMediator = () => {
                     <li className="nav-item">
                                         <button type="button" className="btn">
                                         <span className="spinner-grow spinner-grow-sm text-warning" role="status" aria-hidden="true"></span>
-                                            Notifications<span className="badge bg-green ms-2">0</span>
+                                            Notifications <span className="badge bg-green ms-2">0</span>
                                         </button>
-                                        
                     </li> 
                     <li className="nav-item">
-                    <Button type="button" className="btn btn-light" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i className="fa fa-black-tie text-primary"></i> Hello Mediator, <b className="text-capitalize">{user}</b></Button>
+                    <Button type="button" className="btn btn-light" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i className="fa fa-graduation-cap text-primary"></i> Hello legal professional, <b className="text-capitalize">{user}</b></Button>
                     </li>
+                   
                     <li className="nav-item">
                         <Button variant="outline-danger" onClick={onLogout} className="btn rounded-circle mt-1 ml-5 " style={{marginLeft:10}}>
                             <i className="fa fa-power-off" aria-hidden="true"></i>
                         </Button>
                     </li>
                       
-                </ul>
+                </ul> 
             </div>
         </div>
 
     </div>
 </div>
-
 </header>
 <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
   <div className="container" style={{padding:15}}>
   <div className="offcanvas-header">
-    <h5 id="offcanvasRightLabel" className="text mt-1">Mediator profile</h5>
+    <h5 id="offcanvasRightLabel" className="text mt-1">Legal Professional profile</h5>
     <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div className="offcanvas-body">
@@ -107,27 +93,17 @@ const HeaderMediator = () => {
     <div className="card border-0">
       <div className="card-body">
          <div className="d-flex align-items-start flex-column mb-3">
-         <Link className="d-flex  align-items-center text-decoration-none" to="/profile_mediator" target="_blank">
+         <Link className="d-flex  align-items-center text-decoration-none" to="/profile_arbitrator" target="_blank">
           <button className="btn btn-light btn-sm" style={{padding:10}}><i className="fa fa-user text-success fa-2x"></i></button>
           <button className="btn btn-white bg-white border-0" style={{textAlign:"left"}}> Personal information<br></br><span className="text-secondary">Update your information</span></button>
           </Link>
-          <Link className="d-flex align-items-center text-decoration-none" to="/profile_mediator" target="_blank">
-          <button className="btn btn-light btn-sm" style={{padding:10}}><i className="fa fa-list text-warning fa-2x"></i></button>
-          <button className="btn btn-white bg-white border-0" style={{textAlign:"left"}}> Professional information<br></br><span className="text-secondary">Update your information</span></button>
-          </Link>
-          <Link className="d-flex align-items-center text-decoration-none" to="/profile_mediator" target="_blank">
-          <button className="btn btn-light btn-sm" style={{padding:10}}><i className="fa fa-indent  text-info fa-2x"></i></button>
-          <button className="btn btn-white bg-white border-0" style={{textAlign:"left"}}> Organization contact details<br></br><span className="text-secondary">Update your information</span></button>
-          </Link>
-          <Link className="d-flex align-items-center text-decoration-none" to="/profile_mediator" target="_blank">
+          
+          <Link className="d-flex align-items-center text-decoration-none" to="/profile_arbitrator" target="_blank">
           <button className="btn btn-light btn-sm" style={{padding:10}}><i className="fa fa-shield text-danger fa-2x"></i></button>
           <button className="btn btn-white bg-white border-0" style={{textAlign:"left"}}> Access parameter<br></br><span className="text-secondary">Update your access</span></button>
           </Link>
-          <Link className="d-flex align-items-center text-decoration-none" to="/profile_mediator" target="_blank">
-          <button className="btn btn-light btn-sm" style={{padding:10}}><i className="fa fa-envelope-o text-primary fa-2x"></i></button>
-          <button className="btn btn-white bg-white border-0" style={{textAlign:"left"}}> Subscription<br></br><span className="text-secondary">Update your subscription</span></button>
-          </Link>
-          <Link className="d-flex align-items-center text-decoration-none" to="/profile_mediator" target="_blank">
+          
+          <Link className="d-flex align-items-center text-decoration-none" to="/profile_arbitrator" target="_blank">
           <button className="btn btn-light btn-sm" style={{padding:10}}><i className="fa fa-file-text-o text-secondary fa-2x"></i></button>
           <button className="btn btn-white bg-white border-0" style={{textAlign:"left"}}> My orders<br></br><span className="text-secondary">List of all orders</span></button>
           </Link>
@@ -144,4 +120,4 @@ const HeaderMediator = () => {
     )
 }
 
-export default HeaderMediator
+export default HeaderLegalProf;

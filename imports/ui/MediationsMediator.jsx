@@ -6,6 +6,7 @@ import ListeMedia from '../ui/ListeMedia';
 const MediationsMediator = () => {
     const user = useTracker(() => Meteor.user()?._id);
     const [data,setData]=useState([]);
+    console.log("media :",data)
    const renderMediations=()=>{
     Meteor.call('fetchMediations',user,(err,res)=>{
         console.log("res :",res)
@@ -21,7 +22,7 @@ const MediationsMediator = () => {
             <br></br><br></br><br></br>
             <div className="container mt-5">
             <div className="card-title mb-5">
-                    <h3 className="card-label">List of mediation files in SpeedSolution</h3>
+                    <h3 className="card-label">List of mediation files</h3>
                     <span className="d-block text-muted pt-2 font-size-sm">
                         Consult and edit my mediation files</span>
             </div>
@@ -33,7 +34,7 @@ const MediationsMediator = () => {
                         <th><b>Status</b></th>
                         <th><b>Date</b></th>
                         <th><b>Action</b></th>
-                        
+                        <th><b>Result</b></th>
                         </tr>
                          </thead>
                          <tbody>

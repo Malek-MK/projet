@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import HeaderAdmin from '../ui/HeaderAdmin';
-import ListArbitrators from './ListArbitrators';
+import ListLegalProf from './ListLegalProf';
 import Button from "react-bootstrap/Button";
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -19,12 +19,12 @@ import { Meteor } from 'meteor/meteor';
     }
   })
 
-const ManageArbitrators = () => {
-    const [arbitrators,setArbitrators]=useState([]);
-    const renderArbitrator=()=>{
-        Meteor.call('showArbitrators',(err,res)=>{
+const ManageLegalProf = () => {
+    const [legalprof,setLegalProf]=useState([]);
+    const renderLegalProf=()=>{
+        Meteor.call('showLegalProf',(err,res)=>{
             console.log("res :",res)
-            setArbitrators(res);
+            setLegalProf(res);
         })
     }
     const { register, handleSubmit, errors } = useForm({
@@ -33,21 +33,21 @@ const ManageArbitrators = () => {
      const [show, setShow] = useState(false);
       const handleClose = () => setShow(false);
       const handleShow = () => setShow(true);
-        const InsertArbitrator = data => {
-         Meteor.call('insertArbitrator', data, (err) => {
+        const InsertLegalProf = data => {
+         Meteor.call('insertLegalProf', data, (err) => {
         if (err) {
-          console.log('Inserted arbitrator Failed', err)
-          notyf.error("Inserted Arbitrator Failed")
+          console.log('Inserted Legal Prof Failed', err)
+          notyf.error("Inserted legal professional Failed")
         }
         else {
-          console.log('Inserted arbitrator with success')
-          notyf.success("Inserted arbitrator with success")
+          console.log('Inserted Legal Professional with success')
+          notyf.success("Inserted legal professional with success")
         } 
        
       });
       };
     useEffect(()=>{
-        renderArbitrator();
+        renderLegalProf();
     },[])
 
     return (
@@ -59,14 +59,14 @@ const ManageArbitrators = () => {
                 <div className="d-flex pull-right">
                             <div className="btn-list">
 
-                                <Button className="btn btn-primary d-none d-sm-inline-block" onClick={handleShow} form="update">Create new Arbitrator</Button>
+                                <Button className="btn btn-primary d-none d-sm-inline-block" onClick={handleShow} form="update">Create new legal professional</Button>
                                 
                             </div>
                         </div> 
                 </div>
                 <div className="card-title mb-5"><h3 className="card-label">
-                List of Arbitrators
-                        </h3><span className="d-block text-muted pt-2 font-size-sm">Consult and edit Arbitrators</span></div>
+                List of Legal professionals
+                        </h3><span className="d-block text-muted pt-2 font-size-sm">Consult and edit Legal professionals</span></div>
                         <table className="table table-bordered text-center">
                         <thead className="thead-dark">
                         <tr>
@@ -77,12 +77,12 @@ const ManageArbitrators = () => {
                         </tr>
                          </thead>
                          <tbody>
-                         {arbitrators.map((arbitrator)=>{
+                         {legalprof.map((legprof)=>{
                         return (
-                            <ListArbitrators 
-                                key={arbitrator._id}
-                                arbitrator={arbitrator}
-                                fetch={renderArbitrator}
+                            <ListLegalProf 
+                                key={legprof._id}
+                                legprof={legprof}
+                                fetch={renderLegalProf}
                             />
                         );
                         })}
@@ -98,10 +98,10 @@ const ManageArbitrators = () => {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Insert New Arbitrator</Modal.Title>
+          <Modal.Title>Insert New Legal Professional</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <form onSubmit={handleSubmit(InsertArbitrator)} id="update">
+          <form onSubmit={handleSubmit(InsertLegalProf)} id="update">
             <label>Username :</label>
             <input
               type="text"
@@ -142,7 +142,7 @@ const ManageArbitrators = () => {
         </Modal.Body> 
         <Modal.Footer>
           <Button className="btn btn-success" form="update" type="submit" onClick={handleClose}>
-            Save Arbitrator
+            Save Legal Professional
           </Button>
         </Modal.Footer>
       </Modal>
@@ -150,4 +150,4 @@ const ManageArbitrators = () => {
     )
 }
 
-export default ManageArbitrators
+export default ManageLegalProf

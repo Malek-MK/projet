@@ -49,13 +49,17 @@ import MediatorMediations from '../imports/ui/MediatorMediations';
 import MediationUnknown from '../imports/ui/MediationUnknown'; 
 import MediationShow from '../imports/ui/MediationShow';
 import MediationsMediator from '../imports/ui/MediationsMediator';
-const routes = (
+import MediationAdjust from '../imports/ui/MediationAdjust';
+import ManageLegalProf from '../imports/ui/ManageLegalProf';
+import LegalProfessional from '../imports/ui/LegalProfessional';
+const routes = ( 
   <Router >
     <Switch>
     <Route path="/manageMediations" exact component={ManageMediations} /> 
-    <Route path="/mediator/SpeedSolution-Mediations" exact component={MediationsMediator} /> 
+    <Route path="/mediator/mediations" exact component={MediationsMediator} /> 
     <Route path="/create-mediation" exact component={MediationUnknown} /> 
-    <Route path="/manageMediators" exact component={ManageMediators} /> 
+    <Route path="/manageMediators" exact component={ManageMediators} />
+    <Route path="/manageLegalProfessionals" exact component={ManageLegalProf} />  
     <Route path="/profile" exact component={Profile} /> 
     <Route path="/profile_arbitrator" exact component={ProfileArbitrator} /> 
     <Route path="/profile_admin" exact component={ProfileAdmin} /> 
@@ -79,8 +83,10 @@ const routes = (
     <Route path="/mediator-functionalities" exact component={MediatorFunctionalities} />
     <Route path="/mediations/update/:id" exact component={NavCheck} />
     <Route path="/mediation/show/:id" exact component={MediationShow} />
+    <Route path="/mediator/mediation/adjust/:id" exact component={MediationAdjust} />
     <Route path="/manageArbitrators" exact component={ManageArbitrators}/>
     <Route path="/arbitrator" exact component={Arbitrator}/>
+    <Route path="/legal-professional" exact component={LegalProfessional}/>
     <Route path="/mediator" exact component={Mediator}/>
     <Route path="/faq" exact component={FAQ}/>
     <Route path="/about" exact component={About}/>
@@ -90,7 +96,7 @@ const routes = (
     <Route path="/details-offer-mediators" exact component={OfferDetailsMed}/>
       <Route path="/home" exact component={Home} />
       <Route path="/mediations" exact component={User} />
-      <Route path="/mediator/mediations" exact component={MediatorMediations} />
+      <Route path="/mediator/disputes" exact component={MediatorMediations} />
       <Route path="/register_mediator"  component={RegisterMediator} />
       <Route path="/register"  component={Signup} />
       <Route path="/signin"  component={Login} />

@@ -81,7 +81,7 @@ const Litige = ({ media, fetch}) => {
         </Modal.Body> 
         <Modal.Footer>
           <Button className="btn btn-primary" type="button" onClick={handleClose}>
-            I see the result
+            See the result
           </Button>
         </Modal.Footer>
       </Modal>

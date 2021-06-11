@@ -63,6 +63,21 @@ Meteor.methods({
     Roles.createRole('mediator', { unlessExists: true });
     Roles.addUsersToRoles(res, 'mediator');
   },
+  insertLegalProf(legalprof) {
+    try {
+      YupUser.validate(legalprof)
+    } catch (e) {
+      throw new Meteor.Error(e.message)
+    }
+    const res = Accounts.createUser({
+      username: legalprof.name,
+      email: legalprof.email,
+      password: legalprof.password
+    }
+    );
+    Roles.createRole('legalprof', { unlessExists: true });
+    Roles.addUsersToRoles(res, 'legalprof');
+  },
   'showUsers': async function(){
     if (!this.userId) {
       throw new Meteor.Error('Not Authorized');
@@ -94,9 +109,19 @@ Meteor.methods({
       throw new Meteor.Error('Not Authorized');
   }
   return Meteor.users.findOne({_id:id});
+  },
+  'showLegalPro': async function(id){
+    if (!this.userId) {
+      throw new Meteor.Error('Not Authorized');
   }
-
-  ,
+  return Meteor.users.findOne({_id:id});
+  },
+  'showArbitrator': async function(id){
+    if (!this.userId) {
+      throw new Meteor.Error('Not Authorized');
+  }
+  return Meteor.users.findOne({_id:id});
+  },
   'showArbitrators': async function(){
     if (!this.userId) {
       throw new Meteor.Error('Not Authorized');
@@ -117,6 +142,32 @@ Meteor.methods({
         }, {
             '$match': {
                 'role.role._id': 'arbitrator',
+            }
+        }    
+    ];
+    const experts =(await Meteor.users.rawCollection().aggregate(aggregation).toArray());
+    return experts;
+  },
+  'showLegalProf': async function(){
+    if (!this.userId) {
+      throw new Meteor.Error('Not Authorized');
+  }
+    const aggregation = [
+        {
+            '$lookup': {
+                'from': 'role-assignment',
+                'localField': '_id',
+                'foreignField': 'user._id',
+                'as': 'role'
+            }
+        }, {
+            '$unwind': {
+                'path': '$role',
+                'preserveNullAndEmptyArrays': true
+            }
+        }, {
+            '$match': {
+                'role.role._id': 'legalprof',
             }
         }    
     ];

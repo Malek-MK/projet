@@ -21,6 +21,9 @@ const verif=()=>{
         else if (Roles.userIsInRole(loggedInUser, 'mediator')) {
           history.push('/mediator');
         }
+        else if (Roles.userIsInRole(loggedInUser, 'legalprof')) {
+          history.push('/legal-professional');
+        }
         else{
             history.push('/register_mediator');
         }
@@ -39,6 +42,9 @@ const veriff=()=>{
     else if (Roles.userIsInRole(loggedInUser, 'mediator')) {
       history.push('/mediator');
     }
+    else if (Roles.userIsInRole(loggedInUser, 'legalprof')) {
+      history.push('/legal-professional');
+    }
     else{
         history.push('/signin');
     }
@@ -53,6 +59,9 @@ const verifff=()=>{
     }
     else if (Roles.userIsInRole(loggedInUser, 'arbitrator')) {
       history.push('/arbitrator');
+    }
+    else if (Roles.userIsInRole(loggedInUser, 'legalprof')) {
+      history.push('/legal-professional');
     }
     else if (Roles.userIsInRole(loggedInUser, 'mediator')) {
         history.push('/mediator/create_mediation');
@@ -72,6 +81,9 @@ const verif1=()=>{
     else if (Roles.userIsInRole(loggedInUser, 'arbitrator')) {
       history.push('/arbitrator');
     }
+    else if (Roles.userIsInRole(loggedInUser, 'legalprof')) {
+      history.push('/legal-professional');
+    }
     else if (Roles.userIsInRole(loggedInUser, 'mediator')) {
       history.push('/mediator');
     }
@@ -89,6 +101,9 @@ const verif2=()=>{
     }
     else if (Roles.userIsInRole(loggedInUser, 'arbitrator')) {
       history.push('/arbitrator');
+    }
+    else if (Roles.userIsInRole(loggedInUser, 'legalprof')) {
+      history.push('/legal-professional');
     }
     else if (Roles.userIsInRole(loggedInUser, 'mediator')) {
       history.push('/mediator');

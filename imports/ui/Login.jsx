@@ -55,6 +55,10 @@ const Login = () => {
           history.push('/mediator'); 
           console.log('mediator login');
         }
+        else if (Roles.userIsInRole(loggedInUser, 'legalprof')) {
+          history.push('/legal-professional'); 
+          console.log('legal professional login');
+        }
       }
     });
   }
