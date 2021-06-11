@@ -20,6 +20,7 @@ const ListeMedia = ({doc,renderMedia}) => {
         <td ><b>{doc.nomsoc1}</b><br></br>{doc.email1}</td>
         <td ><span className="text-success">Saved</span></td>
         <td >{doc.time}</td>
+        <td>{doc.isPayment?<span className="text-primary">Yes</span>:<span className="text-danger">No</span>}</td>
         <td><Link className="btn btn-info text-decoration-none" to={`/mediator/mediation/adjust/${doc._id}`} target="_blank">Adjust</Link></td>
         <td><button className="btn btn-success" onClick={handleShow}>Show</button></td>
         <Modal

@@ -33,6 +33,7 @@ const MediationsMediator = () => {
                         <th><b>Part B</b></th>
                         <th><b>Status</b></th>
                         <th><b>Date</b></th>
+                        <th><b>Paying</b></th>
                         <th><b>Action</b></th>
                         <th><b>Result</b></th>
                         </tr>
