@@ -42,7 +42,7 @@ const ListeMediations = ({data,renderMediationsPayment}) => {
                <select className="form-select" name="judgement" form={`${data._id}`} ref={register}>
                    <option value="submitted">Submitted ✅</option>
                    <option value="inprogress">In progress ⌛</option>
-                   <option value="judjed">Judged ⚡️</option>
+                   <option value="judjed">Judged ⚡️</option> 
                </select>
            </td>
            
