@@ -4,6 +4,8 @@ import { Meteor } from 'meteor/meteor';
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 import { Link } from 'react-router-dom';
+import Modal from "react-bootstrap/Modal";
+import { useTracker } from "meteor/react-meteor-data";
 
 const notyf = new Notyf({
   duration: 2000,
@@ -14,10 +16,14 @@ const notyf = new Notyf({
 })
 
 const Litige = ({ media, fetch}) => {
+  const user = useTracker(() => Meteor.user()?.username);
  console.log("res :",media.result)
   useEffect(() => {
     fetch();
-  }, []);    
+  }, []);  
+  const [show, setShow] = useState(false);
+      const handleClose = () => setShow(false);
+      const handleShow = () => setShow(true);  
   const Delete = () => {
     Meteor.call('deleteMediation', media._id, (err) => {
       if (err) {
@@ -48,7 +54,39 @@ const Litige = ({ media, fetch}) => {
           >
           <i className="fa fa-trash-o fa-lg"></i>  Delete
           </Button>        </td>
+          <td><Button className="btn btn-success" onClick={handleShow}>Show</Button></td>
+          <Modal
+        show={show}
+        onHide={handleClose}
+        backdrop="static"
+        keyboard={false}
+        key={media._id}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Show the result of your dispute</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+         <p>Hello <b className="text-dark text-capitalize"> {user}</b></p>
+         <p>Your number ID for your dispute <b className="text-danger">{media._id}</b></p>
+         <h5 className="text-success">Your Dispute :</h5>
+          {media.result?<div>
+          {media.result.judgement==="submitted"?<p>State of arbitration : <b>Submitted ✅</b></p>:null}
+          {media.result.judgement==="inprogress"? <p>State of arbitration : <b>In progress ⌛</b></p>:null}
+          {media.result.judgement==="judjed"? <p>State of arbitration : <b>Judged ⚡️</b></p>:null}
+          {media.result.result==="wait_please"?<p>Result arbitration : <b>Wait please <i class="fa fa-smile-o" aria-hidden="true"></i></b></p>:null}
+          {media.result.result==="Part_A_Winner"? <p>Result arbitration : <b>Part A is winner 🏆</b></p>:null}
+          {media.result.result==="Part_B_Winner"? <p>Result arbitration : <b>Part B is winner 🏆</b></p>:null}
+          {media.result.result==="equality"? <p>Result arbitration : <b>Equality ⚖</b></p>:null}
+         </div>:<p>During arbitration <i class="fa fa-refresh fa-pulse fa-fw" aria-hidden="true"></i></p>}
+        </Modal.Body> 
+        <Modal.Footer>
+          <Button className="btn btn-primary" type="button" onClick={handleClose}>
+            I see the result
+          </Button>
+        </Modal.Footer>
+      </Modal>
       </tr>
+      
     </>
   )
 }

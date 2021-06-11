@@ -58,9 +58,7 @@ const ManageArbitrators = () => {
                 <div className="d-flex pull-right">
                             <div className="btn-list">
 
-                                <Button className="btn btn-primary d-none d-sm-inline-block" onClick={handleShow}
-            form="update">
-                                    Create new Arbitrator</Button>
+                                <Button className="btn btn-primary d-none d-sm-inline-block" onClick={handleShow} form="update">Create new Arbitrator</Button>
                                 
                             </div>
                         </div> 

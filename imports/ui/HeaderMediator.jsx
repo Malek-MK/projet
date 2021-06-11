@@ -66,7 +66,7 @@ const HeaderMediator = () => {
                                         
                     </li> 
                     <li className="nav-item">
-                    <Button type="button" className="btn btn-light" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i className="fa fa-black-tie text-primary"></i> Hello Mediator, <b className="text-dark text-capitalize">{user}</b></Button>
+                    <Button type="button" className="btn btn-light" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i className="fa fa-black-tie text-primary"></i> Hello Mediator, <b className="text-capitalize">{user}</b></Button>
                     </li>
                     <li className="nav-item">
                         <Button variant="outline-danger" onClick={onLogout} className="btn rounded-circle mt-1 ml-5 " style={{marginLeft:10}}>

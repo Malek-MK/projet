@@ -51,7 +51,7 @@ const HeaderAdmin = () => {
                                         </button>
                     </li> 
                     <li className="nav-item">
-                    <Button type="button" className="btn btn-light" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i className="fa fa-user-secret text-primary"></i> Hello Admin, <b className="text-dark text-capitalize">{user}</b></Button>
+                    <Button type="button" className="btn btn-light" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i className="fa fa-user-secret text-primary"></i> Hello Admin, <b className="text-capitalize">{user}</b></Button>
                     </li>
                    
                     <li className="nav-item">
