@@ -14,13 +14,38 @@ const notyf = new Notyf({
 })
 
 const AdjustFour = ({ setStep, data,id }) => {
+    console.log("data :",data)
     const generatePDF=()=>{
-        var doc=new jsPDF('p', 'mm', [600, 650]);
+        var doc=new jsPDF('p', 'mm', [680, 650]);
         doc.html(document.querySelector("#content"),{
           callback:function(pdf){
               pdf.save(`Mediation-${id}.pdf`);
           }  
         });
+    }
+    const [namearbitrator,setNameArbitrator]=useState()
+    const [namelegalprof,setNameLegalProf]=useState()
+    const [namelegalprof1,setNameLegalProf1]=useState()
+const renderArbitrator=()=>{
+        Meteor.call('showArbitrator',data.arbitrator,(err,res)=>{
+            console.log("res :",res)
+            setNameArbitrator(res.username);
+            
+        })
+    }
+    const renderLegalProf=()=>{
+        Meteor.call('showLegalPro',data.legalprof,(err,res)=>{
+            console.log("res :",res)
+            setNameLegalProf(res.username);
+            
+        })
+    }
+    const renderLegalProf1=()=>{
+        Meteor.call('showLegalPro',data.legalprof1,(err,res)=>{
+            console.log("res :",res)
+            setNameLegalProf1(res.username);
+            
+        })
     }
     const [data1, setData1] = useState({
         infoA:data.infoA,
@@ -59,7 +84,10 @@ const AdjustFour = ({ setStep, data,id }) => {
         firstnamelawyer1: data.firstnamelawyer1,
         adresslawyer1: data.adresslawyer1,
         emaillawyer1: data.emaillawyer1,
-        tellawyer1: data.tellawyer1
+        tellawyer1: data.tellawyer1,
+        arbitrator: namearbitrator,
+        legalprof:namelegalprof,
+        legalprof1:namelegalprof1
     })
     const onclickprev = (e) => {
         e.preventDefault
@@ -78,13 +106,12 @@ const AdjustFour = ({ setStep, data,id }) => {
             }
         );
     }
-    const [namemed,setNamemed]=useState()
-    Meteor.call('showMediator',data1.mediator,(err,res)=>{
-        setNamemed(res.username);
-        
-    })
+   
     useEffect(() => {
         setData1(data)
+        renderArbitrator()
+        renderLegalProf()
+        renderLegalProf1()
     }, [])
 
     return (
@@ -95,10 +122,6 @@ const AdjustFour = ({ setStep, data,id }) => {
             
             <table className="table table-bordered " >
                 <tbody>
-                <tr>
-                        <th className="w-25">Mediator responsable<br></br> with your dispute</th>
-                        <td className="w-75"> {namemed}</td>
-                    </tr>
                     <tr>
                         <th className="w-25">Country</th>
                         <td className="w-75"> {data1.infoA}</td>
@@ -123,7 +146,7 @@ const AdjustFour = ({ setStep, data,id }) => {
                         <th className="w-25">Legal representative	</th>
                         <td className="w-75">{data1.prerepleg}{' '}{data1.nomrepleg}</td>
                     </tr>
-                    <tr>
+                    <tr> 
                         <th className="w-25">Address	</th>
                         <td className="w-75">{data1.adresse},{data1.codepos},{data1.ville}</td>
                     </tr>
@@ -134,6 +157,10 @@ const AdjustFour = ({ setStep, data,id }) => {
                     <tr>
                         <th className="w-25">Phone	</th>
                         <td className="w-75">{data1.tel}</td>
+                    </tr>
+                    <tr>
+                        <th className="w-25">Lawyer Name</th>
+                        <td className="w-75">{namelegalprof}</td>
                     </tr>
                     <tr>
                         <th className="w-25">Lawyer Phone</th>
@@ -178,8 +205,12 @@ const AdjustFour = ({ setStep, data,id }) => {
                         <td className="w-75">{data1.email1}</td>
                     </tr>
                     <tr>
-                        <th className="w-25">Phonr	</th>
+                        <th className="w-25">Phone	</th>
                         <td className="w-75">{data1.tel1}</td>
+                    </tr>
+                    <tr>
+                        <th className="w-25">Lawyer Name</th>
+                        <td className="w-75">{namelegalprof1}</td>
                     </tr>
                     <tr>
                         <th className="w-25">Lawyer phone </th>
@@ -191,6 +222,10 @@ const AdjustFour = ({ setStep, data,id }) => {
             <h5>Subject of the dispute</h5>
             <table className="table table-bordered ">
                 <tbody>
+                    <tr>
+                        <th className="w-25">Arbitrator Name</th>
+                        <td className="w-75">{namearbitrator}</td>
+                    </tr>
                     <tr>
                         <th className="w-25">Type of dispute	</th>
                         {data1.objlitige==="Other"?
