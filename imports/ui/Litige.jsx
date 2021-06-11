@@ -66,7 +66,7 @@ const Litige = ({ media, fetch}) => {
           <Modal.Title>Show the result of your dispute</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-         <p>Hello <b className="text-dark text-capitalize"> {user}</b></p>
+         <p>Hello <b className="text-dark text-capitalize"> {user},</b></p>
          <p>Your number ID for your dispute <b className="text-danger">{media._id}</b></p>
          <h5 className="text-success">Your Dispute :</h5>
           {media.result?<div>
