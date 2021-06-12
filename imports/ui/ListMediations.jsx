@@ -14,7 +14,7 @@ const notyf = new Notyf({
   }
 })
 
-const ListeMediations = ({datta}) => {
+const ListMediations = ({datta}) => {
     const { register, handleSubmit, errors } = useForm(); 
     const [id,setId]=useState();
     const onSubmit=(data)=>{
@@ -60,4 +60,4 @@ const ListeMediations = ({datta}) => {
     )
 }
 
-export default ListeMediations
+export default ListMediations

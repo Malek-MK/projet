@@ -13,38 +13,38 @@ const notyf = new Notyf({
     }
 })
 
-const AdjustFour = ({ setStep, data,id }) => {
-    console.log("data :",data)
+const AdjustFour = ({ setStep, data,id,datta }) => {
+    console.log("datta :",datta); 
+    const [idArbitrator,setIdArbitrator]=useState();
+    const [idLegalProf,setLegalprof]=useState();
+    const [idLegalProf1,setLegalprof1]=useState()
     const generatePDF=()=>{
         var doc=new jsPDF('p', 'mm', [680, 680]);
         doc.html(document.querySelector("#content"),{
           callback:function(pdf){
               pdf.save(`Mediation-${id}.pdf`);
-          }  
-        });
+          }   
+        }); 
     }
     const [namearbitrator,setNameArbitrator]=useState()
     const [namelegalprof,setNameLegalProf]=useState()
     const [namelegalprof1,setNameLegalProf1]=useState()
 const renderArbitrator=()=>{
         Meteor.call('showArbitrator',data.arbitrator,(err,res)=>{
-            console.log("res :",res)
             setNameArbitrator(res.username);
-            
+            setIdArbitrator(res._id)
         })
     }
     const renderLegalProf=()=>{
         Meteor.call('showLegalPro',data.legalprof,(err,res)=>{
-            console.log("res :",res)
             setNameLegalProf(res.username);
-            
+            setLegalprof(res._id)
         })
     }
     const renderLegalProf1=()=>{
         Meteor.call('showLegalPro',data.legalprof1,(err,res)=>{
-            console.log("res :",res)
             setNameLegalProf1(res.username);
-            
+            setLegalprof1(res._id)
         })
     }
     const [data1, setData1] = useState({
@@ -91,16 +91,16 @@ const renderArbitrator=()=>{
     })
     const onclickprev = (e) => {
         e.preventDefault
-        setStep(2)
+        setStep(2) 
     }
     const onclick = () => {
         Meteor.call(
-            'updateMediation',{id,data}, (err) => {
+            'MediatorUpdateMediation',{id,idArbitrator,idLegalProf,idLegalProf1,...datta.mediator}, (err) => {
                 if (err) {
                     notyf.error("Updated Failed")
                     console.log(err)
                 } else {
-                    notyf.success("Updated with success")
+                    notyf.success("Updated mediation with success")
         
                 }
             }
@@ -117,7 +117,7 @@ const renderArbitrator=()=>{
     return (
         <div id="content">
             <h2 className="text mb-5">Summary of the dispute file</h2>
-            <h5>Information about the dispute requester</h5><br></br> 
+            <h5>Information about the part "<b>A</b>"</h5><br></br> 
             <p className="text pull-right "><strong className="text-success">Id Dispute: </strong> {id}</p>
             
             <table className="table table-bordered " >
@@ -169,7 +169,7 @@ const renderArbitrator=()=>{
                 </tbody>
             </table>
 
-            <h5>Information about the other party</h5>
+            <h5>Information about the part "<b>B</b>"</h5>
             <table className="table table-bordered ">
                 <tbody>
                 <tr>

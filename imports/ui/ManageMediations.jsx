@@ -3,23 +3,20 @@ import HeaderArbitrator from '../ui/HeaderArbitrator';
 import { Meteor } from 'meteor/meteor';
 import Footerr from './Footerr';
 import ListeMediations from '../ui/ListeMediations';
+import { useTracker } from "meteor/react-meteor-data";
+
 const ManageMediations = () => {
-    const [docs,setDocs]=useState([]);
+    const user = useTracker(() => Meteor.user()?._id); 
     const [data,setData]=useState([]);
-    
-    const renderMediationsPayment=()=>{
-        Meteor.call('fetchMediationsPayment',(err,res)=>{
-            setData(res);
-        })
+    console.log("data :",data);
+    const renderMediationsArbitrator=()=>{
+        Meteor.call('fetchMediationsArbitrator',user,(err,res)=>{
+            setData(res); 
+        }) 
     }
 
-    const renderUsersWithMediations=()=>{
-        Meteor.call('findUsersWithMediations',(err,res)=>{
-            setDocs(res);
-        })
-    }
     useEffect(() => {
-        renderMediationsPayment()
+        renderMediationsArbitrator()
     }, [])
     return (
         <div>
@@ -28,7 +25,7 @@ const ManageMediations = () => {
             <div className="container mt-5">
                 <div className="card-title mb-5"><h3 className="card-label">
                 List of Disputes
-                        </h3><span className="d-block text-muted pt-2 font-size-sm">Consult and edit Disputes</span></div>
+                        </h3><span className="d-block text-muted pt-2 font-size-sm">Consult and arbitrate Disputes</span></div>
                         <table className="table table-bordered text-center">
                         <thead className="thead-dark">
                         <tr>
@@ -44,13 +41,13 @@ const ManageMediations = () => {
                 
                          <tbody>
                         
-                           {data.map((data)=>{
+                           {data.map((datta)=>{
                                return (
                                   
                                 <ListeMediations
-                                key={data._id}
-                                data={data}
-                                renderMediationsPayment={renderMediationsPayment}
+                                key={datta._id}
+                                datta={datta}
+                                renderMediationsArbitrator={renderMediationsArbitrator}
                                 />
                               
                                )

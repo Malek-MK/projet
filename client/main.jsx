@@ -52,10 +52,12 @@ import MediationsMediator from '../imports/ui/MediationsMediator';
 import MediationAdjust from '../imports/ui/MediationAdjust';
 import ManageLegalProf from '../imports/ui/ManageLegalProf';
 import LegalProfessional from '../imports/ui/LegalProfessional';
+import ConsultMediations from '../imports/ui/ConsultMediations';
 const routes = ( 
   <Router >
     <Switch>
-    <Route path="/manageMediations" exact component={ManageMediations} /> 
+    <Route path="/consult-disputes" exact component={ConsultMediations} /> 
+    <Route path="/arbitrate-disputes" exact component={ManageMediations} /> 
     <Route path="/mediator/mediations" exact component={MediationsMediator} /> 
     <Route path="/create-mediation" exact component={MediationUnknown} /> 
     <Route path="/manageMediators" exact component={ManageMediators} />

@@ -14,9 +14,9 @@ const Arbitrator = () => {
             <div className="card">
             <div className="card-body">
             <i className="fa fa-map-o fa-3x text-info" aria-hidden="true"></i>
-                <h4 className="text-success mt-3">Manage mediations</h4><br></br>
-                <p>you can add, modify, see and delete all mediations.</p>
-                <Link className="btn btn-primary" to="/manageMediations">Take control</Link>
+                <h4 className="text-success mt-3">Arbitration mediation</h4><br></br>
+                <p>You can insert, modify the arbitration and set the state.</p>
+                <Link className="btn btn-primary" to="/arbitrate-disputes">Take control</Link>
             </div>
             </div>
             </div>

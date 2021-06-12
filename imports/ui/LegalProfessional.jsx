@@ -16,7 +16,7 @@ const LegalProfessional = () => {
             <i className="fa fa-folder-open-o fa-3x text-info" aria-hidden="true"></i>
                 <h4 className="text-success mt-3">Consult disputes</h4><br></br>
                 <p>see and settle the dispute and defend a vice</p>
-                <Link className="btn btn-primary" to="/manageMediations">Take control</Link>
+                <Link className="btn btn-primary" to="/consult-disputes">Take control</Link>
             </div>
             </div>
             </div>

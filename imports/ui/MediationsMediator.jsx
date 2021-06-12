@@ -8,7 +8,7 @@ const MediationsMediator = () => {
     const [data,setData]=useState([]);
     console.log("media :",data)
    const renderMediations=()=>{
-    Meteor.call('fetchMediations',user,(err,res)=>{
+    Meteor.call('fetchMediations',user,(err,res)=>{ 
         console.log("res :",res)
         setData(res)
     })

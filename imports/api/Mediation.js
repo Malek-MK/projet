@@ -134,6 +134,16 @@ Meteor.methods({
         }
         Mediation.update({ _id: id,userId:this.userId }, { $set: data });
     },
+    'MediatorUpdateMediation'({ id, idArbitrator,idLegalProf,idLegalProf1,med }) {
+        if (!this.userId) {
+            throw new Meteor.Error('Not Authorized');
+        }
+        const media = Mediation.findOne({ _id: id, mediator: med });
+        if (!media) {
+            throw new Meteor.Error('it is not found');
+        }
+        Mediation.update({ _id: id,mediator: med }, { $set: {arbitrator:idArbitrator,legalprof:idLegalProf,legalprof1:idLegalProf1} });
+    },
     'deleteMediation'(_id) {
         if (!this.userId) {
             throw new Meteor.Error('Not Authorized');
@@ -163,6 +173,24 @@ Meteor.methods({
             throw new Meteor.Error('Not Authorized');
         }
        return Mediation.find({isPayment:true}).fetch();
+    },
+    'fetchMediationsArbitrator'(id){
+        if (!this.userId) {
+            throw new Meteor.Error('Not Authorized'); 
+        }
+       return Mediation.find({arbitrator:id}).fetch();
+    },
+    'fetchMediationsLegalProf'(id){
+        if (!this.userId) {
+            throw new Meteor.Error('Not Authorized'); 
+        }
+       return Mediation.find({legalprof:id}).fetch();
+    },
+    'fetchMediationsLegalProf1'(id){
+        if (!this.userId) {
+            throw new Meteor.Error('Not Authorized'); 
+        }
+       return Mediation.find({legalprof1:id}).fetch();
     },
     'insertConvMedia'({id,valid}){
         if (!this.userId) {
