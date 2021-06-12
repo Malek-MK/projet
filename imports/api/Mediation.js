@@ -204,6 +204,12 @@ Meteor.methods({
         }
         Mediation.update({ _id: id },{$set:{result:data}});
         },
+        'insertDefend'({id,data}){
+            if (!this.userId) {
+                throw new Meteor.Error('Not Authorized');
+            }
+            Mediation.update({ _id: id },{$set:{defend:data}});
+            },
         'showResult'(id){
             if (!this.userId) {
                 throw new Meteor.Error('Not Authorized');

@@ -9,7 +9,6 @@ const ConsultMediations = () => {
     const user = useTracker(() => Meteor.user()?._id); 
     const [data,setData]=useState([]);
     const [data1,setData1]=useState([]);
-    console.log("data :",data);
     const renderMediationsLegalProf=()=>{
         Meteor.call('fetchMediationsLegalProf',user,(err,res)=>{
             setData(res); 
@@ -42,7 +41,7 @@ const ConsultMediations = () => {
                         <th><b>Date</b></th>
                         <th><b>Action</b></th>
                         <th><b>Result</b></th>
-                        <th><b>Eventually</b></th>
+                        <th><b>Defend a vice</b></th>
                         </tr>
                          </thead>
                 

@@ -116,6 +116,12 @@ Meteor.methods({
   }
   return Meteor.users.findOne({_id:id});
   },
+  'showLegalPro1': async function(id){
+    if (!this.userId) {
+      throw new Meteor.Error('Not Authorized');
+  }
+  return Meteor.users.findOne({_id:id});
+  },
   'showArbitrator': async function(id){
     if (!this.userId) {
       throw new Meteor.Error('Not Authorized');

@@ -1,8 +1,8 @@
 import React, {  useState,useEffect } from 'react'
 import { useParams } from 'react-router';
 import { Meteor } from 'meteor/meteor';
-import Show from '../ui/Show';
-const MediationShow = () => {
+import Consult from '../ui/Consult';
+const MediationConsult = () => {
     const {id} = useParams();
     const [data,setData]=useState();
     const fetchMedia=()=>{
@@ -15,14 +15,12 @@ const MediationShow = () => {
       useEffect(()=>{
         fetchMedia()
       },[])
-     
-      
-     
+
     return ( 
         <>
         {data?
         
-       <Show
+       <Consult
        data={data}
        fetchMedia={fetchMedia}
        />
@@ -33,4 +31,4 @@ const MediationShow = () => {
     )
 }
 
-export default MediationShow
+export default MediationConsult

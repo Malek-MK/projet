@@ -53,6 +53,7 @@ import MediationAdjust from '../imports/ui/MediationAdjust';
 import ManageLegalProf from '../imports/ui/ManageLegalProf';
 import LegalProfessional from '../imports/ui/LegalProfessional';
 import ConsultMediations from '../imports/ui/ConsultMediations';
+import MediationConsult from '../imports/ui/MediationConsult';
 const routes = ( 
   <Router >
     <Switch>
@@ -85,6 +86,7 @@ const routes = (
     <Route path="/mediator-functionalities" exact component={MediatorFunctionalities} />
     <Route path="/mediations/update/:id" exact component={NavCheck} />
     <Route path="/mediation/show/:id" exact component={MediationShow} />
+    <Route path="/mediation/consult/:id" exact component={MediationConsult} />
     <Route path="/mediator/mediation/adjust/:id" exact component={MediationAdjust} />
     <Route path="/manageArbitrators" exact component={ManageArbitrators}/>
     <Route path="/arbitrator" exact component={Arbitrator}/>

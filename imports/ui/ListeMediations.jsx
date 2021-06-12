@@ -14,7 +14,7 @@ const notyf = new Notyf({
   }
 })
 
-const ListeMediations = ({datta}) => {
+const ListeMediations = ({datta,renderMediationsArbitrator}) => {
     const { register, handleSubmit, errors } = useForm(); 
     const [id,setId]=useState();
     const onSubmit=(data)=>{
@@ -29,12 +29,14 @@ const ListeMediations = ({datta}) => {
             }
         })
     }
-
+    useEffect(() => {
+        renderMediationsArbitrator()
+    }, [])
     return (
             <tr key={datta._id}> 
            <td ><b>{datta.nomsoc}</b><br></br>{datta.email}</td>
            <td ><b>{datta.nomsoc1}</b><br></br>{datta.email1}</td>
-           <td >
+           <td> 
                <form key={datta._id} id={`${datta._id}`} onSubmit={handleSubmit(onSubmit)}></form>
                <select className="form-select" name="judgement" form={`${datta._id}`} ref={register}>
                    <option value="submitted">Submitted ✅</option>
@@ -57,7 +59,7 @@ const ListeMediations = ({datta}) => {
            </td>
            <td><Button key={datta._id} className="btn btn-primary" type="submit" form={`${datta._id}`} onClick={()=>setId(datta._id)}>Send</Button></td>          
          </tr>
-    )
+    ) 
 }
 
 export default ListeMediations
