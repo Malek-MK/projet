@@ -17,7 +17,7 @@ const notyf = new Notyf({
 })
 
 const ListMediations = ({datta,renderMediationsLegalProf}) => {
-  const { register, handleSubmit, errors } = useForm({});
+  const { register, handleSubmit, errors } = useForm();
   const [arbit,setArbit]=useState()
   const [citoyen,setCitoyen]=useState()
     const user = useTracker(() => Meteor.user()?.username);
@@ -31,7 +31,6 @@ const ListMediations = ({datta,renderMediationsLegalProf}) => {
         renderMediationsLegalProf() 
     }, [])
     const [id,setId]=useState();
-    const [ID,setID]=useState();
     const onSubmit=(data)=>{
       console.log("data defend :",data);
         Meteor.call('insertDefend',{id,data},(err,res)=>{
@@ -45,9 +44,10 @@ const ListMediations = ({datta,renderMediationsLegalProf}) => {
             }
         })
     }
-useEffect(()=>{
-setID(datta._id)
-},[])
+    const Render=()=>{
+      setId(datta._id);
+      handleClose1()
+    }
     return (
             <tr key={datta._id}> 
            <td><b>{datta.nomsoc}</b><br></br>{datta.email}</td>
@@ -55,7 +55,7 @@ setID(datta._id)
            <td ><span className="text-success">Saved</span></td>           
            <td>{datta.time}</td>
            <td>  
-       <Link className="btn btn-info text-decoration-none" to={`mediation/consult/${ID}`} target="_blank"> Consult</Link>
+       <Link className="btn btn-info text-decoration-none" to={`mediation/consult/${datta._id}`} target="_blank"> Consult</Link>
            </td>
            <td><button className="btn btn-success" onClick={handleShow}>Show</button></td>
            <td><Button className="btn btn-primary" onClick={handleShow1}>Perform</Button></td>          
@@ -70,7 +70,7 @@ setID(datta._id)
         </Modal.Header>
         <Modal.Body>
          <p>Hello legal professional<b className="text-dark text-capitalize"> {user},</b></p>
-         <p>Number ID for this dispute <b className="text-danger">{}</b></p>
+         <p>Number ID for this dispute <b className="text-danger">{datta._id}</b></p>
          <h5 className="text-success">Dispute :</h5>
           {datta.result?<div>
           {datta.result.judgement==="submitted"?<p>State of arbitration : <b>Submitted ✅</b></p>:null}
@@ -84,7 +84,7 @@ setID(datta._id)
         </Modal.Body> 
         <Modal.Footer>
           <Button className="btn btn-primary" type="button" onClick={handleClose}>
-            See the result
+            I see the result
           </Button>
         </Modal.Footer>
       </Modal>
@@ -100,9 +100,9 @@ setID(datta._id)
         <Modal.Body>
          <form onSubmit={handleSubmit(onSubmit)} id="regist">
          <p>Hello legal professional<b className="text-dark text-capitalize"> {user},</b></p>
-         <p>Number ID for this dispute <b className="text-info">{ID}</b></p>
-         <div className="mb-3">
-        <label htmlFor="formFileMultiple" className="form-label">download the necessary filese</label>
+         <p>Number ID for this dispute <b className="text-info">{datta._id}</b></p>
+         <div className="mb-3"> 
+        <label htmlFor="formFileMultiple" className="form-label">download the necessary files</label>
         <input className="form-control" type="file" id="formFileMultiple" name="fields" multiple ref={register}/>
         </div>
         <div className="mb-3">
@@ -137,7 +137,7 @@ setID(datta._id)
          </form>
         </Modal.Body> 
         <Modal.Footer>
-          <Button className="btn btn-primary" type="submit" form="regist" onClick={handleClose1}>
+          <Button key={datta._id} className="btn btn-primary" type="submit" form="regist" onClick={Render}>
           Send
           </Button>
         </Modal.Footer>

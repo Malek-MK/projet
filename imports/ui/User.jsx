@@ -25,7 +25,8 @@ const User = () => {
         { name: "Date", field: "time", sortable: true },
         { name: "Update", field: "update", sortable: false },
         { name: "Delete", field: "delete", sortable: false },
-        { name: "Result", field: "result", sortable: false },
+        { name: "Defend", field: "defend", sortable: false },
+        { name: "Arbitration", field: "arbitration", sortable: false },
     ];
     const renderMediations = () => {
         Meteor.call('showMediations', { currentPage, ITEMS_PER_PAGE, search, sortBy: field, sortOrder: dir },

@@ -34,26 +34,21 @@ const ManageMediations = () => {
                         <th><b>Status</b></th>
                         <th><b>Date</b></th>
                         <th><b>Action</b></th>
+                        <th><b>Defend</b></th>
                         <th><b>Result</b></th>
                         <th><b>Eventually</b></th>
                         </tr>
                          </thead>
-                
                          <tbody>
-                        
                            {data.map((datta)=>{
                                return (
-                                  
                                 <ListeMediations
                                 key={datta._id}
                                 datta={datta}
                                 renderMediationsArbitrator={renderMediationsArbitrator}
-                                />
-                              
-                               )
-                           
-                           })}
-                           
+                                /> 
+                               )     
+                           })}  
                         </tbody>
                         
                          </table>  

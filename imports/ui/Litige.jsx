@@ -16,14 +16,17 @@ const notyf = new Notyf({
 })
 
 const Litige = ({ media, fetch}) => {
+  console.log("media defend :",media.defend);
   const user = useTracker(() => Meteor.user()?.username);
- console.log("res :",media.result)
   useEffect(() => {
     fetch();
   }, []);  
   const [show, setShow] = useState(false);
-      const handleClose = () => setShow(false);
-      const handleShow = () => setShow(true);  
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true); 
+  const [show1, setShow1] = useState(false);
+  const handleClose1 = () => setShow1(false);
+  const handleShow1 = () => setShow1(true); 
   const Delete = () => {
     Meteor.call('deleteMediation', media._id, (err) => {
       if (err) {
@@ -37,6 +40,7 @@ const Litige = ({ media, fetch}) => {
       }
     });
   }
+
   return (
     <>
      <tr key={media._id}>
@@ -47,20 +51,14 @@ const Litige = ({ media, fetch}) => {
         <td>  
     <Link className="btn btn-info text-decoration-none" to={`/mediations/update/${media._id}`} target="_blank"> Update</Link>
         </td>
-        <td>
-          <Button
-            className="btn btn-danger"
-            onClick={Delete}
-          >
-          <i className="fa fa-trash-o fa-lg"></i>  Delete
-          </Button>        </td>
-          <td><Button className="btn btn-success" onClick={handleShow}>Show</Button></td>
+        <td><Button className="btn btn-danger" onClick={Delete}><i className="fa fa-trash-o fa-lg"></i>Delete </Button></td>
+          <td><Button className="btn btn-success" onClick={handleShow1}>Show</Button></td>
+          <td><Button className="btn btn-primary" onClick={handleShow}>Result</Button></td>
           <Modal
         show={show}
         onHide={handleClose}
         backdrop="static"
         keyboard={false}
-        key={media._id}
       >
         <Modal.Header closeButton>
           <Modal.Title>Show the result of your dispute</Modal.Title>
@@ -81,7 +79,30 @@ const Litige = ({ media, fetch}) => {
         </Modal.Body> 
         <Modal.Footer>
           <Button className="btn btn-primary" type="button" onClick={handleClose}>
-            See the result
+            I see the result
+          </Button>
+        </Modal.Footer>
+      </Modal>
+      <Modal
+        show={show1}
+        onHide={handleClose1}
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Show the defend of your dispute</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+         <p>Hello <b className="text-dark text-capitalize"> {user},</b></p>
+         <p>Your number ID for your dispute <b className="text-danger">{media._id}</b></p>
+         <h5 className="text-success">Your Dispute :</h5>
+          {media.defend?<div>
+            {media.defend.radio2==="yes"?<p>The report :{media.defend.report}</p>:null}
+          </div> :<p>He still hasn't defended you yet <i className="fa fa-circle-o-notch fa-pulse fa-fw" aria-hidden="true"></i></p>}
+        </Modal.Body> 
+        <Modal.Footer>
+          <Button className="btn btn-primary" type="button" onClick={handleClose1}>
+            I see the defend
           </Button>
         </Modal.Footer>
       </Modal>
