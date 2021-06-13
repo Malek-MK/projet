@@ -23,23 +23,15 @@ Meteor.methods({
         if (!this.userId) {
             throw new Meteor.Error('Not Authorized');
         }
-        Profile.insert({
-            userId:this.userId,
-            namebank:data.namebank,
-            iban:data.iban,
-            swift:data.swift, 
-        })
+        Profile.update({userId:this.userId },
+            {$set:{bankinfo:data}});
     },
     'insertCompInfo'({data}){
         if (!this.userId) {
             throw new Meteor.Error('Not Authorized');
         }
-        Profile.insert({
-            userId:this.userId,
-            nameorganisation:data.nameorganisation,
-            sirensiret:data.sirensiret,
-            website:data.website,
-        })
+        rofile.update({userId:this.userId },
+            {$set:{compinfo:data}});
     }    
 
 })
