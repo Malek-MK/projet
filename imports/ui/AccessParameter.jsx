@@ -5,6 +5,7 @@ import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 import Schema from '../Validation/YupProfile';
 import { Meteor } from 'meteor/meteor';
+import { useTracker } from "meteor/react-meteor-data";
 
 const notyf = new Notyf({
   duration: 2000,
@@ -17,9 +18,13 @@ const AccessParameter = () => {
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(Schema)
 })
+const address=useTracker(() =>Meteor.user()?.emails[0].address);
+const id = useTracker(() => Meteor.user()?._id);
+const usr = useTracker(() => Meteor.user());
+
     const onSubmit=(data)=>{
         if(data){
-            Meteor.call('UpdateUser',{id,data}, (err) => {
+            Meteor.call('UpdateUserProfile',{id,data,usr}, (err) => {
                 if (err) {
                   console.log('Updated failed')
                   notyf.error("Updated failed")
@@ -48,7 +53,7 @@ const AccessParameter = () => {
             </div>
             <div className="card-body">
         <label >Email</label>
-        <input type="email" name="email" ref={register} className="form-control bg-light" placeholder="Tap your E-mail"></input>
+        <input type="email" name="email" defaultValue={address} ref={register} className="form-control bg-light" placeholder="Tap your E-mail"></input>
         <p className="text-danger">{errors.email?.message}</p>
         <div className="row mb-4 ">
           <div className="col">

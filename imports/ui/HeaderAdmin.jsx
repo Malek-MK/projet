@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{ useState,useEffect }  from 'react'
 import { Link } from 'react-router-dom';
 import Button from "react-bootstrap/Button";
 import { Meteor } from 'meteor/meteor';
@@ -6,6 +6,7 @@ import { useHistory } from 'react-router-dom'
 import { useTracker } from "meteor/react-meteor-data";
 
 const HeaderAdmin = () => {
+  Meteor.subscribe("notifications");
     const history = useHistory();
     const user = useTracker(() => Meteor.user()?.username);
     const address=useTracker(() =>Meteor.user()?.emails[0].address);

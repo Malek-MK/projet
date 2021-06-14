@@ -5,7 +5,6 @@ const Mediation = new Mongo.Collection('mediation');
 let it=new Date();
 const today=it.getFullYear()+'/'+it.getMonth()+'/'+it.getDate()+' '+it.getHours()+':'+it.getMinutes()
 Time=[];
-console.log(Time)
 Meteor.methods({
     'insertDate'({id,date}) { 
         console.log(date)

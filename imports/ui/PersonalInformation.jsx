@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react' 
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Notyf } from 'notyf'; 
@@ -7,6 +7,7 @@ import Schema from '../Validation/YupProfile';
 const AvatarIcon='./assets/modify.png';
 const CloseIcon='./assets/x.svg';
 import { Meteor } from 'meteor/meteor';
+import { useTracker } from "meteor/react-meteor-data";
 
 const notyf = new Notyf({
   duration: 2000,
@@ -17,20 +18,23 @@ const notyf = new Notyf({
 })
 
 const PersonalInformation = () => {
-    const { register, handleSubmit, errors } = useForm({
-        resolver: yupResolver(Schema)
-    })
+  const { register, handleSubmit, errors } = useForm({
+    resolver: yupResolver(Schema)
+})
+    const address=useTracker(() =>Meteor.user()?.emails[0].address);
+    const user = useTracker(() => Meteor.user()?.username);
     const onSubmit=(data)=>{
-        if(data){
-          Meteor.call('insertPersInfo',{data,id},(err)=>{
+      console.log("data :",data);
+          Meteor.call('insertPersInfo',{data},(err)=>{
             if(err){
               notyf.error('Inserted Personal Information Failed')
               console.log(err)
             }else{
               notyf.success('Inserted Personal Information with success')
+              console.log("Inserted personal information with success");
             }
           })
-        }
+        
       }
       const [image,setImage]=useState('')
       const [isUploaded,setIsUploaded]=useState(false)
@@ -49,14 +53,13 @@ const PersonalInformation = () => {
     return (
         <div className="col-sm-9">
             <div className="card">
-            <form onSubmit={handleSubmit(onSubmit)}>
             <div className="d-flex align-items-center">
                <div className="container mt-3">
                <div>
                 <b>Personal informations</b>
                 <br></br>
                 <small className="text-secondary">Update your personal information</small>
-                <button className="btn btn-info pull-right" type="submit">Save</button>
+                <button className="btn btn-info pull-right" type="submit" form="regist">Save</button>
                 </div> 
                </div>
             </div>
@@ -97,10 +100,11 @@ const PersonalInformation = () => {
                    }
                     
                   </div>
+                  <form onSubmit={handleSubmit(onSubmit)} id="regist">
                 <div className="row mb-3">
-          <div className="col">
+          <div className="col"> 
             <label>First name</label>
-            <input type="text" name="firstname" ref={register} className="form-control bg-light" placeholder="Tap your first name"></input>
+            <input type="text" name="firstname" defaultValue={user} ref={register} className="form-control bg-light" placeholder="Tap your first name"></input>
             <p className="text-danger">{errors.firstname?.message}</p>
           </div>
           <div className="col">
@@ -112,7 +116,7 @@ const PersonalInformation = () => {
         <div className="row mb-3">
           <div className="col">
             <label>E-mail</label>
-            <input type="email" name="email" ref={register} className="form-control bg-light" placeholder="Tap your E-mail"></input>
+            <input type="email" name="email" defaultValue={address} ref={register} className="form-control bg-light" placeholder="Tap your E-mail"></input>
              <p className="text-danger">{errors.email?.message}</p>
           </div>
           <div className="col">
@@ -144,11 +148,11 @@ const PersonalInformation = () => {
           </select>
           <p className="text-danger">{errors.country?.message}</p>
         </div>     
+        </form> 
             </div>
             <div className="card-footer">
-            <button type="submit" className="btn btn-info pull-right mt-3 mb-3">Save</button>
-            </div>
-            </form> 
+            <button type="submit" className="btn btn-info pull-right mt-3 mb-3" form="regist">Save</button>
+            </div> 
             </div>
         </div>
     )

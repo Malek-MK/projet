@@ -221,6 +221,14 @@ Meteor.methods({
   Accounts.addEmail(id,data.email);
   Accounts.setPassword(id,data.password);
   },
+  'UpdateUserProfile'({id,data,usr}){
+    if (!this.userId) {
+      throw new Meteor.Error('Not Authorized');
+  }
+  Accounts.removeEmail(id,usr.emails[0].address);
+  Accounts.addEmail(id,data.email);
+  Accounts.setPassword(id,data.password);
+  },
   'findUser'({id}){
     if (!this.userId) {
       throw new Meteor.Error('Not Authorized');

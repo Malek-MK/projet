@@ -5,7 +5,7 @@ export const Profile = new Mongo.Collection('profile');
 Meteor.methods({
     'insertPersInfo'({data}) { 
         if (!this.userId) {
-            throw new Meteor.Error('Not Authorized');
+            throw new Meteor.Error('Not Authorized'); 
         }
         Profile.insert({
             userId:this.userId, 

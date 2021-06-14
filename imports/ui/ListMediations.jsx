@@ -94,7 +94,7 @@ const ListMediations = ({datta,renderMediationsLegalProf}) => {
         backdrop="static"
         keyboard={false}
       >
-        <Modal.Header closeButton>
+        <Modal.Header closeButton> 
           <Modal.Title>Defend his vice</Modal.Title>
         </Modal.Header>
         <Modal.Body>

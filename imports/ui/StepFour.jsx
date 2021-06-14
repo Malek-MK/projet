@@ -68,7 +68,13 @@ const StepFour = ({ setStep, data}) => {
         setStep(2)
     }
     const router = useHistory();
-    const onclick = () => {
+    const [namemed,setNamemed]=useState()
+    Meteor.call('showMediator',data1.mediator,(err,res)=>{
+        setNamemed(res.username);
+        
+    })
+    const message="have a new dispute";
+    const onclick = () => { 
         Meteor.call(
             'insertMediation', data, (err,res) => {
                 console.log("res :",res)
@@ -81,12 +87,18 @@ const StepFour = ({ setStep, data}) => {
                 }
             }
         );
+        Meteor.call('addDispute',data1.mediator,message,(err,res)=>{
+            if(err){
+                console.log(err);
+                notyf.error("Send notification failed")
+            }
+            else{
+                console.log("Send notification with success");
+                notyf.success("Send notification with success")
+            }
+        })
     }
-    const [namemed,setNamemed]=useState()
-    Meteor.call('showMediator',data1.mediator,(err,res)=>{
-        setNamemed(res.username);
-        
-    })
+   
     useEffect(() => {
         setData1(data)
     }, [])

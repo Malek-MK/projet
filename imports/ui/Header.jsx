@@ -1,20 +1,34 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import Button from "react-bootstrap/Button";
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from "meteor/react-meteor-data";
 import { useHistory } from 'react-router-dom'
-
+import { useState } from 'react';
+import Notif from '../ui/Notif';
 
 const Header = () => { 
+
+    Meteor.subscribe("notifications"); 
+    const [notif,setNotif]=useState();
+    const renderNotif=()=>{
+        Meteor.call('showNotif',(err,res)=>{
+            console.log("notif :",res);
+            setNotif(res);
+        })
+    } 
     const user = useTracker(() => Meteor.user()?.username);
+    const id = useTracker(() => Meteor.user()?._id);
     const address=useTracker(() =>Meteor.user()?.emails[0].address);
     const history = useHistory();
     const onLogout = () => {
         Meteor.logout();
         history.replace('/signin');
     }
+    useEffect(()=>{
+    renderNotif() 
+    },[])
     return (
         <div>
             <header className="navbar fixed-top navbar-expand-md navbar-light d-print-none">
@@ -58,10 +72,38 @@ const Header = () => {
             <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
                 <ul className="navbar-nav ms-auto">
                     <li className="nav-item">
-                                        <button type="button" className="btn">
-                                        <span className="spinner-grow spinner-grow-sm text-warning" role="status" aria-hidden="true"></span>
-                                            Notifications <span className="badge bg-green ms-2">0</span>
-                                        </button>
+                    {notif? 
+                    <>
+                          <div className="btn-group dropstart">
+                          <button type="button" className="btn dropdown-toggle" id="dropdownMenuClickableInside" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                          <span className="spinner-grow spinner-grow-sm text-warning" role="status" aria-hidden="true"></span>
+                                                                    Notifications<span className="badge bg-red ms-2">1</span></button>
+                          <ul class="dropdown-menu bg-light" aria-labelledby="dropdownMenuClickableInside">
+                        {notif.map((not)=>{
+                            return (
+                                <>
+                            {not.userId===id?
+                                 <>
+                                <Notif
+                                key={not._id}
+                                not={not}
+                                fetch={renderNotif}
+                                />
+                            </>
+                            :null}
+                            </>
+                            )
+                        })}
+                           
+                          </ul>
+                        </div>
+                     </>
+                    :
+                    <button type="button" className="btn">
+                    <span className="spinner-grow spinner-grow-sm text-warning" role="status" aria-hidden="true"></span>
+                                                              Notifications<span className="badge bg-green ms-2">0</span></button>
+                    }                   
+                                      
                     </li> 
                     <li className="nav-item">
                     <Button type="button" className="btn btn-light" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i className="fa fa-user text-primary"></i> Hello, <b className="text-capitalize">{user}</b></Button>

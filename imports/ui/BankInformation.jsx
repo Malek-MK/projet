@@ -18,18 +18,18 @@ const BankInformation = () => {
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(Schema)
 })
+
     const onSubmit=(data)=>{
         if(data){
-            Meteor.call('InsertBankInfo', {data }, (err) => {
+            Meteor.call('InsertBankInfo', {data}, (err) => {
                 if (err) {
-                  console.log('Updated failed')
-                  notyf.error("Updated failed")
+                  console.log('Insert bank details failed')
+                  notyf.error("Insert bank details failed")
                 }
                 else {
-                  console.log('Updated with success')
+                  console.log('Insert bank details with success')
                   setShow(false);
-                  notyf.success("Updated with success")
-                  fetch();
+                  notyf.success("Insert bank details with success")
                 }
               });
         }

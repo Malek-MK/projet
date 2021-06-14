@@ -3,3 +3,4 @@ import '../imports/api/files';
 import '../imports/api/Users';
 import '../imports/api/Profile';
 import '../imports/api/Contact';
+import '../imports/api/Notifications';

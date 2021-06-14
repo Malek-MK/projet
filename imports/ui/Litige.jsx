@@ -16,7 +16,6 @@ const notyf = new Notyf({
 })
 
 const Litige = ({ media, fetch}) => {
-  console.log("media defend :",media.defend);
   const user = useTracker(() => Meteor.user()?.username);
   useEffect(() => {
     fetch();
@@ -30,12 +29,12 @@ const Litige = ({ media, fetch}) => {
   const Delete = () => {
     Meteor.call('deleteMediation', media._id, (err) => {
       if (err) {
-        notyf.error("Deleted failed");
-        console.log('Deleted failed');
+        notyf.error("Deleted dispute failed");
+        console.log('Deleted dispute failed');
       }
       else {
-        notyf.success("Deleted with success");
-        console.log('Deleted with success');
+        notyf.success("Deleted dispute with success");
+        console.log('Deleted dispute with success');
         fetch();
       }
     });
