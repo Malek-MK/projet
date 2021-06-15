@@ -10,34 +10,26 @@ if(Meteor.isServer){
 }
 
 Meteor.methods({
-    'addResult'(notif){
-        if (!this.userId) {
-            throw new Meteor.Error('Not Authorized');
-        }
-        Notifications.insert({
-            result:notif,
-            createdAt: new Date(),
-            userId:this.userId
-        })
-    },
-    'addDefend'(notif){
+    'addDefend'(idUser,idArbitrator,notif){
         if (!this.userId) {
             throw new Meteor.Error('Not Authorized');
         }
         Notifications.insert({
             defend:notif,
             createdAt: new Date(),
-            userId:this.userId
+            arbitrator:idArbitrator,
+            user:idUser
         })
     },
-    'addMediation'(notif){
+    'addMediation'(notif,idLAwyer,idArbitrator){
         if (!this.userId) {
             throw new Meteor.Error('Not Authorized');
         }
         Notifications.insert({
             mediation:notif,
             createdAt: new Date(),
-            userId:this.userId
+            legalpro:idLawyer,
+            arbitrator:idArbitrator
         })
     },
     'addDispute'(id,message){
@@ -48,8 +40,37 @@ Meteor.methods({
             dispute:message,
             createdAt: new Date(),
             mediator:id,
-            userId:this.userId
         }) 
+    },
+    'addResult'(idMediator,idUser,idLawyer,message){
+        if (!this.userId) {
+            throw new Meteor.Error('Not Authorized');
+        }
+        Notifications.insert({
+            result:message,
+            createdAt: new Date(),
+            mediator:idMediator,
+            legalpro:idLawyer,
+            user:idUser
+        }) 
+    },
+    'addUser'(message){
+        if (!this.userId) {
+            throw new Meteor.Error('Not Authorized');
+        }
+        Notifications.insert({
+            newUser:message,
+            admin:idAdmin
+        })  
+    },
+    'addMediator'(message){
+        if (!this.userId) {
+            throw new Meteor.Error('Not Authorized');
+        }
+        Notifications.insert({
+            newMediator:message,
+            admin:idAdmin
+        })  
     },
     'showNotif'(){
         if (!this.userId) {

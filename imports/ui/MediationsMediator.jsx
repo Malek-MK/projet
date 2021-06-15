@@ -3,6 +3,7 @@ import HeaderMediator from './HeaderMediator';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from "meteor/react-meteor-data";
 import ListeMedia from '../ui/ListeMedia';
+import Footerr from '../ui/Footerr';
 const MediationsMediator = () => {
     const user = useTracker(() => Meteor.user()?._id);
     const [data,setData]=useState([]);
@@ -51,9 +52,11 @@ const MediationsMediator = () => {
                         )
                         })}
                         </tbody>
-                         </table>  
+                         </table> 
                          
+                         <Footerr/>           
             </div>
+            
         </div>
     )
 }

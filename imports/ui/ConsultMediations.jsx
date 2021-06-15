@@ -84,7 +84,7 @@ const ConsultMediations = () => {
                         
                          </table>  
         
-                     
+                         <br></br><br></br><br></br>          
         <Footerr/>
         </div>
         </div>
