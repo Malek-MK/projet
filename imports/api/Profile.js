@@ -30,8 +30,15 @@ Meteor.methods({
         if (!this.userId) {
             throw new Meteor.Error('Not Authorized');
         }
-        rofile.update({userId:this.userId },
+        Profile.update({userId:this.userId },
             {$set:{compinfo:data}});
+    },
+    'insertProfInfo'({data}){
+        if (!this.userId) {
+            throw new Meteor.Error('Not Authorized');
+        }
+        Profile.update({userId:this.userId },
+            {$set:{profinfo:data}});
     }    
 
 })

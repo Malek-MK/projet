@@ -33,7 +33,7 @@ const ProfessionalInformation = () => {
       }
     );
     
-    const onSubmit=(data)=>{
+    const onSubmit=(data)=>{ 
         if(data){
           Meteor.call('insertProfInfo',{data,id},(err)=>{
             if(err){

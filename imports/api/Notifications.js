@@ -18,10 +18,11 @@ Meteor.methods({
             defend:notif,
             createdAt: new Date(),
             arbitrator:idArbitrator,
-            user:idUser
+            user:idUser,
+            userId:this.userId
         })
     },
-    'addMediation'(notif,idLAwyer,idArbitrator){
+    'addMediation'(notif,idLawyer,idArbitrator){
         if (!this.userId) {
             throw new Meteor.Error('Not Authorized');
         }
@@ -29,7 +30,8 @@ Meteor.methods({
             mediation:notif,
             createdAt: new Date(),
             legalpro:idLawyer,
-            arbitrator:idArbitrator
+            arbitrator:idArbitrator,
+            userId:this.userId
         })
     },
     'addDispute'(id,message){
@@ -40,6 +42,7 @@ Meteor.methods({
             dispute:message,
             createdAt: new Date(),
             mediator:id,
+            userId:this.userId
         }) 
     },
     'addResult'(idMediator,idUser,idLawyer,message){
@@ -51,7 +54,8 @@ Meteor.methods({
             createdAt: new Date(),
             mediator:idMediator,
             legalpro:idLawyer,
-            user:idUser
+            user:idUser,
+            userId:this.userId
         }) 
     },
     'addUser'(message){
