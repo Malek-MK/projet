@@ -16,7 +16,7 @@ Meteor.methods({
         }
         Notifications.insert({
             defend:notif,
-            createdAt: new Date(),
+            dateDefend: new Date(),
             arbitrator:idArbitrator,
             user:idUser,
             userId:this.userId
@@ -28,7 +28,7 @@ Meteor.methods({
         }
         Notifications.insert({
             mediation:notif,
-            createdAt: new Date(),
+            dateMediation: new Date(),
             legalpro:idLawyer,
             arbitrator:idArbitrator,
             userId:this.userId
@@ -40,7 +40,7 @@ Meteor.methods({
         }
         Notifications.insert({
             dispute:message,
-            createdAt: new Date(),
+            dateDispute: new Date(),
             mediator:id,
             userId:this.userId
         }) 
@@ -51,7 +51,7 @@ Meteor.methods({
         }
         Notifications.insert({
             result:message,
-            createdAt: new Date(),
+            dateResult: new Date(),
             mediator:idMediator,
             legalpro:idLawyer,
             user:idUser,
@@ -64,7 +64,8 @@ Meteor.methods({
         }
         Notifications.insert({
             newUser:message,
-            admin:idAdmin
+            admin:idAdmin,
+            dateAddUser: new Date(),
         })  
     },
     'addMediator'(message){
@@ -73,19 +74,44 @@ Meteor.methods({
         }
         Notifications.insert({
             newMediator:message,
-            admin:idAdmin
+            admin:idAdmin,
+            dateAddResult: new Date(),
         })  
     },
-    'showNotif'(){
+    'showNotifMediator'(id){
         if (!this.userId) {
             throw new Meteor.Error('Not Authorized');
         }
-       return Notifications.find({}).fetch();
+       return Notifications.find({mediator:id}).fetch();
     },
-    'DeleteNotif'(id){
+    'showNotifUser'(id){
         if (!this.userId) {
             throw new Meteor.Error('Not Authorized');
         }
-        Notifications.remove({id})
+       return Notifications.find({user:id}).fetch();
+    },
+    'showNotifArbitre'(id){
+        if (!this.userId) {
+            throw new Meteor.Error('Not Authorized');
+        }
+       return Notifications.find({arbitrator:id}).fetch();
+    },
+    'showNotifLegalPro'(id){
+        if (!this.userId) {
+            throw new Meteor.Error('Not Authorized');
+        }
+       return Notifications.find({legalpro:id}).fetch();
+    },
+    'showNotifAdmin'(id){
+        if (!this.userId) {
+            throw new Meteor.Error('Not Authorized');
+        }
+       return Notifications.find({admin:id}).fetch();
+    },
+    'DeleteNotif'(_id){
+        if (!this.userId) {
+            throw new Meteor.Error('Not Authorized');
+        }
+        Notifications.remove({ _id })
     }
 })

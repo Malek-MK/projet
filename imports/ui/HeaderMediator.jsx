@@ -5,21 +5,20 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Meteor } from 'meteor/meteor';
 import { useHistory } from 'react-router-dom'
 import { useTracker } from "meteor/react-meteor-data";
-import Notif from '../ui/Notif';
+import NotifMediator from '../ui/NotifMediator';
 
 const HeaderMediator = () => {
+    const id = useTracker(() => Meteor.user()?._id);
     Meteor.subscribe("notifications");
-    const [notif,setNotif]=useState();
-    const renderNotif=()=>{
-        Meteor.call('showNotif',(err,res)=>{
-            console.log("notif :",res);
+    const [notif,setNotif]=useState([]);
+    const renderNotifDispute=()=>{
+        Meteor.call('showNotifMediator',id,(err,res)=>{
             setNotif(res);
         })
     }
     useEffect(()=>{
-        renderNotif() 
+        renderNotifDispute() 
         },[])
-    const id = useTracker(() => Meteor.user()?._id);
     const user = useTracker(() => Meteor.user()?.username);
     const address=useTracker(() =>Meteor.user()?.emails[0].address);
     const history = useHistory();
@@ -71,36 +70,40 @@ const HeaderMediator = () => {
             <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
                 <ul className="navbar-nav ms-auto">
                 <li className="nav-item">
-                    {notif? 
+                    {notif[0]!==undefined? 
                     <>
-                          <div className="btn-group dropstart">
-                          <button type="button" className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                          <span className="spinner-grow spinner-grow-sm text-warning" role="status" aria-hidden="true"></span>
-                                                                    Notifications<span className="badge bg-red ms-2">1</span></button>
-                          <ul class="dropdown-menu bg-light">
-                        {notif.map((not)=>{
-                            return (
-                                <>
-                            {not.mediator===id?
-                                 <>
-                                <Notif
-                                key={not._id}
-                                not={not}
-                                fetch={renderNotif}
-                                />
-                            </>
-                            :null}
-                            </>
-                            )
-                        })}
-                           
-                          </ul>
-                        </div>
-                     </>
-                    :
-                    <button type="button" className="btn">
+                    <div className="btn-group dropstart">
+                    <button type="button" className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                     <span className="spinner-grow spinner-grow-sm text-warning" role="status" aria-hidden="true"></span>
-                                                              Notifications<span className="badge bg-green ms-2">0</span></button>
+                                                              Notifications<span className="badge bg-red ms-2">1</span></button>
+                    <ul class="dropdown-menu bg-light">
+                  {notif.map((not)=>{
+                      return (
+                          <>
+                      {not.mediator===id?
+                           <>
+                          <NotifMediator
+                          key={not._id}
+                          not={not}
+                          fetchDispute={renderNotifDispute}
+                          />
+                      </>
+                      :null}
+                      </>
+                      )
+                  })}
+                     
+                    </ul>
+                  </div>
+               </>
+                     
+                    :
+<button type="button" className="btn">
+                     <span className="spinner-grow spinner-grow-sm text-warning" role="status" aria-hidden="true"></span>
+                                                               Notifications<span className="badge bg-green ms-2">0</span></button>
+                   
+                    
+                    
                     }                   
                                       
                     </li> 

@@ -90,11 +90,9 @@ const StepFour = ({ setStep, data}) => {
         Meteor.call('addDispute',data1.mediator,message,(err,res)=>{
             if(err){
                 console.log(err);
-                notyf.error("Send notification failed")
             }
             else{
                 console.log("Send notification with success");
-                notyf.success("Send notification with success")
             }
         })
     }

@@ -6,28 +6,27 @@ import { Meteor } from 'meteor/meteor';
 import { useTracker } from "meteor/react-meteor-data";
 import { useHistory } from 'react-router-dom'
 import { useState } from 'react';
-import Notif from '../ui/Notif';
+import NotifUser from '../ui/NotifUser';
 
 const Header = () => { 
-
+    const id = useTracker(() => Meteor.user()?._id);
     Meteor.subscribe("notifications"); 
-    const [notif,setNotif]=useState();
+    const [notif,setNotif]=useState([]);
+    console.log("notif :",notif);
     const renderNotif=()=>{
-        Meteor.call('showNotif',(err,res)=>{
-            console.log("notif :",res);
+        Meteor.call('showNotifUser',id,(err,res)=>{
             setNotif(res);
         })
     } 
     const user = useTracker(() => Meteor.user()?.username);
-    const id = useTracker(() => Meteor.user()?._id);
     const address=useTracker(() =>Meteor.user()?.emails[0].address);
     const history = useHistory();
     const onLogout = () => {
-        Meteor.logout();
+        Meteor.logout(); 
         history.replace('/signin');
     }
     useEffect(()=>{
-    renderNotif() 
+    renderNotif()  
     },[])
     return (
         <div>
@@ -67,38 +66,38 @@ const Header = () => {
                         <i className="fa fa-gavel text-primary" aria-hidden="true"></i> Arbitration <span className="badge badge-danger bg-danger">Comming Soon</span></Link></NavDropdown.Item>
                     </NavDropdown>
                 </li>
-
             </ul>
             <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
                 <ul className="navbar-nav ms-auto">
                     <li className="nav-item">
-                    {notif? 
-                    <>
-                          <div className="btn-group dropstart">
-                          <button type="button" className="btn dropdown-toggle" id="dropdownMenuClickableInside" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-                          <span className="spinner-grow spinner-grow-sm text-warning" role="status" aria-hidden="true"></span>
-                                                                    Notifications<span className="badge bg-red ms-2">1</span></button>
-                          <ul class="dropdown-menu bg-light" aria-labelledby="dropdownMenuClickableInside">
-                        {notif.map((not)=>{
-                            return (
-                                <>
-                            {not.userId===id?
-                                 <>
-                                <Notif
-                                key={not._id}
-                                not={not}
-                                fetch={renderNotif}
-                                />
-                            </>
-                            :null}
-                            </>
-                            )
-                        })}
-                           
-                          </ul>
-                        </div>
-                     </>
-                    :
+                    {notif[0]!==undefined?  
+                     <>
+                     <div className="btn-group dropstart">
+                     <button type="button" className="btn dropdown-toggle" id="dropdownMenuClickableInside" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                     <span className="spinner-grow spinner-grow-sm text-warning" role="status" aria-hidden="true"></span>
+                                                               Notifications<span className="badge bg-red ms-2">1</span></button>
+                     <ul class="dropdown-menu bg-light" aria-labelledby="dropdownMenuClickableInside">
+                   {notif.map((not)=>{
+                       return (
+                           <>
+                       {not.userId===id?
+                            <>
+                           <NotifUser
+                           key={not._id}
+                           not={not}
+                           fetch={renderNotif}
+                           />
+                       </>
+                       :null}
+                       </>
+                       )
+                   })}
+                      
+                     </ul>
+                   </div>
+                </>
+                   
+                    :  
                     <button type="button" className="btn">
                     <span className="spinner-grow spinner-grow-sm text-warning" role="status" aria-hidden="true"></span>
                                                               Notifications<span className="badge bg-green ms-2">0</span></button>
