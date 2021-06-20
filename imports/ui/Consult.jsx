@@ -4,31 +4,25 @@ import jsPDF from 'jspdf';
 import Footerr from '../ui/Footerr';
 
 const Consult = ({data,fetchMedia}) => {
-    console.log("data :",data);
     const [namemediator,setNameMediator]=useState()
-      console.log("name :",namemediator);
       const renderNameMediator=()=>{ 
         Meteor.call('showMediator',data.mediator,(err,res)=>{
             setNameMediator(res.username);
-              console.log("mediator :",res)
           }) 
      }
      const [namelegalpro,setNameLegalPro]=useState()
-      console.log("name :",namelegalpro);
       const renderNameLegalPro=()=>{
         Meteor.call('showLegalPro',data.legalprof,(err,res)=>{
             setNameLegalPro(res.username);
           }) 
      }
      const [namelegalpro1,setNameLegalPro1]=useState()
-     console.log("name :",namelegalpro1);
      const renderNameLegalPro1=()=>{
        Meteor.call('showLegalPro1',data.legalprof1,(err,res)=>{
            setNameLegalPro1(res.username);
          }) 
     }
     const [namearbitrator,setNameArbitrator]=useState()
-     console.log("name :",namearbitrator);
      const renderNameArbitrator=()=>{
        Meteor.call('showLegalPro1',data.legalprof1,(err,res)=>{
         setNameArbitrator(res.username);

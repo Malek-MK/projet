@@ -15,11 +15,9 @@ const MediationAdjust = () => {
     const [data, setData] = useState({});
     const [datta, setDatta] = useState();
     const {id} = useParams();
-    console.log("id :",id)
      const fetchMedia=()=>{
     Meteor.call('fetchMedia',id,(err,res)=>{
       setDatta(res);
-      console.log("data :",res);
     })
   }
  useEffect(()=>{

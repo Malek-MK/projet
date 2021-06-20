@@ -23,7 +23,6 @@ const ManageLegalProf = () => {
     const [legalprof,setLegalProf]=useState([]);
     const renderLegalProf=()=>{
         Meteor.call('showLegalProf',(err,res)=>{
-            console.log("res :",res)
             setLegalProf(res);
         })
     }

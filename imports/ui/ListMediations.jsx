@@ -18,8 +18,6 @@ const notyf = new Notyf({
 
 const ListMediations = ({datta,renderMediationsLegalProf}) => {
   const { register, handleSubmit, errors } = useForm();
-  const [arbit,setArbit]=useState()
-  const [citoyen,setCitoyen]=useState()
     const user = useTracker(() => Meteor.user()?.username);
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -33,7 +31,6 @@ const ListMediations = ({datta,renderMediationsLegalProf}) => {
     const [id,setId]=useState();
     const message="have a new report"
     const onSubmit=(data)=>{
-      console.log("data defend :",data);
         Meteor.call('insertDefend',{id,data},(err,res)=>{
             if(err){
                 console.log("Defend a vice failed")

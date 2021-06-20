@@ -10,7 +10,6 @@ const HeaderArbitrator = () => {
   Meteor.subscribe("notifications");
   const id = useTracker(() => Meteor.user()?._id);
   const [notif,setNotif]=useState([]);
-  console.log("notif :",notif);
   const renderNotif=()=>{
       Meteor.call('showNotifArbitrator',id,(err,res)=>{
           setNotif(res);

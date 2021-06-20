@@ -12,7 +12,6 @@ const Header = () => {
     const id = useTracker(() => Meteor.user()?._id);
     Meteor.subscribe("notifications"); 
     const [notif,setNotif]=useState([]);
-    console.log("notif :",notif);
     const renderNotif=()=>{
         Meteor.call('showNotifUser',id,(err,res)=>{
             setNotif(res);

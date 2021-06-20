@@ -35,7 +35,7 @@ const ListeMediations = ({datta,renderMediationsArbitrator}) => {
                 notyf.success("Arbitration with success")  
             }
         });
-        Meteor.call('addResult',datta.mediator,datta.userId.arbitrator,datta.legalprof,datta.legalprof1,message,(err,res)=>{
+        Meteor.call('addResult',datta.mediator,datta.userId,datta.legalprof,datta.legalprof1,message,(err,res)=>{
           if(err){
               console.log(err);
           }

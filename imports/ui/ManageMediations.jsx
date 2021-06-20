@@ -8,7 +8,6 @@ import { useTracker } from "meteor/react-meteor-data";
 const ManageMediations = () => {
     const user = useTracker(() => Meteor.user()?._id); 
     const [data,setData]=useState([]);
-    console.log("data :",data);
     const renderMediationsArbitrator=()=>{
         Meteor.call('fetchMediationsArbitrator',user,(err,res)=>{
             setData(res); 

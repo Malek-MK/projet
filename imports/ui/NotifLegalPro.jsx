@@ -15,7 +15,6 @@ const notyf = new Notyf({
 
 const NotifLegalPro = ({not,fetch}) => {
     const [idnotif,setIdNotif]=useState()
-    console.log("idnotif :",idnotif);
     if(idnotif){
         Meteor.call('DeleteNotif',idnotif,(err)=>{
             if(err){

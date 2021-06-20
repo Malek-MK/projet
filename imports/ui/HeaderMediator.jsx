@@ -9,7 +9,6 @@ import NotifMediator from '../ui/NotifMediator';
 
 const HeaderMediator = () => {
     const id = useTracker(() => Meteor.user()?._id);
-    console.log("id mediator :",id);
     Meteor.subscribe("notifications");
     const [notif,setNotif]=useState([]);
     const renderNotifDispute=()=>{

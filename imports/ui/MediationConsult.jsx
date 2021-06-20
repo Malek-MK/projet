@@ -7,7 +7,6 @@ const MediationConsult = () => {
     const [data,setData]=useState();
     const fetchMedia=()=>{
         Meteor.call('fetchMedia',id,(err,res)=>{
-            console.log('res :',res);
           setData(res);
         })
       }

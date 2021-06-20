@@ -77,7 +77,6 @@ const StepFour = ({ setStep, data}) => {
     const onclick = () => { 
         Meteor.call(
             'insertMediation', data, (err,res) => {
-                console.log("res :",res)
                 if (err) {
                     notyf.error("Inserted Failed")
                 } else {

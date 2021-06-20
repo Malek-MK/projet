@@ -23,7 +23,6 @@ const ManageArbitrators = () => {
     const [arbitrators,setArbitrators]=useState([]);
     const renderArbitrator=()=>{
         Meteor.call('showArbitrators',(err,res)=>{
-            console.log("res :",res)
             setArbitrators(res);
         })
     }

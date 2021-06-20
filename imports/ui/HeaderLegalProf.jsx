@@ -9,9 +9,7 @@ import NotifLegalPro from '../ui/NotifLegalPro';
 const HeaderLegalProf = () => {
   Meteor.subscribe("notifications");
   const id = useTracker(() => Meteor.user()?._id);
-  console.log("id legalpro :",id);
   const [notif,setNotif]=useState([]);
-  console.log("notif :",notif);
   const renderNotif=()=>{
       Meteor.call('showNotifLegalPro',id,(err,res)=>{
           setNotif(res);

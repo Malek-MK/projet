@@ -6,7 +6,6 @@ import { Meteor } from 'meteor/meteor';
 import SelectLegalProfessionals from './SelectLegalProfessionals';
 
 const AdjustOne = ({ setData, setStep,datta,fetch }) => {
-    console.log("datta :",datta)
   const [check, setCheck] = useState(false);
     const [namelegalprof,setNameLegalProf]=useState()
     Meteor.call('showLegalPro',datta.mediator,(err,res)=>{

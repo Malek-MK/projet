@@ -16,7 +16,6 @@ const notyf = new Notyf({
 })
 
 const PrefDate = ({setVerif,verif,dates,id}) => {
-  console.log("dates :",dates)
     const[date,setDate]=useState([]);
     const handleDateClick = (arg) => {
       if(date.length+(dates?.length || 0)<=9){   

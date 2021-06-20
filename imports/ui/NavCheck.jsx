@@ -15,11 +15,9 @@ const NavCheck = () => {
   const [data,setData]=useState();
   const [showw,setShow]=useState();
   const [paym,setPaym]=useState(false);
-  console.log("isPayment :",paym)
   const {id} = useParams();
   const fetchDate=()=>{
     Meteor.call('showDate',id,(err,res) => {
-      console.log("payment :",res.Time)
        setDates(res.Time)
     });
   }

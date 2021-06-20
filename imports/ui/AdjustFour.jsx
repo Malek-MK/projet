@@ -14,12 +14,9 @@ const notyf = new Notyf({
 })
 
 const AdjustFour = ({ setStep, data,id,datta }) => {
-    console.log("datta :",datta); 
     const [idArbitrator,setIdArbitrator]=useState();
     const [idLegalProf,setLegalprof]=useState();
     const [idLegalProf1,setLegalprof1]=useState()
-    console.log("id legalpro :",idLegalProf);
-    console.log("id legalpro1 :",idLegalProf1);
     const generatePDF=()=>{
         var doc=new jsPDF('p', 'mm', [680, 680]);
         doc.html(document.querySelector("#content"),{

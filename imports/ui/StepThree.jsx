@@ -15,9 +15,7 @@ const StepThree = ({ setData, setStep,data}) => {
         other:data.other || "Other",
         }
     });
-    console.log(errors)
     const objlitige = watch("objlitige");
-    console.log(objlitige)
     const onSubmit = (data3) => {
         setData(old => ({ ...old, ...data3 }));
         setStep(3)

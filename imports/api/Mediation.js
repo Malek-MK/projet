@@ -7,7 +7,6 @@ const today=it.getFullYear()+'/'+it.getMonth()+'/'+it.getDate()+' '+it.getHours(
 Time=[];
 Meteor.methods({
     'insertDate'({id,date}) { 
-        console.log(date)
         if (!this.userId) {
             throw new Meteor.Error('Not Authorized');
         }
@@ -116,7 +115,6 @@ Meteor.methods({
         return { items: Mediation.find(query, options).fetch(), totalCount };
     },
     'paginateMediation'(params) {
-        //console.log(params);
         const { page } = params;
         const perPage = 10;
 

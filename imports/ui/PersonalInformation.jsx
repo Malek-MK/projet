@@ -24,7 +24,6 @@ const PersonalInformation = () => {
     const address=useTracker(() =>Meteor.user()?.emails[0].address);
     const user = useTracker(() => Meteor.user()?.username);
     const onSubmit=(data)=>{
-      console.log("data :",data);
           Meteor.call('insertPersInfo',{data},(err)=>{
             if(err){
               notyf.error('Inserted Personal Information Failed')

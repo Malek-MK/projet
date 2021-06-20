@@ -16,7 +16,6 @@ const notyf = new Notyf({
 })
 
 const Payment = ({setVerifff,verifff,id,paym,datta}) => {
-  console.log("payment :",paym)
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(Schema)
   });

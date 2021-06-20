@@ -10,7 +10,6 @@ const HeaderAdmin = () => {
   Meteor.subscribe("notifications");
   const id = useTracker(() => Meteor.user()?._id);
   const [notif,setNotif]=useState([]);
-  console.log("notif :",notif);
   const renderNotif=()=>{
       Meteor.call('showNotifAdmin',id,(err,res)=>{
           setNotif(res);
