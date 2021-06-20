@@ -4,9 +4,19 @@ import Button from "react-bootstrap/Button";
 import { Meteor } from 'meteor/meteor';
 import { useHistory } from 'react-router-dom'
 import { useTracker } from "meteor/react-meteor-data";
-
+import NotifLegalPro from '../ui/NotifLegalPro';
+ 
 const HeaderLegalProf = () => {
   Meteor.subscribe("notifications");
+  const id = useTracker(() => Meteor.user()?._id);
+  console.log("id legalpro :",id);
+  const [notif,setNotif]=useState([]);
+  console.log("notif :",notif);
+  const renderNotif=()=>{
+      Meteor.call('showNotifLegalPro',id,(err,res)=>{
+          setNotif(res);
+      })
+  }  
     const history = useHistory();
     const user = useTracker(() => Meteor.user()?.username);
     const address=useTracker(() =>Meteor.user()?.emails[0].address);
@@ -14,6 +24,9 @@ const HeaderLegalProf = () => {
         Meteor.logout();
         history.replace('/signin');
     }
+    useEffect(()=>{
+      renderNotif()  
+      },[])
     return (
         <div>
             <header className="navbar fixed-top navbar-expand-md navbar-light d-print-none">
@@ -46,10 +59,39 @@ const HeaderLegalProf = () => {
             <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
                 <ul className="navbar-nav ms-auto">
                     <li className="nav-item">
-                                        <button type="button" className="btn">
-                                        <span className="spinner-grow spinner-grow-sm text-warning" role="status" aria-hidden="true"></span>
-                                            Notifications <span className="badge bg-green ms-2">0</span>
-                                        </button>
+                    {notif[0]!==undefined? 
+                    <>
+                    <div className="btn-group dropstart">
+                    <button type="button" className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span className="spinner-grow spinner-grow-sm text-warning" role="status" aria-hidden="true"></span>
+                                                              Notifications<span className="badge bg-red ms-2">{notif.length}</span></button>
+                    <ul class="dropdown-menu bg-light">
+                  {notif.map((not)=>{
+                      return (
+                          <>
+                      {not.legalpro===id? 
+                           <>
+                          <NotifLegalPro
+                          key={not._id}
+                          not={not}
+                          fetch={renderNotif}
+                          />
+                      </>
+                      :null}
+
+                      </>
+                      )
+                  })}
+                     
+                    </ul>
+                  </div>
+               </>
+                     
+                    :
+                        <button type="button" className="btn">
+                          <span className="spinner-grow spinner-grow-sm text-warning" role="status" aria-hidden="true"></span>
+                          Notifications<span className="badge bg-green ms-2">0</span></button>
+                    }
                     </li> 
                     <li className="nav-item">
                     <Button type="button" className="btn btn-light" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i className="fa fa-graduation-cap text-primary"></i> Hello legal professional, <b className="text-capitalize">{user}</b></Button>

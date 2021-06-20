@@ -13,9 +13,6 @@ Meteor.publish(null, function () {
 
 Meteor.methods({
   insertAccount(user) {
-    if (!this.userId) {
-      throw new Meteor.Error('Not Authorized');
-  }
     try {
       YupUser.validate(user)
     } catch (e) {
@@ -31,9 +28,6 @@ Meteor.methods({
     Roles.addUsersToRoles(res, 'user');
   },
   insertArbitrator(arbitrator) {
-    if (!this.userId) {
-      throw new Meteor.Error('Not Authorized');
-  }
     try {
       YupUser.validate(arbitrator)
     } catch (e) {

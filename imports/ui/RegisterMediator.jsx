@@ -26,6 +26,7 @@ const RegisterMediator = () => {
     resolver: yupResolver(Schema)
   });
 const [verif,setVerif]=useState(false);
+const message="have a new mediator";
   const onSubmit = (data) => {
     if(verif){
       Meteor.call('insertMediator', data, (err) => {
@@ -40,6 +41,14 @@ const [verif,setVerif]=useState(false);
         } 
        
       });
+      Meteor.call('addUser',message,(err,res)=>{
+        if(err){
+            console.log(err);
+        }
+        else{
+            console.log("Send notification with success");
+        }
+    })
     }else{
       notyf.error("Please verify that you are a human, Not a Robot")
     }

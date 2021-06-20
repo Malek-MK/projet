@@ -23,6 +23,7 @@ const ListeMediations = ({datta,renderMediationsArbitrator}) => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true); 
+    const message="have a new result arbitration"
     const onSubmit=(data)=>{
         Meteor.call('insertResult',{id,data},(err,res)=>{
             if(err){
@@ -33,7 +34,15 @@ const ListeMediations = ({datta,renderMediationsArbitrator}) => {
                 console.log("Insert result with success")
                 notyf.success("Arbitration with success")  
             }
-        })
+        });
+        Meteor.call('addResult',datta.mediator,datta.userId.arbitrator,datta.legalprof,datta.legalprof1,message,(err,res)=>{
+          if(err){
+              console.log(err);
+          }
+          else{
+              console.log("Send notification with success");
+          }
+      })
     }
     useEffect(() => {
         renderMediationsArbitrator()

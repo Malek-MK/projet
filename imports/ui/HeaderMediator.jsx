@@ -9,6 +9,7 @@ import NotifMediator from '../ui/NotifMediator';
 
 const HeaderMediator = () => {
     const id = useTracker(() => Meteor.user()?._id);
+    console.log("id mediator :",id);
     Meteor.subscribe("notifications");
     const [notif,setNotif]=useState([]);
     const renderNotifDispute=()=>{
@@ -75,7 +76,7 @@ const HeaderMediator = () => {
                     <div className="btn-group dropstart">
                     <button type="button" className="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                     <span className="spinner-grow spinner-grow-sm text-warning" role="status" aria-hidden="true"></span>
-                                                              Notifications<span className="badge bg-red ms-2">1</span></button>
+                                                              Notifications<span className="badge bg-red ms-2">{notif.length}</span></button>
                     <ul class="dropdown-menu bg-light">
                   {notif.map((not)=>{
                       return (
@@ -98,9 +99,9 @@ const HeaderMediator = () => {
                </>
                      
                     :
-<button type="button" className="btn">
-                     <span className="spinner-grow spinner-grow-sm text-warning" role="status" aria-hidden="true"></span>
-                                                               Notifications<span className="badge bg-green ms-2">0</span></button>
+                                            <button type="button" className="btn">
+                                                <span className="spinner-grow spinner-grow-sm text-warning" role="status" aria-hidden="true"></span>
+                                                Notifications<span className="badge bg-green ms-2">{notif.length}</span></button>
                    
                     
                     

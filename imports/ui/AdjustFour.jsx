@@ -18,6 +18,8 @@ const AdjustFour = ({ setStep, data,id,datta }) => {
     const [idArbitrator,setIdArbitrator]=useState();
     const [idLegalProf,setLegalprof]=useState();
     const [idLegalProf1,setLegalprof1]=useState()
+    console.log("id legalpro :",idLegalProf);
+    console.log("id legalpro1 :",idLegalProf1);
     const generatePDF=()=>{
         var doc=new jsPDF('p', 'mm', [680, 680]);
         doc.html(document.querySelector("#content"),{
@@ -93,6 +95,7 @@ const renderArbitrator=()=>{
         e.preventDefault
         setStep(2) 
     }
+    const message="have a new mediation"
     const onclick = () => {
         Meteor.call(
             'MediatorUpdateMediation',{id,idArbitrator,idLegalProf,idLegalProf1,...datta.mediator}, (err) => {
@@ -105,6 +108,14 @@ const renderArbitrator=()=>{
                 }
             }
         );
+        Meteor.call('addMediation',message,idLegalProf,idLegalProf1,idArbitrator,(err,res)=>{
+            if(err){
+                console.log(err);
+            }
+            else{
+                console.log("Send notification with success");
+            }
+        })
     }
    
     useEffect(() => {

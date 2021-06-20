@@ -31,6 +31,7 @@ const ListMediations = ({datta,renderMediationsLegalProf}) => {
         renderMediationsLegalProf() 
     }, [])
     const [id,setId]=useState();
+    const message="have a new report"
     const onSubmit=(data)=>{
       console.log("data defend :",data);
         Meteor.call('insertDefend',{id,data},(err,res)=>{
@@ -42,7 +43,15 @@ const ListMediations = ({datta,renderMediationsLegalProf}) => {
                 console.log("Defend a vice with success")
                 notyf.success("Defend a vice with success")  
             }
-        })
+        });
+        Meteor.call('addDefend',datta.userId,datta.arbitrator,message,(err,res)=>{
+          if(err){
+              console.log(err);
+          }
+          else{
+              console.log("Send notification with success");
+          }
+      })
     }
     const Render=()=>{
       setId(datta._id);

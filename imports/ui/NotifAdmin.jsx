@@ -13,7 +13,7 @@ const notyf = new Notyf({
     }
   })
 
-const Notif = ({not,fetchDispute}) => {
+const NotifAdmin = ({not,fetch}) => {
     const [idnotif,setIdNotif]=useState()
     console.log("idnotif :",idnotif);
     if(idnotif){
@@ -24,27 +24,27 @@ const Notif = ({not,fetchDispute}) => {
             }else{
                 notyf.success("Deleted Notification with success");
                 console.log('Deleted Notification with success');
-                fetchDispute()
+                fetch()
                 setIdNotif()
             }
         })
        }
     
     useEffect(()=>{
-        fetchDispute()
+        fetch()
     },[])
     return (
-        <>
-       {not.dispute? <li key={not._id}><div className="card">
-            <small className="bg-warning"><button type="button" className="btn-close pull-right" aria-label="Close" onClick={()=>{setIdNotif(not._id)}}></button><b>notif :</b> {not.dispute} 😉<br></br>
-        <b>createdAt :</b> <Moment format="D MMM YYYY" withTitle>{not.dateDispute}</Moment></small>
+       <>
+        {not.newUser? <li><div className="card">
+            <small className="bg-warning"><button type="button" className="btn-close pull-right" aria-label="Close" onClick={()=>{setIdNotif(not._id)}}></button><b>notif :</b> {not.newUser} 😉<br></br>
+        <b>createdAt :</b> <Moment format="D MMM YYYY" withTitle>{not.dateAddUser}</Moment></small>
             </div></li>:null}
-            {not.result? <li key={not._id}><div className="card">
-            <small className="bg-warning"><button type="button" className="btn-close pull-right" aria-label="Close" onClick={()=>{setIdNotif(not._id)}}></button><b>notif :</b> {not.result} 😉<br></br>
-        <b>createdAt :</b> <Moment format="D MMM YYYY" withTitle>{not.dateResult}</Moment></small>
+            {not.Mediator? <li><div className="card">
+            <small className="bg-warning"><button type="button" className="btn-close pull-right" aria-label="Close" onClick={()=>{setIdNotif(not._id)}}></button><b>notif :</b> {not.newMediator} 😉<br></br>
+        <b>createdAt :</b> <Moment format="D MMM YYYY" withTitle>{not.dateAddAdmin}</Moment></small>
             </div></li>:null}
-       </>
+       </> 
     )
 }
 
-export default Notif
+export default NotifAdmin

@@ -25,7 +25,8 @@ const Signup = () => {
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(Schema)
   });
-const [verif,setVerif]=useState(false);
+const [verif,setVerif]=useState(false); 
+const message="have a new user";
   const onSubmit = (data) => {
     if(verif){
       Meteor.call('insertAccount', data, (err) => {
@@ -40,6 +41,14 @@ const [verif,setVerif]=useState(false);
         } 
        
       });
+      Meteor.call('addUser',message,(err,res)=>{
+        if(err){
+            console.log(err);
+        }
+        else{
+            console.log("Send notification with success");
+        }
+    })
     }else{
       notyf.error("Please verify that you are a human, Not a Robot")
     }
